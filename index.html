@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="assets/css/bootstrap.css">
     <link rel="stylesheet" href="assets/css/custom.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
     <script src="assets/js/jquery-3.7.1.min.js"></script>
     <script src="assets/js/bootstrap.min.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -18,7 +19,7 @@
 </head>
 
 <body>
-    <div class="page">
+    <div class="page position-absolute">
         <div class="menu-area">
             <div class="container">
                 <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -59,6 +60,109 @@
         <div class="container">
             <h1>My First Bootstrap Page</h1>
             <p>This is some text.</p>
+        </div>
+    </div>
+
+    <!--Login-->
+    <div class="page container-fluid p-0 position-absolute top-0 start-0 bg-white vh-100 vw-100 login-page">
+        <a class="navbar-brand position-absolute start-0 mt-4" href="#" style="padding-left: calc(15% / 2)">
+            <img src="./assets/images/full-white-logo.svg" style="width: 60%;"/>
+        </a>
+        <img class="ornament w-50" src="./assets/images/background/register.svg" alt="">
+
+        <div class="btn-group position-absolute top-0 mt-4" style="right: calc(15% / 2);">
+            <button class="btn rounded-10 d-flex align-items-center bg-light-blue text-black border-0 p-2 text-icon-button" type="button" id="registerButton">
+                Registrasi Akun
+                <span class="material-symbols-outlined rounded-5 bg-blue-20 text-white mx-2">
+                    keyboard_arrow_right
+                </span>
+            </button>
+        </div>
+
+        <div class="container-fluid row mx-auto mb-4 register-container">
+            <img src="./assets/images/illustration/computer-login.svg" alt="" class="col-sm-12 col-md-12 col-lg-12 w-100" style="height: fit-content;">
+            <form class="col-sm-12 col-md-12 col-lg-12 d-flex flex-column form-login" style="gap: 1.5rem; padding-right: calc(15% / 2);">
+                <h1 class="fs-1 fw-bold font-primary-color">Masuk ke Akun</h1>
+                <div class="">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" class="form-control" placeholder="Masukkan email">
+                </div>
+                <div class="">
+                    <label for="password">Password</label>
+                    <input type="password" id="email" class="form-control" placeholder="Masukkan password">
+                </div>
+                <button type="button" class="btn btn-primary w-100" id="accountLogin">Masuk</button>
+            </form>
+        </div>
+    </div>
+
+
+    <!--Register-->
+    <div class="page container-fluid p-0 position-absolute top-0 start-0 bg-white vh-100 vw-100 register-page">
+        <a class="navbar-brand position-absolute start-0 mt-4" href="#" style="padding-left: calc(15% / 2)">
+            <img src="./assets/images/full-white-logo.svg" style="width: 60%;"/>
+        </a>
+        <img class="ornament w-50" src="./assets/images/background/register.svg" alt="">
+
+        <div class="btn-group position-absolute top-0 mt-4" style="right: calc(15% / 2);">
+            <button class="btn rounded-10 d-flex align-items-center border-0 p-2 login-register-button" type="button" id="loginButton">
+                Masuk ke Akun
+                <span class="material-symbols-outlined rounded-5 mx-2 login-register-arrow-icon">
+                    keyboard_arrow_right
+                </span>
+            </button>
+        </div>
+
+        <div class="container-fluid row mx-auto mb-4 register-container">
+            <img src="./assets/images/illustration/computer-login.svg" alt="" class="col-sm-12 col-md-12 col-lg-12 w-100" style="height: fit-content;">
+            <form class="col-sm-12 col-md-12 col-lg-12 d-flex flex-column form-register" style="gap: 1.5rem; padding-right: calc(15% / 2);">
+                <h1 class="fs-1 fw-bold font-primary-color">Registrasi Akun</h1>
+                <div class="">
+                    <label for="name">Nama</label>
+                    <input type="text" id="name" class="form-control" placeholder="Masukkan nama">
+                </div>
+                <div class="">
+                    <label for="npm">NPM</label>
+                    <input type="npm" id="npm" class="form-control" placeholder="Masukkan NPM">
+                </div>
+                <div class="">
+                    <label for="phone">Nomor HP</label>
+                    <input type="text" id="phone" class="form-control" placeholder="Masukkan nomor HP">
+                </div>
+                <div class="">
+                    <label for="email">Email</label>
+                    <input type="text" id="email" class="form-control" placeholder="Masukkan email">
+                </div>
+                <div class="">
+                    <label for="password">Password</label>
+                    <input type="password" id="email" class="form-control" placeholder="Masukkan password">
+                </div>
+                <div class="">
+                    <label for="faculty">Fakultas</label>
+                    <input type="text" id="faculty" class="form-control" placeholder="Masukkan fakultas">
+                </div>
+                <div class="">
+                    <label for="major">Jurusan</label>
+                    <input type="text" id="major" class="form-control" placeholder="Masukkan jurusan">
+                </div>
+                <div class="">
+                    <label for="class">Kelas</label>
+                    <input type="text" id="class" class="form-control" placeholder="Masukkan kelas">
+                </div>
+                <div class="">
+                    <label for="profile">Foto profil</label>
+                    <input type="file" id="profile" class="form-control">
+                </div>
+                <div class="">
+                    <label for="ktm">Foto KTM</label>
+                    <input type="file" id="ktm" class="form-control">
+                </div>
+                <div class="">
+                    <label for="face-and-ktm">Foto diri dan KTM secara bersamaan</label>
+                    <input type="file" id="face-and-ktm" class="form-control">
+                </div>
+                <button type="button" class="btn btn-primary w-100" id="accountRegister">Registrasi</button>
+            </form>
         </div>
     </div>
 </body>
