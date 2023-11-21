@@ -1,0 +1,56 @@
+@media screen and (max-width: 360px) {
+    #registerButton, #loginButton {
+        margin-top: 4rem;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .ornament {
+        width: 100% !important;
+    }
+}
+
+@media screen and (max-width: 1199px) {
+    .form-login, .form-register {
+        padding-left: calc(15% / 2);
+        margin-top: 3rem;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .ornament {
+        width: 40% !important;
+    }
+
+    .register-container {
+        margin-top: -4rem;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .register-container > * {
+        margin-block: auto;
+    }
+}
+
+@media screen and (min-width: 900px) {
+    .form-register h1, #accountRegister {
+        grid-column-start: 1;
+        grid-column-end: 3;
+    }
+
+    .form-register {
+        display: grid !important;
+        grid-template-columns: 1fr 1fr !important;
+    }
+
+    #accountRegister {
+        grid-row-start: 8;
+    } 
+}
+
+@media screen and (min-width: 1000px) {
+    .ornament {
+        width: 30% !important;
+    }
+}
