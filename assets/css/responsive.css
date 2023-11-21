@@ -22,6 +22,12 @@
         width: 40% !important;
     }
 
+    .signin-container {
+        margin-top: -9rem;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
     .register-container {
         margin-top: -4rem;
         display: grid;
