@@ -25,6 +25,14 @@ body {
     -o-border-radius: 20px;
 }
 
+.rounded-20 {
+    border-radius: 20px !important;
+    -webkit-border-radius: 20px !important;
+    -moz-border-radius: 20px !important;
+    -ms-border-radius: 20px !important;
+    -o-border-radius: 20px !important;
+}
+
 .rounded-10 {
     border-radius: 10px !important;
     -webkit-border-radius: 10px !important;
@@ -94,4 +102,46 @@ body {
 .login-register-button {
     color: black;
     background-color: var(--light-blue);
+}
+
+.team-card-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+}
+
+.team-card {
+    background: linear-gradient(269deg, #1A5F7A 0.34%, #57C5B6 93.33%);
+    background-size: 100% 30%;
+    background-repeat: no-repeat;
+}
+
+.team-card > * {
+    transform: translateY(30px);
+    transition: 0.5s;
+}
+
+.social-media-links {
+    transform: translateY(40px);
+    transition: 0.5s;
+    opacity: 0;
+}
+
+.team-card:hover .social-media-links {
+    transform: translateY(0px);
+    opacity: 1;
+}
+
+.team-card:hover > * {
+    transform: translateY(0px);
+}
+
+.footer {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.footer-logo, .footer-copyright {
+    grid-column-start: 1;
+    grid-column-end: 3;
 }

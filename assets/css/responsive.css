@@ -10,6 +10,16 @@
     }
 }
 
+@media screen and (max-width: 600px) {
+    .team-card-container {
+        grid-template-columns: 1fr;
+    }
+
+    .team-card {
+        padding: 2rem;
+    }
+}
+
 @media screen and (max-width: 1199px) {
     .form-login, .form-register {
         padding-left: calc(15% / 2);
@@ -52,7 +62,26 @@
 
     #accountRegister {
         grid-row-start: 8;
-    } 
+    }
+
+    .team-card-container {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    .footer {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    .footer-logo {
+        grid-column-start: 1;
+        grid-column-end: 2;
+        width: 100%;
+    }
+
+    .footer-copyright {
+        grid-column-start: 1;
+        grid-column-end: 4;
+    }
 }
 
 @media screen and (min-width: 1000px) {
