@@ -8,6 +8,10 @@
     .ornament {
         width: 100% !important;
     }
+
+    .breadcrumb-line {
+        width: 17rem !important;
+    }
 }
 
 @media screen and (max-width: 600px) {
@@ -27,35 +31,13 @@
     }
 }
 
-@media screen and (min-width: 1200px) {
-    .ornament {
-        width: 40% !important;
-    }
-
-    .signin-container {
-        margin-top: -9rem;
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-    }
-
-    .register-container {
-        margin-top: -4rem;
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-    }
-
-    .register-container > * {
-        margin-block: auto;
-    }
-}
-
 @media screen and (min-width: 900px) {
     .form-register h1, #accountRegister {
         grid-column-start: 1;
         grid-column-end: 3;
     }
 
-    .form-register {
+    .form-register, .form-identity, .button-group {
         display: grid !important;
         grid-template-columns: 1fr 1fr !important;
     }
@@ -82,10 +64,36 @@
         grid-column-start: 1;
         grid-column-end: 4;
     }
+
+    .donation-payment-area {
+        grid-template-columns: 1fr 1fr;
+    }
 }
 
 @media screen and (min-width: 1000px) {
     .ornament {
         width: 30% !important;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .ornament {
+        width: 40% !important;
+    }
+
+    .signin-container {
+        margin-top: -9rem;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .register-container {
+        margin-top: -4rem;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .register-container > * {
+        margin-block: auto;
     }
 }

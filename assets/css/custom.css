@@ -145,3 +145,49 @@ body {
     grid-column-start: 1;
     grid-column-end: 3;
 }
+
+.breadcrumb-custom-container {
+    position: relative;
+    -ms-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+    display: flex;
+    justify-content: center;
+}
+
+.breadcrumb-custom {
+    position: absolute;
+    background: white;
+}
+
+.checkmark, .checkmark-checked {
+    position: absolute;
+    top: .8rem;
+    height: 1.5rem;
+    width: 1.5rem;
+    border-radius: 50%;
+}
+
+.checkmark-checked {
+    background: var(--primary);
+}
+
+.item-card-shadow {
+    box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.10), 0px 9px 9px 0px rgba(0, 0, 0, 0.09), 0px 19px 12px 0px rgba(0, 0, 0, 0.05), 0px 34px 14px 0px rgba(0, 0, 0, 0.01), 0px 54px 15px 0px rgba(0, 0, 0, 0.00);
+}
+
+.container-card-shadow {
+    box-shadow: 0px 6px 12px 0px rgba(0, 0, 0, 0.10), 0px 22px 22px 0px rgba(0, 0, 0, 0.09), 0px 50px 30px 0px rgba(0, 0, 0, 0.05), 0px 88px 35px 0px rgba(0, 0, 0, 0.01), 0px 138px 39px 0px rgba(0, 0, 0, 0.00);
+}
+
+.card-horizontal-scroll {
+    overflow-x: auto !important;
+    padding-block: 1rem;
+}
+
+.btn-primary-outline {
+    color: var(--primary);
+    background-color: var(--white);
+    border-color: var(--primary);
+    border-width: 2px;
+}
