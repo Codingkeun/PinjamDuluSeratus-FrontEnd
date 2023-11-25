@@ -191,3 +191,130 @@ body {
     border-color: var(--primary);
     border-width: 2px;
 }
+
+.opacity-75 {
+    opacity: 75% !important;
+}
+
+.opacity-50 {
+    font-weight: 50% !important;
+}
+
+select {
+    appearance: none;
+    border: 0;
+    outline: 0;
+    font: inherit;
+    width: 20rem;
+    padding: 1rem 4rem 1rem 1rem;
+    background: 
+        url(https://img.icons8.com/ios-glyphs/30/159895/sort-down.png)
+        no-repeat right 0.8em center / 1.4em,
+        var(--light-blue);
+    color: black;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+select::ms-expand {
+    display: none;
+}
+
+select:focus {
+    outline: none;
+}
+
+option {
+    color: inherit;
+    background-color: var(--white);
+}
+
+.bank-choices-in-inquiry {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.divider {
+    width: 100%;
+    height: 2px;
+    background-color: rgba(0, 0, 0, .2);
+}
+
+/* Custom Range */
+
+.custom-range {
+    position: relative;
+    height: 3rem;
+    z-index: 999;
+}
+
+.custom-range-field {
+    position: relative;
+    display: flex;
+    gap: 1rem;
+    margin-top: .5rem;
+}
+
+.custom-range-field input {
+    -webkit-appearance: none;
+    width: 100%;
+}
+
+.custom-range-field input::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 1rem;
+    height: 2rem;
+    border-radius: 10px;
+    background: var(--primary);
+    margin-top: -0.8rem;
+    cursor: pointer;
+}
+
+.custom-range-field input::-webkit-slider-thumb:hover {
+    background: var(--secondary);
+}
+
+.custom-range-field input::-webkit-slider-runnable-track {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 8px;
+    border-radius: 5px;
+    background: rgba(0, 0, 0, .1);
+}
+
+.custom-range-value-section {
+    width: 100%;
+    height: 100%;
+    padding-right: 2rem;
+}
+
+.custom-range-value {
+    margin-top: .5rem;
+    width: 2.5rem;
+    height: 2.5rem;
+    background: var(--primary);
+    border-radius: 50%;
+    transform: scale(0);
+    transition: transform 0.2s ease-in-out;
+}
+
+.custom-range-value.show {
+    transform: scale(1);
+}
+
+.custom-range-value span {
+    position: absolute;
+    top: .5rem;
+    width: 100%;
+    text-align: center;
+    color: var(--white);
+    font-weight: 500;
+    z-index: 2;
+    transform: scale(0);
+    transform-origin: bottom;
+    transition: transform 0.5s ease-in-out;
+}
+
+.custom-range-value span.show {
+    transform: scale(1);
+}

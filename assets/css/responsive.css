@@ -68,6 +68,22 @@
     .donation-payment-area {
         grid-template-columns: 1fr 1fr;
     }
+
+    .loan-inquiry {
+        display: grid !important;
+        grid-template-columns: 50% 50% !important;
+    }
+
+    #dueDateOfLoanResultSection {
+        grid-column-start: 2;
+        grid-column-end: 3;
+    }
+
+    #applyForALoanButton {
+        grid-row-start: 3;
+        grid-column-start: 1;
+        grid-column-end: 3;
+    }
 }
 
 @media screen and (min-width: 1000px) {
