@@ -21,6 +21,8 @@
 </head>
 
 <body>
+    <script src="./assets/js/jquery-3.7.1.min.js"></script>
+
     <!--Login-->
     <div class="page container-fluid p-0 position-absolute top-0 start-0 bg-white vh-100 vw-100 login-page">
         <a class="navbar-brand position-absolute start-0 mt-4" href="#" style="padding-left: calc(15% / 2); z-index: 99999">
@@ -39,7 +41,7 @@
 
         <div class="container-fluid row mx-auto mb-4 signin-container">
             <img src="./assets/images/illustration/computer-login.svg" alt="" class="col-sm-12 col-md-12 col-lg-12 w-100" style="height: fit-content;">
-            <form class="col-sm-12 col-md-12 col-lg-12 d-flex flex-column form-login" style="gap: 1.5rem; padding-right: calc(15% / 2);">
+            <form action="index.html" onsubmit="checkFormLoginValidity(this)" class="col-sm-12 col-md-12 col-lg-12 d-flex flex-column form-login" style="gap: 1.5rem; padding-right: calc(15% / 2);">
                 <h1 class="fs-1 fw-bold text-primary">Masuk ke Akun</h1>
                 <div class="">
                     <label for="email">Email</label>
@@ -49,10 +51,17 @@
                     <label for="password">Password</label>
                     <input type="password" id="email" class="form-control" placeholder="Masukkan password" required>
                 </div>
-                <a href="index.html" class="btn btn-primary w-100" id="accountLogin">Masuk</a>
+                
+                <button type="submit" class="btn btn-primary font-weight-semibold w-100" id="accountSignIn">Masuk</button>
             </form>
         </div>
     </div>
+
+    <script>
+        const checkFormValidity = function(form) {
+            return form.checkValidity();
+        }
+    </script>
 </body>
 
 </html>

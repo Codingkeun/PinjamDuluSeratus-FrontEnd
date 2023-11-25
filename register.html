@@ -39,7 +39,7 @@
 
         <div class="container-fluid row mx-auto mb-4 register-container">
             <img src="./assets/images/illustration/computer-login.svg" alt="" class="col-sm-12 col-md-12 col-lg-12 w-100" style="height: fit-content;">
-            <form class="col-sm-12 col-md-12 col-lg-12 d-flex flex-column form-register" style="gap: 1.5rem; padding-right: calc(15% / 2);">
+            <form action="signin.html" onsubmit="checkFormValidity(this)" class="col-sm-12 col-md-12 col-lg-12 d-flex flex-column form-register" style="gap: 1.5rem; padding-right: calc(15% / 2);">
                 <h1 class="fs-1 fw-bold text-primary">Registrasi Akun</h1>
                 <div class="">
                     <label for="name">Nama</label>
@@ -85,10 +85,15 @@
                     <label for="face-and-ktm">Foto diri dan KTM secara bersamaan</label>
                     <input type="file" id="face-and-ktm" class="form-control" required>
                 </div>
-                <a href="index.html" class="btn btn-primary w-100" id="accountRegister">Registrasi</a>
+                <button type="submit" class="btn btn-primary font-weight-semibold w-100" id="accountRegister">Registrasi</button>
             </form>
         </div>
     </div>
-</body>
 
+    <script>
+        const checkFormValidity = function(form) {
+            return form.checkValidity();
+        }
+    </script>
+</body>
 </html>

@@ -86,7 +86,7 @@
         </div>
 
         <div class="donation-nominal-area mt-4 mb-5">
-            <form class="d-flex flex-column" style="gap: 3rem;">
+            <form action="donasi-identitas.html" onsubmit="checkFormValidity(this)" class="d-flex flex-column" style="gap: 3rem;">
                 <div class="w-100 d-flex flex-column" style="padding-inline: calc(15% / 2); gap: 1rem;">
                     <label for="donationAmount" class="text-center font-weight-semibold">Masukkan jumlah donasi</label>
                     <div class="input-group">
@@ -141,9 +141,15 @@
                         </div>
                     </div>
                 </div>
-                <button type="button" class="btn btn-primary font-weight-semibold w-75 rounded-10 mx-auto">Lanjut</button>
+                <button type="submit" class="btn btn-primary font-weight-semibold w-75 mx-auto">Lanjut</button>
             </form>
         </div>
     </div>
+
+    <script>
+        const checkFormValidity = function(form) {
+            return form.checkValidity();
+        }
+    </script>
 </body>
 </html>

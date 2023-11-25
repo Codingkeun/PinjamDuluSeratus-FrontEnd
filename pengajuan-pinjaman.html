@@ -51,13 +51,16 @@
                             <div class="profile-image rounded-circle bg-primary" style="width: 3rem; height: 3rem;">
                                 <img src="./assets/images/profile/user-profile.svg" alt="" class="w-100 h-100">
                             </div>
-                            <button class="border-0">
-                                <span class="material-symbols-rounded">
-                                    keyboard_arrow_down
-                                </span>
-                            </button>
-                            <div class="dropdown-menu" style="">
-                                <a class="dropdown-item" href="signin.html">Sebagai Peminjam <span class="material-symbols-outlined"></span></a>
+                            <div class="d-flex align-items-center">
+                                <button class="border-0 dropdown-toggle" data-toggle="dropdown" aria-expanded="false"></button>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="#"></a></li>
+                                    <li><a class="dropdown-item" href="#">Dashboard</a></li>
+                                    <li><a class="dropdown-item pb-3 border-bottom" href="pengajuan-pinjaman.html">Pinjaman</a></li>
+                                    <li><a class="dropdown-item mt-3" href="profil-peminjam.html">Akun</a></li>
+                                    <li><a class="dropdown-item pb-3 border-bottom" href="#">User Guide</a></li>
+                                    <li><a class="dropdown-item mt-3" href="index.html">Log Out</a></li>
+                                </ul>
                             </div>
                         </div>
                     </div>
@@ -75,7 +78,7 @@
                             <label for="loanAmount">Jumlah Pinjaman</label>
                             <div class="input-group">
                                 <span class="input-group-text border-right-0" style="border-top-right-radius: 0; border-bottom-right-radius: 0;">Rp</span>
-                                <input type="text" placeholder="Masukkan jumlah pinjaman" class="form-control" id="loanAmount">
+                                <input type="text" placeholder="Masukkan jumlah pinjaman" class="form-control" id="loanAmount" required>
                             </div>
                         </div>
 
@@ -83,30 +86,29 @@
                             <label for="tipAmount">Tip</label>
                             <div class="input-group">
                                 <span class="input-group-text border-right-0" style="border-top-right-radius: 0; border-bottom-right-radius: 0;">Rp</span>
-                                <input type="text" placeholder="Masukkan jumlah tip" class="form-control" id="tipAmount">
+                                <input type="text" placeholder="Masukkan jumlah tip" class="form-control" id="tipAmount" required>
                             </div>
                         </div>
 
                         <div class="">
                             <label for="loanDuration">Durasi Pinjaman</label>
                             <div id="loanDuration" class="d-flex" style="gap: 2rem">
-                                <select name="loanDuration" id="loanTextDuration" class="form-select">
-                                    <option value="item0">Pilih rentang:</option>
+                                <select name="loanDuration" id="loanTextDuration" class="form-select" required>
+                                    <option value="">Pilih rentang:</option>
                                     <option value="days">Hari</option>
                                     <option value="weeks">Minggu</option>
                                     <option value="months">Bulan</option>
                                 </select>
-                                <select name="loanDuration" id="loanNumberDuration" class="form-select form-select-lg">
+                                <select name="loanDuration" id="loanNumberDuration" class="form-select form-select-lg" required>
                                     <option value="">Pilih rentang:</option>
                                 </select>
-                                
                             </div>
                         </div>
 
                         <div class="d-flex flex-column">
                             <h3 class="font-weight-normal" style="font-size: 1rem;">Cara pelunasan</h3>
                             <div class="form-check">
-                                <input type="radio" id="installmentPayment" name="paymentMethod" value="installmentPayment" class="form-check-input">
+                                <input type="radio" id="installmentPayment" name="paymentMethod" value="installmentPayment" class="form-check-input" required>
                                 <label for="installmentPayment" class="form-check-label ml-3">Bayar secara cicilan</label>
                                 <div class="ml-3 installmentPaymentRange">
                                     <label for="installmentPaymentRange">Berapa kali cicilan?</label>
@@ -114,7 +116,7 @@
                                         <div class="custom-range-field">
                                             <div class="value left">0</div>
                                             <div class="w-100">
-                                                <input type="range" id="installmentPaymentRange" name="installmentPaymentRange" min="0" max="12" value="0" step="1">
+                                                <input type="range" id="installmentPaymentRange" name="installmentPaymentRange" min="0" max="12" value="0" step="1" required>
                                                 <div class="custom-range-value-section">
                                                     <div class="custom-range-value" id="customRangeValue">
                                                         <span>5</span>
@@ -127,7 +129,7 @@
                                 </div>
                             </div>
                             <div class="form-check mt-1">
-                                <input type="radio" id="fullPayment" name="paymentMethod" value="fullPayment" class="form-check-input">
+                                <input type="radio" id="fullPayment" name="paymentMethod" value="fullPayment" class="form-check-input" required>
                                 <label for="installmentPayment" class="form-check-label ml-3">Bayar semuanya sekaligus</label>
                             </div>
                         </div>
@@ -136,43 +138,43 @@
                             <h3 class="font-weight-normal" style="font-size: 1rem;">Pilihan Bank</h3>
                             <div class="bank-choices-in-inquiry mt-3" style="gap: .5rem;">
                                 <div class="form-check">
-                                    <input type="radio" id="bcaPayment" name="bankChoices" value="bcaPayment" class="form-check-input">
+                                    <input type="radio" id="bcaPayment" name="bankChoices" value="bcaPayment" class="form-check-input" required>
                                     <label for="bcaPayment" class="form-check-label ml-3">
                                         <img src="./assets/images/bank/BCA.svg" alt="Bank BCA" class="w-75">
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input type="radio" id="bniPayment" name="bankChoices" value="bniPayment" class="form-check-input">
+                                    <input type="radio" id="bniPayment" name="bankChoices" value="bniPayment" class="form-check-input" required>
                                     <label for="bniPayment" fclass="form-check-label ml-3">
                                         <img src="./assets/images/bank/BNI.svg" alt="Bank BNI" class="w-75">
                                     </label>
                                 </div>
                                 <div class="form-check mt-1">
-                                    <input type="radio" id="bniSyariahPayment" name="bankChoices" value="bniSyariahPayment" class="form-check-input">
+                                    <input type="radio" id="bniSyariahPayment" name="bankChoices" value="bniSyariahPayment" class="form-check-input" required>
                                     <label for="bniSyariahPayment" class="form-check-label ml-3">
                                         <img src="./assets/images/bank/BNI_Syariah.svg" alt="Bank BNI Syariah" class="w-75">
                                     </label>
                                 </div>
                                 <div class="form-check mt-1">
-                                    <input type="radio" id="briPayment" name="bankChoices" value="briPayment" class="form-check-input">
+                                    <input type="radio" id="briPayment" name="bankChoices" value="briPayment" class="form-check-input" required>
                                     <label for="briPayment" class="form-check-label ml-3">
                                         <img src="./assets/images/bank/BRI.svg" alt="Bank BRI" class="w-75">
                                     </label>
                                 </div>
                                 <div class="form-check mt-1">
-                                    <input type="radio" id="mandiriPayment" name="bankChoices" value="mandiriPayment" class="form-check-input">
+                                    <input type="radio" id="mandiriPayment" name="bankChoices" value="mandiriPayment" class="form-check-input" required>
                                     <label for="mandiriPayment" class="form-check-label ml-3">
                                         <img src="./assets/images/bank/Mandiri.svg" alt="Bank Mandiri" class="w-75">
                                     </label>
                                 </div>
                                 <div class="form-check mt-1">
-                                    <input type="radio" id="visaPayment" name="bankChoices" value="visaPayment" class="form-check-input">
+                                    <input type="radio" id="visaPayment" name="bankChoices" value="visaPayment" class="form-check-input" required>
                                     <label for="visaPayment" class="form-check-label ml-3">
                                         <img src="./assets/images/bank/VISA.svg" alt="VISA" class="w-75">
                                     </label>
                                 </div>
                                 <div class="form-check mt-1">
-                                    <input type="radio" id="masterCardPayment" name="bankChoices" value="masterCardPayment" class="form-check-input">
+                                    <input type="radio" id="masterCardPayment" name="bankChoices" value="masterCardPayment" class="form-check-input" required>
                                     <label for="masterCardPayment" class="form-check-label ml-3">
                                         <img src="./assets/images/bank/MasterCard.svg" alt="MasterCard" class="w-75">
                                     </label>
@@ -182,11 +184,15 @@
 
                         <div class="">
                             <label for="accountNumber">Nomor Rekening</label>
-                            <input type="text" placeholder="Masukkan nomor rekening" class="form-control" id="accountNumber">                        </div>
+                            <input type="text" placeholder="Masukkan nomor rekening" class="form-control" id="accountNumber" required>                 
+                        </div>
                     </div>
+
+                    <button type="submit" class="btn btn-primary font-weight-semibold w-100 mt-4">Simulasikan Pinjaman</button>
+
                 </form>
 
-                <div>
+                <section>
                     <div class="p-5 rounded-10 container-card-shadow" style="height: fit-content;">
                         <h2 class="font-weight-semibold m-0 text-primary mb-4" style="font-size: 1.2rem;">Hasil Simulasi Pengajuan</h2>
                         <div class="d-flex flex-column" style="gap: 1.5rem">
@@ -218,7 +224,7 @@
                         </div>
                     </div>
     
-                    <div id="dueDateOfLoanResultSection" class="mt-5">
+                    <form id="dueDateOfLoanResultSection" class="mt-5">
                         <div>
                             <h4 style="font-size: 1rem;" class="text-center">Tanggal jatuh tempo pembayaran pinjaman</h4>
                             <h4 id="dueDateOfLoanResult" class="text-primary font-weight-bold text-center">16 Februari 2024</h4>
@@ -237,11 +243,10 @@
                                 <label class="form-check-label ml-3" for="terms3">Jika pembayaran kembali pinjaman tidak dilakukan sebelum tanggal jatuh tempo, maka profile peminjam yang bersangkutan akan diterbitkan di halaman website</label>
                             </div>
                         </div>
-                    </div>
+                        <button class="btn btn-primary font-weight-semibold w-100 mt-5" id="applyForALoanButton" type="submit">Ajukan Pinjaman</button>
+                    </form>
 
-                    <button class="btn btn-primary rounded-10 font-weight-semibold w-100 mt-5" id="applyForALoanButton" type="button">Ajukan Pinjaman</button>
-
-                </div>
+                </section>
             </div>
         </div>
 
@@ -296,8 +301,8 @@
                         input += `<option value="test">${j}</option>`;
                     }
                     $('#loanNumberDuration').html(input);
-                } else if (val == "item0") {
-                    $("#loanNumberDuration").html("<option value=''>Pilih rentang</option>");
+                } else if (val == "") {
+                    $("#loanNumberDuration").html("<option value=''>Pilih rentang:</option>");
                 }
             });
 

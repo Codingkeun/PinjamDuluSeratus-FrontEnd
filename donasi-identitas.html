@@ -45,7 +45,7 @@
                             </li>
                         </ul>
                         <div class="btn-group">
-                            <button class="btn btn-primary dropdown-toggle rounded-10" type="button"
+                            <button class="btn btn-primary dropdown-toggle" type="button"
                                 data-toggle="dropdown" aria-expanded="false">
                                 Masuk ke Akun
                             </button>
@@ -86,7 +86,7 @@
         </div>
 
         <div class="donation-nominal-area mt-4 mb-5" style="padding-inline: calc(15% / 2);">
-            <form class="d-flex flex-column" style="gap: 3rem;">
+            <form action="donasi-payment.html" onsubmit="checkFormValidity(this)" class="d-flex flex-column" style="gap: 3rem;">
                 <h1 for="donationAmount" class="text-center font-weight-semibold m-0" style="font-size: 1rem;">Masukkan identitas diri</h1>
                 <div class="d-flex flex-column form-identity p-5 rounded-10 container-card-shadow" style="gap: 2rem; padding-inline: calc(15% / 2);">
                     <div class="">
@@ -103,11 +103,17 @@
                     </div>
                 </div>
                 <div class="button-group d-flex flex-column" style="gap: 2rem;">
-                    <button type="button" class="btn btn-primary-outline rounded-10 w-100 font-weight-semibold">Kembali</button>
-                    <button type="button" class="btn btn-primary rounded-10 w-100 font-weight-semibold">Donasi</button>
+                    <button type="button" class="btn btn-primary-outline w-100 font-weight-semibold">Kembali</button>
+                    <button type="submit" class="btn btn-primary w-100 font-weight-semibold">Donasi</button>
                 </div>
             </form>
         </div>
     </div>
+
+    <script>
+        const checkFormValidity = function(form) {
+            return form.checkValidity();
+        }
+    </script>
 </body>
 </html>

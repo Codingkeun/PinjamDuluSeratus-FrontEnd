@@ -12,6 +12,20 @@
     .breadcrumb-line {
         width: 17rem !important;
     }
+
+    .profile-area img {
+        min-width: 60% !important;
+    }
+}
+
+@media screen and (max-width: 580px) {
+    #loanDuration {
+        flex-direction: column;
+    }
+
+    #loanDuration select {
+        width: 100%;
+    }
 }
 
 @media screen and (max-width: 600px) {
@@ -21,6 +35,16 @@
 
     .team-card {
         padding: 2rem;
+    }
+
+    .profile-area img {
+        width: 50% !important;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .profile-area img {
+        width: 35% !important;
     }
 }
 
@@ -86,6 +110,12 @@
     }
 }
 
+@media screen and (min-width: 992px) {
+    .profile-container .col-lg-4 {
+        max-width: 30%;
+    }
+}
+
 @media screen and (min-width: 1000px) {
     .ornament {
         width: 30% !important;
@@ -111,5 +141,9 @@
 
     .register-container > * {
         margin-block: auto;
+    }
+
+    .profile-area img {
+        width: 20% !important;
     }
 }

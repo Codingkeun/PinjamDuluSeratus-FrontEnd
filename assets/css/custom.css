@@ -110,10 +110,14 @@ body {
     gap: 2rem;
 }
 
-.team-card {
+.team-card, .profile-area > div {
     background: linear-gradient(269deg, #1A5F7A 0.34%, #57C5B6 93.33%);
     background-size: 100% 30%;
     background-repeat: no-repeat;
+}
+
+.profile-area > div {
+    background-size: 100% clamp(3rem, calc(1vw + 8rem), 12rem);
 }
 
 .team-card > * {
@@ -318,3 +322,5 @@ option {
 .custom-range-value span.show {
     transform: scale(1);
 }
+
+/* ============== */
