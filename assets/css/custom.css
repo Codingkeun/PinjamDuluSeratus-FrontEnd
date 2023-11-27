@@ -72,14 +72,20 @@ body {
 .hero .image {
     position: absolute;
     flex-shrink: 0;
-    width: 635px;
+    width: 631px;
     height: 500px;
     background-image: url('../images/hero/hero.svg');
     background-repeat: no-repeat;
     background-size: contain;
     right: 0;
-    top: -15px;
+    top: -11.5px;
     z-index: 0;
+    margin-left: 10px;
+    transform: rotate(1.1deg);
+    -webkit-transform: rotate(1.1deg);
+    -moz-transform: rotate(1.1deg);
+    -ms-transform: rotate(1.1deg);
+    -o-transform: rotate(1.1deg);
 }
 
 .solution {
@@ -92,6 +98,28 @@ body {
     padding: 20px;
     margin-top: 49px;
     z-index: -1;
+}
+
+.solution .container {
+    margin-top: 150px;
+}
+
+.solution .header {
+    display: flex;
+    flex-direction: column;
+    line-height: 1rem;
+    justify-content: center;
+}
+
+.solution .content {
+    display: grid;
+    column-gap: 10px;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    margin-top: 50px;
+}
+
+.solution .content .item {
+
 }
 
 .login-register-arrow-icon {
