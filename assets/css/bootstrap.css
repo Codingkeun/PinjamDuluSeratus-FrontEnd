@@ -4,7 +4,7 @@
  * Copyright 2011-2018 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
-:root {
+ :root {
   --light-blue: #DDF3F0;
   --blue: #007bff;
   --indigo: #6610f2;
@@ -17,6 +17,7 @@
   --teal: #20c997;
   --cyan: #17a2b8;
   --white: #fff;
+  --light-gray: #f3f3f3;
   --gray: #6c757d;
   --gray-dark: #343a40;
   --primary: #159895;
@@ -1715,8 +1716,13 @@ pre code {
   border-bottom-width: 2px;
 }
 
-.table-striped tbody tr:nth-of-type(odd) {
-  background-color: rgba(0, 0, 0, 0.05);
+.table-striped tbody tr:nth-of-type(odd) td {
+  background-color: var(--light-blue) !important;
+  
+}
+
+.table-striped tbody tr:nth-of-type(even) td {
+  background-color: var(--light-gray);
 }
 
 .table-hover tbody tr:hover {

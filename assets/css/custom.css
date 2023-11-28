@@ -352,3 +352,34 @@ option {
 }
 
 /* ============== */
+
+::-webkit-scrollbar {
+    height: 16px;
+}
+::-webkit-scrollbar-track {
+    background-color: rgba(64, 64, 64, .5);
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: rgb(96, 96, 96);
+    background-clip: padding-box;
+    border: 2px solid transparent;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: rgb(112, 112, 112);
+}
+
+::-webkit-scrollbar-thumb:active {
+    background-color: rgb(128, 128, 128);
+}
+
+.loan-area .table tbody > * {
+    border-bottom: 5px white solid;
+}
+
+.simulation-result-data > * {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}

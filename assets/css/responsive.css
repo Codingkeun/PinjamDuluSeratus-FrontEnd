@@ -16,6 +16,14 @@
     .profile-area img {
         min-width: 60% !important;
     }
+
+    .simulation-result-data > * {
+        grid-template-columns: 100% !important;
+    }
+
+    .simulation-result-data > * > * + * {
+        text-align: left !important;
+    }
 }
 
 @media screen and (max-width: 580px) {
@@ -95,7 +103,8 @@
 
     .loan-inquiry {
         display: grid !important;
-        grid-template-columns: 50% 50% !important;
+        grid-template-columns: 48% 48% !important;
+        gap: 4% !important;
     }
 
     #dueDateOfLoanResultSection {
