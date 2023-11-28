@@ -4,13 +4,12 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" type="image/svg+xml" href="assets/images/logo.svg">
-    <title>Pinjam Dulu Seratus - Register</title>
+    <title>Pinjam Dulu Seratus - Detail Pinjaman</title>
     <link rel="stylesheet" href="assets/css/bootstrap.css">
     <link rel="stylesheet" href="assets/css/custom.css">
     <link rel="stylesheet" href="assets/css/responsive.css">
     <script src="assets/js/jquery-3.7.1.min.js"></script>
     <script src="assets/js/bootstrap.min.js"></script>
-    <script src="assets/js/moment.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -18,13 +17,9 @@
         rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,1,0" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
-
-    <link href="https://cdn.datatables.net/1.13.7/css/dataTables.bootstrap5.min.css" rel="stylesheet"/>
-    <script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js"></script>
-    <script src="https://cdn.datatables.net/1.13.7/js/dataTables.bootstrap5.min.js"></script>
 </head>
-<body>
-    <div class="page">
+<body onload="timer('#loanDueDateTimer')">
+    <div class="page" >
         <div class="menu-area">
             <div class="container">
                 <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -59,7 +54,7 @@
                                 <ul class="dropdown-menu rounded-10 border-0 container-card-shadow">
                                     <li><a class="dropdown-item" href="#"></a></li>
                                     <li><a class="dropdown-item" href="#">Dashboard</a></li>
-                                    <li><a class="dropdown-item pb-3 active" href="pengajuan-pinjaman.html">Pinjaman</a></li>
+                                    <li><a class="dropdown-item pb-3" href="pinjaman.html">Pinjaman</a></li>
                                     <li><hr class="dropdown-divider"></li>
                                     <li><a class="dropdown-item mt-3" href="profil-peminjam.html">Akun</a></li>
                                     <li><a class="dropdown-item pb-3" href="#">User Guide</a></li>
@@ -73,70 +68,86 @@
             </div>
         </div>
 
-        <section class="loan-area mt-5 mb-5" style="padding-inline: calc(15% / 2);">
+        <div class="mt-5 mb-5" style="padding-inline: calc(15% / 2);">
             <div class="d-flex justify-content-between align-items-center flex-wrap mt-5" style="gap: 2rem;">
-                <h1 class="font-weight-semibold">Pinjaman</h1>
-                <button type="button" class="btn btn-primary font-weight-semibold" style="height: 44px;" onclick="window.location.href = 'pengajuan-pinjaman.html'">Buat Pengajuan Pinjaman</button>
+                <h1 class="font-weight-semibold">Detail Pinjaman</h1>
+                <button type="button" class="btn bg-white text-primary font-weight-semibold" style="height: 44px; border: 2px solid var(--primary);" onclick="window.location.href = ''">Lihat Histori Pembayaran</button>
             </div>
-            <div class="table-responsive mt-5">
-                <table id="loanTable" class="table table-striped sortable">
-                    <thead>
-                        <tr>
-                            <th class="no-sort">Investor</th>
-                            <th>Jumlah Pinjaman</th>
-                            <th>Tanggal Jatuh Tempo</th>
-                            <th>Total Pembayaran</th>
-                            <th>Status</th>
-                            <th data-defaultsign='no-sort'></th>
-                        </tr>
-                    </thead>
-                    <tbody id="loanTableData">
-                        <tr>
-                            <td class="loanTable_investorName">John Doe</td>
-                            <td class="loanTable_loanAmount">Rp 2,000,000</td>
-                            <td class="loanTable_dueDate" data-dateformat="DD MMM YYYY">15 November 2023</td>
-                            <td class="loanTable_totalPayment">Rp 2,250,000</td>
-                            <td class="loanTable_statusLoan">Lunas</td>
-                            <td>
-                                <button type="button" class="btn btn-primary" id="loanTable_detailLoan" onclick="window.location.href = 'detail-pinjaman.html'">Detail</button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="loanTable_investorName">Jane Smith</td>
-                            <td class="loanTable_loanAmount">Rp 7,000,000</td>
-                            <td class="loanTable_dueDate" data-dateformat="DD MMM YYYY">2 April 2023</td>
-                            <td class="loanTable_totalPayment">Rp 7,750,000</td>
-                            <td class="loanTable_statusLoan">Lunas</td>
-                            <td>
-                                <button type="button" class="btn btn-primary" id="loanTable_detailLoan">Detail</button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="loanTable_investorName">Ahmad Abdullah</td>
-                            <td class="loanTable_loanAmount">Rp 5,000,000</td>
-                            <td class="loanTable_dueDate" data-dateformat="DD MMM YYYY">20 Januari 2024</td>
-                            <td class="loanTable_totalPayment">Rp 6,450,000</td>
-                            <td class="loanTable_statusLoan">Belum Lunas</td>
-                            <td>
-                                <button type="button" class="btn btn-primary" id="loanTable_detailLoan">Detail</button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="loanTable_investorName">Maria Gonzalez</td>
-                            <td class="loanTable_loanAmount">Rp 8,000,000</td>
-                            <td class="loanTable_dueDate" data-dateformat="DD MMM YYYY">20 Maret 2024</td>
-                            <td class="loanTable_totalPayment">Rp 8,750,000</td>
-                            <td class="loanTable_statusLoan">Belum Lunas</td>
-                            <td>
-                                <button type="button" class="btn btn-primary" id="loanTable_detailLoan">Detail</button>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </section>
+            <div class="loan-detail-container row w-100 d-flex mx-0 justify-content-between mt-4">
+                <div class="d-flex flex-column mt-4 w-100 col-sm-12 col-md-12 col-lg-6 px-0" style="gap: 3rem;">
+                    <section class="p-5 rounded-10 container-card-shadow">
+                        <h2 class="font-weight-semibold m-0 text-primary mb-4" style="font-size: 1.2rem;">Informasi Data Investor</h2>
+                        <div class="profile-image rounded-circle bg-primary mx-auto" style="width: 5rem; height: 5rem;">
+                            <img src="./assets/images/profile/user-profile.svg" alt="" class="w-100 h-100">
+                        </div>
+                        <div class="loan-detail-investor-data d-flex flex-wrap mt-4" style="row-gap: 1rem">
+                            <div class="w-50">
+                                <h4 style="font-size: 1rem;">Nama Investor</h4>
+                                <h4 class="text-primary font-weight-semibold my-auto" style="font-size: 1rem;">John Doe</h4>
+                            </div>
+                            <div class="w-50">
+                                <h4 style="font-size: 1rem;">Email</h4>
+                                <h4 class="text-primary font-weight-semibold my-auto" style="font-size: 1rem;">andrea@gmail.com</h4>
+                            </div>
+                            <div class="w-50">
+                                <h4 style="font-size: 1rem;">Nomor HP</h4>
+                                <h4 class="text-primary font-weight-semibold my-auto" style="font-size: 1rem;">08123456789</h4>
+                            </div>
+                        </div>
+                    </section>
 
-        <section class="fluid-container footer bg-primary py-5" style="padding-inline: calc(15% / 2); gap: clamp(2rem, calc(1vw + 3rem), 4rem)">
+                    <section class="p-5 rounded-10 container-card-shadow" style="height: fit-content;">
+                        <div>
+                            <h4 style="font-size: 1rem;" class="text-center">Tanggal jatuh tempo pembayaran pinjaman</h4>
+                            <h4 class="text-primary font-weight-bold text-center mt-3">16 Februari 2024</h4>
+                        </div>
+                        <div class="d-flex p-3 rounded-10 bg-secondary justify-content-center mx-auto mt-4" style="gap: 1rem; width: fit-content;">
+                            <h2 class="my-auto" style="font-size: 1rem;">Sisa Waktu</h2>
+                            <h3 class="text-danger my-auto font-weight-bold" style="font-size: 1rem;" id="loanDueDateTimer">23:00:59</h3>
+                        </div>
+                    </section>
+                </div>
+
+                <div class="d-flex flex-column mt-4 w-100 col-sm-12 col-md-12 col-lg-6 px-0" style="gap: 3rem;">
+                    <section>
+                        <div class="p-5 rounded-10 container-card-shadow" style="height: fit-content;">
+                            <h2 class="font-weight-semibold m-0 text-primary mb-4" style="font-size: 1.2rem;">Informasi Pinjaman Anda</h2>
+                            <div class="simulation-result-data d-flex flex-column" style="gap: 1rem">
+                                <div>
+                                    <h4 style="font-size: 1rem;">Jumlah Pinjaman</h4>
+                                    <h4 class="text-right font-weight-semibold my-auto" style="font-size: 1rem;">Rp 2,000,000</h4>
+                                </div>
+                                <div>
+                                    <h4 style="font-size: 1rem;">Jumlah Tip ke Investor</h4>
+                                    <h4 class="text-right font-weight-semibold my-auto" style="font-size: 1rem;">Rp 500,000</h4>
+                                </div>
+                                <div>
+                                    <h4 style="font-size: 1rem;">Durasi Pinjaman</h4>
+                                    <h4 class="text-right font-weight-semibold my-auto" style="font-size: 1rem;">90 hari</h4>
+                                </div>
+                                <div>
+                                    <h4 style="font-size: 1rem;">Cicilan</h4>
+                                    <h4 class="text-right font-weight-semibold my-auto" style="font-size: 1rem;">3 kali</h4>
+                                </div>
+                                <div class="divider"></div>
+                                <div>
+                                    <h4 style="font-size: 1rem;">Jumlah yang harus dibayarkan</h4>
+                                    <h4 class="text-primary font-weight-semibold my-auto text-right" style="font-size: 1rem;">Rp 2,500,000</h4>
+                                </div>
+                                <div>
+                                    <h4 style="font-size: 1rem;">Pembayaran per cicilan</h4>
+                                    <h4 class="text-primary font-weight-bold text-right">Rp 833,333</h4>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <button type="button" class="btn btn-primary font-weight-semibold w-100">Bayar Cicilan ke-1</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="fluid-container footer bg-primary py-5" style="padding-inline: calc(15% / 2); gap: clamp(2rem, calc(1vw + 3rem), 4rem)">
             <div class="footer-logo mx-auto my-auto">
                 <img src="./assets/images/full-white-logo.svg" alt="" class="w-100">
                 <h4 class="text-light border p-2 text-center rounded-10 mt-4 w-100" style="font-size: 1rem;">Universitas Padjajaran</h4>
@@ -164,15 +175,9 @@
                 <a href="#" class="text-light">Riana Ratna</a>
             </div>
             <p class="text-light text-center footer-copyright" style="font-size: .8rem;">Copyright &#169; 2023 PinjamDuluSeratus. All right reserved.</p>
-        </section>
+        </div>
     </div>
 
-    <script>
-        $('#loanTable').DataTable({
-            "columnDefs": [
-                { "orderable": false, "targets": 5 }]
-        });
-    </script>
-    <script src="assets/js/bootstrap-sortable.js"></script>
+    <script src="./assets/js/countdownTimer.js"></script>
 </body>
 </html>
