@@ -19,8 +19,6 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
 </head>
 <body>
-    <script src="./assets/js/jquery-3.7.1.min.js"></script>
-
     <div class="page">
         <div class="menu-area">
             <div class="container">
@@ -40,7 +38,7 @@
                                 <a class="nav-link" href="#">Home</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">About Us</a>
+                                <a class="nav-link" href="about-us.html">About Us</a>
                             </li>
                         </ul>
                         <div class="btn-group">
@@ -53,12 +51,14 @@
                             </div>
                             <div class="d-flex align-items-center">
                                 <button class="border-0 dropdown-toggle" data-toggle="dropdown" aria-expanded="false"></button>
-                                <ul class="dropdown-menu">
+                                <ul class="dropdown-menu rounded-10 border-0 container-card-shadow">
                                     <li><a class="dropdown-item" href="#"></a></li>
                                     <li><a class="dropdown-item" href="#">Dashboard</a></li>
-                                    <li><a class="dropdown-item pb-3 border-bottom" href="pengajuan-pinjaman.html">Pinjaman</a></li>
+                                    <li><a class="dropdown-item pb-3" href="pinjaman.html">Pinjaman</a></li>
+                                    <li><hr class="dropdown-divider"></li>
                                     <li><a class="dropdown-item mt-3" href="profil-peminjam.html">Akun</a></li>
-                                    <li><a class="dropdown-item pb-3 border-bottom" href="#">User Guide</a></li>
+                                    <li><a class="dropdown-item pb-3" href="#">User Guide</a></li>
+                                    <li><hr class="dropdown-divider"></li>
                                     <li><a class="dropdown-item mt-3" href="index.html">Log Out</a></li>
                                 </ul>
                             </div>
@@ -92,7 +92,7 @@
 
                         <div class="">
                             <label for="loanDuration">Durasi Pinjaman</label>
-                            <div id="loanDuration" class="d-flex" style="gap: 2rem">
+                            <div id="loanDuration" class="d-flex flex-wrap" style="gap: 1rem">
                                 <select name="loanDuration" id="loanTextDuration" class="form-select" required>
                                     <option value="">Pilih rentang:</option>
                                     <option value="days">Hari</option>
@@ -195,31 +195,31 @@
                 <section>
                     <div class="p-5 rounded-10 container-card-shadow" style="height: fit-content;">
                         <h2 class="font-weight-semibold m-0 text-primary mb-4" style="font-size: 1.2rem;">Hasil Simulasi Pengajuan</h2>
-                        <div class="d-flex flex-column" style="gap: 1.5rem">
-                            <div id="loanAmountTotal" class="row">
-                                <h4 id="loanAmountTotalName" class="col-6 my-auto" style="font-size: 1rem;">Jumlah Pinjaman</h4>
-                                <h4 id="loanAmountTotalResult" class="col-6 text-right font-weight-semibold my-auto" style="font-size: 1rem;">Rp 2,000,000</h4>
+                        <div class="simulation-result-data d-flex flex-column" style="gap: 1rem">
+                            <div id="simulationResult_loanAmountTotal">
+                                <h4 id="loanAmountTotalName" style="font-size: 1rem;">Jumlah Pinjaman</h4>
+                                <h4 id="loanAmountTotalResult" class="text-right font-weight-semibold my-auto" style="font-size: 1rem;">Rp 2,000,000</h4>
                             </div>
-                            <div id="tipAmountTotal" class="row">
-                                <h4 id="tipAmountTotalName" class="col-6 my-auto" style="font-size: 1rem;">Jumlah Tip ke Investor</h4>
-                                <h4 id="tipAmountTotalResult" class="col-6 text-right font-weight-semibold my-auto" style="font-size: 1rem;">Rp 500,000</h4>
+                            <div id="simulationResult_tipAmountTotal">
+                                <h4 id="tipAmountTotalName" style="font-size: 1rem;">Jumlah Tip ke Investor</h4>
+                                <h4 id="tipAmountTotalResult" class="text-right font-weight-semibold my-auto" style="font-size: 1rem;">Rp 500,000</h4>
                             </div>
-                            <div id="loanDuration" class="row">
-                                <h4 id="loanDurationName" class="col-6 my-auto" style="font-size: 1rem;">Durasi Pinjaman</h4>
-                                <h4 id="loanDurationResult" class="col-6 text-right font-weight-semibold my-auto" style="font-size: 1rem;">90 hari</h4>
+                            <div id="simulationResult_loanDuration">
+                                <h4 id="loanDurationName" style="font-size: 1rem;">Durasi Pinjaman</h4>
+                                <h4 id="loanDurationResult" class="text-right font-weight-semibold my-auto" style="font-size: 1rem;">90 hari</h4>
                             </div>
-                            <div id="installmentRange" class="row">
-                                <h4 id="installmentRangeName" class="col-6 my-auto" style="font-size: 1rem;">Cicilan</h4>
-                                <h4 id="installmentRangeResult" class="col-6 text-right font-weight-semibold my-auto" style="font-size: 1rem;">3 kali</h4>
+                            <div id="simulationResult_installmentRange">
+                                <h4 id="installmentRangeName" style="font-size: 1rem;">Cicilan</h4>
+                                <h4 id="installmentRangeResult" class="text-right font-weight-semibold my-auto" style="font-size: 1rem;">3 kali</h4>
                             </div>
                             <div class="divider"></div>
-                            <div id="numberOfTotalPayment" class="row">
-                                <h4 id="numberOfTotalPaymentName" class="col-6 my-auto" style="font-size: 1rem;">Jumlah yang harus dibayarkan</h4>
-                                <h4 id="numberOfTotalPaymentResult" class="col-6 text-primary font-weight-semibold text-right my-auto" style="font-size: 1rem;">Rp 2,500,000</h4>
+                            <div id="simulationResult_numberOfTotalPayment">
+                                <h4 id="numberOfTotalPaymentName" style="font-size: 1rem;">Jumlah yang harus dibayarkan</h4>
+                                <h4 id="numberOfTotalPaymentResult" class="text-primary font-weight-semibold my-auto text-right" style="font-size: 1rem;">Rp 2,500,000</h4>
                             </div>
-                            <div id="numberOfTotalInstallment" class="row">
-                                <h4 id="numberOfTotalInstallmentName" class="col-6 my-auto" style="font-size: 1rem;">Pembayaran per cicilan</h4>
-                                <h4 id="numberOfTotalInstallmentResult" class="col-6 text-primary font-weight-bold text-right my-auto">Rp 833,333</h4>
+                            <div id="simulationResult_numberOfTotalInstallment">
+                                <h4 id="numberOfTotalInstallmentName" style="font-size: 1rem;">Pembayaran per cicilan</h4>
+                                <h4 id="numberOfTotalInstallmentResult" class="text-primary font-weight-bold text-right">Rp 833,333</h4>
                             </div>
                         </div>
                     </div>
