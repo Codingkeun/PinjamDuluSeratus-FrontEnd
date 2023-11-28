@@ -60,6 +60,12 @@
     }
 }
 
+@media screen and (max-width: 991px) {
+    .lendee-payment-detail .col-md-12:last-child {
+        margin-top: 1.5rem !important;
+    }
+}
+
 @media screen and (max-width: 1199px) {
     .form-login, .form-register {
         padding-left: calc(15% / 2);
@@ -130,6 +136,17 @@
 
     .loan-detail-container .col-lg-6 {
         max-width: 48%;
+    }
+
+    .lendee-payment-detail .col-lg-6:last-child {
+        max-width: 47% !important;
+    }
+
+    .lendee-payment-detail button,
+    .lendee-payment-detail + * > div,
+    .lendee-payment-detail + * > button {
+        width: 50% !important;
+        transform: translateX(50%);
     }
 }
 

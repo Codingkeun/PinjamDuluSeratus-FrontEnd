@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/svg+xml" href="assets/images/logo.svg">
+    <title>Pinjam Dulu Seratus - Pembayaran Pinjaman (Informasi Pembayaran)</title>
+    <link rel="stylesheet" href="assets/css/bootstrap.css">
+    <link rel="stylesheet" href="assets/css/custom.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+    <script src="assets/js/jquery-3.7.1.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Space+Mono&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,1,0" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+</head>
+<body onload="timer('#lendee_loanPaymentDueDateTimer', new Date('12-4-2023').getTime())">
+    <div class="page" >
+        <div class="menu-area">
+            <div class="container">
+                <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                    <a class="navbar-brand" href="#">
+                        <img src="./assets/images/logo.svg" />
+                    </a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse"
+                        data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav mr-auto">
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="about-us.html">About Us</a>
+                            </li>
+                        </ul>
+                        <div class="btn-group">
+                            <div class="mr-2">
+                                <h5 style="font-size: 1rem;">Andrea</h5>
+                                <h6 class="font-weight-light opacity-75" style="font-size: .8rem;">Peminjam</h6>
+                            </div>
+                            <div class="profile-image rounded-circle bg-primary" style="width: 3rem; height: 3rem;">
+                                <img src="./assets/images/profile/user-profile.svg" alt="" class="w-100 h-100">
+                            </div>
+                            <div class="d-flex align-items-center">
+                                <button class="border-0 dropdown-toggle" data-toggle="dropdown" aria-expanded="false"></button>
+                                <ul class="dropdown-menu rounded-10 border-0 container-card-shadow">
+                                    <li><a class="dropdown-item" href="#"></a></li>
+                                    <li><a class="dropdown-item" href="#">Dashboard</a></li>
+                                    <li><a class="dropdown-item pb-3" href="peminjam_pinjaman.html">Pinjaman</a></li>
+                                    <li><hr class="dropdown-divider"></li>
+                                    <li><a class="dropdown-item mt-3" href="peminjam_profil-peminjam.html">Akun</a></li>
+                                    <li><a class="dropdown-item pb-3" href="#">User Guide</a></li>
+                                    <li><hr class="dropdown-divider"></li>
+                                    <li><a class="dropdown-item mt-3" href="index.html">Log Out</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+
+        <section class="mt-5 mb-5 lendee-payment-section">
+            <div class="d-flex justify-content-between align-items-center flex-wrap mt-5" style="gap: 2rem;">
+                <h1 class="font-weight-semibold">Pembayaran Dana Pinjaman</h1>
+                <button type="button" class="btn bg-white text-primary font-weight-semibold d-flex align-items-center" style="height: 44px; border: 2px solid var(--primary);" onclick="window.location.href = '#uploadProofOfPaymentSection'">
+                    <span>Upload Bukti Pembayaran</span>
+                    <span class="material-symbols-rounded ml-2">
+                        arrow_downward
+                    </span>
+                </button>
+            </div>
+            <div class="lendee-payment-detail">
+                <div class="mt-5">
+                    <h2 class="text-center pt-2" style="font-size: 1rem;">Pembayaran Cicilan Pertama</h2>
+                    <h3 class="text-center font-weight-bold text-primary">Rp 833,333</h3>
+                </div>
+                <div class="mt-5">
+                    <h2 class="text-center" style="font-size: 1rem;">Pilih metode pembayaran</h2>
+                    <div class="d-flex card-horizontal-scroll" style="gap: 2rem; padding-inline: calc(15% / 2);">
+                        <div class="item-card-shadow rounded-10 px-3 py-2" style="min-width: 15rem; min-height: 8rem;">
+                            <input type="radio" name="paymentMethod" id="lendeePaymentMethod_bca" required>
+                            <label for="lendeePaymentMethod_bca" class="position-relative d-flex justify-content-center">
+                                <img src="./assets/images/bank/BCA.svg" alt="" class="p-3">
+                            </label>
+                        </div>
+                        <div class="item-card-shadow rounded-10 px-3 py-2" style="min-width: 15rem; min-height: 8rem">
+                            <input type="radio" name="paymentMethod" id="lendeePaymentMethod_bni" required>
+                            <label for="lendeePaymentMethod_bni" class="position-relative d-flex justify-content-center">
+                                <img src="./assets/images/bank/BNI.svg" alt="" class="p-3">
+                            </label>
+                        </div>
+                        <div class="item-card-shadow rounded-10 px-3 py-2" style="min-width: 15rem; min-height: 8rem">
+                            <input type="radio" name="paymentMethod" id="lendeePaymentMethod_bniSyarih" required>
+                            <label for="lendeePaymentMethod_bniSyarih" class="position-relative d-flex justify-content-center">
+                                <img src="./assets/images/bank/BNI_Syariah.svg" alt="" class="p-3">
+                            </label>
+                        </div>
+                        <div class="item-card-shadow rounded-10 px-3 py-2" style="min-width: 15rem; min-height: 8rem">
+                            <input type="radio" name="paymentMethod" id="lendeePaymentMethod_bri" required>
+                            <label for="lendeePaymentMethod_bri" class="position-relative d-flex justify-content-center">
+                                <img src="./assets/images/bank/BRI.svg" alt="" class="p-3">
+                            </label>
+                        </div>
+                        <div class="item-card-shadow rounded-10 px-3 py-2" style="min-width: 15rem; min-height: 8rem">
+                            <input type="radio" name="paymentMethod" id="lendeePaymentMethod_mandiri" required>
+                            <label for="lendeePaymentMethod_mandiri" class="position-relative d-flex justify-content-center">
+                                <img src="./assets/images/bank/Mandiri.svg" alt="" class="p-1">
+                            </label>
+                        </div>
+                        <div class="item-card-shadow rounded-10 px-3 py-2" style="min-width: 15rem; min-height: 8rem">
+                            <input type="radio" name="paymentMethod" id="lendeePaymentMethod_visa" required>
+                            <label for="lendeePaymentMethod_visa" class="position-relative d-flex justify-content-center">
+                                <img src="./assets/images/bank/VISA.svg" alt="" class="p-3">
+                            </label>
+                        </div>
+                        <div class="item-card-shadow rounded-10 px-3 py-2" style="min-width: 15rem; min-height: 8rem">
+                            <input type="radio" name="paymentMethod" id="lendeePaymentMethod_masterCard" required>
+                            <label for="lendeePaymentMethod_masterCard" class="position-relative d-flex justify-content-center">
+                                <img src="./assets/images/bank/MasterCard.svg" alt="" class="">
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-5">
+                    <h2 class="text-center" style="font-size: 1rem;">Informasi Pembayaran</h2>
+                    <div class="mt-4 mb-5 row justify-content-between w-100 mx-auto">
+                        <div class="bg-light rounded-20 d-flex flex-column justify-content-center col-sm-12 col-md-12 col-lg-6" style="height: 14rem; gap: .4rem">
+                            <h2 class="text-center" style="font-size: 1rem;">Total Pembayaran</h2>
+                            <h1 class="text-center font-weight-bold text-primary">Rp 833,333</h1>
+                            <div class="d-flex p-3 rounded-10 bg-white justify-content-center mx-auto" style="gap: 1rem; width: fit-content;">
+                                <h2 class="my-auto" style="font-size: 1rem;">Sisa Waktu</h2>
+                                <h3 class="text-danger my-auto font-weight-bold" style="font-size: 1rem;" id="lendee_loanPaymentDueDateTimer">23:00:59</h3>
+                            </div>
+                        </div>
+                        <div class="bg-secondary rounded-20 d-flex flex-column justify-content-center col-sm-12 col-md-12 col-lg-6" style="height: 14rem; gap: 1rem;">
+                            <h2 class="text-center" style="font-size: 1rem;">Nomor Rekening</h2>
+                            <h1 class="text-center font-weight-bold text-primary">12345678</h1>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <button type="button" class="btn bg-white font-weight-semibold text-primary w-100" style="border: 2px solid var(--primary);" onclick="window.location.href = 'peminjam_pembayaran_detail-pinjaman.html'">Batal Bayar</button>
+                </div>
+            </div>
+            <form class="mt-5" id="uploadProofOfPaymentSection">
+                <h2 class="text-center mb-3 pt-2" style="font-size: 1rem;">Upload Bukti Pembayaran</h2>
+                <div class="rounded-5 d-flex justify-content-center align-items-center py-5 w-100" style="border: 2px dashed var(--primary);">
+                    <div class="btn bg-secondary text-primary position-relative">
+                        <input id="uploadProofOfPaymentButton" type="file" class="custom-file-input position-absolute" required>
+                        <label for="uploadProofOfPaymentButton" class="d-flex justify-content-center align-items-center" style="cursor: pointer;">
+                            <span class="font-weight-medium">Upload</span>
+                            <span class="material-symbols-rounded ml-2">
+                                publish
+                            </span>
+                        </label>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary font-weight-semibold w-100 mt-5" style="border: 2px solid var(--primary);">Kirim Bukti Pembayaran</button>
+            </form>
+        </section>
+
+        <div class="fluid-container footer bg-primary py-5" style="padding-inline: calc(15% / 2); gap: clamp(2rem, calc(1vw + 3rem), 4rem)">
+            <div class="footer-logo mx-auto my-auto">
+                <img src="./assets/images/full-white-logo.svg" alt="" class="w-100">
+                <h4 class="text-light border p-2 text-center rounded-10 mt-4 w-100" style="font-size: 1rem;">Universitas Padjajaran</h4>
+            </div>
+            <div class="footer-pages-links d-flex flex-column" style="gap: 2rem">
+                <h2 class="text-light font-weight-semibold">Pages</h2>
+                <a href="#" class="text-light">Home</a>
+                <div class="w-100 bg-light" style="height: 1px;"></div>
+                <a href="#" class="text-light">Dashboard</a>
+                <div class="w-100 bg-light" style="height: 1px;"></div>
+                <a href="#" class="text-light">Pinjaman</a>
+                <div class="w-100 bg-light" style="height: 1px;"></div>
+                <a href="#" class="text-light">About Us</a>
+            </div>
+            <div class="footer-members-links d-flex flex-column" style="gap: 2rem">
+                <h2 class="text-light font-weight-semibold">Members</h2>
+                <a href="#" class="text-light">Arinda Puspa Dewi</a>
+                <div class="w-100 bg-light" style="height: 1px;"></div>
+                <a href="#" class="text-light">Cecep Rokani</a>
+                <div class="w-100 bg-light" style="height: 1px;"></div>
+                <a href="#" class="text-light">Cecep Sutisna</a>
+                <div class="w-100 bg-light" style="height: 1px;"></div>
+                <a href="#" class="text-light">Moh Ari Nurhuda Aprilyansyah</a>
+                <div class="w-100 bg-light" style="height: 1px;"></div>
+                <a href="#" class="text-light">Riana Ratna</a>
+            </div>
+            <p class="text-light text-center footer-copyright" style="font-size: .8rem;">Copyright &#169; 2023 PinjamDuluSeratus. All right reserved.</p>
+        </div>
+    </div>
+
+    <script src="./assets/js/countdownTimer.js"></script>
+</body>
+</html>
