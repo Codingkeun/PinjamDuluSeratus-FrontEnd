@@ -17,15 +17,18 @@
         min-width: 60% !important;
     }
 
-    .simulation-result-data > * {
+    .simulation-result-data > *, 
+    .loan-information-data > * {
         grid-template-columns: 100% !important;
     }
 
-    .simulation-result-data > * > * + * {
+    .simulation-result-data > * > * + *,
+    .loan-information-data > * > * + * {
         text-align: left !important;
     }
 
-    .loan-detail-investor-data > * {
+    .loan-detail-investor-data > *,
+    .loan-detail-lendee-data > * {
         width: 100% !important;
     }
 
@@ -68,6 +71,14 @@
 @media screen and (max-width: 991px) {
     .lendee-payment-detail .col-md-12:last-child {
         margin-top: 1.5rem !important;
+    }
+    
+    .loan-detail-container.lender-role {
+        grid-template-columns: 1fr;
+    }
+    
+    .loan-detail-container.lender-role > *:nth-child(2) {
+        grid-row-start: 3;
     }
 }
 
@@ -159,6 +170,31 @@
     .lendee-payment-detail + * > button {
         width: 50% !important;
         transform: translateX(50%);
+    }
+        
+    .loan-detail-container.lender-role {
+        grid-template-columns: 1fr 1fr;
+        gap: 3rem;
+    }
+    
+    .loan-detail-container.lender-role > *:first-child {
+        grid-column-start: 1;
+    }
+    
+    .loan-detail-container.lender-role > *:nth-child(2) {
+        grid-column-start: 1;
+        grid-row-start: 2;
+    }
+    
+    .loan-detail-container.lender-role > *:nth-child(3) {
+        grid-row-start: 1;
+        grid-row-end: 3;
+    }
+    
+    .loan-detail-container.lender-role > *:last-child {
+        grid-row-start: 3;
+        grid-column-start: 1;
+        grid-column-end: 3;
     }
 }
 
