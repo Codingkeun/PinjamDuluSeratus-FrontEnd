@@ -106,6 +106,7 @@ body {
 
 .solution .container {
     margin-top: 150px;
+    padding-bottom: 100px;
 }
 
 .solution .header {
@@ -117,13 +118,50 @@ body {
 
 .solution .content {
     display: grid;
-    column-gap: 10px;
+    column-gap: 20px;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     margin-top: 50px;
 }
 
-.solution .content .item {
+.donation .container {
+    display: grid;
+    background: white;
+    grid-template-columns: 0.5fr 0.5fr;
+    gap: 50px;
+    margin-top: 150px;
+    padding-bottom: 100px;
+}
 
+.donation .container .balance {
+    border-radius: 20px;
+    opacity: 0.8;
+    background: linear-gradient(233deg, #5D299F 6.76%, #F94A29 91.46%);
+    width: 100%;
+    height: 400px;
+    margin-top: 120px;
+}
+
+.donation .container .balance .content {
+    display: block;
+    background-image: url('../images/background/pattern.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+}
+
+.donation .container .balance-description {
+    display: block;
+}
+
+.donation .container .balance-description .description {
+    color: #000;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px; /* 150% */
+    letter-spacing: 0.5px;
+    margin-top: 50px;
 }
 
 .login-register-arrow-icon {
