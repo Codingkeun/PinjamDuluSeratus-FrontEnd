@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/svg+xml" href="assets/images/logo.svg">
+    <title>Pinjam Dulu Seratus - Detail Pinjaman</title>
+    <link rel="stylesheet" href="assets/css/bootstrap.css">
+    <link rel="stylesheet" href="assets/css/custom.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+    <script src="assets/js/jquery-3.7.1.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Space+Mono&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,1,0" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+</head>
+<body onload="timer('#loanDueDateTimer', new Date('2-16-2024').getTime())">
+    <div class="page" >
+        <div class="menu-area">
+            <div class="container">
+                <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                    <a class="navbar-brand" href="#">
+                        <img src="./assets/images/logo.svg" />
+                    </a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse"
+                        data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav mr-auto">
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="about-us.html">About Us</a>
+                            </li>
+                        </ul>
+                        <div class="btn-group">
+                            <div class="mr-2">
+                                <h5 style="font-size: 1rem;">Andrea</h5>
+                                <h6 class="font-weight-light opacity-75" style="font-size: .8rem;">Investor</h6>
+                            </div>
+                            <div class="profile-image rounded-circle bg-primary" style="width: 3rem; height: 3rem;">
+                                <img src="./assets/images/profile/user-profile.svg" alt="" class="w-100 h-100">
+                            </div>
+                            <div class="d-flex align-items-center">
+                                <button class="border-0 dropdown-toggle" data-toggle="dropdown" aria-expanded="false"></button>
+                                <ul class="dropdown-menu rounded-10 border-0 container-card-shadow">
+                                    <li><a class="dropdown-item" href="#"></a></li>
+                                    <li><a class="dropdown-item" href="#">Dashboard</a></li>
+                                    <li><a class="dropdown-item active" href="peminjam_pengajuan-pinjaman.html">Pinjaman</a></li>
+                                    <li><hr class="dropdown-divider"></li>
+                                    <li><a class="dropdown-item" href="peminjam_profil-peminjam.html">Akun</a></li>
+                                    <li><a class="dropdown-item" href="#">User Guide</a></li>
+                                    <li><hr class="dropdown-divider"></li>
+                                    <li><a class="dropdown-item" href="index.html">Log Out</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+
+        <div class="mt-5 mb-5" style="padding-inline: calc(15% / 2);">
+            <div class="d-flex justify-content-between align-items-center flex-wrap mt-5" style="gap: 2rem;">
+                <h1 class="font-weight-semibold">Detail Pinjaman</h1>
+                <button type="button" class="btn bg-white text-primary font-weight-semibold" style="height: 44px; border: 2px solid var(--primary);" onclick="window.location.href = 'investor_histori-pembayaran.html'">Lihat Histori Pembayaran</button>
+            </div>
+            <div class="loan-detail-container row w-100 d-flex mx-0 justify-content-between mt-4">
+                <div class="d-flex flex-column mt-4 w-100 col-sm-12 col-md-12 col-lg-6 px-0" style="gap: 3rem;">
+                    <section class="p-5 rounded-10 container-card-shadow">
+                        <h2 class="font-weight-semibold m-0 text-primary mb-4" style="font-size: 1.2rem;">Informasi Data Investor</h2>
+                        <div class="profile-image rounded-circle bg-primary mx-auto" style="width: 5rem; height: 5rem;">
+                            <img src="./assets/images/profile/user-profile.svg" alt="" class="w-100 h-100">
+                        </div>
+                        <div class="loan-detail-lendee-data d-flex flex-wrap mt-4" style="row-gap: 1rem">
+                            <div class="w-50">
+                                <h4 style="font-size: 1rem;">Nama Investor</h4>
+                                <h4 class="text-primary font-weight-semibold my-auto" style="font-size: 1rem;">John Doe</h4>
+                            </div>
+                            <div class="w-50">
+                                <h4 style="font-size: 1rem;">Email</h4>
+                                <h4 class="text-primary font-weight-semibold my-auto" style="font-size: 1rem;">andrea@gmail.com</h4>
+                            </div>
+                            <div class="w-50">
+                                <h4 style="font-size: 1rem;">Nomor HP</h4>
+                                <h4 class="text-primary font-weight-semibold my-auto" style="font-size: 1rem;">08123456789</h4>
+                            </div>
+                            <div class="w-50">
+                                <h4 style="font-size: 1rem;">NPM</h4>
+                                <h4 class="text-primary font-weight-semibold my-auto" style="font-size: 1rem;">1019201923</h4>
+                            </div>
+                            <div class="w-50">
+                                <h4 style="font-size: 1rem;">Jurusan</h4>
+                                <h4 class="text-primary font-weight-semibold my-auto" style="font-size: 1rem;">Teknik Informatika</h4>
+                            </div>
+                            <div class="w-50">
+                                <h4 style="font-size: 1rem;">Kelas</h4>
+                                <h4 class="text-primary font-weight-semibold my-auto" style="font-size: 1rem;">TIF RM 222</h4>
+                            </div>
+                        </div>
+                    </section>
+
+                    <div class="w-100 opacity-75">
+                        <div class="bg-primary" style="border-radius: 1.2rem; height: 4rem;">
+                            <img class="w-100" src="./assets/images/background/wave-background.svg" alt="">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="d-flex flex-column mt-4 w-100 col-sm-12 col-md-12 col-lg-6 px-0" style="gap: 3rem;">
+                    <section>
+                        <div class="p-5 rounded-10 container-card-shadow" style="height: fit-content;">
+                            <h2 class="font-weight-semibold m-0 text-primary mb-4" style="font-size: 1.2rem;">Informasi Pinjaman</h2>
+                            <div class="loan-information-data d-flex flex-column" style="gap: 1.5rem">
+                                <div style="row-gap: 8px;">
+                                    <h4 class="my-auto" style="font-size: 1rem;">Jumlah Pinjaman</h4>
+                                    <h4 class="text-right font-weight-semibold my-auto" style="font-size: 1rem;">Rp 2,000,000</h4>
+                                </div>
+                                <div style="row-gap: 8px;">
+                                    <h4 class="my-auto" style="font-size: 1rem;">Jumlah Tip ke Investor</h4>
+                                    <h4 class="text-right font-weight-semibold my-auto" style="font-size: 1rem;">Rp 500,000</h4>
+                                </div>
+                                <div style="row-gap: 8px;">
+                                    <h4 class="my-auto" style="font-size: 1rem;">Durasi Pinjaman</h4>
+                                    <h4 class="text-right font-weight-semibold my-auto" style="font-size: 1rem;">90 hari</h4>
+                                </div>
+                                <div style="row-gap: 8px;">
+                                    <h4 class="my-auto" style="font-size: 1rem;">Cara pembayaran</h4>
+                                    <h4 class="text-right font-weight-semibold my-auto" style="font-size: 1rem;">Cicilan</h4>
+                                </div>
+                                <div style="row-gap: 8px;">
+                                    <h4 class="my-auto" style="font-size: 1rem;">Jumlah cicilan</h4>
+                                    <h4 class="text-right font-weight-semibold my-auto" style="font-size: 1rem;">3 kali</h4>
+                                </div>
+                                <div class="divider"></div>
+                                <div style="row-gap: 8px;">
+                                    <h4 class="my-auto" style="font-size: 1rem;">Total Pembayaran</h4>
+                                    <h4 class="text-primary font-weight-semibold my-auto text-right" style="font-size: 1rem;">Rp 2,500,000</h4>
+                                </div>
+                                <div style="row-gap: 8px;">
+                                    <h4 class="my-auto" style="font-size: 1rem;">Pembayaran per cicilan</h4>
+                                    <h4 class="text-primary font-weight-bold text-right">Rp 833,333</h4>
+                                </div>
+                                <div style="row-gap: 8px;">
+                                    <h4 class="my-auto" style="font-size: 1rem;">Tanggal jatuh tempo</h4>
+                                    <h4 class="text-primary font-weight-semibold my-auto text-right" style="font-size: 1rem;">16 Februari 2024</h4>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+
+        <div class="fluid-container footer bg-primary py-5 position-relative" style="padding-inline: calc(15% / 2); gap: clamp(2rem, calc(1vw + 3rem), 4rem)">
+            <div class="footer-logo mx-auto my-auto">
+                <img src="./assets/images/full-white-logo.svg" alt="" class="w-100">
+                <h4 class="text-light border p-2 text-center rounded-10 mt-4 w-100" style="font-size: 1rem;">Universitas Padjajaran</h4>
+            </div>
+            <div class="footer-pages-links d-flex flex-column" style="gap: 2rem">
+                <h2 class="text-light font-weight-semibold">Pages</h2>
+                <a href="#" class="text-light">Home</a>
+                <div class="w-100 bg-light" style="height: 1px;"></div>
+                <a href="#" class="text-light">Dashboard</a>
+                <div class="w-100 bg-light" style="height: 1px;"></div>
+                <a href="investor_investasi-aktif.html" class="text-light">Investasi Aktif</a>
+                <div class="w-100 bg-light" style="height: 1px;"></div>
+                <a href="#" class="text-light">About Us</a>
+            </div>
+            <div class="footer-members-links d-flex flex-column" style="gap: 2rem">
+                <h2 class="text-light font-weight-semibold">Members</h2>
+                <a href="#" class="text-light">Arinda Puspa Dewi</a>
+                <div class="w-100 bg-light" style="height: 1px;"></div>
+                <a href="#" class="text-light">Cecep Rokani</a>
+                <div class="w-100 bg-light" style="height: 1px;"></div>
+                <a href="#" class="text-light">Cecep Sutisna</a>
+                <div class="w-100 bg-light" style="height: 1px;"></div>
+                <a href="#" class="text-light">Moh Ari Nurhuda Aprilyansyah</a>
+                <div class="w-100 bg-light" style="height: 1px;"></div>
+                <a href="#" class="text-light">Riana Ratna</a>
+            </div>
+            <p class="text-light text-center footer-copyright" style="font-size: .8rem;">Copyright &#169; 2023 PinjamDuluSeratus. All right reserved.</p>
+            <div class="footer-background position-absolute opacity-50" style="left: 0; bottom: 0;">
+                <img src="./assets/images/background/footer-background.svg" alt="">
+            </div>
+            <div class="footer-background position-absolute opacity-50" style="right: 0; top: 0; rotate: 180deg;">
+                <img src="./assets/images/background/footer-background.svg" alt="">
+            </div>
+        </div>
+    </div>
+
+    <script src="./assets/js/countdownTimer.js"></script>
+</body>
+</html>

@@ -68,7 +68,7 @@
     }
 }
 
-@media screen and (max-width: 991px) {
+@media screen and (max-width: 992px) {
     .lendee-payment-detail .col-md-12:last-child {
         margin-top: 1.5rem !important;
     }
@@ -79,6 +79,10 @@
     
     .loan-detail-container.lender-role > *:nth-child(2) {
         grid-row-start: 3;
+    }
+
+    .loan-detail-container > *:first-child > *:last-child {
+        display: none;
     }
 }
 
@@ -195,6 +199,10 @@
         grid-row-start: 3;
         grid-column-start: 1;
         grid-column-end: 3;
+    }
+
+    .loan-detail-container > *:first-child > *:last-child {
+        display: block;
     }
 }
 
