@@ -88,6 +88,16 @@
     }
 }
 
+@media screen and (max-width: 616px) {
+    .nav-tabs .nav-item:first-child {
+        border-bottom: 3px solid #dee2e6;
+    }
+
+    .nav-tabs .nav-item {
+        width: 100%;
+    }
+}
+
 @media screen and (max-width: 900px) {
     .profile-area img {
         width: 35% !important;

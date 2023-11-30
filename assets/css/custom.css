@@ -442,3 +442,16 @@ table tbody tr td {
     display: grid;
     gap: 3rem;
 }
+
+/* .nav.nav-underline .nav-item .nav-link.active,
+.nav.nav-underline .nav-item .nav-link.active:hover {
+    color: black;
+    font-weight: 600;
+    border-bottom: 3px solid var(--primary);
+}
+
+.nav.nav-underline .nav-item .nav-link:hover {
+    color: var(--primary);
+    border-bottom: 2px solid transparent;
+    transition: 0.3s border-bottom ease;
+} */
