@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/svg+xml" href="assets/images/logo.svg">
+    <title>Pinjam Dulu Seratus - Investasi Aktif</title>
+    <link rel="stylesheet" href="assets/css/bootstrap.css">
+    <link rel="stylesheet" href="assets/css/custom.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+    <script src="assets/js/jquery-3.7.1.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Space+Mono&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,1,0" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+</head>
+<body>
+    <div class="page">
+        <div class="menu-area">
+            <div class="container">
+                <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                    <a class="navbar-brand" href="#">
+                        <img src="./assets/images/logo.svg" />
+                    </a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse"
+                        data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav mr-auto">
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="about-us.html">About Us</a>
+                            </li>
+                        </ul>
+                        <div class="btn-group">
+                            <div class="mr-2">
+                                <h5 style="font-size: 1rem;">John Doe</h5>
+                                <h6 class="font-weight-light opacity-75" style="font-size: .8rem;">Investor</h6>
+                            </div>
+                            <div class="profile-image rounded-circle bg-primary" style="width: 3rem; height: 3rem;">
+                                <img src="./assets/images/profile/user-profile.svg" alt="" class="w-100 h-100">
+                            </div>
+                            <div class="d-flex align-items-center">
+                                <button class="border-0 dropdown-toggle" data-toggle="dropdown" aria-expanded="false"></button>
+                                <ul class="dropdown-menu rounded-10 border-0 container-card-shadow">
+                                    <li><a class="dropdown-item" href="#"></a></li>
+                                    <li><a class="dropdown-item" href="#">Dashboard</a></li>
+                                    <li><a class="dropdown-item active" href="investor_investasi-aktif.html">Investasi Aktif</a></li>
+                                    <li><hr class="dropdown-divider"></li>
+                                    <li><a class="dropdown-item" href="investor_profil-investor.html">Akun</a></li>
+                                    <li><a class="dropdown-item" href="#">User Guide</a></li>
+                                    <li><hr class="dropdown-divider"></li>
+                                    <li><a class="dropdown-item" href="index.html">Log Out</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+
+        <form class="mt-5 mb-5 w-100 d-flex flex-column" style="gap: 3rem;">
+            <h1 class="font-weight-semibold" style="padding-inline: calc(15% / 2);">Top Up Saldo</h1>
+            <div class="d-flex flex-column" style="gap: 1rem;">
+                <h2 class="text-center font-weight-semibold" style="font-size: 1.2rem;">Pilih nominal top up</h2>
+                <div class="amountInputByRadioElement d-flex card-horizontal-scroll" style="gap: 2rem; padding-inline: calc(15% / 2);">
+                    <div class="item-card-shadow rounded-10 px-3 py-2" style="min-width: 15rem; min-height: 8rem;">
+                        <input type="radio" name="topUpAmount" id="topUp30Thousand" required>
+                        <label for="topUp30Thousand" class="position-relative d-flex justify-content-center font-weight-semibold" style="font-size: 1.2rem; transform: translateY(50%);">
+                            Rp 30,000
+                        </label>
+                    </div>
+                    <div class="item-card-shadow rounded-10 px-3 py-2" style="min-width: 15rem; min-height: 8rem;">
+                        <input type="radio" name="topUpAmount" id="topUp50Thousand" required>
+                        <label for="topUp50Thousand" class="position-relative d-flex justify-content-center font-weight-semibold" style="font-size: 1.2rem; transform: translateY(50%);">
+                            Rp 50,000
+                        </label>
+                    </div>
+                    <div class="item-card-shadow rounded-10 px-3 py-2" style="min-width: 15rem; min-height: 8rem;">
+                        <input type="radio" name="topUpAmount" id="topUp100Thousand" required>
+                        <label for="topUp100Thousand" class="position-relative d-flex justify-content-center font-weight-semibold" style="font-size: 1.2rem; transform: translateY(50%);">
+                            Rp 100,000
+                        </label>
+                    </div>
+                    <div class="item-card-shadow rounded-10 px-3 py-2" style="min-width: 15rem; min-height: 8rem;">
+                        <input type="radio" name="topUpAmount" id="topUp200Thousand" required>
+                        <label for="topUp200Thousand" class="position-relative d-flex justify-content-center font-weight-semibold" style="font-size: 1.2rem; transform: translateY(50%);">
+                            Rp 200,000
+                        </label>
+                    </div>
+                    <div class="item-card-shadow rounded-10 px-3 py-2" style="min-width: 15rem; min-height: 8rem;">
+                        <input type="radio" name="topUpAmount" id="topUp300Thousand" required>
+                        <label for="topUp300Thousand" class="position-relative d-flex justify-content-center font-weight-semibold" style="font-size: 1.2rem; transform: translateY(50%);">
+                            Rp 300,000
+                        </label>
+                    </div>
+                    <div class="item-card-shadow rounded-10 px-3 py-2" style="min-width: 15rem; min-height: 8rem;">
+                        <input type="radio" name="topUpAmount" id="topUp500Thousand" required>
+                        <label for="topUp500Thousand" class="position-relative d-flex justify-content-center font-weight-semibold" style="font-size: 1.2rem; transform: translateY(50%);">
+                            Rp 500,000
+                        </label>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-between" style="padding-inline: calc(15% / 2); gap: 2rem;">
+                    <div class="divider my-auto"></div>
+                    <div>atau</div>
+                    <div class="divider my-auto"></div>
+                </div>
+                <div class="input-group w-50 mx-auto d-flex">
+                    <span class="input-group-text border-right-0" style="border-top-right-radius: 0; border-bottom-right-radius: 0;">Rp</span>
+                    <input type="text" placeholder="Masukkan jumlah donasi" class="form-control" id="topUpWrittenAmount" required disabled>
+                    <div class="amountInvalidInputMessage flex-wrap w-100" hidden>
+                    </div>
+                </div>
+            </div>
+            <div class="d-flex flex-column" style="gap: 1rem;">
+                <h2 class="text-center font-weight-semibold" style="font-size: 1.2rem;">Pilih metode pembayaran</h2>
+                <div class="d-flex card-horizontal-scroll" style="gap: 2rem; padding-inline: calc(15% / 2);">
+                    <div class="item-card-shadow rounded-10 px-3 py-2" style="min-width: 15rem; min-height: 8rem;">
+                        <input type="radio" name="topUpPaymentMethod" id="topUpPaymentMethod_bca" required>
+                        <label for="topUpPaymentMethod_bca" class="position-relative d-flex justify-content-center">
+                            <img src="./assets/images/bank/BCA.svg" alt="" class="p-3">
+                        </label>
+                    </div>
+                    <div class="item-card-shadow rounded-10 px-3 py-2" style="min-width: 15rem; min-height: 8rem">
+                        <input type="radio" name="topUpPaymentMethod" id="topUpPaymentMethod_bni" required>
+                        <label for="topUpPaymentMethod_bni" class="position-relative d-flex justify-content-center">
+                            <img src="./assets/images/bank/BNI.svg" alt="" class="p-3">
+                        </label>
+                    </div>
+                    <div class="item-card-shadow rounded-10 px-3 py-2" style="min-width: 15rem; min-height: 8rem">
+                        <input type="radio" name="topUpPaymentMethod" id="topUpPaymentMethod_bniSyarih" required>
+                        <label for="topUpPaymentMethod_bniSyarih" class="position-relative d-flex justify-content-center">
+                            <img src="./assets/images/bank/BNI_Syariah.svg" alt="" class="p-3">
+                        </label>
+                    </div>
+                    <div class="item-card-shadow rounded-10 px-3 py-2" style="min-width: 15rem; min-height: 8rem">
+                        <input type="radio" name="topUpPaymentMethod" id="topUpPaymentMethod_bri" required>
+                        <label for="topUpPaymentMethod_bri" class="position-relative d-flex justify-content-center">
+                            <img src="./assets/images/bank/BRI.svg" alt="" class="p-3">
+                        </label>
+                    </div>
+                    <div class="item-card-shadow rounded-10 px-3 py-2" style="min-width: 15rem; min-height: 8rem">
+                        <input type="radio" name="topUpPaymentMethod" id="topUpPaymentMethod_mandiri" required>
+                        <label for="topUpPaymentMethod_mandiri" class="position-relative d-flex justify-content-center">
+                            <img src="./assets/images/bank/Mandiri.svg" alt="" class="p-1">
+                        </label>
+                    </div>
+                    <div class="item-card-shadow rounded-10 px-3 py-2" style="min-width: 15rem; min-height: 8rem">
+                        <input type="radio" name="topUpPaymentMethod" id="topUpPaymentMethod_visa" required>
+                        <label for="topUpPaymentMethod_visa" class="position-relative d-flex justify-content-center">
+                            <img src="./assets/images/bank/VISA.svg" alt="" class="p-3">
+                        </label>
+                    </div>
+                    <div class="item-card-shadow rounded-10 px-3 py-2" style="min-width: 15rem; min-height: 8rem">
+                        <input type="radio" name="topUpPaymentMethod" id="topUpPaymentMethod_masterCard" required>
+                        <label for="topUpPaymentMethod_masterCard" class="position-relative d-flex justify-content-center">
+                            <img src="./assets/images/bank/MasterCard.svg" alt="" class="">
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary font-weight-semibold w-75 mx-auto">Lanjut</button>
+        </form>
+
+        <div class="fluid-container footer bg-primary py-5 position-relative" style="padding-inline: calc(15% / 2); gap: clamp(2rem, calc(1vw + 3rem), 4rem)">
+            <div class="footer-logo mx-auto my-auto">
+                <img src="./assets/images/full-white-logo.svg" alt="" class="w-100">
+                <h4 class="text-light border p-2 text-center rounded-10 mt-4 w-100" style="font-size: 1rem;">Universitas Padjajaran</h4>
+            </div>
+            <section class="footer-pages-links d-flex flex-column" style="gap: 2rem">
+                <h2 class="text-light font-weight-semibold">Pages</h2>
+                <a href="#" class="text-light">Home</a>
+                <div class="w-100 bg-light" style="height: 1px;"></div>
+                <a href="#" class="text-light">Dashboard</a>
+                <div class="w-100 bg-light" style="height: 1px;"></div>
+                <a href="investor_investasi-aktif.html" class="text-light">Investasi Aktif</a>
+                <div class="w-100 bg-light" style="height: 1px;"></div>
+                <a href="#" class="text-light">About Us</a>
+            </section>
+            <section class="footer-members-links d-flex flex-column" style="gap: 2rem">
+                <h2 class="text-light font-weight-semibold">Members</h2>
+                <a href="#" class="text-light">Arinda Puspa Dewi</a>
+                <div class="w-100 bg-light" style="height: 1px;"></div>
+                <a href="#" class="text-light">Cecep Rokani</a>
+                <div class="w-100 bg-light" style="height: 1px;"></div>
+                <a href="#" class="text-light">Cecep Sutisna</a>
+                <div class="w-100 bg-light" style="height: 1px;"></div>
+                <a href="#" class="text-light">Moh Ari Nurhuda Aprilyansyah</a>
+                <div class="w-100 bg-light" style="height: 1px;"></div>
+                <a href="#" class="text-light">Riana Ratna</a>
+            </section>
+            <p class="text-light text-center footer-copyright" style="font-size: .8rem;">Copyright &#169; 2023 PinjamDuluSeratus. All right reserved.</p>
+            <div class="footer-background position-absolute opacity-50" style="left: 0; bottom: 0;">
+                <img src="./assets/images/background/footer-background.svg" alt="">
+            </div>
+            <div class="footer-background position-absolute opacity-50" style="right: 0; top: 0; rotate: 180deg;">
+                <img src="./assets/images/background/footer-background.svg" alt="">
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const topUpInputAmountSwitch = () => {
+            $('.amountInvalidInputMessage').html('');
+            $('form').submit((event) => {
+                if ($('#topUpWrittenAmount').val() != ''){
+                    event.preventDefault();
+                    amountInputValidation('#topUpWrittenAmount', event);
+                }
+            })
+
+            $('.amountInputByRadioElement, .amountInputByRadioElement div').click(() => {
+                activeAmountInputByRadioElement();
+                inactiveAmountWrittenInputElement();
+                $('.amountInvalidInputMessage').html('');
+            })
+
+            $('.input-group, #topUpWrittenAmount').click(() => {
+                inactiveAmountInputByRadioElement();
+                activeAmountWrittenInputElement();
+                amountInvalidInputMessage();
+            })
+
+            const amountInvalidInputMessage = () => {
+                $('.amountInvalidInputMessage').html(`
+                    <p class="text-danger font-weight-medium mb-0" style="font-size: .8rem;">
+                        Inputan harus berupa angka dengan minimal nominal adalah Rp 10,000
+                    </p>
+                `);
+            }
+
+            const activeAmountInputByRadioElement = () => {
+                $('.amountInputByRadioElement label').css('opacity', '1');
+                $('.amountInputByRadioElement input').removeAttr('disabled');
+            }
+
+            const inactiveAmountInputByRadioElement = () => {
+                $('.amountInputByRadioElement label').css('opacity', '.5');
+                $('.amountInputByRadioElement input').attr('disabled', '');
+                $('.amountInputByRadioElement input').prop('checked', false);
+            }
+
+            const activeAmountWrittenInputElement = () => {
+                $('#topUpWrittenAmount').removeAttr('disabled');
+            }
+
+            const inactiveAmountWrittenInputElement = () => {
+                $('#topUpWrittenAmount').attr('disabled', '');
+                document.querySelector('#topUpWrittenAmount').value = '';
+            }
+        }
+
+        topUpInputAmountSwitch();
+    </script>
+    <script src="./assets/js/number-input-validation.js"></script>
+</body>
+</html>
