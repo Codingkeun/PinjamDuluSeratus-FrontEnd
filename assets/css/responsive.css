@@ -124,6 +124,10 @@
         display: grid !important;
         grid-template-columns: 1fr 1fr;
     }
+
+    #chart-line {
+        height: 20rem !important;
+    }
 }
 
 @media screen and (min-width: 900px) {
@@ -179,6 +183,10 @@
         grid-row-start: 3;
         grid-column-start: 1;
         grid-column-end: 3;
+    }
+
+    #chart-line {
+        height: 25rem !important;
     }
 }
 

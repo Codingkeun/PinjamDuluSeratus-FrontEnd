@@ -4,7 +4,11 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" type="image/svg+xml" href="assets/images/logo.svg">
-    <title>Pinjam Dulu Seratus - Pinjaman</title>
+    <title>Pinjam Dulu Seratus - Dashboard</title>
+
+    <!-- Dashboard Chart -->
+    <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
+    
     <link rel="stylesheet" href="assets/css/bootstrap.css">
     <link rel="stylesheet" href="assets/css/custom.css">
     <link rel="stylesheet" href="assets/css/responsive.css">
@@ -58,8 +62,8 @@
                                 <button class="border-0 dropdown-toggle" data-toggle="dropdown" aria-expanded="false"></button>
                                 <ul class="dropdown-menu rounded-10 border-0 container-card-shadow">
                                     <li><a class="dropdown-item" href="#"></a></li>
-                                    <li><a class="dropdown-item" href="peminjam_dashboard.html">Dashboard</a></li>
-                                    <li><a class="dropdown-item active" href="peminjam_pengajuan-pinjaman.html">Pinjaman</a></li>
+                                    <li><a class="dropdown-item active" href="peminjam_dashboard.html">Dashboard</a></li>
+                                    <li><a class="dropdown-item" href="peminjam_pengajuan-pinjaman.html">Pinjaman</a></li>
                                     <li><hr class="dropdown-divider"></li>
                                     <li><a class="dropdown-item" href="peminjam_profil-peminjam.html">Akun</a></li>
                                     <li><a class="dropdown-item" href="#">User Guide</a></li>
@@ -74,11 +78,39 @@
         </div>
 
         <section class="loan-area mt-5 mb-5" style="padding-inline: calc(15% / 2);">
-            <div class="d-flex justify-content-between align-items-center flex-wrap mt-5" style="gap: 2rem;">
-                <h1 class="font-weight-semibold">Pinjaman</h1>
-                <button type="button" class="btn btn-primary font-weight-semibold" style="height: 44px;" onclick="window.location.href = 'peminjam_pengajuan-pinjaman.html'">Buat Pengajuan Pinjaman</button>
+            <h1 class="font-weight-semibold mt-5">Statistik Pinjaman Anda</h1>
+
+            <div class="mt-5">
+                <div class="row justify-content-between w-100 mx-auto" style="column-gap: 1rem; row-gap: 1rem;">
+                    <div class="row d-flex align-items-center ml-0" style="column-gap: 3rem; row-gap: 1rem;">
+                        <div>
+                            <h3 style="font-size: 1rem;">Total Pinjaman</h3>
+                            <h3 class="font-weight-semibold" style="font-size: 1.5rem;"id="dashboard_loanAmountTotal">Rp 5,000,000</h3>
+                        </div>
+                        <div>
+                            <h3 style="font-size: 1rem;">Periode</h3>
+                            <div class="d-flex align-items-center">
+                                <select id="dashboard_monthsPeriod" class="form-select bg-white font-weight-semibold border-0 pl-0 py-0 w-100" style="font-size: 1.5rem;" required>
+                                    <option value="januaryToMarch">Januari-Maret 2023</option>
+                                    <option value="aprilToJune">April-Juni 2023</option>
+                                    <option value="julyToSeptember">Juli-September 2023</option>
+                                    <option value="octoberToDecember">Oktober-Desember 2023</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card z-index-2 h-100 mt-4">
+                    <div class="card-body p-1">
+                        <div class="chart">
+                            <canvas id="chart-line" class="chart-canvas" style="height: 18rem;"></canvas>
+                        </div>
+                    </div>
+                </div>
             </div>
+
             <div class="table-responsive mt-5">
+                <h1 class="font-weight-semibold mb-4">Daftar Pinjaman Aktif</h1>
                 <table id="loanTable" class="table table-striped sortable">
                     <thead>
                         <tr>
@@ -180,5 +212,128 @@
         });
     </script>
     <script src="assets/js/bootstrap-sortable.js"></script>
+
+    <!-- Plugin for the charts -->
+    <script src="../assets/js/plugins/chartjs.min.js"></script>
+    <script src="../assets/js/plugins/Chart.extension.js"></script>
+
+    <script>
+        const ctx1 = document.getElementById("chart-line").getContext("2d");
+    
+        const gradientStroke1 = ctx1.createLinearGradient(0, 230, 0, 50);
+    
+        gradientStroke1.addColorStop(1, 'rgba(94, 114, 228, 0.2)');
+        gradientStroke1.addColorStop(0.2, 'rgba(94, 114, 228, 0.0)');
+        gradientStroke1.addColorStop(0, 'rgba(94, 114, 228, 0)');
+        
+        let label = ["Jan", "Feb", "March"];
+
+        const config = {
+            type: "line",
+            data: {
+                labels: ["Jan", "Feb", "Mar"],
+                datasets: [{
+                    label: "Jumlah Pinjaman",
+                    tension: 0.4,
+                    borderWidth: 0,
+                    pointRadius: 0,
+                    borderColor: "#5e72e4",
+                    backgroundColor: gradientStroke1,
+                    borderWidth: 3,
+                    fill: true,
+                    data: [50, 40, 300, 220, 500, 250, 400, 230, 500],
+                    maxBarThickness: 6
+                }],
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        display: false,
+                    }
+                },
+                interaction: {
+                    intersect: false,
+                    mode: 'index',
+                },
+                scales: {
+                    y: {
+                        grid: {
+                            drawBorder: false,
+                            display: true,
+                            drawOnChartArea: true,
+                            drawTicks: false,
+                            borderDash: [5, 5]
+                        },
+                        ticks: {
+                            display: true,
+                            padding: 10,
+                            color: '#fbfbfb',
+                            font: {
+                                size: 11,
+                                family: "Open Sans",
+                                style: 'normal',
+                                lineHeight: 2
+                            },
+                        }
+                    },
+                        x: {
+                            grid: {
+                                drawBorder: false,
+                                display: false,
+                                drawOnChartArea: false,
+                                drawTicks: false,
+                                borderDash: [5, 5]
+                            },
+                            ticks: {
+                                display: true,
+                                color: '#ccc',
+                                padding: 20,
+                                font: {
+                                    size: 11,
+                                    family: "Open Sans",
+                                    style: 'normal',
+                                    lineHeight: 2
+                                },
+                            }
+                    },
+                },
+            },
+        };
+
+        let chart = new Chart(ctx1, config);
+
+        const monthsPeriod = $('#dashboard_monthsPeriod');
+        $(monthsPeriod).on('change', function () {
+            chart.clear();
+            chart.destroy();
+            if ($(this).val() === 'januaryToMarch') {
+                chart.data.labels = ["Jan", "Feb", "Mar"];
+            } else if ($(this).val() === 'aprilToJune') {
+                chart.data.labels = ["Apr", "Mei", "Jun"];
+            } else if ($(this).val() === 'julyToSeptember') {
+                chart.data.labels = ["Jul", "Agu", "Sep"];
+            } else if ($(this).val() === 'octoberToDecember') {
+                chart.data.labels = ["Okt", "Nov", "Des"];
+            }
+            chart = new Chart(ctx1, config);
+        });
+
+        const rupiah = (number) => {
+            return new Intl.NumberFormat('id-ID', {
+                style: 'currency',
+                currency: 'IDR',
+                maximumSignificantDigits: 3
+            }).format(number);
+        }
+
+        const amountData = chart.data.datasets;
+        let total = 0;
+        for (let i = 0; i <= amountData.length; i++) {
+            amountData[i].data.forEach((number) => total += number);
+            $('#dashboard_loanAmountTotal').html(rupiah(total + '000'));
+        }
+    </script>
 </body>
 </html>
