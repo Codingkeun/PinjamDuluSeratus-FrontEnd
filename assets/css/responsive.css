@@ -123,6 +123,16 @@
 }
 
 @media screen and (max-width: 1055px) {
+    .signin-container,
+    .register-container {
+        transform: translateY(-10%);
+    }
+
+    .form-login, .form-register {
+        padding-left: calc(15% / 2);
+        margin-top: 3rem;
+    }
+    
     .team-card > * {
         transform: translateY(0px) !important;
     }
@@ -135,13 +145,6 @@
     .team-card:hover .social-media-links {
         transform: translateY(0px);
         opacity: 1;
-    }
-}
-
-@media screen and (max-width: 1199px) {
-    .form-login, .form-register {
-        padding-left: calc(15% / 2);
-        margin-top: 3rem;
     }
 }
 
@@ -277,6 +280,17 @@
     }
 }
 
+@media screen and (min-width: 1056px) {
+    .signin-container,
+    .register-container {
+        position: absolute;
+        top: 0;
+        transform: translateY(50%);
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
 @media screen and (min-width: 1100px) {
     .active-lendees-list {
         display: grid !important;
@@ -287,22 +301,6 @@
 @media screen and (min-width: 1200px) {
     .ornament {
         width: 40% !important;
-    }
-
-    .signin-container {
-        margin-top: -9rem;
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-    }
-
-    .register-container {
-        margin-top: -4rem;
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-    }
-
-    .register-container > * {
-        margin-block: auto;
     }
 
     .profile-area img {
