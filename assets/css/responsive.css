@@ -122,6 +122,22 @@
     }
 }
 
+@media screen and (max-width: 1055px) {
+    .team-card > * {
+        transform: translateY(0px) !important;
+    }
+
+    .social-media-links {
+        transform: translateY(0px) !important;
+        opacity: 1 !important;
+    }
+    
+    .team-card:hover .social-media-links {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}
+
 @media screen and (max-width: 1199px) {
     .form-login, .form-register {
         padding-left: calc(15% / 2);
@@ -291,6 +307,10 @@
 
     .profile-area img {
         width: 20% !important;
+    }
+
+    .breadcrumb-line {
+        top: 16.5rem !important;
     }
 
     .menu-area {
