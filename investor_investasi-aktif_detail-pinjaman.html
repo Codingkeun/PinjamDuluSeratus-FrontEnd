@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" type="image/svg+xml" href="assets/images/logo.svg">
     <title>Pinjam Dulu Seratus - Detail Pinjaman</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="assets/css/bootstrap.css">
     <link rel="stylesheet" href="assets/css/custom.css">
     <link rel="stylesheet" href="assets/css/responsive.css">
@@ -71,7 +72,7 @@
         <div class="mt-5 mb-5" style="padding-inline: calc(15% / 2);">
             <h1 class="font-weight-semibold mt-5">Detail Pinjaman</h1>
 
-            <form class="loan-detail-container lender-role w-100 mx-0 mt-4">
+            <form class="loan-detail-container lender-role w-100 mx-0 mt-4" id="provideLoanFundsForm">
                 <section class="p-5 rounded-10 container-card-shadow w-100" style="height: fit-content;">
                     <h2 class="font-weight-semibold m-0 text-primary mb-4" style="font-size: 1.2rem;">Informasi Data Peminjam</h2>
                     <div class="profile-image rounded-circle bg-primary mx-auto" style="width: 5rem; height: 5rem;">
@@ -151,7 +152,51 @@
                     </div>
                 </section>
 
-                <button class="btn btn-primary w-100 font-weight-semibold" type="submit">Berikan Dana Pinjaman</button>
+                <button class="btn btn-primary w-100 font-weight-semibold" id="provideLoanFundsButton" type="submit">Berikan Dana Pinjaman</button>
+
+                <form id="provideLoanFundsConfigurationForm">
+                    <div class="modal fade" id="provideLoanFundsConfiguration" tabindex="-1" aria-labelledby="investorForm_modalTitle" aria-hidden="true" style="padding-inline: calc(15% / 2);">
+                        <div class="modal-dialog modal-dialog-centered">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h1 class="modal-title fs-5" id="investorForm_modalTitle">Konfirmasi Pemberian Dana Pinjaman</h1>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <p class="card-text">Apakah Anda yakin ingin memberikan dana pinjaman sebesar 
+                                        <span class="font-weight-semibold text-primary">
+                                            Rp 2,500,000
+                                        </span>
+                                        kepada
+                                        <span class="font-weight-semibold text-primary">
+                                            Andrea
+                                        </span>
+                                        dengan tanggal jatuh tempo pembayaran pinjaman adalah 
+                                        <span class="font-weight-semibold text-primary">
+                                            18 Februari 2024?
+                                        </span>
+                                    </p>
+                                </div>
+                                <div class="modal-footer mx-auto">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tidak, batalkan pemberian</button>
+                                    <button type="submit" class="btn btn-primary font" id="provideLoanFundsConfirmed">Ya, berikan pinjaman</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+
+                <script>
+                    const showProvideLoanFundsPopUpConfiguration = () => {
+                        const forms = $('#provideLoanFundsForm');
+                        $(forms).on('submit', function (event) {
+                            event.preventDefault();
+                            $('#provideLoanFundsButton').attr('data-bs-toggle', 'modal');
+                            $('#provideLoanFundsButton').attr('data-bs-target', '#provideLoanFundsConfiguration');
+                        })
+                    }
+                    showProvideLoanFundsPopUpConfiguration();
+                </script>
             </form>
         </div>
 
@@ -192,6 +237,7 @@
         </div>
     </div>
 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
     <script src="./assets/js/countdownTimer.js"></script>
 </body>
 </html>
