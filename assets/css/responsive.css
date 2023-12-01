@@ -292,6 +292,11 @@
     .profile-area img {
         width: 20% !important;
     }
+
+    .menu-area {
+        height: 100%;
+        padding-bottom: 5rem;
+    }
 }
 
 @media screen and (min-width: 1500px) {
