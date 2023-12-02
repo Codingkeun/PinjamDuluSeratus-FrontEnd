@@ -112,10 +112,9 @@
 </template>
 <script>
 export default {
-    name: 'Page2',
+    name: 'About',
     data() {
         return {
-            content: 'Page 2'
         }
     }
 }

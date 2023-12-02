@@ -2,7 +2,8 @@ import { createRouter, createWebHashHistory, createWebHistory } from 'vue-router
 
 import Home from '../views/Home.vue'
 import About from '../views/About.vue'
-import Donation from '../views/Donation.vue'
+import Donation from '../views/donation/Donation.vue'
+import DonationForm from '../views/donation/DonationForm.vue'
 
 const routes = [
     {
@@ -16,6 +17,10 @@ const routes = [
     {
         path: '/donation',
         component: Donation
+    },
+    {
+        path: '/donation-send',
+        component: DonationForm
     }
 ]
 

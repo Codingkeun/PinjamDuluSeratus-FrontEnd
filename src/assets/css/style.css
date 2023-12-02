@@ -266,10 +266,12 @@ body {
     height: 1.5rem;
     width: 1.5rem;
     border-radius: 50%;
+    cursor: no-drop;
 }
 
 .checkmark-checked {
     background: var(--primary);
+    cursor: pointer !important;
 }
 
 .item-card-shadow {
