@@ -1,6 +1,8 @@
 import { createRouter, createWebHashHistory, createWebHistory } from 'vue-router'
 
 import Home from '../views/Home.vue'
+import Signin from '../views/authentication/Signin.vue'
+import Signup from '../views/authentication/Signup.vue'
 import About from '../views/About.vue'
 import Donation from '../views/donation/Donation.vue'
 import DonationForm from '../views/donation/DonationForm.vue'
@@ -8,19 +10,51 @@ import DonationForm from '../views/donation/DonationForm.vue'
 const routes = [
     {
         path: '/',
-        component: Home
+        component: Home,
+        meta: {
+            footer: true,
+            navbar: true,
+        }
+    },
+    {
+        path: '/signin',
+        component: Signin,
+        meta: {
+            footer: false,
+            navbar: false,
+        }
+    },
+    {
+        path: '/Signup',
+        component: Signup,
+        meta: {
+            footer: false,
+            navbar: false,
+        }
     },
     {
         path: '/about',
-        component: About
+        component: About,
+        meta: {
+            footer: true,
+            navbar: true,
+        }
     },
     {
         path: '/donation',
-        component: Donation
+        component: Donation,
+        meta: {
+            footer: true,
+            navbar: true,
+        }
     },
     {
         path: '/donation-send',
-        component: DonationForm
+        component: DonationForm,
+        meta: {
+            footer: true,
+            navbar: true,
+        }
     }
 ]
 

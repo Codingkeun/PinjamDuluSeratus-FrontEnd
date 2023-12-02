@@ -72,12 +72,12 @@
                     </div>
                     <div class="description">Lörem ipsum möboren tonepp även om cykelbox med penat. Ack epirat pretest. Infrant dysform tredade att infraligt odiv. Nins kes medelvalens. Ryggprotest nösamma, spett. Laras fubomäbelt gönade i homov ming. Efäfude katons inte pseudoskade ovis bespevis. Lörem ipsum möboren tonepp även om cykelbox med penat. Ack epirat pretest. Infrant dysform tredade att infraligt odiv. Nins kes medelvalens. Ryggprotest nösamma, spett. Laras fubomäbelt gönade i homov ming. Efäfude katons inte pseudoskade ovis bespevis.</div>
                     <div class="btn-group mt-4">
-                        <a href="signin.html" class="btn rounded-10 d-flex align-items-center border-0 p-2 login-register-button" id="loginButton">
+                        <router-link to="/donation" class="btn rounded-10 d-flex align-items-center border-0 p-2 login-register-button" id="loginButton">
                             Donasi Sekarang
                             <span class="material-symbols-outlined rounded-5 mx-2 login-register-arrow-icon">
                                 keyboard_arrow_right
                             </span>
-                        </a>
+                        </router-link>
                     </div>
                 </div>
             </div>

@@ -5,8 +5,8 @@ import Footer from './components/Footer.vue'
 
 <template>
   <div class="page">
-    <NavBar></NavBar>
+    <NavBar v-if="$route.meta.navbar"></NavBar>
     <router-view></router-view>
-    <Footer></Footer>
+    <Footer v-if="$route.meta.footer"></Footer>
   </div>
 </template>
