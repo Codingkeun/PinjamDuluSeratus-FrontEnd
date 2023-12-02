@@ -152,7 +152,7 @@ body {
     opacity: 0.8;
     background: linear-gradient(233deg, #5D299F 6.76%, #F94A29 91.46%);
     width: 100%;
-    height: 400px;
+    height: 300px;
     margin-top: 120px;
 }
 
@@ -187,6 +187,17 @@ body {
 .login-register-button {
     color: black;
     background-color: var(--light-blue);
+}
+
+.announcement {
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.announcement .list {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
 }
 
 .team-card-container {
@@ -456,4 +467,50 @@ table tbody tr td {
 .loan-detail-container.lender-role {
     display: grid;
     gap: 3rem;
+}
+
+.pagination {
+    display: flex;
+    gap: 10px;
+}
+
+.pagination .operation {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--primary);
+    padding: 10px;
+    color: white;
+    border-color: none;
+    outline: 0 !important;
+    border: 0 !important;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
+
+.pagination .page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--light-blue);
+    width: 75px;
+    padding: 10px;
+    color: var(--primary);
+    font-weight: bold;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
+
+.clear-space-medium {
+    margin-top: 2rem;
+}
+
+.clear-space-large {
+    margin-top: 4rem;
 }
