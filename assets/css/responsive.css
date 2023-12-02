@@ -20,7 +20,7 @@
     }
 
     .breadcrumb-line {
-        width: 17rem !important;
+        width: 18.8rem !important;
     }
 
     .profile-area img {
@@ -305,15 +305,6 @@
 
     .profile-area img {
         width: 20% !important;
-    }
-
-    .breadcrumb-line {
-        top: 16.5rem !important;
-    }
-
-    .menu-area {
-        height: 100%;
-        padding-bottom: 5rem;
     }
 }
 
