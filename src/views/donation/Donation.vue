@@ -16,7 +16,7 @@
                 </span>
                 <p>Donasi yang terkumpul akan digunakan untuk membantu keperluan dana darurat dari para mahasiswa yang mendaftar sebagai peminjam di <span class="text-primary font-weight-semibold">Pinjam Dulu Seratus</span></p>
             </div>
-            <router-link to="donation-send" class="btn btn-primary w-100 font-weight-semibold" id="makeDonationButton">Lakukan Donasi</router-link>
+            <router-link to="donation-send" class="btn btn-primary w-100 font-weight-semibold d-flex align-items-center justify-content-center" id="makeDonationButton">Lakukan Donasi</router-link>
         </div>
     </div>
 </template>
