@@ -1,7 +1,7 @@
 <template>
     <main>
         <section class="container hero">
-            <div class="content">Tingkatkan Perjalanan Keuangan Anda Bersama <span class="text-primary">PinjamDuluSeratus</span></div>
+            <div class="content">Tingkatkan Perjalanan Keuangan Anda Bersama <span class="text-primary">Pinjam Dulu Seratus</span></div>
             <div class="image"></div>
         </section>
         <section class="solution">
@@ -40,10 +40,7 @@
                     <div class="card rounded-10">
                         <div class="card-body">
                             <div class="d-flex justify-content-center flex-column p-3">
-                                <div class="d-block text-primary text-center mb-2">
-                                    <!-- <span class="material-symbols-outlined mb-3" style="font-size: 50pt">
-                                        steppers
-                                    </span> -->
+                                <div class="d-block text-primary text-center mb-2">\
                                     <span class="material-symbols-outlined mb-3" style="font-size: 50pt">
                                         page_control
                                     </span>
@@ -56,6 +53,51 @@
                 </div>
             </div>
         </section>
+        <section class="mission-container" style="padding-inline: calc(15% / 2); margin-top: 120px;">
+            <div class="container">
+                <div class="row justify-content-between align-items-center">
+                    <img src="../assets/images/illustration/mission-section.svg" class="w-100 col-md-5 col-lg-5 order-2" alt="">
+                    <div class="col-md-7 col-lg-7">
+                        <div>
+                            <h4 class="pt-4" style="font-size: 1rem;">Sejak 2013</h4>
+                            <h1 class="font-weight-bold text-primary">Misi Kami</h1>
+                        </div>
+                        <p class="mt-4">
+                            Setiap orang berhak mendapatkan akses pendidikan yang adil dan setara. Misi kami adalah memberdayakan setiap individu untuk mengerjar mimpi pendidikan mereka tanpa terhalang oleh kendala finansial. 
+                            <br><br>
+                            Melalui kerja sama dengan pihak universitas, kami berharap dapat mendukung mahasiswa dalam menghadapi keadaan darurat dan membangun masa depan yang lebih baik.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="lender-investor-registration-cta" style="margin-top: 120px;">
+            <div class="container">
+                <div class="d-flex flex-column align-items-center" style="gap: 1rem; padding-inline: calc(15% / 2);">
+                    <h1 class="font-weight-bold text-primary text-center">Daftar<br>Sebagai Peminjam</h1>
+                    <p class="text-center">
+                        <span>Mari ajukan dana darurat Anda melalui platform</span> 
+                        <span>Pinjam Dulu Seratus tanpa risiko terlilit dalam utang bunga.</span>
+                    </p>
+                    <router-link to="signup" class="d-flex align-items-center btn btn-primary font-weight-semibold">Daftar Sebagai Peminjam</router-link>
+                </div>
+                <div class="mt-5">
+                    <img src="../assets/images/illustration/register-lender-section-1.svg" alt="">
+                    <img src="../assets/images/illustration/register-lender-section-2.svg" alt="">
+                    <img src="../assets/images/illustration/register-lender-section-3.svg" alt="">
+                    <img src="../assets/images/illustration/register-lender-section-4.svg" alt="">
+                </div>
+                <div class="d-flex flex-column align-items-center" style="gap: 1rem; padding-inline: calc(15% / 2);">
+                    <h1 class="font-weight-bold text-primary text-center">Daftar<br>Sebagai Investor</h1>
+                    <p class="text-center">
+                        <span>Mari berinvestasi bersama kami dengan menyediakan</span>
+                        <span>dana darurat kepada mahasiswa yang membutuhkan.</span>
+                    </p>
+                    <router-link to="signup" class="d-flex align-items-center btn btn-primary font-weight-semibold">Daftar Sebagai Investor</router-link>
+                </div>
+            </div>
+            <img src="../assets/images/background/big-circle-gradient.svg" alt="">
+        </section>
         <section class="donation">
             <div class="container">
                 <div class="balance">
@@ -66,23 +108,23 @@
                     </div>
                 </div>
                 <div class="balance-description">
-                    <div class="header">
-                        <div class="h5 font-weight-normal mb-3">Apa itu</div>
-                        <div class="h1 font-weight-bold">Saldo Donasi?</div>
-                    </div>
-                    <div class="description">Lörem ipsum möboren tonepp även om cykelbox med penat. Ack epirat pretest. Infrant dysform tredade att infraligt odiv. Nins kes medelvalens. Ryggprotest nösamma, spett. Laras fubomäbelt gönade i homov ming. Efäfude katons inte pseudoskade ovis bespevis. Lörem ipsum möboren tonepp även om cykelbox med penat. Ack epirat pretest. Infrant dysform tredade att infraligt odiv. Nins kes medelvalens. Ryggprotest nösamma, spett. Laras fubomäbelt gönade i homov ming. Efäfude katons inte pseudoskade ovis bespevis.</div>
+                    <div class="h1 font-weight-bold text-primary">Ayo Berdonasi</div>
+                    <p class="description mt-4">
+                        Anda bisa membantu kami dalam menyediakan dana darurat ke mahasiswa yang membutuhkan tanpa harus melakukan registasi akun.
+                        Berapapun dana donasi yang Anda berikan dapat membantu para mahasiswa dalam mempersiapkan dana pendidikan.
+                    </p>
                     <div class="btn-group mt-4">
-                        <router-link to="/donation" class="btn rounded-10 d-flex align-items-center border-0 p-2 login-register-button" id="loginButton">
+                        <a href="signin.html" class="btn rounded-10 d-flex align-items-center border-0 p-2 login-register-button font-weight-semibold">
                             Donasi Sekarang
                             <span class="material-symbols-outlined rounded-5 mx-2 login-register-arrow-icon">
                                 keyboard_arrow_right
                             </span>
-                        </router-link>
+                        </a>
                     </div>
                 </div>
             </div>
         </section>
-        <section class="announcement container">
+        <section class="announcement container d-flex flex-column">
             <div class="card bg-primary rounded-10 mb-4">
                 <div class="card-body d-flex align-items-center text-white">
                     <img src="../assets/images/icon/stopwatch.svg" />
@@ -92,7 +134,7 @@
                     </div>
                 </div>
             </div>
-            <div class="list">
+            <div class="list mt-4">
                 <div class="card rounded-10">
                     <div class="card-body pb-2">
                         <div class="d-flex align-items-center">
@@ -190,22 +232,15 @@
                     </div>
                 </div>
             </div>
-            <div class="clear-space-large"></div>
-            <div class="d-flex justify-content-center">
-                <div class="pagination">
-                    <button class="operation">
-                        <span class="material-symbols-outlined">
-                            keyboard_arrow_left
-                        </span>
-                    </button>
-                    <div class="page">1</div>
-                    <button class="operation">
-                        <span class="material-symbols-outlined">
-                            keyboard_arrow_right
-                        </span>
-                    </button>
-                </div>
-            </div>
+            <nav class="mt-5 align-self-center">
+                <ul class="pagination">
+                    <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+                    <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                    <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                </ul>
+            </nav>
         </section>
     </main>
 </template>

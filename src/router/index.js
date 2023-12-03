@@ -25,7 +25,7 @@ const routes = [
         }
     },
     {
-        path: '/Signup',
+        path: '/signup',
         component: Signup,
         meta: {
             footer: false,
