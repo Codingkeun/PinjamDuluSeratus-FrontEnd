@@ -68,60 +68,71 @@ body {
     -o-border-radius: 5px !important;
 }
 
-.hero {
+body {
     display: flex;
+    flex-flow: row wrap;
+}
+
+.page {
     position: relative;
-    align-items: center;
-    justify-content: space-evently;
+}
+
+.menu-area .container {
+    width: 100%;
+    max-width: 100vw;
+}
+
+.hero {
+    width: 100%;
+    max-width: 100vw;
 }
 
 .hero .content {
     position: relative;
-    font-size: 50px;
+    font-size: 3rem;
     font-weight: normal;
     letter-spacing: -0.25px;
-    max-width: 50%;
+    width: 50%;
     margin-top: 100px;
+    z-index: 1;
+    padding-inline: calc(15% / 2);
 }
 
 .hero .content span {
     font-weight: 600;
+    text-shadow: 2px 0 #fff, -2px 0 #fff, 0 2px #fff, 0 -2px #fff,
+                1px 1px #fff, -1px -1px #fff, 1px -1px #fff, -1px 1px #fff;
 }
 
 .hero .image {
     position: absolute;
     flex-shrink: 0;
-    width: 631px;
-    height: 500px;
+    width: 100%;
+    height: 80rem;
+    max-width: 1600px;
+    left: 50%;
+    transform: translateX(-50%);
     background-image: url('../images/hero/hero.svg');
     background-repeat: no-repeat;
-    background-size: contain;
+    background-size: cover;
     right: 0;
-    top: -11.5px;
-    z-index: 0;
-    margin-left: 10px;
-    transform: rotate(1.1deg);
-    -webkit-transform: rotate(1.1deg);
-    -moz-transform: rotate(1.1deg);
-    -ms-transform: rotate(1.1deg);
-    -o-transform: rotate(1.1deg);
+    top: 18rem;
+    z-index: -1;
+    margin-top: 20rem;
 }
 
+
 .solution {
-    background-image: url('../images/background/solution-section.svg');
-    background-repeat: no-repeat;
     width: 100%;
     height: auto;
-    background-size: cover;
-    background-position: inherit;
-    padding: 20px;
-    margin-top: 49px;
-    z-index: -1;
+    margin-top: 25rem;
+    background: linear-gradient(3deg, #1A5F7A -16.01%, #159895 38.7%, rgba(111, 163, 163, 0.00) 94.69%);
+    padding-bottom: 100px !important;
 }
 
 .solution .container {
-    margin-top: 150px;
     padding-bottom: 100px;
+    padding-inline: calc(15% / 2);
 }
 
 .solution .header {
@@ -133,9 +144,58 @@ body {
 
 .solution .content {
     display: grid;
-    column-gap: 20px;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 50px;
+    grid-template-columns: repeat(auto-fill, minmax(30%, 1fr));
     margin-top: 50px;
+}
+
+.mission-container > div > div {
+    background: url('../images/background/mission-section.svg') no-repeat center center;
+}
+
+.mission-container > div > div > div {
+    background: url('../images/illustration/graduation-cap.svg') no-repeat 40px -10px;
+}
+
+.lender-investor-registration-cta .container {
+    width: 100vw;
+    background: url('../images/background/blue-wave-background.svg') no-repeat center center;
+    background-size: cover;
+    max-width: 1600px;
+}
+
+.lender-investor-registration-cta .container > div:nth-child(2) {
+    padding-inline: calc(15% / 2);
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 1rem;
+}
+
+.lender-investor-registration-cta .container > div:nth-child(2) > img {
+    width: 100%;
+}
+
+.lender-investor-registration-cta .container > div:nth-child(2) > img:nth-child(2) {
+    transform: translateY(25%);
+}
+
+.lender-investor-registration-cta .container > div:nth-child(2) > img:nth-child(3) {
+    transform: translateY(50%);
+}
+
+.lender-investor-registration-cta .container > div:nth-child(2) > img:last-child {
+    transform: translateY(75%);
+}
+
+.lender-investor-registration-cta .container > div:nth-child(3) {
+    margin-top: 20rem; 
+    background: url('../images/background/register-investor-section.svg') no-repeat center top;
+    background-size: contain;
+    width: 100%;
+}
+
+.lender-investor-registration-cta > img {
+    width: 100%;
 }
 
 .donation .container {
@@ -143,8 +203,9 @@ body {
     background: white;
     grid-template-columns: 0.5fr 0.5fr;
     gap: 50px;
-    margin-top: 150px;
+    margin-top: -150px;
     padding-bottom: 100px;
+    padding-inline: calc(15% / 2);
 }
 
 .donation .container .balance {
@@ -166,7 +227,7 @@ body {
 }
 
 .donation .container .balance-description {
-    display: block;
+    margin-block: auto;
 }
 
 .donation .container .balance-description .description {
@@ -176,7 +237,7 @@ body {
     font-weight: 400;
     line-height: 24px; /* 150% */
     letter-spacing: 0.5px;
-    margin-top: 50px;
+    /* margin-top: 50px; */
 }
 
 .login-register-arrow-icon {
@@ -192,6 +253,10 @@ body {
 .announcement {
     margin-top: 50px;
     margin-bottom: 50px;
+}
+
+.announcement.container {
+    padding-inline: calc(15% / 2);
 }
 
 .announcement .list {
