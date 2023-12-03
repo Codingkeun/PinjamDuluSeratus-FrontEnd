@@ -31,6 +31,7 @@
                         </button>
                         <div class="dropdown-menu rounded-10 border-0 container-card-shadow" style="">
                             <router-link class="dropdown-item" to="signin">Sebagai Peminjam <span class="material-symbols-outlined"></span></router-link>
+                            <router-link class="dropdown-item" to="signin">Sebagai Investor <span class="material-symbols-outlined"></span></router-link>
                         </div>
                     </div>
                 </div>
