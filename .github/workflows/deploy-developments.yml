@@ -1,0 +1,26 @@
+name: Deploy Production
+
+on: 
+  push:
+    branches: [ main ]
+
+jobs:
+  deploy:
+    name: Deployment
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v1
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - run: npm install && npm run build
+      - name: Install SSH Key
+        uses: shimataro/ssh-key-action@v2
+        with:
+          key: ${{ secrets.PRODUCTION_SSH_KEY }}
+          known_hosts: 'placeholder-value'
+      - name: Adding Known Hosts
+        run: ssh-keyscan -p 22 -H 51.161.11.156 >> ~/.ssh/known_hosts
+      - name: Deploy with rsync
+        run: rsync -avz -e "ssh -p 22" ./ ubuntu@51.161.11.156:/var/www/oeltimacreation/apps/pinjamdulustatus/public/
