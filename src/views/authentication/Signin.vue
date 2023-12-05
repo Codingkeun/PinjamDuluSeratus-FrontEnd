@@ -16,28 +16,53 @@
 
         <div class="container-fluid row mx-auto mb-4 signin-container">
             <img src="../../assets/images/illustration/computer-login.svg" alt="" class="col-sm-12 col-md-12 col-lg-12 w-100" style="height: fit-content;">
-            <form class="col-sm-12 col-md-12 col-lg-12 d-flex flex-column form-login" style="gap: 1.5rem; padding-right: calc(15% / 2);">
+            <form @submit.prevent="handleSubmit" class="col-sm-12 col-md-12 col-lg-12 d-flex flex-column form-login" style="gap: 1.5rem; padding-right: calc(15% / 2);">
                 <h1 class="fs-1 fw-bold text-primary">Masuk ke Akun</h1>
                 <div class="">
                     <label for="email">Email</label>
-                    <input type="email" id="email" class="form-control" placeholder="Masukkan email" required>
+                    <input type="email" id="email" class="form-control" placeholder="Masukkan email" v-model="email" required>
                 </div>
                 <div class="">
                     <label for="password">Password</label>
-                    <input type="password" id="email" class="form-control" placeholder="Masukkan password" required>
+                    <input type="password" id="email" class="form-control" placeholder="Masukkan password" v-model="password" required>
                 </div>
-                
-                <router-link to="/" type="submit" class="btn btn-primary font-weight-semibold w-100 d-flex justify-content-center align-items-center" id="accountSignIn">Masuk</router-link>
+                <button type="submit" class="btn btn-primary font-weight-semibold w-100" id="accountSignIn">Masuk</button>
             </form>
         </div>
     </div>
 </template>
 <script>
+import { storeToRefs } from 'pinia'
+import {useUserStore} from '../../store/user'
 export default {
     name: 'Signin',
     data() {
         return {
-            
+            email: '',
+            password: ''
+        }
+    },
+    setup() {
+        const user = storeToRefs(useUserStore())
+
+        return {
+            user
+        }
+    },
+    methods: {
+        async handleSubmit() {
+            try {
+                const signin = await useUserStore().login(this.email, this.password)
+                if (signin.status) {
+                    this.$router.push({ name: 'home' })
+                    // this.$showNotification(response.message, 'success')
+                } else {
+                    alert(signin.message)
+                    // this.$showNotification(response.message)
+                }
+            } catch(error) {
+                alert(error)
+            }
         }
     }
 }

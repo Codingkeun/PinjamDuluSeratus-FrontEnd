@@ -1,9 +1,12 @@
 import { createApp } from 'vue'
 import App from './App.vue'
 
+// import store from './store'
+import { createPinia } from 'pinia'
+import { createPersistedState } from 'pinia-plugin-persistedstate'
+
 // load utils
 import router from './router'
-import store from './store'
 
 // load external library
 import VueCountdown from '@chenfengyuan/vue-countdown';
@@ -16,9 +19,14 @@ import './assets/css/responsive.css'
 import 'bootstrap'
 
 const app = createApp(App)
+const pinia = createPinia()
 
+pinia.use(createPersistedState({
+    storage: localStorage,
+}))
+
+app.use(pinia)
 app.use(router)
-app.use(store)
 
 app.component(VueCountdown.name, VueCountdown);
 
