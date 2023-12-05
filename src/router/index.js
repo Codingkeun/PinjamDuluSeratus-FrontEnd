@@ -68,18 +68,18 @@ const router = createRouter({
 })
 
 router.beforeEach((to, from, next) => {
-    const localData = localStorage.getItem('store')
+    // const localData = localStorage.getItem('store')
 
-    const authRequired  = !['signin'].includes(to.name);
+    // const authRequired  = !['signin'].includes(to.name);
 
-    if (authRequired) {
-        if (localData && JSON.parse(localData).key)
-            next()
-        else
-            next({name: 'signin'})
-    } else {
+    // if (authRequired) {
+    //     if (localData && JSON.parse(localData).key)
+    //         next()
+    //     else
+    //         next({name: 'signin'})
+    // } else {
         next()
-    }
+    // }
 })
 
 export default router
