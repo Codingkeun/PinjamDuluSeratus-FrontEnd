@@ -41,7 +41,7 @@
 
                 <div class="w-100 opacity-75">
                     <div class="bg-primary" style="border-radius: 1.2rem; height: 4rem;">
-                        <img class="w-100" src="./assets/images/background/wave-background.svg" alt="">
+                        <img class="w-100" src="../../../assets/images/background/wave-background.svg" alt="">
                     </div>
                 </div>
                 <section class="form-check">
