@@ -7,29 +7,28 @@ import About from '../views/About.vue'
 import Donation from '../views/donation/Donation.vue'
 import DonationForm from '../views/donation/DonationForm.vue'
 import HistoryPayment from '../views/HistoryPayment.vue'
-import Account from '../views/Account.vue'
 
-// route for borrower role
+// routes for borrower role
 import DashboardBorrower from '../views/peminjam/Dashboard.vue'
 import LoanBorrower from '../views/peminjam/loan/Loan.vue'
 import LoanFormBorrower from '../views/peminjam/loan/LoanForm.vue'
 import LoanDetailBorrower from '../views/peminjam/loan/LoanDetail.vue'
 import LoanPayBorrower from '../views/peminjam/loan/LoanPayment.vue'
+import AccountBorrower from '../views/peminjam/Account.vue'
+
+// routes for investor
+import DashboardInvestor from '../views/investor/Dashboard.vue'
+import InvestmentInvestor from '../views/investor/investment/Investment.vue'
+import InvestmentDetailInvestor from '../views/investor/investment/InvestmentDetail.vue'
+import AccountInvestor from '../views/investor/Account.vue'
+import TopUpBalanceInvestor from '../views/investor/TopUpBalance.vue'
 
 const routes = [
+    // routes general
     {
         path: '/',
         name: 'home',
         component: Home,
-        meta: {
-            footer: true,
-            navbar: true,
-        }
-    },
-    {
-        path: '/account',
-        name: 'account',
-        component: Account,
         meta: {
             footer: true,
             navbar: true,
@@ -77,9 +76,19 @@ const routes = [
             navbar: true,
         }
     },
+    // routes for borrower
     {
         path: '/dashboard/peminjam',
         component: DashboardBorrower,
+        meta: {
+            footer: true,
+            navbar: true,
+        }
+    },
+    {
+        path: '/account/peminjam',
+        name: 'account',
+        component: AccountBorrower,
         meta: {
             footer: true,
             navbar: true,
@@ -120,6 +129,48 @@ const routes = [
     {
         path: '/loan/info-payment',
         component: LoanPayBorrower,
+        meta: {
+            footer: true,
+            navbar: true,
+        }
+    },
+    // routes for investor
+    {
+        path: '/dashboard/investor',
+        component: DashboardInvestor,
+        meta: {
+            footer: true,
+            navbar: true,
+        }
+    },
+    {
+        path: '/investment',
+        component: InvestmentInvestor,
+        meta: {
+            footer: true,
+            navbar: true,
+        }
+    },
+    {
+        path: '/account/investor',
+        name: 'account',
+        component: AccountInvestor,
+        meta: {
+            footer: true,
+            navbar: true,
+        }
+    },
+    {
+        path: '/investment/detail/:id',
+        component: InvestmentDetailInvestor,
+        meta: {
+            footer: true,
+            navbar: true,
+        }
+    },
+    {
+        path: '/topup-balance',
+        component: TopUpBalanceInvestor,
         meta: {
             footer: true,
             navbar: true,
