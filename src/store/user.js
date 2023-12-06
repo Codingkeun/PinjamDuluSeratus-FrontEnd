@@ -6,10 +6,11 @@ import apiEndpoint from '../services/api-endpoint'
 /**
  * Simulate a login
  */
-async function apiLogin(email, password) {
+async function apiLogin(role, email, password) {
   const response = await ApiCore.store(apiEndpoint.AUTHENTICATION, {
       email: email,
-      password: password
+      password: password,
+      role: role
   }, "signin")
   
   if (response.status)
@@ -20,11 +21,13 @@ async function apiLogin(email, password) {
 
 export const useUserStore = defineStore('store', {
   state: () => ({
+    role: '',
     isLogin: false
   }),
   actions: {
     logout() {
       this.$patch({
+        role: '',
         isLogin: false
       })
 
@@ -34,10 +37,11 @@ export const useUserStore = defineStore('store', {
     /**
      * Attempt to login a user
      */
-    async login(user, password) {
+    async login(role, user, password) {
       try {
-        const userData = await apiLogin(user, password)
+        const userData = await apiLogin(role, user, password)
         this.$patch({
+          role: role,
           isLogin: true,
           ...userData.user,
         })

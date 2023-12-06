@@ -18,7 +18,7 @@ const routes = [
         }
     },
     {
-        path: '/signin',
+        path: '/signin/:role',
         name: 'signin',
         component: Signin,
         meta: {

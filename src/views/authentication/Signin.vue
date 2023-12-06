@@ -39,7 +39,8 @@ export default {
     data() {
         return {
             email: '',
-            password: ''
+            password: '',
+            role: this.$route.params.role
         }
     },
     setup() {
@@ -52,7 +53,7 @@ export default {
     methods: {
         async handleSubmit() {
             try {
-                const signin = await useUserStore().login(this.email, this.password)
+                const signin = await useUserStore().login(this.role, this.email, this.password)
                 if (signin.status) {
                     this.$router.push({ name: 'home' })
                     // this.$showNotification(response.message, 'success')
