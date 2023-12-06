@@ -87,7 +87,7 @@ const routes = [
     },
     {
         path: '/account/peminjam',
-        name: 'account',
+        name: 'account.borrower',
         component: AccountBorrower,
         meta: {
             footer: true,
@@ -153,7 +153,7 @@ const routes = [
     },
     {
         path: '/account/investor',
-        name: 'account',
+        name: 'account.investor',
         component: AccountInvestor,
         meta: {
             footer: true,

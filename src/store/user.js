@@ -25,7 +25,7 @@ export const useUserStore = defineStore('store', {
     isLogin: false
   }),
   actions: {
-    logout() {
+    async logout() {
       this.$patch({
         role: '',
         isLogin: false

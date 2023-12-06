@@ -30,8 +30,8 @@
                             Masuk ke Akun
                         </button>
                         <div class="dropdown-menu rounded-10 border-0 container-card-shadow" style="">
-                            <router-link class="dropdown-item" to="signin/peminjam">Sebagai Peminjam <span class="material-symbols-outlined"></span></router-link>
-                            <router-link class="dropdown-item" to="signin/investor">Sebagai Investor <span class="material-symbols-outlined"></span></router-link>
+                            <router-link class="dropdown-item" to="/signin/peminjam">Sebagai Peminjam <span class="material-symbols-outlined"></span></router-link>
+                            <router-link class="dropdown-item" to="/signin/investor">Sebagai Investor <span class="material-symbols-outlined"></span></router-link>
                         </div>
                     </div>
                     <div class="btn-group" v-else>
@@ -53,7 +53,7 @@
                                 <li><router-link class="dropdown-item" :to="'/account/' + user.role">Akun</router-link></li>
                                 <li><a class="dropdown-item" href="#">User Guide</a></li>
                                 <li><hr class="dropdown-divider"></li>
-                                <li><button type="button" @click="user.logout()" class="dropdown-item">Log Out</button></li>
+                                <li><button type="button" @click="logout" class="dropdown-item">Log Out</button></li>
                             </ul>
                         </div>
                     </div>
@@ -79,5 +79,11 @@ export default {
             user
         }
     },
+    methods: {
+        async logout() {
+            await this.user.logout()
+            this.$route.push('/')
+        }
+    }
 }
 </script>

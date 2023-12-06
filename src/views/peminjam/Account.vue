@@ -2,7 +2,7 @@
     <main class="profile-area mt-5 mb-5" style="padding-inline: calc(15% / 2);">
         <h1 class="font-weight-semibold">Informasi Pribadi</h1>
         <div class="p-5 w-100 h-100 rounded-20 container-card-shadow d-flex flex-column align-items-center mt-5">
-            <img src="../assets/images/profile/user-profile.svg" alt="" class="w-25 h-25">
+            <img src="../../assets/images/profile/user-profile.svg" alt="" class="w-25 h-25">
             <div class="profile-container row justify-content-around mt-4">
                 <div class="card col-sm-5 col-md-5 col-lg-4 p-4 bg-secondary border-0 rounded-10 mb-4">
                     <h3 style="font-size: 1rem;">Nama</h3>
