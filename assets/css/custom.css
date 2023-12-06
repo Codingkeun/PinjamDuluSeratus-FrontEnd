@@ -8,6 +8,30 @@ body {
     margin-right: auto;
 }
 
+.par-2-2-5em {
+    font-size: clamp(1.8rem, 4vw, 2.5rem) !important;
+}
+
+.par-1-5em {
+    font-size: clamp(1.25rem, 4vw, 1.5rem) !important;
+}
+
+.par-1-2em {
+    font-size: clamp(1rem, 4vw, 1.2rem) !important;
+}
+
+.par-1em, p, label {
+    font-size: clamp(0.8rem, 4vw, 1rem) !important;
+}
+
+.par-0-8em {
+    font-size: clamp(0.7rem, 4vw, 0.8rem) !important;
+}
+
+.form-select {
+    min-height: 44px !important;
+}
+
 .menu-area {
     background-image: url('../images/background/header.svg');
     background-repeat: no-repeat;
@@ -36,12 +60,16 @@ body {
 }
 
 .navbar {
-    padding: 10px 30px;
-    border-radius: 20px;
-    -webkit-border-radius: 20px;
-    -moz-border-radius: 20px;
-    -ms-border-radius: 20px;
-    -o-border-radius: 20px;
+    padding: 8px 20px;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
+
+.navbar img {
+    width: 1.5em;
 }
 
 .rounded-20 {
@@ -91,10 +119,10 @@ body {
 
 .hero .content {
     position: relative;
-    font-size: 3rem;
+    font-size: clamp(2rem, 6vw, 2.7rem) !important;
     font-weight: normal;
     letter-spacing: -0.25px;
-    width: 50%;
+    width: 60%;
     margin-top: 100px;
     z-index: 1;
     padding-inline: calc(15% / 2);
@@ -120,16 +148,16 @@ body {
     right: 0;
     top: 18rem;
     z-index: -1;
-    margin-top: 20rem;
+    margin-top: 14rem
 }
 
 
 .solution {
     width: 100%;
     height: auto;
-    margin-top: 25rem;
+    margin-top: 22rem;
     background: linear-gradient(3deg, #1A5F7A -16.01%, #159895 38.7%, rgba(111, 163, 163, 0.00) 94.69%);
-    padding-bottom: 100px !important;
+    padding-bottom: 40px !important;
 }
 
 .solution .container {
@@ -156,7 +184,7 @@ body {
 }
 
 .mission-container > div > div > div {
-    background: url('../images/illustration/graduation-cap.svg') no-repeat 40px -10px;
+    background: url('../images/illustration/graduation-cap.svg') no-repeat 60px -10px;
 }
 
 .lender-investor-registration-cta .container {
@@ -234,12 +262,11 @@ body {
 
 .donation .container .balance-description .description {
     color: #000;
-    font-size: 16px;
+    font-size: 1em;
     font-style: normal;
     font-weight: 400;
     line-height: 24px; /* 150% */
     letter-spacing: 0.5px;
-    /* margin-top: 50px; */
 }
 
 .login-register-arrow-icon {
@@ -279,6 +306,11 @@ body {
     background-repeat: no-repeat;
 }
 
+.team-card h3 {
+    margin-block: auto;
+    height: fit-content !important;
+}
+
 .profile-area > div {
     background-size: 100% clamp(3rem, calc(1vw + 8rem), 12rem);
 }
@@ -303,14 +335,41 @@ body {
     transform: translateY(0px);
 }
 
-.footer {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+.team-card img {
+    margin-inline: auto !important;
 }
 
-.footer-logo, .footer-copyright {
-    grid-column-start: 1;
-    grid-column-end: 3;
+.footer {
+    background: var(--primary);
+    padding-block-start: 3rem !important;
+}
+
+.footer > .footer-logo {
+    margin-bottom: 1rem;
+}
+
+.footer-logo img {
+    max-height: 60px !important;
+}
+
+.footer > img {
+    z-index: 1;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    opacity: .5;
+}
+
+.footer > .footer-logo,
+.footer > .footer-contact-info,
+.footer > .divider,
+.footer > .footer-bottom-section {
+    z-index: 2;
+}
+
+.footer > .footer-bottom-section > .footer-social-media > img {
+    width: 1.3rem !important;
+    height: 1.3em !important;
 }
 
 .breadcrumb-custom-container {
@@ -368,19 +427,19 @@ body {
 }
 
 select {
-    appearance: none;
-    border: 0;
-    outline: 0;
-    font: inherit;
-    width: 20rem;
-    padding: 1rem 4rem 1rem 1rem;
+    appearance: none !important;
+    border: 0 !important;
+    outline: 0 !important;
+    font: inherit !important;
+    width: 20rem !important;
+    padding: 1rem 4rem 1rem 1rem !important;
     background: 
         url(https://img.icons8.com/ios-glyphs/30/159895/sort-down.png)
         no-repeat right 0.8em center / 1.4em,
-        var(--light-blue);
-    color: black;
-    border-radius: 5px;
-    cursor: pointer;
+        var(--light-blue) !important;
+    color: black !important;
+    border-radius: 5px !important;
+    cursor: pointer !important;
 }
 
 select::ms-expand {
@@ -581,3 +640,16 @@ table tbody tr td {
 .clear-space-large {
     margin-top: 4rem;
 }
+
+.donation-nominal-area .input-group {
+    max-width: 400px;
+}
+
+button.btn {
+    max-width: 680px;
+}
+
+.card-horizontal-scroll::-webkit-scrollbar {
+    display: none;
+}
+

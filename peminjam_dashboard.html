@@ -52,8 +52,8 @@
                         </ul>
                         <div class="btn-group">
                             <div class="mr-2">
-                                <h5 style="font-size: 1rem;">Andrea</h5>
-                                <h6 class="font-weight-light opacity-75" style="font-size: .8rem;">Peminjam</h6>
+                                <h5 class="par-1em">Andrea</h5>
+                                <h6 class="font-weight-light opacity-75 par-0-8em">Peminjam</h6>
                             </div>
                             <div class="profile-image rounded-circle bg-primary" style="width: 3rem; height: 3rem;">
                                 <img src="./assets/images/profile/user-profile.svg" alt="" class="w-100 h-100">
@@ -84,13 +84,13 @@
                 <div class="row justify-content-between w-100 mx-auto" style="column-gap: 1rem; row-gap: 1rem;">
                     <div class="row d-flex align-items-center ml-0" style="column-gap: 3rem; row-gap: 1rem;">
                         <div>
-                            <h3 style="font-size: 1rem;">Total Pinjaman</h3>
-                            <h3 class="font-weight-semibold" style="font-size: 1.5rem;"id="dashboard_loanAmountTotal">Rp 5,000,000</h3>
+                            <h3 class="par-1em">Total Pinjaman</h3>
+                            <h3 class="font-weight-semibold par-1-5em" id="dashboard_loanAmountTotal">Rp 5,000,000</h3>
                         </div>
                         <div>
-                            <h3 style="font-size: 1rem;">Periode</h3>
+                            <h3 class="par-1em">Periode</h3>
                             <div class="d-flex align-items-center">
-                                <select id="dashboard_loanMonthsPeriod" class="form-select bg-white font-weight-semibold border-0 pl-0 py-0 w-100" style="font-size: 1.5rem;" required>
+                                <select id="dashboard_loanMonthsPeriod" class="form-select bg-white font-weight-semibold border-0 pl-0 py-0 w-100 par-1-5em" required>
                                     <option value="januaryToMarch">Januari-Maret 2023</option>
                                     <option value="aprilToJune">April-Juni 2023</option>
                                     <option value="julyToSeptember">Juli-September 2023</option>
@@ -168,40 +168,48 @@
             </div>
         </main>
         
-        <div class="fluid-container footer bg-primary py-5 position-relative" style="padding-inline: calc(15% / 2); gap: clamp(2rem, calc(1vw + 3rem), 4rem)">
-            <div class="footer-logo mx-auto my-auto">
-                <img src="./assets/images/full-white-logo.svg" alt="" class="w-100">
-                <h4 class="text-light border p-2 text-center rounded-10 mt-4 w-100" style="font-size: 1rem;">Universitas Padjajaran</h4>
+        <div class="container-fluid footer position-relative d-flex flex-column" style="padding-inline: calc(15% / 2); gap: 1rem; overflow: hidden;">
+            <div class="footer-logo d-flex justify-content-center align-items-center" style="gap: 1rem;">
+                <div class="appLogo">
+                    <img src="./assets/images/full-white-logo.svg" alt="" class="w-100">
+                </div>
+                <span class="material-symbols-rounded text-white" style="font-size: 3rem; opacity: .5">
+                    close
+                </span>
+                <div class="universityLogo">
+                    <img src="./assets/images/icon/university-logo.svg" alt="">
+                </div>
             </div>
-            <div class="footer-pages-links d-flex flex-column" style="gap: 2rem">
-                <h2 class="text-light font-weight-semibold">Pages</h2>
-                <a href="#" class="text-light">Home</a>
-                <div class="w-100 bg-light" style="height: 1px;"></div>
-                <a href="peminjam_dashboard.html" class="text-light">Dashboard</a>
-                <div class="w-100 bg-light" style="height: 1px;"></div>
-                <a href="peminjam_pinjaman.html" class="text-light">Pinjaman</a>
-                <div class="w-100 bg-light" style="height: 1px;"></div>
-                <a href="#" class="text-light">About Us</a>
+            <div class="footer-contact-info d-flex flex-wrap justify-content-between" style="column-gap: 1rem;">
+                <div class="footer-location-info d-flex">
+                    <span class=" mr-2 material-symbols-rounded text-white par-1em">
+                        location_on
+                    </span>
+                    <p class="text-white par-0-8em">Lorem ipsum dolor sit emet</p>
+                </div>
+                <div class="footer-mail-info d-flex">
+                    <span class=" mr-2 material-symbols-rounded text-white par-1em">
+                        mail
+                    </span>
+                    <p class="text-white par-0-8em">pinjamduluseratus@gmail.com</p>
+                </div>
+                <div class="footer-phone-info d-flex">
+                    <span class=" mr-2 material-symbols-rounded text-white par-1em">
+                        call
+                    </span>
+                    <p class="text-white par-0-8em">061-234567</p>
+                </div>
             </div>
-            <div class="footer-members-links d-flex flex-column" style="gap: 2rem">
-                <h2 class="text-light font-weight-semibold">Members</h2>
-                <a href="#" class="text-light">Arinda Puspa Dewi</a>
-                <div class="w-100 bg-light" style="height: 1px;"></div>
-                <a href="#" class="text-light">Cecep Rokani</a>
-                <div class="w-100 bg-light" style="height: 1px;"></div>
-                <a href="#" class="text-light">Cecep Sutisna</a>
-                <div class="w-100 bg-light" style="height: 1px;"></div>
-                <a href="#" class="text-light">Moh Ari Nurhuda Aprilyansyah</a>
-                <div class="w-100 bg-light" style="height: 1px;"></div>
-                <a href="#" class="text-light">Riana Ratna</a>
+            <div class="divider bg-white"></div>
+            <div class="footer-bottom-section d-flex justify-content-between flex-wrap" style="margin-bottom: 1rem; column-gap: 1rem; row-gap: .5rem;">
+                <p class="text-light footer-copyright par-0-8em my-auto">Copyright &#169; 2023 PinjamDuluSeratus. All right reserved.</p>
+                <div class="footer-social-media d-flex my-auto" style="gap: 1rem;">
+                    <img width="30" height="30" src="https://img.icons8.com/ios-glyphs/30/FFFFFF/twitter--v1.png" alt=""/>
+                    <img width="30" height="30" src="https://img.icons8.com/ios-glyphs/30/FFFFFF/facebook-new.png" alt=""/>
+                    <img width="30" height="30" src="https://img.icons8.com/ios-glyphs/30/FFFFFF/instagram-new.png" alt=""/>
+                </div>
             </div>
-            <p class="text-light text-center footer-copyright" style="font-size: .8rem;">Copyright &#169; 2023 PinjamDuluSeratus. All right reserved.</p>
-            <div class="footer-background position-absolute opacity-50" style="left: 0; bottom: 0;">
-                <img src="./assets/images/background/footer-background.svg" alt="">
-            </div>
-            <div class="footer-background position-absolute opacity-50" style="right: 0; top: 0; rotate: 180deg;">
-                <img src="./assets/images/background/footer-background.svg" alt="">
-            </div>
+            <img src="./assets/images/background/footer-pattern.svg" class="position-absolute" alt="" aria-hidden="true">
         </div>
     </div>
 

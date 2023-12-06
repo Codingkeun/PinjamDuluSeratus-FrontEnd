@@ -65,21 +65,21 @@
                         <span class="rounded-circle border border-primary breadcrumb-custom" style="width: 3rem; height: 3rem; border-width: 3px !important;"></span>
                         <span class="checkmark-checked"></span>
                     </div>
-                    <p class="mt-5 pt-2 text-center" style="font-size: .8rem;">Isi nominal dan metode</p>
+                    <p class="mt-5 pt-2 text-center par-0-8em">Isi nominal dan metode</p>
                 </li>
                 <li class="d-flex flex-column">
                     <div class="breadcrumb-custom-container">
                         <span class="rounded-circle border border-primary breadcrumb-custom" style="width: 3rem; height: 3rem; border-width: 3px !important;"></span>
                         <span class="checkmark-checked"></span>
                     </div>
-                    <p class="mt-5 pt-2 text-center" style="font-size: .8rem;">Isi identitas diri</p>
+                    <p class="mt-5 pt-2 text-center par-0-8em">Isi identitas diri</p>
                 </li>
                 <li class="d-flex flex-column">
                     <div class="breadcrumb-custom-container">
                         <span class="rounded-circle border border-primary breadcrumb-custom" style="width: 3rem; height: 3rem; border-width: 3px !important;"></span>
                         <span class="checkmark-checked"></span>
                     </div>
-                    <p class="mt-5 pt-2 text-center" style="font-size: .8rem;">Informasi pembayaran</p>
+                    <p class="mt-5 pt-2 text-center par-0-8em">Informasi pembayaran</p>
                 </li>
             </ul>
             <div class="bg-primary position-absolute breadcrumb-line" style="height: 2px; width: clamp(15rem, calc(1vw + 20rem), 25rem); top: 17.8rem; z-index: -1;"></div>
@@ -87,17 +87,61 @@
 
         <div class="donation-payment-area mt-4 mb-5" style="padding-inline: calc(15% / 2); display: grid; gap: 3rem">
             <div class="bg-light rounded-20 d-flex flex-column justify-content-center" style="height: 14rem; gap: .4rem">
-                <h2 class="text-center" style="font-size: 1rem;">Total Pembayaran</h2>
+                <h2 class="text-center par-1em">Total Pembayaran</h2>
                 <h1 class="text-center font-weight-bold text-primary">Rp 200,000</h1>
-                <div class="d-flex p-3 rounded-10 bg-white justify-content-center mx-auto" style="gap: 1rem; width: fit-content;">
-                    <h2 class="my-auto" style="font-size: 1rem;">Sisa Waktu</h2>
-                    <h3 class="text-danger my-auto font-weight-bold" style="font-size: 1rem;" id="donationDueDateTimer">23:00:59</h3>
+                <div class="d-flex p-3 rounded-10 bg-white justify-content-center mx-auto" style="gap: 1rem; max-width: 80%; width: fit-content;">
+                    <h2 class="my-auto par-1em">Sisa Waktu</h2>
+                    <h3 class="text-danger my-auto font-weight-bold par-1em" id="donationDueDateTimer">23:00:59</h3>
                 </div>
             </div>
             <div class="bg-secondary rounded-20 d-flex flex-column justify-content-center" style="height: 14rem; gap: 1rem;">
-                <h2 class="text-center" style="font-size: 1rem;">Nomor Rekening</h2>
+                <h2 class="text-center par-1em">Nomor Rekening</h2>
                 <h1 class="text-center font-weight-bold text-primary">12345678</h1>
             </div>
+        </div>
+
+        <div class="container-fluid footer position-relative d-flex flex-column" style="padding-inline: calc(15% / 2); gap: 1rem; overflow: hidden;">
+            <div class="footer-logo d-flex justify-content-center align-items-center" style="gap: 1rem;">
+                <div class="appLogo">
+                    <img src="./assets/images/full-white-logo.svg" alt="" class="w-100">
+                </div>
+                <span class="material-symbols-rounded text-white" style="font-size: 3rem; opacity: .5">
+                    close
+                </span>
+                <div class="universityLogo">
+                    <img src="./assets/images/icon/university-logo.svg" alt="">
+                </div>
+            </div>
+            <div class="footer-contact-info d-flex flex-wrap justify-content-between" style="column-gap: 1rem;">
+                <div class="footer-location-info d-flex">
+                    <span class=" mr-2 material-symbols-rounded text-white par-1em">
+                        location_on
+                    </span>
+                    <p class="text-white par-0-8em">Lorem ipsum dolor sit emet</p>
+                </div>
+                <div class="footer-mail-info d-flex">
+                    <span class=" mr-2 material-symbols-rounded text-white par-1em">
+                        mail
+                    </span>
+                    <p class="text-white par-0-8em">pinjamduluseratus@gmail.com</p>
+                </div>
+                <div class="footer-phone-info d-flex">
+                    <span class=" mr-2 material-symbols-rounded text-white par-1em">
+                        call
+                    </span>
+                    <p class="text-white par-0-8em">061-234567</p>
+                </div>
+            </div>
+            <div class="divider bg-white"></div>
+            <div class="footer-bottom-section d-flex justify-content-between flex-wrap" style="margin-bottom: 1rem; column-gap: 1rem; row-gap: .5rem;">
+                <p class="text-light footer-copyright par-0-8em my-auto">Copyright &#169; 2023 PinjamDuluSeratus. All right reserved.</p>
+                <div class="footer-social-media d-flex my-auto" style="gap: 1rem;">
+                    <img width="30" height="30" src="https://img.icons8.com/ios-glyphs/30/FFFFFF/twitter--v1.png" alt=""/>
+                    <img width="30" height="30" src="https://img.icons8.com/ios-glyphs/30/FFFFFF/facebook-new.png" alt=""/>
+                    <img width="30" height="30" src="https://img.icons8.com/ios-glyphs/30/FFFFFF/instagram-new.png" alt=""/>
+                </div>
+            </div>
+            <img src="./assets/images/background/footer-pattern.svg" class="position-absolute" alt="" aria-hidden="true">
         </div>
     </div>
 
