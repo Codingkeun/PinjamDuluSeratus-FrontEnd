@@ -36,13 +36,13 @@
             <p class="text-light footer-copyright par-0-8em my-auto">Copyright &#169; 2023 PinjamDuluSeratus. All right reserved.</p>
             <div class="footer-social-media d-flex my-auto" style="gap: 1rem;">
                 <a href="">
-                    <img width="30" height="30" src="https://img.icons8.com/ios-glyphs/30/FFFFFF/twitter--v1.png" alt=""/>
+                    <img src="https://img.icons8.com/ios-glyphs/30/FFFFFF/twitter--v1.png" alt=""/>
                 </a>
                 <a href="">
-                    <img width="30" height="30" src="https://img.icons8.com/ios-glyphs/30/FFFFFF/facebook-new.png" alt=""/>
+                    <img src="https://img.icons8.com/ios-glyphs/30/FFFFFF/facebook-new.png" alt=""/>
                 </a>
                 <a href="">
-                    <img width="30" height="30" src="https://img.icons8.com/ios-glyphs/30/FFFFFF/instagram-new.png" alt=""/>
+                    <img src="https://img.icons8.com/ios-glyphs/30/FFFFFF/instagram-new.png" alt=""/>
                 </a>
             </div>
         </div>

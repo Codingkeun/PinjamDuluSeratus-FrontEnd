@@ -3,41 +3,41 @@
         <form class="mt-5 mb-5 w-100 d-flex flex-column" style="gap: 3rem;">
             <h1 class="font-weight-semibold" style="padding-inline: calc(15% / 2);">Top Up Saldo</h1>
             <div class="d-flex flex-column" style="gap: 1rem;">
-                <h2 class="text-center font-weight-semibold" style="font-size: 1.2rem;">Pilih nominal top up</h2>
+                <h2 class="text-center font-weight-semibold par-1-2em">Pilih nominal top up</h2>
                 <div class="amountInputByRadioElement d-flex card-horizontal-scroll" style="gap: 2rem; padding-inline: calc(15% / 2);">
                     <div class="item-card-shadow rounded-10 px-3 py-2" style="min-width: 15rem; min-height: 8rem;">
                         <input type="radio" name="topUpAmount" id="topUp30Thousand" required>
-                        <label for="topUp30Thousand" class="position-relative d-flex justify-content-center font-weight-semibold" style="font-size: 1.2rem; transform: translateY(50%);">
+                        <label for="topUp30Thousand" class="position-relative d-flex justify-content-center font-weight-semibold par-1-2em" style="transform: translateY(50%);">
                             Rp 30,000
                         </label>
                     </div>
                     <div class="item-card-shadow rounded-10 px-3 py-2" style="min-width: 15rem; min-height: 8rem;">
                         <input type="radio" name="topUpAmount" id="topUp50Thousand" required>
-                        <label for="topUp50Thousand" class="position-relative d-flex justify-content-center font-weight-semibold" style="font-size: 1.2rem; transform: translateY(50%);">
+                        <label for="topUp50Thousand" class="position-relative d-flex justify-content-center font-weight-semibold par-1-2em" style="transform: translateY(50%);">
                             Rp 50,000
                         </label>
                     </div>
                     <div class="item-card-shadow rounded-10 px-3 py-2" style="min-width: 15rem; min-height: 8rem;">
                         <input type="radio" name="topUpAmount" id="topUp100Thousand" required>
-                        <label for="topUp100Thousand" class="position-relative d-flex justify-content-center font-weight-semibold" style="font-size: 1.2rem; transform: translateY(50%);">
+                        <label for="topUp100Thousand" class="position-relative d-flex justify-content-center font-weight-semibold par-1-2em" style="transform: translateY(50%);">
                             Rp 100,000
                         </label>
                     </div>
                     <div class="item-card-shadow rounded-10 px-3 py-2" style="min-width: 15rem; min-height: 8rem;">
                         <input type="radio" name="topUpAmount" id="topUp200Thousand" required>
-                        <label for="topUp200Thousand" class="position-relative d-flex justify-content-center font-weight-semibold" style="font-size: 1.2rem; transform: translateY(50%);">
+                        <label for="topUp200Thousand" class="position-relative d-flex justify-content-center font-weight-semibold par-1-2em" style="transform: translateY(50%);">
                             Rp 200,000
                         </label>
                     </div>
                     <div class="item-card-shadow rounded-10 px-3 py-2" style="min-width: 15rem; min-height: 8rem;">
                         <input type="radio" name="topUpAmount" id="topUp300Thousand" required>
-                        <label for="topUp300Thousand" class="position-relative d-flex justify-content-center font-weight-semibold" style="font-size: 1.2rem; transform: translateY(50%);">
+                        <label for="topUp300Thousand" class="position-relative d-flex justify-content-center font-weight-semibold par-1-2em" style="transform: translateY(50%);">
                             Rp 300,000
                         </label>
                     </div>
                     <div class="item-card-shadow rounded-10 px-3 py-2" style="min-width: 15rem; min-height: 8rem;">
                         <input type="radio" name="topUpAmount" id="topUp500Thousand" required>
-                        <label for="topUp500Thousand" class="position-relative d-flex justify-content-center font-weight-semibold" style="font-size: 1.2rem; transform: translateY(50%);">
+                        <label for="topUp500Thousand" class="position-relative d-flex justify-content-center font-weight-semibold par-1-2em" style="transform: translateY(50%);">
                             Rp 500,000
                         </label>
                     </div>
@@ -55,7 +55,7 @@
                 </div>
             </div>
             <div class="d-flex flex-column" style="gap: 1rem;">
-                <h2 class="text-center font-weight-semibold" style="font-size: 1.2rem;">Pilih metode pembayaran</h2>
+                <h2 class="text-center font-weight-semibold par-1-2em">Pilih metode pembayaran</h2>
                 <div class="d-flex card-horizontal-scroll" style="gap: 2rem; padding-inline: calc(15% / 2);">
                     <div class="item-card-shadow rounded-10 px-3 py-2" style="min-width: 15rem; min-height: 8rem;">
                         <input type="radio" name="topUpPaymentMethod" id="topUpPaymentMethod_bca" required>

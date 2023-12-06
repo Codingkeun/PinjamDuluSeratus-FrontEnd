@@ -15,13 +15,13 @@
             <div class="row justify-content-between w-100 mx-auto" style="column-gap: 1rem; row-gap: 1rem;">
                 <div class="row d-flex align-items-center ml-0" style="column-gap: 3rem; row-gap: 1rem;">
                     <div>
-                        <h3 style="font-size: 1rem;">Total Pinjaman</h3>
-                        <h3 class="font-weight-semibold" style="font-size: 1.5rem;" id="dashboard_investmentAmountTotal">Rp 5,000,000</h3>
+                        <h3 class="par-1em">Total Pinjaman</h3>
+                        <h3 class="font-weight-semibold par-1-5em" id="dashboard_investmentAmountTotal">Rp 5,000,000</h3>
                     </div>
                     <div>
-                        <h3 style="font-size: 1rem;">Periode</h3>
+                        <h3 class="par-1em">Periode</h3>
                         <div class="d-flex align-items-center">
-                            <select id="dashboard_investmentMonthsPeriod" class="form-select bg-white font-weight-semibold border-0 pl-0 py-0 w-100" style="font-size: 1.5rem;" required>
+                            <select id="dashboard_investmentMonthsPeriod" class="form-select bg-white font-weight-semibold border-0 pl-0 py-0 w-100 par-1-5em" required>
                                 <option value="januaryToMarch">Januari-Maret 2023</option>
                                 <option value="aprilToJune">April-Juni 2023</option>
                                 <option value="julyToSeptember">Juli-September 2023</option>
@@ -57,7 +57,7 @@
                     <tr>
                         <td class="receivableTable_lendersNameAndNPM">
                             <div class="receivableTable_lendersName font-weight-semibold">Andrea</div>
-                            <div style="font-size: .8rem;">NPM <span class="receivableTable_lendersNPM">1019201923</span></div>
+                            <div class="par-0-8em">NPM <span class="receivableTable_lendersNPM">1019201923</span></div>
                         </td>
                         <td class="receivableTable_loanAmount font-weight-semibold">Rp 2,000,000</td>
                         <td class="receivableTableTable_lendersPhone">08123456789</td>
@@ -70,7 +70,7 @@
                     <tr>
                         <td class="receivableTable_lendersNameAndNPM">
                             <div class="receivableTable_lendersName font-weight-semibold">Jane Smith</div>
-                            <div style="font-size: .8rem;">NPM <span class="receivableTable_lendersNPM">1019201923</span></div>
+                            <div class="par-0-8em">NPM <span class="receivableTable_lendersNPM">1019201923</span></div>
                         </td>
                         <td class="receivableTable_loanAmount font-weight-semibold">Rp 7,000,000</td>
                         <td class="receivableTableTable_lendersPhone">08123456789</td>
@@ -83,7 +83,7 @@
                     <tr>
                         <td class="receivableTable_lendersNameAndNPM">
                             <div class="receivableTable_lendersName font-weight-semibold">Ahmad Abdullah</div>
-                            <div style="font-size: .8rem;">NPM <span class="receivableTable_lendersNPM">1019201923</span></div>
+                            <div class="par-0-8em">NPM <span class="receivableTable_lendersNPM">1019201923</span></div>
                         </td>
                         <td class="receivableTable_loanAmount font-weight-semibold">Rp 5,000,000</td>
                         <td class="receivableTableTable_lendersPhone">08123456789</td>
@@ -96,7 +96,7 @@
                     <tr>
                         <td class="receivableTable_lendersNameAndNPM">
                             <div class="receivableTable_lendersName font-weight-semibold">Maria Gonzalez</div>
-                            <div style="font-size: .8rem;">NPM <span class="receivableTable_lendersNPM">1019201923</span></div>
+                            <div class="par-0-8em">NPM <span class="receivableTable_lendersNPM">1019201923</span></div>
                         </td>
                         <td class="receivableTable_loanAmount font-weight-semibold">Rp 8,750,000</td>
                         <td class="receivableTableTable_lendersPhone">08123456789</td>

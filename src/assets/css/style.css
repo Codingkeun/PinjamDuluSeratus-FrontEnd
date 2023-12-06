@@ -6,26 +6,28 @@ body {
     max-width: 1600px;
     margin-left: auto;
     margin-right: auto;
+    display: flex;
+    flex-flow: row wrap;
 }
 
 .par-2-2-5em {
-    font-size: clamp(1.8rem, 4vw, 2.5rem) !important;
+    font-size: clamp(1.8rem, 3vw, 2.5rem) !important;
 }
 
 .par-1-5em {
-    font-size: clamp(1.25rem, 4vw, 1.5rem) !important;
+    font-size: clamp(1.25rem, 3vw, 1.5rem) !important;
 }
 
 .par-1-2em {
-    font-size: clamp(1rem, 4vw, 1.2rem) !important;
+    font-size: clamp(1rem, 3vw, 1.2rem) !important;
 }
 
 .par-1em, p, label {
-    font-size: clamp(0.8rem, 4vw, 1rem) !important;
+    font-size: clamp(0.8rem, 3vw, 1rem) !important;
 }
 
 .par-0-8em {
-    font-size: clamp(0.7rem, 4vw, 0.8rem) !important;
+    font-size: clamp(0.7rem, 3vw, 0.8rem) !important;
 }
 
 .form-select {
@@ -100,11 +102,6 @@ body {
 .btn:hover {
     background-color: var(--secondary) !important;
     color: white !important;
-}
-
-body {
-    display: flex;
-    flex-flow: row wrap;
 }
 
 .page {
@@ -250,7 +247,7 @@ body {
     background: linear-gradient(233deg, #5D299F 6.76%, #F94A29 91.46%);
     width: 100%;
     height: 300px;
-    margin-top: 120px;
+    margin-top: 100px;
 }
 
 .donation .container .balance .content {
@@ -286,7 +283,6 @@ body {
 }
 
 .announcement {
-    margin-top: 50px;
     margin-bottom: 50px;
 }
 
@@ -373,9 +369,9 @@ body {
     z-index: 2;
 }
 
-.footer > .footer-bottom-section > .footer-social-media > img {
+.footer > .footer-bottom-section > .footer-social-media > a > img {
     width: 1.3rem !important;
-    height: 1.3em !important;
+    height: 1.3rem !important;
 }
 
 .breadcrumb-custom-container {
@@ -436,8 +432,7 @@ select {
     appearance: none !important;
     border: 0 !important;
     outline: 0 !important;
-    font: inherit !important;
-    width: 20rem !important;
+    width: 20rem;
     padding: 1rem 4rem 1rem 1rem !important;
     background: 
         url(https://img.icons8.com/ios-glyphs/30/159895/sort-down.png)
@@ -657,4 +652,17 @@ button.btn {
 
 .card-horizontal-scroll::-webkit-scrollbar {
     display: none;
+}
+
+.announcement .pagination {
+    width: 100%;
+}
+
+.announcement > .card img {
+    width: clamp(2rem, (2vw), 3rem) !important;
+}
+
+input[type=radio],
+input[type=checkbox] {
+    border: 1px black solid;
 }

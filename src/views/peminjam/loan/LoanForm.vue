@@ -86,7 +86,7 @@
                         </div>
                         <div class="form-check">
                             <input type="radio" id="loanInquiry_bniPayment" name="bankChoices" value="bniPayment" class="form-check-input" required>
-                            <label for="loanInquiry_bniPayment" fclass="form-check-label ml-3">
+                            <label for="loanInquiry_bniPayment" class="form-check-label ml-3">
                                 <img src="../../../assets/images/bank/BNI.svg" alt="Bank BNI" class="w-75">
                             </label>
                         </div>

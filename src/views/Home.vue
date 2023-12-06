@@ -129,8 +129,8 @@
                 <div class="card-body d-flex align-items-center text-white">
                     <img src="../assets/images/icon/stopwatch.svg" />
                     <div class="d-block ml-3">
-                        <div>Announcement</div>
-                        <div class="h4">Peminjam yang telat bayar</div>
+                        <div class="h6">Announcement</div>
+                        <div class="h4 font-weight-semibold">Peminjam yang telat bayar</div>
                     </div>
                 </div>
             </div>

@@ -52,6 +52,17 @@
     }
 }
 
+@media screen and (max-width: 637px) {
+    .saving-balance-section > div:first-child > img {
+        width: clamp(4rem, 30vw, 5.5rem) !important;
+        margin-top: -5rem !important;
+    }
+
+    .saving-balance-section {
+        overflow: hidden;
+    }
+}
+
 @media screen and (max-width: 616px) {
     .nav-tabs .nav-item:first-child {
         border-bottom: 3px solid #dee2e6;
@@ -83,6 +94,44 @@
 @media screen and (max-width: 600px) {
     .profile-area img {
         width: 50% !important;
+    }
+
+    .donation-nominal-area .item-card-shadow,
+    .lendee-payment-detail .item-card-shadow {
+        width: 10rem !important;
+        height: fit-content !important;
+        min-height: 7rem !important;
+        max-height: 7rem !important;
+        min-width: clamp(8rem, 30vw, 10rem) !important;
+        max-width: clamp(8rem, 30vw, 10rem) !important;
+    }
+
+    .donation-nominal-area .item-card-shadow label img,
+    .lendee-payment-detail .item-card-shadow label img {
+        width: 4rem !important;
+        margin-block: 1rem 1.5rem;
+    }
+    
+    .donation-nominal-area .item-card-shadow:nth-child(3) label img,
+    .donation-nominal-area .item-card-shadow:nth-child(4) label img,
+    .donation-nominal-area .item-card-shadow label img.p-1,
+    .lendee-payment-detail .item-card-shadow:nth-child(3) label img,
+    .lendee-payment-detail .item-card-shadow:nth-child(4) label img,
+    .lendee-payment-detail .item-card-shadow label img.p-1 {
+        width: 5.5rem !important;
+    }
+
+    .donation-nominal-area .item-card-shadow:last-child label img,
+    .donation-nominal-area .item-card-shadow label img.p-1,
+    .lendee-payment-detail .item-card-shadow:last-child label img,
+    .lendee-payment-detail .item-card-shadow label img.p-1 {
+        margin-block: .5rem 1.5rem;
+    }
+
+    .donation-nominal-area .item-card-shadow label img.p-3,
+    .lendee-payment-detail .item-card-shadow label img.p-3 {
+        padding: 0 !important;
+        width: 100%;
     }
 }
 
@@ -151,26 +200,11 @@
     }
 
     .breadcrumb-line {
-        width: 18.8rem !important;
+        width: clamp(12rem, 77vw, 18.8rem) !important;
     }
 
     .profile-area img {
         min-width: 60% !important;
-    }
-
-    .simulation-result-data > *, 
-    .loan-information-data > * {
-        grid-template-columns: 100% !important;
-    }
-
-    .simulation-result-data > * > * + *,
-    .loan-information-data > * > * + * {
-        text-align: left !important;
-    }
-
-    .loan-detail-investor-data > *,
-    .loan-detail-lendee-data > * {
-        width: 100% !important;
     }
 
     .active-lendees-list {
@@ -192,6 +226,30 @@
     .lender-investor-registration-cta .container > div:nth-child(3) {
         margin-top: 19rem !important;
     }
+
+    .ml-3 {
+        margin-left: .5rem !important;
+    }
+
+    .breadcrumb-custom-container .breadcrumb-custom {
+        width: 2rem !important;
+        height: 2rem !important;
+        margin-top: .5rem;
+    }
+
+    .checkmark, .checkmark-checked {
+        width: 1rem;
+        height: 1rem;
+        top: 1rem;
+    }
+
+    .container-card-shadow.p-5 {
+        padding: clamp(1.5rem, 20vw, 2rem) !important;
+    }
+
+    .profile-area .container-card-shadow {
+        padding: 3rem !important;
+    }
 }
 
 
@@ -203,6 +261,21 @@
 
     .lender-investor-registration-cta .container > div:nth-child(3) {
         background-size: 30rem !important;
+    }
+
+    .simulation-result-data > *, 
+    .loan-information-data > * {
+        grid-template-columns: 100% !important;
+    }
+
+    .simulation-result-data > * > * + *,
+    .loan-information-data > * > * + * {
+        text-align: left !important;
+    }
+
+    .loan-detail-investor-data > *,
+    .loan-detail-lendee-data > * {
+        width: 100% !important;
     }
 }
 
@@ -226,6 +299,10 @@
 
     .solution {
         margin-top: 25rem !important;
+    }
+
+    .top-up-section > span {
+        display: none;
     }
 }
 
@@ -447,7 +524,6 @@
         display: grid !important;
         grid-template-columns: 100% !important;
         gap: 3rem !important;
-
     }
 
     .mission-container > .container > div > div {
@@ -464,14 +540,9 @@
     }
 
     .donation .container .balance {
-        width: 75% !important;
         margin-inline: auto;
-        height: 12rem !important;
-    }
-
-    .donation .container .balance .content img {
-        width: 8rem;
-        margin-top: 50px !important;
+        width: 50% !important;
+        height: clamp(8rem, 50vw, 12rem) !important;
     }
 
     .donation .container {
@@ -482,11 +553,17 @@
         display: flex;
         flex-direction: column;
         align-items: center;
+        margin-top: -1rem;
     }
 
     .donation .container .balance-description > div:first-child,
     .donation .container .balance-description > p {
         text-align: center;
+    }
+
+    .donation .container .balance .content div img {
+        width: clamp(4rem, 30vw,  7rem);
+        margin-top: 7rem;
     }
 }
 
@@ -512,12 +589,6 @@
     .hero .image {
         background-size: cover;
         background-position-x: right;
-    }
-}
-
-@media screen and (max-width: 484px) {
-    .hero .content {
-        /* margin-top: 1.5rem !important; */
     }
 }
 
@@ -586,7 +657,7 @@
     .hero .image {
         margin-top: -8rem !important;
     }
-    
+
     .solution {
         margin-top: 25rem !important;
     }
