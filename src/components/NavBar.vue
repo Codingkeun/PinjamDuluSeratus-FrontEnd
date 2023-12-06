@@ -82,7 +82,7 @@ export default {
     methods: {
         async logout() {
             await this.user.logout()
-            this.$route.push('/')
+            this.$router.push('/')
         }
     }
 }
