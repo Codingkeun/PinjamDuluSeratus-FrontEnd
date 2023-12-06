@@ -7,6 +7,7 @@ import About from '../views/About.vue'
 import Donation from '../views/donation/Donation.vue'
 import DonationForm from '../views/donation/DonationForm.vue'
 import HistoryPayment from '../views/HistoryPayment.vue'
+import Account from '../views/Account.vue'
 
 // route for borrower role
 import DashboardBorrower from '../views/peminjam/Dashboard.vue'
@@ -20,6 +21,15 @@ const routes = [
         path: '/',
         name: 'home',
         component: Home,
+        meta: {
+            footer: true,
+            navbar: true,
+        }
+    },
+    {
+        path: '/account',
+        name: 'account',
+        component: Account,
         meta: {
             footer: true,
             navbar: true,
