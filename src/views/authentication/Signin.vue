@@ -24,7 +24,7 @@
                 </div>
                 <div class="">
                     <label for="password">Password</label>
-                    <input type="password" id="email" class="form-control" placeholder="Masukkan password" v-model="password" required>
+                    <input type="password" id="password" class="form-control" placeholder="Masukkan password" v-model="password" required>
                 </div>
                 <button type="submit" class="btn btn-primary font-weight-semibold w-100" id="accountSignIn">Masuk</button>
             </form>

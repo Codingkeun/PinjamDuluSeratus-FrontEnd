@@ -7,21 +7,21 @@
                         <span class="rounded-circle border border-primary breadcrumb-custom" style="width: 3rem; height: 3rem; border-width: 3px !important;"></span>
                         <span class="checkmark" :class="{'checkmark-checked': statusTab[0]}"></span>
                     </div>
-                    <p class="mt-5 pt-2 text-center" style="font-size: .8rem;">Isi nominal dan metode</p>
+                    <p class="mt-5 pt-2 text-center par-0-8em">Isi nominal dan metode</p>
                 </li>
                 <li class="d-flex flex-column" @click="changeTab('StepTwo')">
                     <div class="breadcrumb-custom-container">
                         <span class="rounded-circle border border-primary breadcrumb-custom" style="width: 3rem; height: 3rem; border-width: 3px !important;"></span>
                         <span class="checkmark" :class="{'checkmark-checked': statusTab[1]}"></span>
                     </div>
-                    <p class="mt-5 pt-2 text-center" style="font-size: .8rem;">Isi identitas diri</p>
+                    <p class="mt-5 pt-2 text-center par-0-8em">Isi identitas diri</p>
                 </li>
                 <li class="d-flex flex-column" @click="changeTab('StepThree')">
                     <div class="breadcrumb-custom-container">
                         <span class="rounded-circle border border-primary breadcrumb-custom" style="width: 3rem; height: 3rem; border-width: 3px !important;"></span>
                         <span class="checkmark" :class="{'checkmark-checked': statusTab[2]}"></span>
                     </div>
-                    <p class="mt-5 pt-2 text-center" style="font-size: .8rem;">Informasi pembayaran</p>
+                    <p class="mt-5 pt-2 text-center par-0-8em">Informasi pembayaran</p>
                 </li>
             </ul>
             <div class="bg-primary position-absolute breadcrumb-line" style="height: 2px; width: clamp(15rem, calc(1vw + 20rem), 25rem); top: 17.8rem; z-index: -1;"></div>

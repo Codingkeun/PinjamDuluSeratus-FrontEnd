@@ -6,13 +6,13 @@
         <div class="row justify-content-between w-100 mx-auto" style="column-gap: 1rem; row-gap: 1rem;">
             <div class="row d-flex align-items-center ml-0" style="column-gap: 3rem; row-gap: 1rem;">
                 <div>
-                    <h3 style="font-size: 1rem;">Total Pinjaman</h3>
-                    <h3 class="font-weight-semibold" style="font-size: 1.5rem;" id="dashboard_loanAmountTotal">Rp 5,000,000</h3>
+                    <h3 class="par-1em">Total Pinjaman</h3>
+                    <h3 class="font-weight-semibold par-1-5em" id="dashboard_loanAmountTotal">Rp 5,000,000</h3>
                 </div>
                 <div>
-                    <h3 style="font-size: 1rem;">Periode</h3>
+                    <h3 class="par-1em">Periode</h3>
                     <div class="d-flex align-items-center">
-                        <select id="dashboard_loanMonthsPeriod" class="form-select bg-white font-weight-semibold border-0 pl-0 py-0 w-100" style="font-size: 1.5rem;" required>
+                        <select id="dashboard_loanMonthsPeriod" class="form-select bg-white font-weight-semibold border-0 pl-0 py-0 w-100 par-1-5em" required>
                             <option value="januaryToMarch">Januari-Maret 2023</option>
                             <option value="aprilToJune">April-Juni 2023</option>
                             <option value="julyToSeptember">Juli-September 2023</option>

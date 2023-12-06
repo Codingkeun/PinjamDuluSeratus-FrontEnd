@@ -11,11 +11,11 @@
         </div>
         <div class="lendee-payment-detail">
             <div class="mt-5">
-                <h2 class="text-center pt-2" style="font-size: 1rem;">Pembayaran Cicilan Pertama</h2>
+                <h2 class="text-center pt-2 par-1-em">Pembayaran Cicilan Pertama</h2>
                 <h3 class="text-center font-weight-bold text-primary">Rp 833,333</h3>
             </div>
             <div class="mt-5">
-                <h2 class="text-center" style="font-size: 1rem;">Pilih metode pembayaran</h2>
+                <h2 class="text-center par-1-em">Pilih metode pembayaran</h2>
                 <div class="d-flex card-horizontal-scroll" style="gap: 2rem; padding-inline: calc(15% / 2);">
                     <div class="item-card-shadow rounded-10 px-3 py-2" style="min-width: 15rem; min-height: 8rem;">
                         <input type="radio" name="paymentMethod" id="lendeePaymentMethod_bca" required>
@@ -62,18 +62,18 @@
                 </div>
             </div>
             <div class="mt-5">
-                <h2 class="text-center" style="font-size: 1rem;">Informasi Pembayaran</h2>
+                <h2 class="text-center par-1-em">Informasi Pembayaran</h2>
                 <div class="mt-4 mb-5 row justify-content-between w-100 mx-auto">
                     <div class="bg-light rounded-20 d-flex flex-column justify-content-center col-sm-12 col-md-12 col-lg-6" style="height: 14rem; gap: .4rem">
-                        <h2 class="text-center" style="font-size: 1rem;">Total Pembayaran</h2>
+                        <h2 class="text-center par-1-em">Total Pembayaran</h2>
                         <h1 class="text-center font-weight-bold text-primary">Rp 833,333</h1>
                         <div class="d-flex p-3 rounded-10 bg-white justify-content-center mx-auto" style="gap: 1rem; width: fit-content;">
-                            <h2 class="my-auto" style="font-size: 1rem;">Sisa Waktu</h2>
-                            <h3 class="text-danger my-auto font-weight-bold" style="font-size: 1rem;" id="lendee_loanPaymentDueDateTimer">23:00:59</h3>
+                            <h2 class="my-auto par-1-em">Sisa Waktu</h2>
+                            <h3 class="text-danger my-auto font-weight-bold par-1-em" id="lendee_loanPaymentDueDateTimer">23:00:59</h3>
                         </div>
                     </div>
                     <div class="bg-secondary rounded-20 d-flex flex-column justify-content-center col-sm-12 col-md-12 col-lg-6" style="height: 14rem; gap: 1rem;">
-                        <h2 class="text-center" style="font-size: 1rem;">Nomor Rekening</h2>
+                        <h2 class="text-center par-1-em">Nomor Rekening</h2>
                         <h1 class="text-center font-weight-bold text-primary">12345678</h1>
                     </div>
                 </div>
@@ -83,7 +83,7 @@
             </div>
         </div>
         <form class="mt-5" id="uploadProofOfPaymentSection">
-            <h2 class="text-center mb-3 pt-2" style="font-size: 1rem;">Upload Bukti Pembayaran</h2>
+            <h2 class="text-center mb-3 pt-2 par-1-em">Upload Bukti Pembayaran</h2>
             <div class="rounded-5 d-flex justify-content-center align-items-center py-5 w-100" style="border: 2px dashed var(--primary);">
                 <div class="btn bg-secondary text-primary position-relative">
                     <input id="uploadProofOfPaymentButton" type="file" class="custom-file-input position-absolute" required>

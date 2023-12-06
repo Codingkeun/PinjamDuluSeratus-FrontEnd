@@ -18,7 +18,7 @@
                                     <span class="material-symbols-outlined mb-3" style="font-size: 50pt">
                                         encrypted
                                     </span>
-                                    <h5>Lebih Aman</h5>
+                                    <h3 class="font-weight-semibold">Lebih Aman</h3>
                                 </div>
                                 <div>Menggantikan sistem bunga dengan tip kepada investor, sehingga Anda dapat terhindar dari risiko terlilit dalam utang bunga yang tinggi</div>
                             </div>
@@ -31,7 +31,7 @@
                                     <span class="material-symbols-outlined mb-3" style="font-size: 50pt">
                                         airwave
                                     </span>
-                                    <h5>Fleksibel</h5>
+                                    <h3 class="font-weight-semibold">Fleksibel</h3>
                                 </div>
                                 <div>Besaran tip ditentukan sendiri oleh peminjam. Serta, terdapat saldo donasi untuk membantu Anda melunasi terlebih dahulu pinjaman yang didapat</div>
                             </div>
@@ -40,11 +40,11 @@
                     <div class="card rounded-10">
                         <div class="card-body">
                             <div class="d-flex justify-content-center flex-column p-3">
-                                <div class="d-block text-primary text-center mb-2">\
+                                <div class="d-block text-primary text-center mb-2">
                                     <span class="material-symbols-outlined mb-3" style="font-size: 50pt">
                                         page_control
                                     </span>
-                                    <h5>Langkah yang mudah</h5>
+                                    <h3 class="font-weight-semibold">Langkah yang mudah</h3>
                                 </div>
                                 <div>Proses peminjaman dilakukan dalam beberapa langkah yang mudah dan singkat</div>
                             </div>
@@ -59,11 +59,11 @@
                     <img src="../assets/images/illustration/mission-section.svg" class="w-100 col-md-5 col-lg-5 order-2" alt="">
                     <div class="col-md-7 col-lg-7">
                         <div>
-                            <h4 class="pt-4" style="font-size: 1rem;">Sejak 2013</h4>
+                            <h4 class="pt-4 par-1em">Sejak 2023</h4>
                             <h1 class="font-weight-bold text-primary">Misi Kami</h1>
                         </div>
                         <p class="mt-4">
-                            Setiap orang berhak mendapatkan akses pendidikan yang adil dan setara. Misi kami adalah memberdayakan setiap individu untuk mengerjar mimpi pendidikan mereka tanpa terhalang oleh kendala finansial. 
+                            Setiap individu berhak mendapatkan akses pendidikan yang adil dan setara. Misi kami adalah memberdayakan setiap individu untuk mengejar impian pendidikan mereka tanpa terkendala oleh masalah finansial. 
                             <br><br>
                             Melalui kerja sama dengan pihak universitas, kami berharap dapat mendukung mahasiswa dalam menghadapi keadaan darurat dan membangun masa depan yang lebih baik.
                         </p>
@@ -77,7 +77,7 @@
                     <h1 class="font-weight-bold text-primary text-center">Daftar<br>Sebagai Peminjam</h1>
                     <p class="text-center">
                         <span>Mari ajukan dana darurat Anda melalui platform</span> 
-                        <span>Pinjam Dulu Seratus tanpa risiko terlilit dalam utang bunga.</span>
+                        <span>Pinjam Dulu Seratus tanpa risiko terjebak dalam utang bunga.</span>
                     </p>
                     <router-link to="signup" class="d-flex align-items-center btn btn-primary font-weight-semibold">Daftar Sebagai Peminjam</router-link>
                 </div>
@@ -114,12 +114,12 @@
                         Berapapun dana donasi yang Anda berikan dapat membantu para mahasiswa dalam mempersiapkan dana pendidikan.
                     </p>
                     <div class="btn-group mt-4">
-                        <a href="signin.html" class="btn rounded-10 d-flex align-items-center border-0 p-2 login-register-button font-weight-semibold">
+                        <router-link to="Donation" class="btn rounded-10 d-flex align-items-center border-0 p-2 login-register-button font-weight-semibold">
                             Donasi Sekarang
                             <span class="material-symbols-outlined rounded-5 mx-2 login-register-arrow-icon">
                                 keyboard_arrow_right
                             </span>
-                        </a>
+                        </router-link>
                     </div>
                 </div>
             </div>

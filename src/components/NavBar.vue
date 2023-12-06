@@ -36,8 +36,8 @@
                     </div>
                     <div class="btn-group" v-else>
                         <div class="mr-2">
-                            <h5 style="font-size: 1rem;">Andrea</h5>
-                            <h6 class="font-weight-light opacity-75" style="font-size: .8rem;">Peminjam</h6>
+                            <h5 class="par-1em">Andrea</h5>
+                            <h6 class="font-weight-light opacity-75 par-0-8em">Peminjam</h6>
                         </div>
                         <div class="profile-image rounded-circle bg-primary" style="width: 3rem; height: 3rem;">
                             <img src="../assets/images/profile/user-profile.svg" alt="" class="w-100 h-100">

@@ -13,13 +13,13 @@
         </div>
         <div>
             <div class="mb-5">
-                <h4 class="text-center" style="font-size: 1rem;">Teamwork Credit</h4>
+                <h4 class="text-center par-1em">Teamwork Credit</h4>
                 <h1 class="text-center font-weight-bold">Tim yang Solid</h1>
             </div>
             <div class="team-card-container">
                 <section class="d-flex flex-column justify-content-center w-100 h-100 bg-white rounded-20 team-card pb-4" style="box-shadow: 0px 4px 9px 0px rgba(0, 0, 0, 0.10), 0px 16px 16px 0px rgba(0, 0, 0, 0.09), 0px 35px 21px 0px rgba(0, 0, 0, 0.05), 0px 63px 25px 0px rgba(0, 0, 0, 0.01), 0px 98px 28px 0px rgba(0, 0, 0, 0.00);">
                     <img src="../assets/images/profile/profile-1.svg" alt="" class="p-4">
-                    <h3 class="text-center font-weight-semibold text-primary px-4 h-50 d-flex align-items-center justify-content-center">Cecep Rokani</h3>
+                    <h3 class="text-center font-weight-semibold text-primary px-4">Cecep Rokani</h3>
                     <div class="d-flex justify-content-center align-items-center social-media-links" style="column-gap: 1.25rem;">
                         <a href="#">
                             <img src="../assets/images/icon/github.svg" alt="">
@@ -37,7 +37,7 @@
 
                 <section class="d-flex flex-column justify-content-center w-100 h-100 bg-white rounded-20 team-card pb-4" style="box-shadow: 0px 4px 9px 0px rgba(0, 0, 0, 0.10), 0px 16px 16px 0px rgba(0, 0, 0, 0.09), 0px 35px 21px 0px rgba(0, 0, 0, 0.05), 0px 63px 25px 0px rgba(0, 0, 0, 0.01), 0px 98px 28px 0px rgba(0, 0, 0, 0.00);">
                     <img src="../assets/images/profile/profile-2.svg" alt="" class="p-4">
-                    <h3 class="text-center font-weight-semibold text-primary px-4 h-50 d-flex align-items-center justify-content-center">Cecep Sutisna</h3>
+                    <h3 class="text-center font-weight-semibold text-primary px-4">Cecep Sutisna</h3>
                     <div class="d-flex justify-content-center align-items-center social-media-links" style="column-gap: 1.25rem;">
                         <a href="#">
                             <img src="../assets/images/icon/github.svg" alt="">
@@ -55,7 +55,7 @@
 
                 <section class="d-flex flex-column justify-content-center w-100 h-100 bg-white rounded-20 team-card pb-4" style="box-shadow: 0px 4px 9px 0px rgba(0, 0, 0, 0.10), 0px 16px 16px 0px rgba(0, 0, 0, 0.09), 0px 35px 21px 0px rgba(0, 0, 0, 0.05), 0px 63px 25px 0px rgba(0, 0, 0, 0.01), 0px 98px 28px 0px rgba(0, 0, 0, 0.00);">
                     <img src="../assets/images/profile/profile-3.svg" alt="" class="p-4">
-                    <h3 class="text-center font-weight-semibold text-primary px-4 h-50 d-flex align-items-center justify-content-center">Moh Ari Nurhuda Aprilyansyah</h3>
+                    <h3 class="text-center font-weight-semibold text-primary px-4">Moh Ari Nurhuda Aprilyansyah</h3>
                     <div class="d-flex justify-content-center align-items-center social-media-links" style="column-gap: 1.25rem;">
                         <a href="#">
                             <img src="../assets/images/icon/github.svg" alt="">
@@ -73,7 +73,7 @@
 
                 <section class="d-flex flex-column justify-content-center w-100 h-100 bg-white rounded-20 team-card pb-4" style="box-shadow: 0px 4px 9px 0px rgba(0, 0, 0, 0.10), 0px 16px 16px 0px rgba(0, 0, 0, 0.09), 0px 35px 21px 0px rgba(0, 0, 0, 0.05), 0px 63px 25px 0px rgba(0, 0, 0, 0.01), 0px 98px 28px 0px rgba(0, 0, 0, 0.00);">
                     <img src="../assets/images/profile/profile-4.svg" alt="" class="p-4">
-                    <h3 class="text-center font-weight-semibold text-primary px-4 h-50 d-flex align-items-center justify-content-center">Riana Ratna</h3>
+                    <h3 class="text-center font-weight-semibold text-primary px-4">Riana Ratna</h3>
                     <div class="d-flex justify-content-center align-items-center social-media-links" style="column-gap: 1.25rem;">
                         <a href="#">
                             <img src="../assets/images/icon/github.svg" alt="">
@@ -91,7 +91,7 @@
 
                 <section class="d-flex flex-column justify-content-center w-100 h-100 bg-white rounded-20 team-card pb-4" style="box-shadow: 0px 4px 9px 0px rgba(0, 0, 0, 0.10), 0px 16px 16px 0px rgba(0, 0, 0, 0.09), 0px 35px 21px 0px rgba(0, 0, 0, 0.05), 0px 63px 25px 0px rgba(0, 0, 0, 0.01), 0px 98px 28px 0px rgba(0, 0, 0, 0.00);">
                     <img src="../assets/images/profile/profile-5.svg" alt="" class="p-4">
-                    <h3 class="text-center font-weight-semibold text-primary px-4 h-50 d-flex align-items-center justify-content-center">Arinda Puspa Dewi</h3>
+                    <h3 class="text-center font-weight-semibold text-primary px-4">Arinda Puspa Dewi</h3>
                     <div class="d-flex justify-content-center align-items-center social-media-links" style="column-gap: 1.25rem;">
                         <a href="#">
                             <img src="../assets/images/icon/github.svg" alt="">

@@ -1,7 +1,7 @@
 <template>
     <div class="donation-nominal-area mt-4 mb-5" style="padding-inline: calc(15% / 2);">
         <form class="d-flex flex-column" style="gap: 3rem;" @submit.prevent="submit">
-            <h1 for="donationAmount" class="text-center font-weight-semibold m-0" style="font-size: 1rem;">Masukkan identitas diri</h1>
+            <h1 for="donationAmount" class="text-center font-weight-semibold m-0 par-1em">Masukkan identitas diri</h1>
             <div class="d-flex flex-column form-identity p-5 rounded-10 container-card-shadow" style="gap: 2rem; padding-inline: calc(15% / 2);">
                 <div class="">
                     <label for="name">Nama</label>

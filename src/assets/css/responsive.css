@@ -1,10 +1,5 @@
 /* Maximum Width */
 @media screen and (max-width: 1055.9px) {
-    .signin-container,
-    .register-container {
-        transform: translateY(-10%);
-    }
-
     .form-login, .form-register {
         padding-left: calc(15% / 2);
         margin-top: 3rem;
@@ -86,14 +81,6 @@
 }
 
 @media screen and (max-width: 600px) {
-    .team-card-container {
-        grid-template-columns: 1fr;
-    }
-
-    .team-card {
-        padding: 2rem;
-    }
-
     .profile-area img {
         width: 50% !important;
     }
@@ -106,6 +93,55 @@
 
     #loanDuration select {
         width: 100%;
+    }
+
+    .team-card-container {
+        grid-template-columns: 100% !important;
+    }
+
+    .team-card {
+        flex-direction: row !important;
+        align-items: center;
+        padding: 0 !important;
+        display: grid !important;
+        grid-template-columns: 30% 60% 10%;
+        padding: clamp(.6rem, 4vw, 1rem) !important;
+        background-size: 20% 100% !important;
+    }
+
+    .team-card img {
+        padding: 0 !important;
+        grid-row-start: 1;
+        grid-row-end: 3;
+        width: 80%;
+        margin-inline-start: 0 !important;
+    }
+
+    .team-card h3 {
+        text-align: left !important;
+        padding: 0 !important;
+        font-size: clamp(1rem, 4vw, 1.4rem) !important;
+    }
+
+    .team-card .social-media-links {
+        width: 100% !important;
+        grid-column-start: 2;
+        justify-content: left !important;
+        gap: clamp(.5rem, 4vw, 1rem) !important;
+    }
+
+    .team-card .social-media-links a img {
+        width: clamp(1.3rem, 6vw, 1.6rem) !important;
+    }
+
+    .team-card div a {
+        width: 2rem;
+        opacity: .7;
+    }
+    
+    .team-card span {
+        font-size: 1.5rem !important;
+        text-align: center !important;
     }
 }
 
@@ -153,11 +189,6 @@
         position: relative !important;
     }
 
-    .saving-balance-section > * > h3,
-    .top-up-section > * > h3 + h3 {
-        font-size: 1.1rem !important;
-    }
-
     .lender-investor-registration-cta .container > div:nth-child(3) {
         margin-top: 19rem !important;
     }
@@ -180,18 +211,21 @@
         margin-top: 4rem;
     }
 
-    .saving-balance-section > * > h3 span,
-    .top-up-section > * > h3:first-child {
-        font-size: 1.8rem !important;
-    }
-
-    .saving-balance-section > * > h3,
-    .top-up-section > * > h3 + h3 {
-        font-size: 1rem !important;
-    }
-
     .lender-investor-registration-cta .container > div:nth-child(3) {
         margin-top: 13rem !important;
+    }
+
+    .hero .content {
+        font-size: clamp(1.8rem, 4vw, 2rem) !important;
+        margin-top: 2rem;
+    }
+
+    body {
+        position: relative;
+    }
+
+    .solution {
+        margin-top: 25rem !important;
     }
 }
 
@@ -341,10 +375,18 @@
     .signin-container,
     .register-container {
         position: absolute;
-        top: 0;
+        top: -5rem;
         transform: translateY(50%);
         display: grid;
         grid-template-columns: 1fr 1fr;
+    }
+
+    .signin-container form {
+        transform: translateY(10%);
+    }
+
+    .register-container form {
+        transform: translateY(-20%);
     }
 }
 
@@ -362,10 +404,6 @@
 
     .profile-area img {
         width: 20% !important;
-    }
-
-    .hero .content {
-        margin-top: clamp(8rem, calc(1vw + 10rem), 15rem) !important;
     }
 }
 
@@ -397,9 +435,19 @@
 }
 
 @media screen and (max-width: 767.9px) {
+    .about-page-area > div:first-child > div:first-child > img:first-child {
+        width: 40% !important;
+    }
+
+    .about-page-area > div:first-child > div:first-child > img:last-child {
+        width: 50% !important;
+    }
+
     .mission-container > .container > div {
         display: grid !important;
         grid-template-columns: 100% !important;
+        gap: 3rem !important;
+
     }
 
     .mission-container > .container > div > div {
@@ -409,10 +457,6 @@
     .mission-container > .container > div > img {
         width: 60% !important;
         margin-inline: auto;
-    }
-
-    .mission-container > .container > div {
-        gap: 3rem !important;
     }
 
     .lender-investor-registration-cta > img {
@@ -446,12 +490,6 @@
     }
 }
 
-@media screen and (max-width: 691px) {
-    .hero .content {
-        font-size: 2.5rem;
-    }
-}
-
 @media screen and (max-width: 688.9px) {
     .hero .content {
         width: 70%;
@@ -466,7 +504,7 @@
 
 @media screen and (max-width: 566.9px) {
     .hero .content {
-        width: 100%;
+        width: 90%;
     }
 }
 
@@ -475,27 +513,33 @@
         background-size: cover;
         background-position-x: right;
     }
+}
 
+@media screen and (max-width: 484px) {
     .hero .content {
-        width: fit-content !important;
+        /* margin-top: 1.5rem !important; */
     }
 }
 
-@media screen and (max-width: 522px) {
-    .hero .content {
-        width: 100%;
+@media screen and (min-width: 431px) {
+    .hero .image {
+        margin-top: 12rem !important;
     }
 }
 
 @media screen and (min-width: 505px) {
     .hero .image {
-        margin-top: 15rem !important;
+        margin-top: 8rem !important;
+    }
+    
+    .solution {
+        margin-top: 18rem !important;
     }
 }
 
-@media screen and (min-width: 910px) {
+@media screen and (min-width: 870px) {
     .hero .image {
-        margin-top: 5rem !important;
+        margin-top: 3rem !important;
     }
 
     .solution {
@@ -503,27 +547,54 @@
     }
 }
 
-@media screen and (min-width: 1163px) {
+@media screen and (min-width: 981px) {
+    .solution {
+        margin-top: 18rem !important;
+    }
+
+    .hero .image {
+        margin-top: 0rem !important;
+    }
+}
+
+@media screen and (min-width: 1057px) {
+    .hero .content {
+        margin-top: clamp(8rem, calc(1vw + 10rem), 15rem) !important;
+    }
+}
+
+@media screen and (min-width: 1177px) {
+    .hero .image {
+        height: 70rem !important;
+    }
+}
+
+@media screen and (min-width: 1255px) {
+    .hero .image {
+        margin-top: -6rem !important;
+        height: 80rem !important;
+    }
+}
+
+@media screen and (min-width: 1320px) {
+    .solution {
+        margin-top: 22rem !important;
+    }
+}
+
+@media screen and (min-width: 1430px) {
+    .hero .image {
+        margin-top: -8rem !important;
+    }
+    
     .solution {
         margin-top: 25rem !important;
     }
 }
 
-@media screen and (min-width: 1355px) {
+@media screen and (min-width: 1575px) {
     .hero .image {
-        margin-top: 0 !important;
-    }
-}
-
-@media screen and (min-width: 1499px) {
-    .hero .image {
-        margin-top: -3rem !important;
-    }
-}
-
-@media screen and (min-width: 1589px) {
-    .hero .image {
-        margin-top: -8rem !important;
+        margin-top: -13rem !important;
     }
 
     .solution .container {
