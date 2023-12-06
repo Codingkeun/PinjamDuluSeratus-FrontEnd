@@ -46,9 +46,9 @@
                             <button class="border-0 dropdown-toggle" data-toggle="dropdown" aria-expanded="false"></button>
                             <ul class="dropdown-menu rounded-10 border-0 container-card-shadow">
                                 <li><a class="dropdown-item" href="#"></a></li>
-                                <li><router-link :to="'dashboard/' + user.role" class="dropdown-item">Dashboard</router-link></li>
-                                <li><router-link to="loan" class="dropdown-item" v-if="user.role == 'peminjam'">Pinjaman</router-link></li>
-                                <li><router-link to="investment" class="dropdown-item" v-if="user.role == 'investor'">Investasi Aktif</router-link></li>
+                                <li><router-link :to="'/dashboard/' + user.role" class="dropdown-item">Dashboard</router-link></li>
+                                <li><router-link to="/loan" class="dropdown-item" v-if="user.role == 'peminjam'">Pinjaman</router-link></li>
+                                <li><router-link to="/investment" class="dropdown-item" v-if="user.role == 'investor'">Investasi Aktif</router-link></li>
                                 <li><hr class="dropdown-divider"></li>
                                 <li><router-link class="dropdown-item" to="account">Akun</router-link></li>
                                 <li><a class="dropdown-item" href="#">User Guide</a></li>
