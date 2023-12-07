@@ -6,7 +6,7 @@
         <img class="ornament w-50" style="z-index: 1111; position: relative;" src="../../assets/images/background/register.svg" alt="">
 
         <div class="btn-group position-absolute top-0 mt-4" style="right: calc(15% / 2); z-index: 3000;">
-            <router-link to="signup" class="btn rounded-10 d-flex align-items-center border-0 p-2 login-register-button" id="loginButton">
+            <router-link :to="'/signup/' + $route.params.role" class="btn rounded-10 d-flex align-items-center border-0 p-2 login-register-button" id="loginButton">
                 Registrasi Akun
                 <span class="material-symbols-outlined rounded-5 mx-2 login-register-arrow-icon">
                     keyboard_arrow_right
