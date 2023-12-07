@@ -4,11 +4,11 @@
             <div class="appLogo">
                 <img src="../assets/images/full-white-logo.svg" alt="" class="w-100">
             </div>
-            <span class="material-symbols-rounded text-white" style="font-size: 3rem; opacity: .5">
+            <span class="material-symbols-rounded text-white" style="font-size: clamp(1.8rem, 6vw, 3rem); opacity: .5">
                 close
             </span>
             <div class="universityLogo">
-                <img src="../assets/images/icon/university-logo.svg" alt="">
+                <img src="../assets/images/icon/university-logo.svg" alt="" class="w-100">
             </div>
         </div>
         <div class="footer-contact-info d-flex flex-wrap justify-content-between" style="column-gap: 1rem;">

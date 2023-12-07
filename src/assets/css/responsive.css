@@ -277,6 +277,18 @@
     .loan-detail-lendee-data > * {
         width: 100% !important;
     }
+
+    .custom-pagination > * {
+        min-width: clamp(2.2rem, 10vw, 2.5rem) !important;
+        min-height: clamp(2.2rem, 10vw, 2.5rem) !important;
+        max-width: clamp(2.2rem, 10vw, 2.5rem) !important;
+        max-height: clamp(2.2rem, 10vw, 2.5rem) !important;
+    }
+    
+    .custom-pagination > button > span {
+        margin-block: auto;
+        font-size: clamp(1.5rem, 6vw, 2rem) !important;
+    }
 }
 
 @media screen and (max-width: 360px) {

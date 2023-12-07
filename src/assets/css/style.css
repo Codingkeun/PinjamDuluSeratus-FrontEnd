@@ -659,10 +659,20 @@ button.btn {
 }
 
 .announcement > .card img {
-    width: clamp(2rem, (2vw), 3rem) !important;
+    width: clamp(2rem, 2vw, 3rem) !important;
 }
 
 input[type=radio],
 input[type=checkbox] {
     border: 1px black solid;
+}
+
+.custom-pagination > * {
+    width: 3rem;
+    height: auto;
+    border-radius: 10px;
+}
+
+.custom-pagination > button > span {
+    font-size: 2rem;
 }
