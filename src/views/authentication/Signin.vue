@@ -38,6 +38,7 @@ export default {
     name: 'Signin',
     data() {
         return {
+            loader: null,
             email: '',
             password: '',
             role: this.$route.params.role
@@ -53,7 +54,9 @@ export default {
     methods: {
         async handleSubmit() {
             try {
+                this.loader = this.$loading.show()
                 const signin = await useUserStore().login(this.role, this.email, this.password)
+                this.loader.hide()
                 if (signin.status) {
                     this.$router.push({ name: 'home' })
                     // this.$showNotification(response.message, 'success')
@@ -62,6 +65,7 @@ export default {
                     // this.$showNotification(response.message)
                 }
             } catch(error) {
+                this.loader.hide()
                 alert(error)
             }
         }

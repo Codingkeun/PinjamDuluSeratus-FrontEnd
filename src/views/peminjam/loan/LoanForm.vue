@@ -169,7 +169,7 @@
                 </div>
             </div>
 
-            <form id="dueDateOfLoanResultSection" class="mt-5">
+            <form ref="form" class="mt-5" @submit.prevent="submit">
                 <div>
                     <h4 class="text-center par-1-em">Tanggal jatuh tempo pembayaran pinjaman</h4>
                     <h4 id="dueDateOfLoanResult" class="text-primary font-weight-bold text-center">16 Februari 2024</h4>
@@ -189,46 +189,36 @@
                     </div>
                 </div>
 
-                <button class="btn btn-primary font-weight-semibold w-100 mt-5" id="applyForALoanButton" type="submit">Ajukan Pinjaman</button>
-
-                <form id="applyForLoanConfigurationForm">
-                    <div class="modal fade" id="applyForALoanConfiguration" tabindex="-1" aria-labelledby="lenderForm_modalTitle" aria-hidden="true" style="padding-inline: calc(15% / 2);">
-                        <div class="modal-dialog modal-dialog-centered">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h1 class="modal-title fs-5" id="lenderForm_modalTitle">Konfirmasi Pengajuan Pinjaman</h1>
-                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                </div>
-                                <div class="modal-body">
-                                    <p class="card-text">Apakah Anda yakin ingin mengajukan pinjaman sebesar 
-                                        <span class="font-weight-semibold text-primary">
-                                            Rp 2,000,000
-                                        </span> 
-                                        dengan tanggal jatuh tempo pembayaran pinjaman adalah 
-                                        <span class="font-weight-semibold text-primary">
-                                            16 Februari 2024?
-                                        </span>
-                                    </p>
-                                </div>
-                                <div class="modal-footer mx-auto">
-                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tidak, batalkan pengajuan</button>
-                                    <button type="submit" class="btn btn-primary font" id="applyForLoanConfirmed">Ya, ajukan pengajuan</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </form>
+                <button class="btn btn-primary font-weight-semibold w-100 mt-5" type="submit">Ajukan Pinjaman</button>
             </form>
         </section>
     </div>
 </main>
 </template>
 <script>
+import { string, number, date } from 'yup';
 export default {
     name: 'FormLoan',
     data() {
         return {
             
+        }
+    },
+    methods: {
+        submit() {
+            this.$swal
+                .fire({
+                    title: 'Apakah kamu yakin ?',
+                    text: 'tess!',
+                    icon: 'warning',
+                    showDenyButton: true,
+                    showCancelButton: false,
+                    confirmButtonText: 'YA',
+                    confirmButtonColor: '#0059AD',
+                    denyButtonText: 'TIDAK',
+                })
+                .then((result) => {
+                });
         }
     }
 }

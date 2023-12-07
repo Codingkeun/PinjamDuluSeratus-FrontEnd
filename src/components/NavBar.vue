@@ -81,8 +81,23 @@ export default {
     },
     methods: {
         async logout() {
-            await this.user.logout()
-            this.$router.push('/')
+            this.$swal
+                .fire({
+                    title: 'Apakah kamu yakin ?',
+                    text: 'Kamu akan keluar dari aplikasi',
+                    icon: 'warning',
+                    showDenyButton: true,
+                    showCancelButton: false,
+                    confirmButtonText: 'YA',
+                    confirmButtonColor: '#0059AD',
+                    denyButtonText: 'TIDAK',
+                })
+                .then(async (result) => {
+                    if (result.isConfirmed) {
+                        await this.user.logout()
+                        this.$router.push('/')
+                    }
+                });
         }
     }
 }
