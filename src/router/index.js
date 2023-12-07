@@ -44,7 +44,7 @@ const routes = [
         }
     },
     {
-        path: '/signup',
+        path: '/signup/:role',
         component: Signup,
         meta: {
             footer: false,
@@ -182,6 +182,9 @@ const router = createRouter({
     history: createWebHashHistory(),
     routes: routes,
     linkActiveClass: 'active',
+    scrollBehavior() {
+        return { top: 0, left: 0 }
+    }
 })
 
 router.beforeEach((to, from, next) => {

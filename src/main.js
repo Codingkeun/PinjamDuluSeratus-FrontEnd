@@ -11,12 +11,18 @@ import router from './router'
 // load external library
 import VueCountdown from '@chenfengyuan/vue-countdown';
 
+import VueSweetalert2 from 'vue-sweetalert2';
+import 'sweetalert2/dist/sweetalert2.min.css';
+
 // load assets
 import './assets/css/bootstrap.css'
 import './assets/css/style.css'
 import './assets/css/responsive.css'
 
 import 'bootstrap'
+
+// import components for global
+import Pagination from './components/Pagination.vue'
 
 const app = createApp(App)
 const pinia = createPinia()
@@ -27,7 +33,9 @@ pinia.use(createPersistedState({
 
 app.use(pinia)
 app.use(router)
+app.use(VueSweetalert2);
 
 app.component(VueCountdown.name, VueCountdown);
+app.component(Pagination.name, Pagination)
 
 app.mount('#app')
