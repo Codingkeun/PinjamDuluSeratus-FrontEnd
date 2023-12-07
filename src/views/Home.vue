@@ -79,7 +79,7 @@
                         <span>Mari ajukan dana darurat Anda melalui platform</span> 
                         <span>Pinjam Dulu Seratus tanpa risiko terjebak dalam utang bunga.</span>
                     </p>
-                    <router-link to="signup" class="d-flex align-items-center btn btn-primary font-weight-semibold">Daftar Sebagai Peminjam</router-link>
+                    <router-link to="/signup/peminjam" class="d-flex align-items-center btn btn-primary font-weight-semibold">Daftar Sebagai Peminjam</router-link>
                 </div>
                 <div class="mt-5">
                     <img src="../assets/images/illustration/register-lender-section-1.svg" alt="">
@@ -93,7 +93,7 @@
                         <span>Mari berinvestasi bersama kami dengan menyediakan</span>
                         <span>dana darurat kepada mahasiswa yang membutuhkan.</span>
                     </p>
-                    <router-link to="signup" class="d-flex align-items-center btn btn-primary font-weight-semibold">Daftar Sebagai Investor</router-link>
+                    <router-link to="/signup/investor" class="d-flex align-items-center btn btn-primary font-weight-semibold">Daftar Sebagai Investor</router-link>
                 </div>
             </div>
             <img src="../assets/images/background/big-circle-gradient.svg" alt="">
