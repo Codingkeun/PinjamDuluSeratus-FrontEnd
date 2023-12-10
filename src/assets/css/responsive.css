@@ -9,14 +9,9 @@
         transform: translateY(0px) !important;
     }
 
-    .social-media-links {
+    .team-card:hover .social-media-links, .social-media-links {
         transform: translateY(0px) !important;
-        opacity: 1 !important;
-    }
-    
-    .team-card:hover .social-media-links {
-        transform: translateY(0px);
-        opacity: 1;
+        opacity: .7 !important;
     }
 
     .donation .container {
@@ -185,7 +180,6 @@
 
     .team-card div a {
         width: 2rem;
-        opacity: .7;
     }
     
     .team-card span {
@@ -315,6 +309,13 @@
 
     .top-up-section > span {
         display: none;
+    }
+
+    .top-up-section button {
+        min-width: clamp(2.2rem, 10vw, 44px) !important;
+        min-height: clamp(2.2rem, 10vw, 44px) !important;
+        max-width: clamp(2.2rem, 10vw, 44px) !important;
+        max-height: clamp(2.2rem, 10vw, 44px) !important;
     }
 }
 
@@ -540,6 +541,7 @@
 
     .mission-container > .container > div > div {
         order: 2 !important;
+        padding-inline: 0;
     }
 
     .mission-container > .container > div > img {

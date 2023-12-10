@@ -11,27 +11,23 @@ body {
 }
 
 .par-2-2-5em {
-    font-size: clamp(1.8rem, 3vw, 2.5rem) !important;
+    font-size: clamp(1.6rem, 3vw, 2.5rem) !important;
 }
 
 .par-1-5em {
-    font-size: clamp(1.25rem, 3vw, 1.5rem) !important;
+    font-size: clamp(1.1rem, 3vw, 1.5rem) !important;
 }
 
 .par-1-2em {
-    font-size: clamp(1rem, 3vw, 1.2rem) !important;
+    font-size: clamp(0.9rem, 3vw, 1.2rem) !important;
 }
 
-.par-1em, p, label {
+.par-1em, p, label, button, a, input, tr, select, .input-group-text, .custom-range-field > * {
     font-size: clamp(0.8rem, 3vw, 1rem) !important;
 }
 
 .par-0-8em {
     font-size: clamp(0.7rem, 3vw, 0.8rem) !important;
-}
-
-.form-select {
-    min-height: 44px !important;
 }
 
 .menu-area {
@@ -187,7 +183,8 @@ body {
 }
 
 .mission-container > div > div > div {
-    background: url('../images/illustration/graduation-cap.svg') no-repeat 60px -10px;
+    background: url('../images/illustration/graduation-cap.svg') no-repeat clamp(45px, 9vw, 80px) clamp(0px, 3vw, -10px);
+    background-size: clamp(2.5rem, 3vw, 3.2rem);
 }
 
 .lender-investor-registration-cta .container {
@@ -330,7 +327,7 @@ body {
 
 .team-card:hover .social-media-links {
     transform: translateY(0px);
-    opacity: 1;
+    opacity: .7;
 }
 
 .team-card:hover > * {
@@ -675,4 +672,17 @@ input[type=checkbox] {
 
 .custom-pagination > button > span {
     font-size: 2rem;
+}
+
+.top-up-section button span {
+    font-size: clamp(2rem, 10vw, 3rem) !important;
+}
+
+a.btn.bg-white.text-primary {
+    display: flex !important;
+    align-items: center !important;
+}
+
+.empty-state img {
+    width: clamp(6rem, 18vw, 10rem);
 }

@@ -8,7 +8,7 @@
                     </div>
                     <div class="position-relative">
                         <h3 class="text-white font-weight-light par-1-2em">Rp <span class="font-weight-semibold par-2-2-5em">2,000,000</span></h3>
-                        <h3 class="text-white font-weight-light par-1-2em">Saldo Tabungan Saya</h3>
+                        <h3 class="text-white font-weight-light par-1-2em">Saldo Tabungan Anda</h3>
                     </div>
                     <div class="wavy-background position-absolute opacity-50" style="left: 0; bottom: 0; margin-left: -4rem; margin-bottom: -3rem;">
                         <img src="../../assets/images/background/footer-background.svg" alt="">

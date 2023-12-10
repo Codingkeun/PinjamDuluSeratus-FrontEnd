@@ -372,27 +372,23 @@ h1, h2, h3, h4, h5, h6,
 }
 
 h1, .h1 {
-  font-size: clamp(1.85rem, 3vw, 2.25rem);
+  font-size: clamp(1.6rem, 3vw, 2.25rem);
 }
 
 h2, .h2 {
-  font-size: clamp(1.6rem, 3vw, 1.8rem);
+  font-size: clamp(1.4rem, 3vw, 1.8rem);
 }
 
 h3, .h3 {
-  font-size: clamp(1.3rem, 3vw, 1.5rem);
+  font-size: clamp(1.35rem, 3vw, 1.5rem);
 }
 
 h4, .h4 {
-  font-size: clamp(1.1rem, 3vw, 1.25rem);
+  font-size: clamp(1rem, 3vw, 1.25rem);
 }
 
 h5, .h5 {
-  font-size: clamp(0.9rem, 3vw, 1rem);
-}
-
-h5, .h5 {
-  font-size: clamp(0.9rem, 3vw, 1rem);
+  font-size: clamp(0.8rem, 3vw, 1rem);
 }
 
 h6, .h6 {
@@ -2488,6 +2484,9 @@ select.form-control-lg:not([size]):not([multiple]), .input-group-lg > select.for
   border-radius: 0.25rem;
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
   min-height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .btn:hover, .btn:focus {

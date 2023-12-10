@@ -47,7 +47,7 @@
                 </div>
 
                 <div class="d-flex flex-column">
-                    <h3 class="font-weight-normal par-1-em">Cara pelunasan</h3>
+                    <h3 class="font-weight-normal par-1em">Cara pelunasan</h3>
                     <div class="form-check">
                         <input type="radio" id="installmentPayment" name="paymentMethod" value="installmentPayment" class="form-check-input" required>
                         <label for="installmentPayment" class="form-check-label ml-3">Bayar secara cicilan</label>
@@ -76,7 +76,7 @@
                 </div>
 
                 <div>
-                    <h3 class="font-weight-normal par-1-em">Pilihan Bank</h3>
+                    <h3 class="font-weight-normal par-1em">Pilihan Bank</h3>
                     <div class="bank-choices-in-inquiry mt-3" style="gap: .5rem;">
                         <div class="form-check">
                             <input type="radio" id="loanInquiry_bcaPayment" name="bankChoices" value="bcaPayment" class="form-check-input" required>
@@ -142,28 +142,28 @@
                 <h2 class="font-weight-semibold m-0 text-primary mb-4 par-1-2em">Hasil Simulasi Pengajuan</h2>
                 <div class="simulation-result-data d-flex flex-column" style="gap: 1.5rem">
                     <div id="simulationResult_loanAmountTotal" style="row-gap: 8px;">
-                        <h4 class="my-auto" id="loanAmountTotalName par-1-em">Jumlah Pinjaman</h4>
-                        <h4 id="loanAmountTotalResult" class="text-right font-weight-semibold my-auto par-1-em">Rp 2,000,000</h4>
+                        <h4 class="my-auto par-1em" id="loanAmountTotalName">Jumlah Pinjaman</h4>
+                        <h4 id="loanAmountTotalResult" class="text-right font-weight-semibold my-auto par-1em">Rp 2,000,000</h4>
                     </div>
                     <div id="simulationResult_tipAmountTotal" style="row-gap: 8px;">
-                        <h4 class="my-auto" id="tipAmountTotalName par-1-em">Jumlah Tip ke Investor</h4>
-                        <h4 id="tipAmountTotalResult" class="text-right font-weight-semibold my-auto par-1-em">Rp 500,000</h4>
+                        <h4 class="my-auto par-1em" id="tipAmountTotalName">Jumlah Tip ke Investor</h4>
+                        <h4 id="tipAmountTotalResult" class="text-right font-weight-semibold my-auto par-1em">Rp 500,000</h4>
                     </div>
                     <div id="simulationResult_loanDuration" style="row-gap: 8px;">
-                        <h4 class="my-auto" id="loanDurationName par-1-em">Durasi Pinjaman</h4>
-                        <h4 id="loanDurationResult" class="text-right font-weight-semibold my-auto par-1-em">90 hari</h4>
+                        <h4 class="my-auto par-1em" id="loanDurationName">Durasi Pinjaman</h4>
+                        <h4 id="loanDurationResult" class="text-right font-weight-semibold my-auto par-1em">90 hari</h4>
                     </div>
                     <div id="simulationResult_installmentRange" style="row-gap: 8px;">
-                        <h4 class="my-auto" id="installmentRangeName par-1-em">Cicilan</h4>
-                        <h4 id="installmentRangeResult" class="text-right font-weight-semibold my-auto par-1-em">3 kali</h4>
+                        <h4 class="my-auto par-1em" id="installmentRangeName">Cicilan</h4>
+                        <h4 id="installmentRangeResult" class="text-right font-weight-semibold my-auto par-1em">3 kali</h4>
                     </div>
                     <div class="divider"></div>
                     <div id="simulationResult_numberOfTotalPayment" style="row-gap: 8px;">
-                        <h4 class="my-auto" id="numberOfTotalPaymentName par-1-em">Jumlah yang harus dibayarkan</h4>
-                        <h4 id="numberOfTotalPaymentResult" class="text-primary font-weight-semibold my-auto text-right par-1-em">Rp 2,500,000</h4>
+                        <h4 class="my-auto par-1em" id="numberOfTotalPaymentName">Jumlah yang harus dibayarkan</h4>
+                        <h4 id="numberOfTotalPaymentResult" class="text-primary font-weight-semibold my-auto text-right par-1em">Rp 2,500,000</h4>
                     </div>
                     <div id="simulationResult_numberOfTotalInstallment" style="row-gap: 8px;">
-                        <h4 class="my-auto" id="numberOfTotalInstallmentName par-1-em">Pembayaran per cicilan</h4>
+                        <h4 class="my-auto par-1em" id="numberOfTotalInstallmentName">Pembayaran per cicilan</h4>
                         <h4 id="numberOfTotalInstallmentResult" class="text-primary font-weight-bold text-right">Rp 833,333</h4>
                     </div>
                 </div>
@@ -171,7 +171,7 @@
 
             <form ref="form" class="mt-5" @submit.prevent="submit">
                 <div>
-                    <h4 class="text-center par-1-em">Tanggal jatuh tempo pembayaran pinjaman</h4>
+                    <h4 class="text-center par-1em">Tanggal jatuh tempo pembayaran pinjaman</h4>
                     <h4 id="dueDateOfLoanResult" class="text-primary font-weight-bold text-center">16 Februari 2024</h4>
                 </div>
                 <div class="mt-4 d-flex flex-column" style="gap: .5rem;">

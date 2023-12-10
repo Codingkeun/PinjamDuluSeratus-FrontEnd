@@ -25,6 +25,7 @@ import 'bootstrap'
 
 // import components for global
 import Pagination from './components/Pagination.vue'
+import EmptyState from './components/EmptyState.vue'
 
 const app = createApp(App)
 const pinia = createPinia()
@@ -44,5 +45,6 @@ app.use(LoadingPlugin, {
 
 app.component(VueCountdown.name, VueCountdown);
 app.component(Pagination.name, Pagination)
+app.component(EmptyState.name, EmptyState)
 
 app.mount('#app')

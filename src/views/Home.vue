@@ -18,9 +18,9 @@
                                     <span class="material-symbols-outlined mb-3" style="font-size: 50pt">
                                         encrypted
                                     </span>
-                                    <h3 class="font-weight-semibold">Lebih Aman</h3>
+                                    <h3 class="h4 font-weight-semibold">Lebih Aman</h3>
                                 </div>
-                                <div>Menggantikan sistem bunga dengan tip kepada investor, sehingga Anda dapat terhindar dari risiko terlilit dalam utang bunga yang tinggi</div>
+                                <p>Menggantikan sistem bunga dengan tip kepada investor, sehingga Anda dapat terhindar dari risiko terlilit dalam utang bunga yang tinggi</p>
                             </div>
                         </div>
                     </div>
@@ -31,9 +31,9 @@
                                     <span class="material-symbols-outlined mb-3" style="font-size: 50pt">
                                         airwave
                                     </span>
-                                    <h3 class="font-weight-semibold">Fleksibel</h3>
+                                    <h3 class="h4 font-weight-semibold">Fleksibel</h3>
                                 </div>
-                                <div>Besaran tip ditentukan sendiri oleh peminjam. Serta, terdapat saldo donasi untuk membantu Anda melunasi terlebih dahulu pinjaman yang didapat</div>
+                                <p>Besaran tip ditentukan sendiri oleh peminjam. Serta, terdapat saldo donasi untuk membantu Anda melunasi terlebih dahulu pinjaman yang didapat</p>
                             </div>
                         </div>
                     </div>
@@ -44,9 +44,9 @@
                                     <span class="material-symbols-outlined mb-3" style="font-size: 50pt">
                                         page_control
                                     </span>
-                                    <h3 class="font-weight-semibold">Langkah yang mudah</h3>
+                                    <h3 class="h4 font-weight-semibold">Langkah yang mudah</h3>
                                 </div>
-                                <div>Proses peminjaman dilakukan dalam beberapa langkah yang mudah dan singkat</div>
+                                <p>Proses peminjaman dilakukan dalam beberapa langkah yang mudah dan singkat</p>
                             </div>
                         </div>
                     </div>
@@ -140,11 +140,11 @@
                         <div class="d-flex align-items-center">
                             <img src="../assets/images/icon/avatar.svg" />
                             <div class="d-block ml-3" style="font-weight: 500;">
-                                <div>John Doe</div>
-                                <div>NPM : <span class="text-primary">10129301</span></div>
+                                <div class="h4">John Doe</div>
+                                <div class="h5">NPM : <span class="text-primary">10129301</span></div>
                             </div>
                         </div>
-                        <div class="alert alert-danger rounded-10 p-2 text-center font-weight-bold mt-4">Telat 28 Hari</div>
+                        <div class="h5 alert alert-danger rounded-10 p-2 text-center font-weight-bold mt-4">Telat 28 Hari</div>
                     </div>
                 </div>
                 <div class="card rounded-10">
@@ -152,11 +152,11 @@
                         <div class="d-flex align-items-center">
                             <img src="../assets/images/icon/avatar.svg" />
                             <div class="d-block ml-3" style="font-weight: 500;">
-                                <div>John Doe</div>
-                                <div>NPM : <span class="text-primary">10129301</span></div>
+                                <div class="h4">John Doe</div>
+                                <div class="h5">NPM : <span class="text-primary">10129301</span></div>
                             </div>
                         </div>
-                        <div class="alert alert-danger rounded-10 p-2 text-center font-weight-bold mt-4">Telat 28 Hari</div>
+                        <div class="h5 alert alert-danger rounded-10 p-2 text-center font-weight-bold mt-4">Telat 28 Hari</div>
                     </div>
                 </div>
                 <div class="card rounded-10">
@@ -164,11 +164,11 @@
                         <div class="d-flex align-items-center">
                             <img src="../assets/images/icon/avatar.svg" />
                             <div class="d-block ml-3" style="font-weight: 500;">
-                                <div>John Doe</div>
-                                <div>NPM : <span class="text-primary">10129301</span></div>
+                                <div class="h4">John Doe</div>
+                                <div class="h5">NPM : <span class="text-primary">10129301</span></div>
                             </div>
                         </div>
-                        <div class="alert alert-danger rounded-10 p-2 text-center font-weight-bold mt-4">Telat 28 Hari</div>
+                        <div class="h5 alert alert-danger rounded-10 p-2 text-center font-weight-bold mt-4">Telat 28 Hari</div>
                     </div>
                 </div>
                 <div class="card rounded-10">
@@ -176,11 +176,11 @@
                         <div class="d-flex align-items-center">
                             <img src="../assets/images/icon/avatar.svg" />
                             <div class="d-block ml-3" style="font-weight: 500;">
-                                <div>John Doe</div>
-                                <div>NPM : <span class="text-primary">10129301</span></div>
+                                <div class="h4">John Doe</div>
+                                <div class="h5">NPM : <span class="text-primary">10129301</span></div>
                             </div>
                         </div>
-                        <div class="alert alert-danger rounded-10 p-2 text-center font-weight-bold mt-4">Telat 28 Hari</div>
+                        <div class="h5 alert alert-danger rounded-10 p-2 text-center font-weight-bold mt-4">Telat 28 Hari</div>
                     </div>
                 </div>
                 <div class="card rounded-10">
@@ -188,11 +188,11 @@
                         <div class="d-flex align-items-center">
                             <img src="../assets/images/icon/avatar.svg" />
                             <div class="d-block ml-3" style="font-weight: 500;">
-                                <div>John Doe</div>
-                                <div>NPM : <span class="text-primary">10129301</span></div>
+                                <div class="h4">John Doe</div>
+                                <div class="h5">NPM : <span class="text-primary">10129301</span></div>
                             </div>
                         </div>
-                        <div class="alert alert-danger rounded-10 p-2 text-center font-weight-bold mt-4">Telat 28 Hari</div>
+                        <div class="h5 alert alert-danger rounded-10 p-2 text-center font-weight-bold mt-4">Telat 28 Hari</div>
                     </div>
                 </div>
                 <div class="card rounded-10">
@@ -200,11 +200,11 @@
                         <div class="d-flex align-items-center">
                             <img src="../assets/images/icon/avatar.svg" />
                             <div class="d-block ml-3" style="font-weight: 500;">
-                                <div>John Doe</div>
-                                <div>NPM : <span class="text-primary">10129301</span></div>
+                                <div class="h4">John Doe</div>
+                                <div class="h5">NPM : <span class="text-primary">10129301</span></div>
                             </div>
                         </div>
-                        <div class="alert alert-danger rounded-10 p-2 text-center font-weight-bold mt-4">Telat 28 Hari</div>
+                        <div class="h5 alert alert-danger rounded-10 p-2 text-center font-weight-bold mt-4">Telat 28 Hari</div>
                     </div>
                 </div>
                 <div class="card rounded-10">
@@ -212,11 +212,11 @@
                         <div class="d-flex align-items-center">
                             <img src="../assets/images/icon/avatar.svg" />
                             <div class="d-block ml-3" style="font-weight: 500;">
-                                <div>John Doe</div>
-                                <div>NPM : <span class="text-primary">10129301</span></div>
+                                <div class="h4">John Doe</div>
+                                <div class="h5">NPM : <span class="text-primary">10129301</span></div>
                             </div>
                         </div>
-                        <div class="alert alert-danger rounded-10 p-2 text-center font-weight-bold mt-4">Telat 28 Hari</div>
+                        <div class="h5 alert alert-danger rounded-10 p-2 text-center font-weight-bold mt-4">Telat 28 Hari</div>
                     </div>
                 </div>
                 <div class="card rounded-10">
@@ -224,11 +224,11 @@
                         <div class="d-flex align-items-center">
                             <img src="../assets/images/icon/avatar.svg" />
                             <div class="d-block ml-3" style="font-weight: 500;">
-                                <div>John Doe</div>
-                                <div>NPM : <span class="text-primary">10129301</span></div>
+                                <div class="h4">John Doe</div>
+                                <div class="h5">NPM : <span class="text-primary">10129301</span></div>
                             </div>
                         </div>
-                        <div class="alert alert-danger rounded-10 p-2 text-center font-weight-bold mt-4">Telat 28 Hari</div>
+                        <div class="h5 alert alert-danger rounded-10 p-2 text-center font-weight-bold mt-4">Telat 28 Hari</div>
                     </div>
                 </div>
             </div>

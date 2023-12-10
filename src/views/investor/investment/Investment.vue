@@ -5,7 +5,7 @@
         <div class="active-lendees-list d-flex flex-column mt-4" style="gap: 3rem">
             <div class="card p-5 rounded-10 container-card-shadow" v-for="item in [1,2,3,4,5,6,7,8]">
                 <div class="card-body p-0 mb-4">
-                    <h2 class="card-title font-weight-bold m-0" id="activeLendeesLoanAmount par-1-5em">Rp 2,000,000</h2>
+                    <h2 class="card-title font-weight-bold m-0 par-1-5em" id="activeLendeesLoanAmount">Rp 2,000,000</h2>
                     <h3 class="card-subtitle font-weight-semibold text-primary m-0 mb-4 par-1em" id="activeLendeesTipAmount">Tip Rp 500,000</h3>
                     <div class="d-flex flex-column">
                         <h3 class="card-text font-weight-semibold par-1-2em" id="activeLendeesName">Andrea</h3>
