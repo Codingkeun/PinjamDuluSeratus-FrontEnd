@@ -50,7 +50,7 @@ export default class RequestHandler {
         this.loader = null
     }
 
-    get(endpoint, params, withLoader=true) {
+    async get(endpoint, params, withLoader=true) {
         return new Promise((resolve, reject) => {
             if (withLoader)
                 this.loader = $loading.show();
@@ -76,7 +76,7 @@ export default class RequestHandler {
         });
     }
 
-    find(endpoint, param, withLoader=true) {
+    async find(endpoint, param, withLoader=true) {
         return new Promise((resolve, reject) => {
             if (withLoader)
                 this.loader = $loading.show();
@@ -98,7 +98,7 @@ export default class RequestHandler {
         });
     }
 
-    store(endpoint, body, withLoader=true) {
+    async store(endpoint, body, withLoader=true) {
         return new Promise((resolve, reject) => {
             if (withLoader)
                 this.loader = $loading.show();
@@ -123,7 +123,7 @@ export default class RequestHandler {
         });
     }
 
-    saveCustomHeader(endpoint, body, withLoader=true) {
+    async saveCustomHeader(endpoint, body, withLoader=true) {
         return new Promise((resolve, reject) => {
             if (withLoader)
                 this.loader = $loading.show();
@@ -153,7 +153,7 @@ export default class RequestHandler {
         });
     }
 
-    update(endpoint, id, body, withLoader=true) {
+    async update(endpoint, id, body, withLoader=true) {
         return new Promise((resolve, reject) => {
             if (withLoader)
                 this.loader = $loading.show();
@@ -178,7 +178,7 @@ export default class RequestHandler {
         });
     }
 
-    delete(endpoint, id, withLoader=true) {
+    async delete(endpoint, id, withLoader=true) {
         return new Promise((resolve, reject) => {
             if (withLoader)
                 this.loader = $loading.show();
@@ -201,7 +201,7 @@ export default class RequestHandler {
         });
     }
 
-    bulkDelete(endpoint, params, withLoader=true) {
+    async bulkDelete(endpoint, params, withLoader=true) {
         return new Promise((resolve, reject) => {
             if (withLoader)
                 this.loader = $loading.show();
@@ -228,7 +228,7 @@ export default class RequestHandler {
         });
     }
 
-    downloadExcel(endpoint, params, uri='excel/download', fileName='file-download', withLoader=true) {
+    async downloadExcel(endpoint, params, uri='excel/download', fileName='file-download', withLoader=true) {
         return new Promise((resolve, reject) => {
             if (withLoader)
                 this.loader = $loading.show();
@@ -261,7 +261,7 @@ export default class RequestHandler {
         });
     }
 
-    downloadPDF(endpoint, params, uri='', filename = 'print', withLoader=true) {
+    async downloadPDF(endpoint, params, uri='', filename = 'print', withLoader=true) {
         return new Promise((resolve, reject) => {
             if (withLoader)
                 this.loader = $loading.show();
@@ -294,7 +294,7 @@ export default class RequestHandler {
         });
     }
 
-    postWithUpload(endpoint, body, withLoader=true) {
+    async postWithUpload(endpoint, body, withLoader=true) {
         return new Promise((resolve, reject) => {
             let formData = new FormData();
 

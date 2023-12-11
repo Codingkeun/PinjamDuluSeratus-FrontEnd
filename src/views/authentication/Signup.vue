@@ -16,63 +16,140 @@
 
         <div class="container-fluid row mx-auto pb-4 register-container">
             <img src="@/assets/images/illustration/computer-login.svg" alt="" class="col-sm-12 col-md-12 col-lg-12 w-100" style="height: fit-content;">
-            <form class="col-sm-12 col-md-12 col-lg-12 d-flex flex-column form-register" style="gap: 1.5rem; padding-right: calc(15% / 2);">
-                <h1 class="fs-1 fw-bold text-primary">Registrasi Akun</h1>
-                <div class="">
-                    <label for="name">Nama</label>
-                    <input type="text" id="name" class="form-control" placeholder="Masukkan nama" required>
+            <Form :validation-schema="schema" @submit="handleSubmit" class="col-md-12" style="gap: 1.5rem; padding-right: calc(15% / 2);">
+                <div class="d-flex flex-column form-register mb-3" style="gap: 10px">
+                    <h1 class="fs-1 fw-bold text-primary">Registrasi Akun</h1>
+                    <div class="mb-2">
+                        <label for="name">Nama</label>
+                        <Field type="text" name="name" class="form-control" placeholder="Masukkan nama" v-model="form.name" />
+                        <ErrorMessage name="name" :class="'text-danger'" />
+                    </div>
+                    <div class="mb-2">
+                        <label for="npm">NPM</label>
+                        <Field type="text" name="npm" class="form-control" placeholder="Masukkan NPM" v-model="form.npm" />
+                        <ErrorMessage name="npm" :class="'text-danger'" />
+                    </div>
+                    <div class="mb-2">
+                        <label for="phone">Nomor HP</label>
+                        <Field type="text" name="phone" class="form-control" placeholder="Masukkan nomor HP" v-model="form.phone" min="0" />
+                        <ErrorMessage name="phone" :class="'text-danger'" />
+                    </div>
+                    <div class="mb-2">
+                        <label for="email">Email</label>
+                        <Field type="email" name="email" class="form-control" placeholder="Masukkan email" v-model="form.email" />
+                        <ErrorMessage name="email" :class="'text-danger'" />
+                    </div>
+                    <div class="mb-2">
+                        <label for="password">Password</label>
+                        <Field type="password" name="password" class="form-control" placeholder="Masukkan password" v-model="form.password" />
+                        <ErrorMessage name="password" :class="'text-danger'" />
+                    </div>
+                    <div class="mb-2">
+                        <label for="faculty">Fakultas</label>
+                        <Field type="text" name="faculty" class="form-control" placeholder="Masukkan fakultas" v-model="form.faculty" @input="form.faculty=$event.target.value.toUpperCase()" />
+                        <ErrorMessage name="faculty" :class="'text-danger'" />
+                    </div>
+                    <div class="mb-2">
+                        <label for="major">Jurusan</label>
+                        <Field type="text" name="major" class="form-control" placeholder="Masukkan jurusan" v-model="form.major" />
+                        <ErrorMessage name="major" :class="'text-danger'" />
+                    </div>
+                    <div class="mb-2">
+                        <label for="class">Kelas</label>
+                        <Field type="text" name="class" class="form-control" placeholder="Masukkan kelas" v-model="form.class" />
+                        <ErrorMessage name="class" :class="'text-danger'" />
+                    </div>
+                    <div class="mb-2">
+                        <label for="profile">Foto profil</label>
+                        <Field type="file" name="profile" class="form-control" v-model="form.foto_profile" />
+                        <ErrorMessage name="profile" :class="'text-danger'" />
+                    </div>
+                    <div class="mb-2">
+                        <label for="ktm">Foto KTM</label>
+                        <Field type="file" name="ktm" class="form-control" v-model="form.foto_ktm" />
+                        <ErrorMessage name="ktm" :class="'text-danger'" />
+                    </div>
+                    <div class="mb-2">
+                        <label for="face_ktm">Foto diri dan KTM secara bersamaan</label>
+                        <Field type="file" name="face_ktm" class="form-control" v-model="form.foto_ktm" />
+                        <ErrorMessage name="face_ktm" :class="'text-danger'" />
+                    </div>
                 </div>
-                <div class="">
-                    <label for="npm">NPM</label>
-                    <input type="npm" id="npm" class="form-control" placeholder="Masukkan NPM" required>
+                <div class="d-block">
+                    <button type="submit" class="btn btn-block btn-primary font-weight-semibold" :disabled="form.fetch"><span v-if="form.fetch">Loading</span><span v-else>Registrasi</span></button>
                 </div>
-                <div class="">
-                    <label for="phone">Nomor HP</label>
-                    <input type="text" id="phone" class="form-control" placeholder="Masukkan nomor HP" required>
-                </div>
-                <div class="">
-                    <label for="email">Email</label>
-                    <input type="text" id="email" class="form-control" placeholder="Masukkan email" required>
-                </div>
-                <div class="">
-                    <label for="password">Password</label>
-                    <input type="password" id="email" class="form-control" placeholder="Masukkan password" required>
-                </div>
-                <div class="">
-                    <label for="faculty">Fakultas</label>
-                    <input type="text" id="faculty" class="form-control" placeholder="Masukkan fakultas" required>
-                </div>
-                <div class="">
-                    <label for="major">Jurusan</label>
-                    <input type="text" id="major" class="form-control" placeholder="Masukkan jurusan" required>
-                </div>
-                <div class="">
-                    <label for="class">Kelas</label>
-                    <input type="text" id="class" class="form-control" placeholder="Masukkan kelas" required>
-                </div>
-                <div class="">
-                    <label for="profile">Foto profil</label>
-                    <input type="file" id="profile" class="form-control" required>
-                </div>
-                <div class="">
-                    <label for="ktm">Foto KTM</label>
-                    <input type="file" id="ktm" class="form-control" required>
-                </div>
-                <div class="">
-                    <label for="face-and-ktm">Foto diri dan KTM secara bersamaan</label>
-                    <input type="file" id="face-and-ktm" class="form-control" required>
-                </div>
-                <button type="submit" class="btn btn-primary font-weight-semibold w-100" id="accountRegister">Registrasi</button>
-            </form>
+            </Form>
         </div>
     </div>
 </template>
 <script>
+import { Field, Form, ErrorMessage } from 'vee-validate';
+import * as yup from 'yup';
+
+import { ApiCore } from '../../services/core';
+import apiEnpoint from '../../services/api-endpoint';
+
 export default {
     name: 'Register',
     data() {
         return {
-            
+            form: {
+                name: '',
+                npm: '',
+                phone: '',
+                email: '',
+                password: '',
+                faculty: '',
+                major: '',
+                class: '',
+                profile: '',
+                foto_ktm: '',
+                foto_profile: '',
+                foto_selfie: '',
+                role: this.$route.params.role
+            }
+        }
+    },
+    setup() {
+        const schema = yup.object({
+            npm: yup.string().required('Masukan npm'),
+            name: yup.string().required('Masukan nama'),
+            phone: yup.string().required('Masukan nomor handphone'),
+            email: yup.string().email('Masukan email yang valid').required('Masukan email'),
+            password: yup.string().required('Masukan password'),
+            faculty: yup.string().required('Masukan fakultas'),
+            major: yup.string().required('Masukan jurusan'),
+            class: yup.string().required('Masukan kelas'),
+            profile: yup.string().required('Pilih poto profile'),
+            ktm: yup.string().required('Pilih berkas KTM'),
+            face_ktm: yup.string().required('Pilih foto diri beserta KTM'),
+        });
+
+        return {
+            schema
+        }
+    },
+    components: {Field, Form, ErrorMessage},
+    methods: {
+        async handleSubmit() {
+            try {
+                this.form.fetch = true
+                const register = await ApiCore.store(`${apiEnpoint.AUTHENTICATION}/signup`, {
+                    ...this.form
+                })
+                this.form.fetch = false
+                if (register.status) {
+                    this.$toast.success(register.message);
+                    setTimeout(() => {
+                        this.$router.push({ name: 'signin' })
+                    }, 1000);
+                } else {
+                    this.$toast.error(register.message);
+                }
+            } catch(error) {
+                this.form.fetch = false
+                this.$toast.error(error);
+            }
         }
     }
 }
