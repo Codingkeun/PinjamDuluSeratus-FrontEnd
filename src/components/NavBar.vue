@@ -86,7 +86,7 @@ export default {
                 .then(async (result) => {
                     if (result.isConfirmed) {
                         this.$store.getters.logout
-                        this.$router.push('/')
+                        window.location.href='/'
                     }
                 });
         }
