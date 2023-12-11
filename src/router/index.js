@@ -1,4 +1,8 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
+import stores from '../stores'
+
+import apiEnpoint from '../services/api-endpoint'
+import { ApiCore } from '../services/core'
 
 import Home from '../views/Home.vue'
 import Signin from '../views/authentication/Signin.vue'
@@ -49,6 +53,7 @@ const routes = [
     },
     {
         path: '/signup/:role',
+        name: 'signup',
         component: Signup,
         meta: {
             title: `${nameApplication} | Registrasi Akun`,
@@ -209,11 +214,18 @@ const router = createRouter({
 
 router.beforeEach((to, from, next) => {
     document.title = to.meta.title;
+
     // const localData = localStorage.getItem('store')
 
-    // const authRequired  = !['signin'].includes(to.name);
+    const authRequired  = ['signin', 'signup'].includes(to.name);
 
-    // if (authRequired) {
+    if (!authRequired) {
+        ApiCore.get(`${apiEnpoint.ACCOUNT}/info`)
+                .then((response) => {
+                    stores.commit('setuser', response)
+                })
+                .catch(() => {})
+    }
     //     if (localData && JSON.parse(localData).key)
     //         next()
     //     else

@@ -11,7 +11,7 @@ const $loading = useLoading({
 const api = axios.create({
     baseURL: import.meta.env.VITE_APP_API_ENDPOINT,
     timeout: 30000,
-    headers: { Authorization: `Bearer ${localStorage.token_finance}` },
+    headers: { Authorization: `${localStorage.token}` },
 });
 
 // Add a request interceptor

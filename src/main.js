@@ -2,8 +2,7 @@ import { createApp } from 'vue'
 import App from './App.vue'
 
 // import store from './store'
-import { createPinia } from 'pinia'
-import { createPersistedState } from 'pinia-plugin-persistedstate'
+import stores from './stores';
 
 // load utils
 import router from './router'
@@ -36,14 +35,9 @@ import Pagination from './components/Pagination.vue'
 import EmptyState from './components/EmptyState.vue'
 
 const app = createApp(App)
-const pinia = createPinia()
 
-pinia.use(createPersistedState({
-    storage: localStorage,
-}))
-
-app.use(pinia)
 app.use(router)
+app.use(stores)
 app.use(VueSweetalert2);
 app.use(LoadingPlugin, {
     color: '#fff',

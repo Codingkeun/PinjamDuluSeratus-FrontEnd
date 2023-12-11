@@ -34,7 +34,8 @@
     </div>
 </template>
 <script>
-import {useUserStore} from '@/stores/user'
+import apiEndpoint from '@/services/api-endpoint'
+import {ApiCore} from '@/services/core'
 
 import { Field, Form, ErrorMessage } from 'vee-validate';
 import * as yup from 'yup';
@@ -65,12 +66,14 @@ export default {
         async handleSubmit() {
             try {
                 this.fetch = true
-                const signin = await useUserStore().login(this.role, this.email, this.password)
+                const signin = await ApiCore.store(`${apiEndpoint.AUTHENTICATION}/signin`, {email: this.email, password: this.password, role: this.role})
                 this.fetch = false
                 if (signin.status) {
                     this.$toast.success(signin.message);
+                    localStorage.removeItem('token')
+                    localStorage.setItem('token', signin.user.key)
                     setTimeout(() => {
-                        this.$router.push({ name: 'home' })
+                        window.location.href = '/home'
                     }, 1000);
                 } else {
                     this.$toast.error(signin.message);

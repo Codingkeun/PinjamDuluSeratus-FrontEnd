@@ -71,7 +71,7 @@
                 </div>
             </div>
         </section>
-        <section class="lender-investor-registration-cta" style="margin-top: 120px;" v-if="!user.isLogin">
+        <section class="lender-investor-registration-cta" style="margin-top: 120px;" v-if="!$store.state.user?.logged_in">
             <div class="container">
                 <div class="d-flex flex-column align-items-center" style="gap: 1rem; padding-inline: calc(15% / 2);">
                     <h1 class="font-weight-bold text-primary text-center">Daftar<br>Sebagai Peminjam</h1>
@@ -98,7 +98,7 @@
             </div>
             <img src="@/assets/images/background/big-circle-gradient.svg" alt="">
         </section>
-        <section class="donation" :style="{'margin-top': user.isLogin ? '300px' : ''}">
+        <section class="donation" :style="{'margin-top': $store.state.user?.logged_in ? '300px' : ''}">
             <div class="container">
                 <div class="balance">
                     <div class="content">
@@ -238,18 +238,10 @@
     </main>
 </template>
 <script>
-import { storeToRefs } from 'pinia'
-import {useUserStore} from '@/stores/user'
 export default {
     name: 'Home',
     data() {
         return {
-        }
-    },
-    setup() {
-        const user = storeToRefs(useUserStore())
-        return {
-            user
         }
     },
 }
