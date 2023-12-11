@@ -34,8 +34,7 @@
     </div>
 </template>
 <script>
-import { storeToRefs } from 'pinia'
-import {useUserStore} from '../../store/user'
+import {useUserStore} from '@/stores/user'
 
 import { Field, Form, ErrorMessage } from 'vee-validate';
 import * as yup from 'yup';
@@ -52,15 +51,12 @@ export default {
         }
     },
     setup() {
-        const user = storeToRefs(useUserStore())
-        
         const schema = yup.object({
             email: yup.string().email('Masukan email yang valid').required('Masukan email'),
             password: yup.string().required('Masukan password'),
         });
 
         return {
-            user,
             schema
         }
     },
