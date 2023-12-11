@@ -44,7 +44,7 @@
                         </div>
                         <div class="d-flex align-items-center">
                             <button class="border-0 dropdown-toggle" data-toggle="dropdown" aria-expanded="false"></button>
-                            <ul class="dropdown-menu rounded-10 border-0 container-card-shadow">
+                            <ul class="dropdown-menu rounded-10 border-0 container-card-shadow" style="left: auto; right: 0">
                                 <li><a class="dropdown-item" href="#"></a></li>
                                 <li><router-link :to="'/dashboard/' + $store.state.user.role" class="dropdown-item">Dashboard</router-link></li>
                                 <li><router-link to="/loan" class="dropdown-item" v-if="$store.state.user.role == 'peminjam'">Pinjaman</router-link></li>
