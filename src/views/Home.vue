@@ -134,91 +134,7 @@
                     </div>
                 </div>
             </div>
-            <div class="list mt-4">
-                <div class="card rounded-10">
-                    <div class="card-body pb-2">
-                        <div class="d-flex align-items-center">
-                            <img src="@/assets/images/icon/avatar.svg" />
-                            <div class="d-block ml-3" style="font-weight: 500;">
-                                <div class="h4">John Doe</div>
-                                <div class="h5">NPM : <span class="text-primary">10129301</span></div>
-                            </div>
-                        </div>
-                        <div class="h5 alert alert-danger rounded-10 p-2 text-center font-weight-bold mt-4">Telat 28 Hari</div>
-                    </div>
-                </div>
-                <div class="card rounded-10">
-                    <div class="card-body pb-2">
-                        <div class="d-flex align-items-center">
-                            <img src="@/assets/images/icon/avatar.svg" />
-                            <div class="d-block ml-3" style="font-weight: 500;">
-                                <div class="h4">John Doe</div>
-                                <div class="h5">NPM : <span class="text-primary">10129301</span></div>
-                            </div>
-                        </div>
-                        <div class="h5 alert alert-danger rounded-10 p-2 text-center font-weight-bold mt-4">Telat 28 Hari</div>
-                    </div>
-                </div>
-                <div class="card rounded-10">
-                    <div class="card-body pb-2">
-                        <div class="d-flex align-items-center">
-                            <img src="@/assets/images/icon/avatar.svg" />
-                            <div class="d-block ml-3" style="font-weight: 500;">
-                                <div class="h4">John Doe</div>
-                                <div class="h5">NPM : <span class="text-primary">10129301</span></div>
-                            </div>
-                        </div>
-                        <div class="h5 alert alert-danger rounded-10 p-2 text-center font-weight-bold mt-4">Telat 28 Hari</div>
-                    </div>
-                </div>
-                <div class="card rounded-10">
-                    <div class="card-body pb-2">
-                        <div class="d-flex align-items-center">
-                            <img src="@/assets/images/icon/avatar.svg" />
-                            <div class="d-block ml-3" style="font-weight: 500;">
-                                <div class="h4">John Doe</div>
-                                <div class="h5">NPM : <span class="text-primary">10129301</span></div>
-                            </div>
-                        </div>
-                        <div class="h5 alert alert-danger rounded-10 p-2 text-center font-weight-bold mt-4">Telat 28 Hari</div>
-                    </div>
-                </div>
-                <div class="card rounded-10">
-                    <div class="card-body pb-2">
-                        <div class="d-flex align-items-center">
-                            <img src="@/assets/images/icon/avatar.svg" />
-                            <div class="d-block ml-3" style="font-weight: 500;">
-                                <div class="h4">John Doe</div>
-                                <div class="h5">NPM : <span class="text-primary">10129301</span></div>
-                            </div>
-                        </div>
-                        <div class="h5 alert alert-danger rounded-10 p-2 text-center font-weight-bold mt-4">Telat 28 Hari</div>
-                    </div>
-                </div>
-                <div class="card rounded-10">
-                    <div class="card-body pb-2">
-                        <div class="d-flex align-items-center">
-                            <img src="@/assets/images/icon/avatar.svg" />
-                            <div class="d-block ml-3" style="font-weight: 500;">
-                                <div class="h4">John Doe</div>
-                                <div class="h5">NPM : <span class="text-primary">10129301</span></div>
-                            </div>
-                        </div>
-                        <div class="h5 alert alert-danger rounded-10 p-2 text-center font-weight-bold mt-4">Telat 28 Hari</div>
-                    </div>
-                </div>
-                <div class="card rounded-10">
-                    <div class="card-body pb-2">
-                        <div class="d-flex align-items-center">
-                            <img src="@/assets/images/icon/avatar.svg" />
-                            <div class="d-block ml-3" style="font-weight: 500;">
-                                <div class="h4">John Doe</div>
-                                <div class="h5">NPM : <span class="text-primary">10129301</span></div>
-                            </div>
-                        </div>
-                        <div class="h5 alert alert-danger rounded-10 p-2 text-center font-weight-bold mt-4">Telat 28 Hari</div>
-                    </div>
-                </div>
+            <div class="list mt-4" v-if="list.length > 0">
                 <div class="card rounded-10">
                     <div class="card-body pb-2">
                         <div class="d-flex align-items-center">
@@ -232,8 +148,9 @@
                     </div>
                 </div>
             </div>
+            <EmptyState v-if="list.length == 0"></EmptyState>
             <!-- Pagination -->
-            <Pagination></Pagination>
+            <Pagination v-if="list.length" :page="pagination.page" :prev="pagination.prev" :next="pagination.next" v-on:fetchData="fetchDataAnnouncement"></Pagination>
         </section>
     </main>
 </template>
@@ -242,7 +159,20 @@ export default {
     name: 'Home',
     data() {
         return {
+            list: [],
+            pagination: {
+                prev: false,
+                next: false,
+                page: 1,
+                limit: 15,
+                total: 0
+            },
         }
     },
+    methods: {
+        fetchDataAnnouncement() {
+
+        }
+    }
 }
 </script>
