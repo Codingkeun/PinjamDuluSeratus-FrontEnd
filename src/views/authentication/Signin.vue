@@ -16,17 +16,19 @@
 
         <div class="container-fluid row mx-auto mb-4 signin-container">
             <img src="@/assets/images/illustration/computer-login.svg" alt="" class="col-sm-12 col-md-12 col-lg-12 w-100" style="height: fit-content;">
-            <form @submit.prevent="handleSubmit" class="col-sm-12 col-md-12 col-lg-12 d-flex flex-column form-login" style="gap: 1.5rem; padding-right: calc(15% / 2);">
+            <Form :validation-schema="schema" @submit="handleSubmit" class="col-sm-12 col-md-12 col-lg-12 d-flex flex-column form-login" style="gap: 1.5rem; padding-right: calc(15% / 2);">
                 <h1 class="fs-1 fw-bold text-primary">Masuk ke Akun</h1>
                 <div class="">
                     <label for="email">Email</label>
-                    <input type="email" id="email" class="form-control" placeholder="Masukkan email" v-model="email" required>
+                    <Field type="email" name="email" id="email" class="form-control mb-2" placeholder="Masukkan email" v-model="email" />
+                    <ErrorMessage name="email" :class="'text-danger'" />
                 </div>
                 <div class="">
                     <label for="password">Password</label>
-                    <input type="password" id="password" class="form-control" placeholder="Masukkan password" v-model="password" required>
+                    <Field type="password" name="password" id="password" class="form-control mb-2" placeholder="Masukkan password" v-model="password" />
+                    <ErrorMessage name="password" :class="'text-danger'" />
                 </div>
-                <button type="submit" class="btn btn-primary font-weight-semibold w-100" id="accountSignIn">Masuk</button>
+                <button type="submit" class="btn btn-primary font-weight-semibold w-100" :disabled="fetch"><span v-if="fetch">Loading</span><span v-else>Masuk</span></button>
             </form>
         </div>
     </div>
@@ -34,6 +36,10 @@
 <script>
 import { storeToRefs } from 'pinia'
 import {useUserStore} from '../../store/user'
+
+import { Field, Form, ErrorMessage } from 'vee-validate';
+import * as yup from 'yup';
+
 export default {
     name: 'Signin',
     data() {
@@ -41,20 +47,30 @@ export default {
             loader: null,
             email: '',
             password: '',
-            role: this.$route.params.role
+            role: this.$route.params.role,
+            fetch: false,
         }
     },
     setup() {
         const user = storeToRefs(useUserStore())
+        
+        const schema = yup.object({
+            email: yup.string().email('Masukan email yang valid').required('Masukan email'),
+            password: yup.string().required('Masukan password'),
+        });
 
         return {
-            user
+            user,
+            schema
         }
     },
+    components: {Field, Form, ErrorMessage},
     methods: {
         async handleSubmit() {
             try {
+                this.fetch = true
                 const signin = await useUserStore().login(this.role, this.email, this.password)
+                this.fetch = false
                 if (signin.status) {
                     this.$toast.success(signin.message);
                     setTimeout(() => {
@@ -64,6 +80,7 @@ export default {
                     this.$toast.error(signin.message);
                 }
             } catch(error) {
+                this.fetch = false
                 this.$toast.error(error);
             }
         }

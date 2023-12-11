@@ -56,6 +56,8 @@ app.use(Toast, {
     newestOnTop: true,
     pauseOnHover: false,
     hideProgressBar: true,
+    closeOnClick: true,
+    pauseOnFocusLoss: false,
     timeout: 2000,
     position: "top-right",
 });
