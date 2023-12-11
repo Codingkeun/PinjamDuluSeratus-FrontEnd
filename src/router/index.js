@@ -23,6 +23,8 @@ import InvestmentDetailInvestor from '../views/investor/investment/InvestmentDet
 import AccountInvestor from '../views/investor/Account.vue'
 import TopUpBalanceInvestor from '../views/investor/TopUpBalance.vue'
 
+const nameApplication = import.meta.env.VITE_APP_TITLE
+
 const routes = [
     // routes general
     {
@@ -30,6 +32,7 @@ const routes = [
         name: 'home',
         component: Home,
         meta: {
+            title: `${nameApplication} | Home`,
             footer: true,
             navbar: true,
         }
@@ -39,6 +42,7 @@ const routes = [
         name: 'signin',
         component: Signin,
         meta: {
+            title: `${nameApplication} | Login`,
             footer: false,
             navbar: false,
         }
@@ -47,6 +51,7 @@ const routes = [
         path: '/signup/:role',
         component: Signup,
         meta: {
+            title: `${nameApplication} | Registrasi Akun`,
             footer: false,
             navbar: false,
         }
@@ -55,6 +60,7 @@ const routes = [
         path: '/about',
         component: About,
         meta: {
+            title: `${nameApplication} | Tentang Kami`,
             footer: true,
             navbar: true,
         }
@@ -64,6 +70,7 @@ const routes = [
         name: 'donation',
         component: Donation,
         meta: {
+            title: `${nameApplication} | Donasi`,
             footer: true,
             navbar: true,
         }
@@ -72,6 +79,7 @@ const routes = [
         path: '/donation-send',
         component: DonationForm,
         meta: {
+            title: `${nameApplication} | Form Donasi`,
             footer: true,
             navbar: true,
         }
@@ -81,6 +89,7 @@ const routes = [
         path: '/dashboard/peminjam',
         component: DashboardBorrower,
         meta: {
+            title: `${nameApplication} | Dashboard`,
             footer: true,
             navbar: true,
         }
@@ -90,6 +99,7 @@ const routes = [
         name: 'account.borrower',
         component: AccountBorrower,
         meta: {
+            title: `${nameApplication} | Akun`,
             footer: true,
             navbar: true,
         }
@@ -98,6 +108,7 @@ const routes = [
         path: '/loan',
         component: LoanBorrower,
         meta: {
+            title: `${nameApplication} | Pinjaman`,
             footer: true,
             navbar: true,
         }
@@ -106,6 +117,7 @@ const routes = [
         path: '/loan/form/:id?',
         component: LoanFormBorrower,
         meta: {
+            title: `${nameApplication} | Pengajuan Pinjaman`,
             footer: true,
             navbar: true,
         }
@@ -114,6 +126,7 @@ const routes = [
         path: '/loan/detail/:id',
         component: LoanDetailBorrower,
         meta: {
+            title: `${nameApplication} | Detail Pinjaman`,
             footer: true,
             navbar: true,
         }
@@ -122,6 +135,7 @@ const routes = [
         path: '/history-payment',
         component: HistoryPayment,
         meta: {
+            title: `${nameApplication} | Riwayat Pembayaran`,
             footer: true,
             navbar: true,
         }
@@ -130,6 +144,7 @@ const routes = [
         path: '/loan/info-payment',
         component: LoanPayBorrower,
         meta: {
+            title: `${nameApplication} | Informasi Pembayaran`,
             footer: true,
             navbar: true,
         }
@@ -139,12 +154,14 @@ const routes = [
         path: '/dashboard/investor',
         component: DashboardInvestor,
         meta: {
+            title: `${nameApplication} | Dashboard`,
             footer: true,
             navbar: true,
         }
     },
     {
         path: '/investment',
+        title: `${nameApplication} | Investasi Aktif`,
         component: InvestmentInvestor,
         meta: {
             footer: true,
@@ -156,6 +173,7 @@ const routes = [
         name: 'account.investor',
         component: AccountInvestor,
         meta: {
+            title: `${nameApplication} | Akun`,
             footer: true,
             navbar: true,
         }
@@ -164,6 +182,7 @@ const routes = [
         path: '/investment/detail/:id',
         component: InvestmentDetailInvestor,
         meta: {
+            title: `${nameApplication} | Detail Pinjaman`,
             footer: true,
             navbar: true,
         }
@@ -172,6 +191,7 @@ const routes = [
         path: '/topup-balance',
         component: TopUpBalanceInvestor,
         meta: {
+            title: `${nameApplication} | Top Up Saldo`,
             footer: true,
             navbar: true,
         }
@@ -188,6 +208,7 @@ const router = createRouter({
 })
 
 router.beforeEach((to, from, next) => {
+    document.title = to.meta.title;
     // const localData = localStorage.getItem('store')
 
     // const authRequired  = !['signin'].includes(to.name);
