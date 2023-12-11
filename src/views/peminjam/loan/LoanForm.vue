@@ -206,19 +206,6 @@ export default {
     },
     methods: {
         submit() {
-            this.$swal
-                .fire({
-                    title: 'Apakah kamu yakin ?',
-                    text: 'tess!',
-                    icon: 'warning',
-                    showDenyButton: true,
-                    showCancelButton: false,
-                    confirmButtonText: 'YA',
-                    confirmButtonColor: '#0059AD',
-                    denyButtonText: 'TIDAK',
-                })
-                .then((result) => {
-                });
         }
     }
 }

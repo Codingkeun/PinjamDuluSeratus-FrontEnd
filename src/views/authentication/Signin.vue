@@ -56,14 +56,15 @@ export default {
             try {
                 const signin = await useUserStore().login(this.role, this.email, this.password)
                 if (signin.status) {
-                    this.$router.push({ name: 'home' })
-                    // this.$showNotification(response.message, 'success')
+                    this.$toast.success(signin.message);
+                    setTimeout(() => {
+                        this.$router.push({ name: 'home' })
+                    }, 1000);
                 } else {
-                    alert(signin.message)
-                    // this.$showNotification(response.message)
+                    this.$toast.error(signin.message);
                 }
             } catch(error) {
-                alert(error)
+                this.$toast.error(error);
             }
         }
     }

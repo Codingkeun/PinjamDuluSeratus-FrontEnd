@@ -9,12 +9,20 @@ import { createPersistedState } from 'pinia-plugin-persistedstate'
 import router from './router'
 
 // load external library
+// countdown library
 import VueCountdown from '@chenfengyuan/vue-countdown';
+
+// loader library
 import {LoadingPlugin} from 'vue-loading-overlay';
 import 'vue-loading-overlay/dist/css/index.css';
 
+// sweetalert library
 import VueSweetalert2 from 'vue-sweetalert2';
 import 'sweetalert2/dist/sweetalert2.min.css';
+
+// toast library
+import Toast, {useToast} from "vue-toastification";
+import "vue-toastification/dist/index.css";
 
 // load assets
 import './assets/css/bootstrap.css'
@@ -42,9 +50,22 @@ app.use(LoadingPlugin, {
     zIndex: 99999999,
     backgroundColor: '#000',
 });
+app.use(Toast, {
+    transition: "Vue-Toastification__bounce",
+    maxToasts: 1,
+    newestOnTop: true,
+    pauseOnHover: false,
+    hideProgressBar: true,
+    timeout: 2000,
+    position: "top-right",
+});
+
+app.config.productionTip = false
 
 app.component(VueCountdown.name, VueCountdown);
 app.component(Pagination.name, Pagination)
 app.component(EmptyState.name, EmptyState)
+
+app.config.globalProperties.$toast = useToast()
 
 app.mount('#app')
