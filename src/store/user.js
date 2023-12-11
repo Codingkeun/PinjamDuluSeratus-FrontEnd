@@ -7,11 +7,11 @@ import apiEndpoint from '../services/api-endpoint'
  * Simulate a login
  */
 async function apiLogin(role, email, password) {
-  const response = await ApiCore.store(apiEndpoint.AUTHENTICATION, {
+  const response = await ApiCore.store(`${apiEndpoint.AUTHENTICATION}/signin`, {
       email: email,
       password: password,
       role: role
-  }, "signin")
+  })
   
   if (response.status)
     return Promise.resolve(response)

@@ -1,5 +1,12 @@
 /* eslint-disable consistent-return */
 import axios from 'axios';
+import {useLoading} from 'vue-loading-overlay';
+
+const $loading = useLoading({
+    color: '#fff',
+    zIndex: 99999999,
+    backgroundColor: '#000',
+});
 
 const api = axios.create({
     baseURL: import.meta.env.VITE_APP_API_ENDPOINT,
@@ -40,17 +47,21 @@ export default class RequestHandler {
     constructor() {
         this.api = api;
         this.fileName = "ApiService";
+        this.loader = null
     }
 
-    get(endpoint, params, uri=null) {
+    get(endpoint, params, withLoader=true) {
         return new Promise((resolve, reject) => {
-            let baseUrl = uri ? `${endpoint}/${uri}` : endpoint
-            api.get(baseUrl, {
+            if (withLoader)
+                this.loader = $loading.show();
+            api.get(endpoint, {
                 params: {
                     ...params,
                 },
             })
                 .then((response) => {
+                    if (withLoader)
+                        this.loader.hide();
                     if (response.statusText.toLowerCase() === 'ok' || response.status === 200) {
                         resolve(response.data);
                     } else {
@@ -58,15 +69,21 @@ export default class RequestHandler {
                     }
                 })
                 .catch((error) => {
+                    if (withLoader)
+                        this.loader.hide();
                     reject(error);
                 });
         });
     }
 
-    find(endpoint, param) {
+    find(endpoint, param, withLoader=true) {
         return new Promise((resolve, reject) => {
+            if (withLoader)
+                this.loader = $loading.show();
             api.get(`${endpoint}/${param}`)
                 .then((response) => {
+                    if (withLoader)
+                        this.loader.hide();
                     if (response.statusText.toLowerCase() === 'ok' || response.status === 200) {
                         resolve(response.data);
                     } else {
@@ -74,18 +91,24 @@ export default class RequestHandler {
                     }
                 })
                 .catch((error) => {
+                    if (withLoader)
+                        this.loader.hide();
                     reject(error);
                 });
         });
     }
 
-    store(endpoint, body, uri='') {
+    store(endpoint, body, withLoader=true) {
         return new Promise((resolve, reject) => {
+            if (withLoader)
+                this.loader = $loading.show();
             this.api
-                .post(uri ? `${endpoint}/${uri}` : endpoint, {
+                .post(endpoint, {
                     ...body,
                 })
                 .then((response) => {
+                    if (withLoader)
+                        this.loader.hide()
                     if (response.statusText.toLowerCase() === 'ok' || response.status === 200) {
                         resolve(response.data);
                     } else {
@@ -93,13 +116,17 @@ export default class RequestHandler {
                     }
                 })
                 .catch((error) => {
+                    if (withLoader)
+                        this.loader.hide()
                     reject(error);
                 });
         });
     }
 
-    saveCustomHeader(endpoint, body) {
+    saveCustomHeader(endpoint, body, withLoader=true) {
         return new Promise((resolve, reject) => {
+            if (withLoader)
+                this.loader = $loading.show();
             this.api
                 .post(`${endpoint}`, {
                     ...body,
@@ -110,6 +137,8 @@ export default class RequestHandler {
                     }
                 })
                 .then((response) => {
+                    if (withLoader)
+                        this.loader.hide();
                     if (response.statusText.toLowerCase() === 'ok' || response.status === 200) {
                         resolve(response.data);
                     } else {
@@ -117,18 +146,24 @@ export default class RequestHandler {
                     }
                 })
                 .catch((error) => {
+                    if (withLoader)
+                        this.loader.hide();
                     reject(error);
                 });
         });
     }
 
-    update(endpoint, id, body) {
+    update(endpoint, id, body, withLoader=true) {
         return new Promise((resolve, reject) => {
+            if (withLoader)
+                this.loader = $loading.show();
             this.api
                 .put(`${endpoint}/${id}`, {
                     ...body,
                 })
                 .then((response) => {
+                    if (withLoader)
+                        this.loader.hide();
                     if (response.statusText.toLowerCase() === 'ok' || response.status === 200) {
                         resolve(response.data);
                     } else {
@@ -136,16 +171,22 @@ export default class RequestHandler {
                     }
                 })
                 .catch((error) => {
+                    if (withLoader)
+                        this.loader.hide();
                     reject(error);
                 });
         });
     }
 
-    delete(endpoint, id) {
+    delete(endpoint, id, withLoader=true) {
         return new Promise((resolve, reject) => {
+            if (withLoader)
+                this.loader = $loading.show();
             this.api
                 .delete(`${endpoint}/${id}`)
                 .then((response) => {
+                    if (withLoader)
+                        this.loader.hide();
                     if (response.statusText.toLowerCase() === 'ok' || response.status === 200) {
                         resolve(response.data);
                     } else {
@@ -153,13 +194,17 @@ export default class RequestHandler {
                     }
                 })
                 .catch((error) => {
+                    if (withLoader)
+                        this.loader.hide();
                     reject(error);
                 });
         });
     }
 
-    bulkDelete(endpoint, params) {
+    bulkDelete(endpoint, params, withLoader=true) {
         return new Promise((resolve, reject) => {
+            if (withLoader)
+                this.loader = $loading.show();
             this.api
                 .delete(`${endpoint}/bulk-delete`, {
                     data: {
@@ -167,6 +212,8 @@ export default class RequestHandler {
                     },
                 })
                 .then((response) => {
+                    if (withLoader)
+                        this.loader.hide();
                     if (response.statusText.toLowerCase() === 'ok' || response.status === 200) {
                         resolve(response.data);
                     } else {
@@ -174,13 +221,17 @@ export default class RequestHandler {
                     }
                 })
                 .catch((error) => {
+                    if (withLoader)
+                        this.loader.hide();
                     reject(error);
                 });
         });
     }
 
-    downloadExcel(endpoint, params, uri='excel/download', fileName='file-download') {
+    downloadExcel(endpoint, params, uri='excel/download', fileName='file-download', withLoader=true) {
         return new Promise((resolve, reject) => {
+            if (withLoader)
+                this.loader = $loading.show();
             this.api
                 .get(`${endpoint}/${uri}`, {
                     method: 'GET',
@@ -190,6 +241,8 @@ export default class RequestHandler {
                     },
                 })
                 .then((response) => {
+                    if (withLoader)
+                        this.loader.hide();
                     if (response.statusText.toLowerCase() === 'ok' || response.status === 200) {
                         const url = window.URL.createObjectURL(new Blob([response.data], { type: 'application/octet-stream' }));
                         const link = document.createElement('a');
@@ -201,13 +254,17 @@ export default class RequestHandler {
                     } else reject(response);
                 })
                 .catch((error) => {
+                    if (withLoader)
+                        this.loader.hide();
                     reject(error);
                 });
         });
     }
 
-    downloadPDF(endpoint, params, uri='', filename = 'print') {
+    downloadPDF(endpoint, params, uri='', filename = 'print', withLoader=true) {
         return new Promise((resolve, reject) => {
+            if (withLoader)
+                this.loader = $loading.show();
             this.api
                 .get(`${endpoint}/${uri}`, {
                     method: 'GET',
@@ -217,6 +274,8 @@ export default class RequestHandler {
                     },
                 })
                 .then((response) => {
+                    if (withLoader)
+                        this.loader.hide();
                     if (response.statusText.toLowerCase() === 'ok' || response.status === 200) {
                         const url = window.URL.createObjectURL(new Blob([response.data], { type: 'application/pdf' }));
                         const link = document.createElement('a');
@@ -228,12 +287,14 @@ export default class RequestHandler {
                     } else reject(response);
                 })
                 .catch((error) => {
+                    if (withLoader)
+                        this.loader.hide();
                     reject(error);
                 });
         });
     }
 
-    postWithUpload(endpoint, body, uri='save') {
+    postWithUpload(endpoint, body, withLoader=true) {
         return new Promise((resolve, reject) => {
             let formData = new FormData();
 
@@ -246,12 +307,16 @@ export default class RequestHandler {
                 }
             }
 
-            this.api.post(`${endpoint}/${uri}`, formData, {
+            if (withLoader)
+                this.loader = $loading.show();
+            this.api.post(endpoint, formData, {
                 headers: {
                     'Content-Type': 'multipart/form-data'
                 }
             })
             .then((response) => {
+                if (withLoader)
+                    this.loader.hide();
                 if (response.statusText.toLowerCase() === 'ok' || response.status === 200) {
                     resolve(response.data);
                 } else {
@@ -259,25 +324,10 @@ export default class RequestHandler {
                 }
             })
             .catch((error) => {
+                if (withLoader)
+                    this.loader.hide();
                 reject(error);
             });
         });
-    }
-
-    syncLms(endpoint) {
-        return new Promise((resolve, reject) => {
-            this.api
-                .post(`${endpoint}/sync-lms`)
-                .then((response) => {
-                    if (response.statusText.toLowerCase() === 'ok' || response.status === 200) {
-                        resolve(response.data)
-                    } else {
-                        reject(response)
-                    }
-                })
-                .catch((error) => {
-                    reject(error)
-                })
-        })
     }
 }
