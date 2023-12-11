@@ -65,14 +65,14 @@
                         <ErrorMessage name="profile" :class="'text-danger'" />
                     </div>
                     <div class="mb-2">
-                        <label for="ktm">Foto KTM</label>
-                        <Field type="file" name="ktm" class="form-control" v-model="form.foto_ktm" />
-                        <ErrorMessage name="ktm" :class="'text-danger'" />
+                        <label for="foto_ktm">Foto KTM</label>
+                        <Field type="file" name="foto_ktm" class="form-control" v-model="form.foto_ktm" />
+                        <ErrorMessage name="foto_ktm" :class="'text-danger'" />
                     </div>
                     <div class="mb-2">
-                        <label for="face_ktm">Foto diri dan KTM secara bersamaan</label>
-                        <Field type="file" name="face_ktm" class="form-control" v-model="form.foto_ktm" />
-                        <ErrorMessage name="face_ktm" :class="'text-danger'" />
+                        <label for="foto_selfie">Foto diri dan KTM secara bersamaan</label>
+                        <Field type="file" name="foto_selfie" class="form-control" v-model="form.foto_selfie" />
+                        <ErrorMessage name="foto_selfie" :class="'text-danger'" />
                     </div>
                 </div>
                 <div class="d-block">
@@ -86,8 +86,8 @@
 import { Field, Form, ErrorMessage } from 'vee-validate';
 import * as yup from 'yup';
 
-import { ApiCore } from '../../services/core';
-import apiEnpoint from '../../services/api-endpoint';
+import { ApiCore } from '@/services/core';
+import apiEnpoint from '@/services/api-endpoint';
 
 export default {
     name: 'Register',
@@ -121,8 +121,8 @@ export default {
             major: yup.string().required('Masukan jurusan'),
             class: yup.string().required('Masukan kelas'),
             profile: yup.string().required('Pilih poto profile'),
-            ktm: yup.string().required('Pilih berkas KTM'),
-            face_ktm: yup.string().required('Pilih foto diri beserta KTM'),
+            foto_ktm: yup.string().required('Pilih berkas KTM'),
+            foto_selfie: yup.string().required('Pilih foto diri beserta KTM'),
         });
 
         return {
@@ -134,7 +134,7 @@ export default {
         async handleSubmit() {
             try {
                 this.form.fetch = true
-                const register = await ApiCore.store(`${apiEnpoint.AUTHENTICATION}/signup`, {
+                const register = await ApiCore.postWithUpload(`${apiEnpoint.AUTHENTICATION}/signup`, {
                     ...this.form
                 })
                 this.form.fetch = false
