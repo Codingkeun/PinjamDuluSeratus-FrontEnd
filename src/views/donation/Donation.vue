@@ -1,6 +1,6 @@
 <template>
     <div class="donation-page-area row mt-4 mb-5" style="padding-inline: calc(15% / 2);">
-        <img src="../../assets/images/illustration/thank-you.png" alt="" class="w-100 h-100 col-md-5">
+        <img src="@/assets/images/illustration/thank-you.png" alt="" class="w-100 h-100 col-md-5">
         <div class="col-md-7 my-auto">
             <h1 class="font-weight-semibold">Donasi</h1>
             <p>Ayo berdonasi</p>

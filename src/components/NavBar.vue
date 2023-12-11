@@ -40,7 +40,7 @@
                             <h6 class="font-weight-light opacity-75 par-0-8em">Peminjam</h6>
                         </div>
                         <div class="profile-image rounded-circle bg-primary" style="width: 3rem; height: 3rem;">
-                            <img src="../assets/images/profile/user-profile.svg" alt="" class="w-100 h-100">
+                            <img src="@/assets/images/profile/user-profile.svg" alt="" class="w-100 h-100">
                         </div>
                         <div class="d-flex align-items-center">
                             <button class="border-0 dropdown-toggle" data-toggle="dropdown" aria-expanded="false"></button>

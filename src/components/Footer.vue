@@ -2,13 +2,13 @@
     <div class="container-fluid footer position-relative d-flex flex-column" style="padding-inline: calc(15% / 2); gap: 1rem; overflow: hidden;">
         <div class="footer-logo d-flex justify-content-center align-items-center" style="gap: 1rem;">
             <div class="appLogo">
-                <img src="../assets/images/full-white-logo.svg" alt="" class="w-100">
+                <img src="@/assets/images/full-white-logo.svg" alt="" class="w-100">
             </div>
             <span class="material-symbols-rounded text-white" style="font-size: clamp(1.8rem, 6vw, 3rem); opacity: .5">
                 close
             </span>
             <div class="universityLogo">
-                <img src="../assets/images/icon/university-logo.svg" alt="" class="w-100">
+                <img src="@/assets/images/icon/university-logo.svg" alt="" class="w-100">
             </div>
         </div>
         <div class="footer-contact-info d-flex flex-wrap justify-content-between" style="column-gap: 1rem;">
@@ -46,7 +46,7 @@
                 </a>
             </div>
         </div>
-        <img src="../assets/images/background/footer-pattern.svg" class="position-absolute" alt="" aria-hidden="true">
+        <img src="@/assets/images/background/footer-pattern.svg" class="position-absolute" alt="" aria-hidden="true">
     </div>
 </template>
 <script>

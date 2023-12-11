@@ -60,43 +60,43 @@
                     <div class="item-card-shadow rounded-10 px-3 py-2" style="min-width: 15rem; min-height: 8rem;">
                         <input type="radio" name="topUpPaymentMethod" id="topUpPaymentMethod_bca" required>
                         <label for="topUpPaymentMethod_bca" class="position-relative d-flex justify-content-center">
-                            <img src="../../assets/images/bank/BCA.svg" alt="" class="p-3">
+                            <img src="@/assets/images/bank/BCA.svg" alt="" class="p-3">
                         </label>
                     </div>
                     <div class="item-card-shadow rounded-10 px-3 py-2" style="min-width: 15rem; min-height: 8rem">
                         <input type="radio" name="topUpPaymentMethod" id="topUpPaymentMethod_bni" required>
                         <label for="topUpPaymentMethod_bni" class="position-relative d-flex justify-content-center">
-                            <img src="../../assets/images/bank/BNI.svg" alt="" class="p-3">
+                            <img src="@/assets/images/bank/BNI.svg" alt="" class="p-3">
                         </label>
                     </div>
                     <div class="item-card-shadow rounded-10 px-3 py-2" style="min-width: 15rem; min-height: 8rem">
                         <input type="radio" name="topUpPaymentMethod" id="topUpPaymentMethod_bniSyarih" required>
                         <label for="topUpPaymentMethod_bniSyarih" class="position-relative d-flex justify-content-center">
-                            <img src="../../assets/images/bank/BNI_Syariah.svg" alt="" class="p-3">
+                            <img src="@/assets/images/bank/BNI_Syariah.svg" alt="" class="p-3">
                         </label>
                     </div>
                     <div class="item-card-shadow rounded-10 px-3 py-2" style="min-width: 15rem; min-height: 8rem">
                         <input type="radio" name="topUpPaymentMethod" id="topUpPaymentMethod_bri" required>
                         <label for="topUpPaymentMethod_bri" class="position-relative d-flex justify-content-center">
-                            <img src="../../assets/images/bank/BRI.svg" alt="" class="p-3">
+                            <img src="@/assets/images/bank/BRI.svg" alt="" class="p-3">
                         </label>
                     </div>
                     <div class="item-card-shadow rounded-10 px-3 py-2" style="min-width: 15rem; min-height: 8rem">
                         <input type="radio" name="topUpPaymentMethod" id="topUpPaymentMethod_mandiri" required>
                         <label for="topUpPaymentMethod_mandiri" class="position-relative d-flex justify-content-center">
-                            <img src="../../assets/images/bank/Mandiri.svg" alt="" class="p-1">
+                            <img src="@/assets/images/bank/Mandiri.svg" alt="" class="p-1">
                         </label>
                     </div>
                     <div class="item-card-shadow rounded-10 px-3 py-2" style="min-width: 15rem; min-height: 8rem">
                         <input type="radio" name="topUpPaymentMethod" id="topUpPaymentMethod_visa" required>
                         <label for="topUpPaymentMethod_visa" class="position-relative d-flex justify-content-center">
-                            <img src="../../assets/images/bank/VISA.svg" alt="" class="p-3">
+                            <img src="@/assets/images/bank/VISA.svg" alt="" class="p-3">
                         </label>
                     </div>
                     <div class="item-card-shadow rounded-10 px-3 py-2" style="min-width: 15rem; min-height: 8rem">
                         <input type="radio" name="topUpPaymentMethod" id="topUpPaymentMethod_masterCard" required>
                         <label for="topUpPaymentMethod_masterCard" class="position-relative d-flex justify-content-center">
-                            <img src="../../assets/images/bank/MasterCard.svg" alt="" class="">
+                            <img src="@/assets/images/bank/MasterCard.svg" alt="" class="">
                         </label>
                     </div>
                 </div>

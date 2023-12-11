@@ -56,7 +56,7 @@
         <section class="mission-container" style="padding-inline: calc(15% / 2); margin-top: 120px;">
             <div class="container">
                 <div class="row justify-content-between align-items-center">
-                    <img src="../assets/images/illustration/mission-section.svg" class="w-100 col-md-5 col-lg-5 order-2" alt="">
+                    <img src="@/assets/images/illustration/mission-section.svg" class="w-100 col-md-5 col-lg-5 order-2" alt="">
                     <div class="col-md-7 col-lg-7">
                         <div>
                             <h4 class="pt-4 par-1em">Sejak 2023</h4>
@@ -82,10 +82,10 @@
                     <router-link to="/signup/peminjam" class="d-flex align-items-center btn btn-primary font-weight-semibold">Daftar Sebagai Peminjam</router-link>
                 </div>
                 <div class="mt-5">
-                    <img src="../assets/images/illustration/register-lender-section-1.svg" alt="">
-                    <img src="../assets/images/illustration/register-lender-section-2.svg" alt="">
-                    <img src="../assets/images/illustration/register-lender-section-3.svg" alt="">
-                    <img src="../assets/images/illustration/register-lender-section-4.svg" alt="">
+                    <img src="@/assets/images/illustration/register-lender-section-1.svg" alt="">
+                    <img src="@/assets/images/illustration/register-lender-section-2.svg" alt="">
+                    <img src="@/assets/images/illustration/register-lender-section-3.svg" alt="">
+                    <img src="@/assets/images/illustration/register-lender-section-4.svg" alt="">
                 </div>
                 <div class="d-flex flex-column align-items-center" style="gap: 1rem; padding-inline: calc(15% / 2);">
                     <h1 class="font-weight-bold text-primary text-center">Daftar<br>Sebagai Investor</h1>
@@ -96,14 +96,14 @@
                     <router-link to="/signup/investor" class="d-flex align-items-center btn btn-primary font-weight-semibold">Daftar Sebagai Investor</router-link>
                 </div>
             </div>
-            <img src="../assets/images/background/big-circle-gradient.svg" alt="">
+            <img src="@/assets/images/background/big-circle-gradient.svg" alt="">
         </section>
         <section class="donation">
             <div class="container">
                 <div class="balance">
                     <div class="content">
                         <div class="text-center">
-                            <img src="../assets/images/background/balance_money.svg" style="position: relative; top: -120px;" />
+                            <img src="@/assets/images/background/balance_money.svg" style="position: relative; top: -120px;" />
                         </div>
                     </div>
                 </div>
@@ -127,7 +127,7 @@
         <section class="announcement container d-flex flex-column">
             <div class="card bg-primary rounded-10 mb-4">
                 <div class="card-body d-flex align-items-center text-white">
-                    <img src="../assets/images/icon/stopwatch.svg" />
+                    <img src="@/assets/images/icon/stopwatch.svg" />
                     <div class="d-block ml-3">
                         <div class="h6">Announcement</div>
                         <div class="h4 font-weight-semibold">Peminjam yang telat bayar</div>
@@ -138,7 +138,7 @@
                 <div class="card rounded-10">
                     <div class="card-body pb-2">
                         <div class="d-flex align-items-center">
-                            <img src="../assets/images/icon/avatar.svg" />
+                            <img src="@/assets/images/icon/avatar.svg" />
                             <div class="d-block ml-3" style="font-weight: 500;">
                                 <div class="h4">John Doe</div>
                                 <div class="h5">NPM : <span class="text-primary">10129301</span></div>
@@ -150,7 +150,7 @@
                 <div class="card rounded-10">
                     <div class="card-body pb-2">
                         <div class="d-flex align-items-center">
-                            <img src="../assets/images/icon/avatar.svg" />
+                            <img src="@/assets/images/icon/avatar.svg" />
                             <div class="d-block ml-3" style="font-weight: 500;">
                                 <div class="h4">John Doe</div>
                                 <div class="h5">NPM : <span class="text-primary">10129301</span></div>
@@ -162,7 +162,7 @@
                 <div class="card rounded-10">
                     <div class="card-body pb-2">
                         <div class="d-flex align-items-center">
-                            <img src="../assets/images/icon/avatar.svg" />
+                            <img src="@/assets/images/icon/avatar.svg" />
                             <div class="d-block ml-3" style="font-weight: 500;">
                                 <div class="h4">John Doe</div>
                                 <div class="h5">NPM : <span class="text-primary">10129301</span></div>
@@ -174,7 +174,7 @@
                 <div class="card rounded-10">
                     <div class="card-body pb-2">
                         <div class="d-flex align-items-center">
-                            <img src="../assets/images/icon/avatar.svg" />
+                            <img src="@/assets/images/icon/avatar.svg" />
                             <div class="d-block ml-3" style="font-weight: 500;">
                                 <div class="h4">John Doe</div>
                                 <div class="h5">NPM : <span class="text-primary">10129301</span></div>
@@ -186,7 +186,7 @@
                 <div class="card rounded-10">
                     <div class="card-body pb-2">
                         <div class="d-flex align-items-center">
-                            <img src="../assets/images/icon/avatar.svg" />
+                            <img src="@/assets/images/icon/avatar.svg" />
                             <div class="d-block ml-3" style="font-weight: 500;">
                                 <div class="h4">John Doe</div>
                                 <div class="h5">NPM : <span class="text-primary">10129301</span></div>
@@ -198,7 +198,7 @@
                 <div class="card rounded-10">
                     <div class="card-body pb-2">
                         <div class="d-flex align-items-center">
-                            <img src="../assets/images/icon/avatar.svg" />
+                            <img src="@/assets/images/icon/avatar.svg" />
                             <div class="d-block ml-3" style="font-weight: 500;">
                                 <div class="h4">John Doe</div>
                                 <div class="h5">NPM : <span class="text-primary">10129301</span></div>
@@ -210,7 +210,7 @@
                 <div class="card rounded-10">
                     <div class="card-body pb-2">
                         <div class="d-flex align-items-center">
-                            <img src="../assets/images/icon/avatar.svg" />
+                            <img src="@/assets/images/icon/avatar.svg" />
                             <div class="d-block ml-3" style="font-weight: 500;">
                                 <div class="h4">John Doe</div>
                                 <div class="h5">NPM : <span class="text-primary">10129301</span></div>
@@ -222,7 +222,7 @@
                 <div class="card rounded-10">
                     <div class="card-body pb-2">
                         <div class="d-flex align-items-center">
-                            <img src="../assets/images/icon/avatar.svg" />
+                            <img src="@/assets/images/icon/avatar.svg" />
                             <div class="d-block ml-3" style="font-weight: 500;">
                                 <div class="h4">John Doe</div>
                                 <div class="h5">NPM : <span class="text-primary">10129301</span></div>

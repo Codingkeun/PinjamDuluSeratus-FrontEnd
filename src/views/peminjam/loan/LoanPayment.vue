@@ -20,43 +20,43 @@
                     <div class="item-card-shadow rounded-10 px-3 py-2" style="min-width: 15rem; min-height: 8rem;">
                         <input type="radio" name="paymentMethod" id="lendeePaymentMethod_bca" required>
                         <label for="lendeePaymentMethod_bca" class="position-relative d-flex justify-content-center">
-                            <img src="../../../assets/images/bank/BCA.svg" alt="" class="p-3">
+                            <img src="@/assets/images/bank/BCA.svg" alt="" class="p-3">
                         </label>
                     </div>
                     <div class="item-card-shadow rounded-10 px-3 py-2" style="min-width: 15rem; min-height: 8rem">
                         <input type="radio" name="paymentMethod" id="lendeePaymentMethod_bni" required>
                         <label for="lendeePaymentMethod_bni" class="position-relative d-flex justify-content-center">
-                            <img src="../../../assets/images/bank/BNI.svg" alt="" class="p-3">
+                            <img src="@/assets/images/bank/BNI.svg" alt="" class="p-3">
                         </label>
                     </div>
                     <div class="item-card-shadow rounded-10 px-3 py-2" style="min-width: 15rem; min-height: 8rem">
                         <input type="radio" name="paymentMethod" id="lendeePaymentMethod_bniSyarih" required>
                         <label for="lendeePaymentMethod_bniSyarih" class="position-relative d-flex justify-content-center">
-                            <img src="../../../assets/images/bank/BNI_Syariah.svg" alt="" class="p-3">
+                            <img src="@/assets/images/bank/BNI_Syariah.svg" alt="" class="p-3">
                         </label>
                     </div>
                     <div class="item-card-shadow rounded-10 px-3 py-2" style="min-width: 15rem; min-height: 8rem">
                         <input type="radio" name="paymentMethod" id="lendeePaymentMethod_bri" required>
                         <label for="lendeePaymentMethod_bri" class="position-relative d-flex justify-content-center">
-                            <img src="../../../assets/images/bank/BRI.svg" alt="" class="p-3">
+                            <img src="@/assets/images/bank/BRI.svg" alt="" class="p-3">
                         </label>
                     </div>
                     <div class="item-card-shadow rounded-10 px-3 py-2" style="min-width: 15rem; min-height: 8rem">
                         <input type="radio" name="paymentMethod" id="lendeePaymentMethod_mandiri" required>
                         <label for="lendeePaymentMethod_mandiri" class="position-relative d-flex justify-content-center">
-                            <img src="../../../assets/images/bank/Mandiri.svg" alt="" class="p-1">
+                            <img src="@/assets/images/bank/Mandiri.svg" alt="" class="p-1">
                         </label>
                     </div>
                     <div class="item-card-shadow rounded-10 px-3 py-2" style="min-width: 15rem; min-height: 8rem">
                         <input type="radio" name="paymentMethod" id="lendeePaymentMethod_visa" required>
                         <label for="lendeePaymentMethod_visa" class="position-relative d-flex justify-content-center">
-                            <img src="../../../assets/images/bank/VISA.svg" alt="" class="p-3">
+                            <img src="@/assets/images/bank/VISA.svg" alt="" class="p-3">
                         </label>
                     </div>
                     <div class="item-card-shadow rounded-10 px-3 py-2" style="min-width: 15rem; min-height: 8rem">
                         <input type="radio" name="paymentMethod" id="lendeePaymentMethod_masterCard" required>
                         <label for="lendeePaymentMethod_masterCard" class="position-relative d-flex justify-content-center">
-                            <img src="../../../assets/images/bank/MasterCard.svg" alt="" class="">
+                            <img src="@/assets/images/bank/MasterCard.svg" alt="" class="">
                         </label>
                     </div>
                 </div>

@@ -81,43 +81,43 @@
                         <div class="form-check">
                             <input type="radio" id="loanInquiry_bcaPayment" name="bankChoices" value="bcaPayment" class="form-check-input" required>
                             <label for="loanInquiry_bcaPayment" class="form-check-label ml-3">
-                                <img src="../../../assets/images/bank/BCA.svg" alt="Bank BCA" class="w-75">
+                                <img src="@/assets/images/bank/BCA.svg" alt="Bank BCA" class="w-75">
                             </label>
                         </div>
                         <div class="form-check">
                             <input type="radio" id="loanInquiry_bniPayment" name="bankChoices" value="bniPayment" class="form-check-input" required>
                             <label for="loanInquiry_bniPayment" class="form-check-label ml-3">
-                                <img src="../../../assets/images/bank/BNI.svg" alt="Bank BNI" class="w-75">
+                                <img src="@/assets/images/bank/BNI.svg" alt="Bank BNI" class="w-75">
                             </label>
                         </div>
                         <div class="form-check mt-1">
                             <input type="radio" id="loanInquiry_bniSyariahPayment" name="bankChoices" value="bniSyariahPayment" class="form-check-input" required>
                             <label for="loanInquiry_bniSyariahPayment" class="form-check-label ml-3">
-                                <img src="../../../assets/images/bank/BNI_Syariah.svg" alt="Bank BNI Syariah" class="w-75">
+                                <img src="@/assets/images/bank/BNI_Syariah.svg" alt="Bank BNI Syariah" class="w-75">
                             </label>
                         </div>
                         <div class="form-check mt-1">
                             <input type="radio" id="loanInquiry_briPayment" name="bankChoices" value="briPayment" class="form-check-input" required>
                             <label for="loanInquiry_briPayment" class="form-check-label ml-3">
-                                <img src="../../../assets/images/bank/BRI.svg" alt="Bank BRI" class="w-75">
+                                <img src="@/assets/images/bank/BRI.svg" alt="Bank BRI" class="w-75">
                             </label>
                         </div>
                         <div class="form-check mt-1">
                             <input type="radio" id="loanInquiry_mandiriPayment" name="bankChoices" value="mandiriPayment" class="form-check-input" required>
                             <label for="loanInquiry_mandiriPayment" class="form-check-label ml-3">
-                                <img src="../../../assets/images/bank/Mandiri.svg" alt="Bank Mandiri" class="w-75">
+                                <img src="@/assets/images/bank/Mandiri.svg" alt="Bank Mandiri" class="w-75">
                             </label>
                         </div>
                         <div class="form-check mt-1">
                             <input type="radio" id="loanInquiry_visaPayment" name="bankChoices" value="visaPayment" class="form-check-input" required>
                             <label for="loanInquiry_visaPayment" class="form-check-label ml-3">
-                                <img src="../../../assets/images/bank/VISA.svg" alt="VISA" class="w-75">
+                                <img src="@/assets/images/bank/VISA.svg" alt="VISA" class="w-75">
                             </label>
                         </div>
                         <div class="form-check mt-1">
                             <input type="radio" id="loanInquiry_masterCardPayment" name="bankChoices" value="masterCardPayment" class="form-check-input" required>
                             <label for="loanInquiry_masterCardPayment" class="form-check-label ml-3">
-                                <img src="../../../assets/images/bank/MasterCard.svg" alt="MasterCard" class="w-75">
+                                <img src="@/assets/images/bank/MasterCard.svg" alt="MasterCard" class="w-75">
                             </label>
                         </div>
                     </div>

@@ -1,9 +1,9 @@
 <template>
     <div class="page container-fluid p-0 position-absolute top-0 start-0 bg-white vh-100 vw-100 login-page">
         <a class="navbar-brand position-absolute start-0 mt-4" href="#" style="padding-left: calc(15% / 2); z-index: 2000">
-            <img src="../../assets/images/full-white-logo.svg" style="width: 60%;"/>
+            <img src="@/assets/images/full-white-logo.svg" style="width: 60%;"/>
         </a>
-        <img class="ornament w-50" style="z-index: 1111; position: relative;" src="../../assets/images/background/register.svg" alt="">
+        <img class="ornament w-50" style="z-index: 1111; position: relative;" src="@/assets/images/background/register.svg" alt="">
 
         <div class="btn-group position-absolute top-0 mt-4" style="right: calc(15% / 2); z-index: 3000;">
             <router-link :to="'/signup/' + $route.params.role" class="btn rounded-10 d-flex align-items-center border-0 p-2 login-register-button" id="loginButton">
@@ -15,7 +15,7 @@
         </div>
 
         <div class="container-fluid row mx-auto mb-4 signin-container">
-            <img src="../../assets/images/illustration/computer-login.svg" alt="" class="col-sm-12 col-md-12 col-lg-12 w-100" style="height: fit-content;">
+            <img src="@/assets/images/illustration/computer-login.svg" alt="" class="col-sm-12 col-md-12 col-lg-12 w-100" style="height: fit-content;">
             <form @submit.prevent="handleSubmit" class="col-sm-12 col-md-12 col-lg-12 d-flex flex-column form-login" style="gap: 1.5rem; padding-right: calc(15% / 2);">
                 <h1 class="fs-1 fw-bold text-primary">Masuk ke Akun</h1>
                 <div class="">
@@ -54,9 +54,7 @@ export default {
     methods: {
         async handleSubmit() {
             try {
-                this.loader = this.$loading.show()
                 const signin = await useUserStore().login(this.role, this.email, this.password)
-                this.loader.hide()
                 if (signin.status) {
                     this.$router.push({ name: 'home' })
                     // this.$showNotification(response.message, 'success')
@@ -65,7 +63,6 @@ export default {
                     // this.$showNotification(response.message)
                 }
             } catch(error) {
-                this.loader.hide()
                 alert(error)
             }
         }

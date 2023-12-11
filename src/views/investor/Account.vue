@@ -4,17 +4,17 @@
             <div class="row justify-content-between w-100 mx-auto" style="row-gap: 3rem">
                 <div class="saving-balance-section rounded-20 d-flex align-items-center p-4 py-5 position-relative justify-content-around mx-auto" style="background: linear-gradient(272deg, #5D299F 3.69%, #F94A29 94.22%); opacity: 0.8; width: 100%; max-width: 40rem;">
                     <div class="position-relative" style="width: 7rem;">
-                        <img src="../../assets/images/background/saving-balance.svg" alt="" class="position-absolute" style="width: 7rem; margin-top: -8rem;">
+                        <img src="@/assets/images/background/saving-balance.svg" alt="" class="position-absolute" style="width: 7rem; margin-top: -8rem;">
                     </div>
                     <div class="position-relative">
                         <h3 class="text-white font-weight-light par-1-2em">Rp <span class="font-weight-semibold par-2-2-5em">2,000,000</span></h3>
                         <h3 class="text-white font-weight-light par-1-2em">Saldo Tabungan Anda</h3>
                     </div>
                     <div class="wavy-background position-absolute opacity-50" style="left: 0; bottom: 0; margin-left: -4rem; margin-bottom: -3rem;">
-                        <img src="../../assets/images/background/footer-background.svg" alt="">
+                        <img src="@/assets/images/background/footer-background.svg" alt="">
                     </div>
                     <div class="wavy-background position-absolute opacity-50" style="right: 0; top: 0; rotate: 180deg; margin-right: -3rem; margin-top: -3rem;">
-                        <img src="../../assets/images/background/footer-background.svg" alt="">
+                        <img src="@/assets/images/background/footer-background.svg" alt="">
                     </div>
                 </div>
                 <div class="top-up-section rounded-20 d-flex align-items-center justify-content-around p-4 py-5 position-relative mx-auto" style="overflow: hidden; background: linear-gradient(272deg, #1A5F7A 3.69%, #159895 94.22%); opacity: 0.8; width: 100%; max-width: 40rem;">
@@ -31,10 +31,10 @@
                         </span>
                     </button>
                     <div class="wavy-background position-absolute opacity-50" style="left: 0; bottom: 0; margin-left: -4rem; margin-bottom: -3rem;">
-                        <img src="../../assets/images/background/footer-background.svg" alt="">
+                        <img src="@/assets/images/background/footer-background.svg" alt="">
                     </div>
                     <div class="wavy-background position-absolute opacity-50" style="right: 0; top: 0; rotate: 180deg; margin-right: -3rem; margin-top: -3rem;">
-                        <img src="../../assets/images/background/footer-background.svg" alt="">
+                        <img src="@/assets/images/background/footer-background.svg" alt="">
                     </div>
                 </div>
             </div>
@@ -43,7 +43,7 @@
         <section class="profile-area mt-5 mb-5" style="padding-inline: calc(15% / 2);">
             <h1 class="font-weight-semibold">Informasi Pribadi</h1>
             <div class="p-5 w-100 h-100 rounded-20 container-card-shadow d-flex flex-column align-items-center mt-5">
-                <img src="../../assets/images/profile/user-profile.svg" alt="" class="w-25 h-25">
+                <img src="@/assets/images/profile/user-profile.svg" alt="" class="w-25 h-25">
                 <div class="profile-container row justify-content-around mt-4">
                     <div class="card col-sm-5 col-md-5 col-lg-4 p-4 bg-secondary border-0 rounded-10 mb-4">
                         <h3 class="par-1em">Nama</h3>

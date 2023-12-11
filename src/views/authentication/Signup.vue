@@ -1,9 +1,9 @@
 <template>
     <div class="page container-fluid p-0 position-absolute top-0 start-0 bg-white vh-100 vw-100 register-page">
         <a class="navbar-brand position-absolute start-0 mt-4" href="#" style="padding-left: calc(15% / 2)">
-            <img src="../../assets/images/full-white-logo.svg" style="width: 60%;"/>
+            <img src="@/assets/images/full-white-logo.svg" style="width: 60%;"/>
         </a>
-        <img class="ornament w-50" src="../../assets/images/background/register.svg" alt="">
+        <img class="ornament w-50" src="@/assets/images/background/register.svg" alt="">
 
         <div class="btn-group position-absolute top-0 mt-4" style="right: calc(15% / 2); z-index: 999;">
             <router-link :to="'/signin/' + $route.params.role" class="btn rounded-10 d-flex align-items-center border-0 p-2 login-register-button" id="loginButton">
@@ -15,7 +15,7 @@
         </div>
 
         <div class="container-fluid row mx-auto pb-4 register-container">
-            <img src="../../assets/images/illustration/computer-login.svg" alt="" class="col-sm-12 col-md-12 col-lg-12 w-100" style="height: fit-content;">
+            <img src="@/assets/images/illustration/computer-login.svg" alt="" class="col-sm-12 col-md-12 col-lg-12 w-100" style="height: fit-content;">
             <form class="col-sm-12 col-md-12 col-lg-12 d-flex flex-column form-register" style="gap: 1.5rem; padding-right: calc(15% / 2);">
                 <h1 class="fs-1 fw-bold text-primary">Registrasi Akun</h1>
                 <div class="">

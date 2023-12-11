@@ -8,7 +8,7 @@
                 <section class="p-5 rounded-10 container-card-shadow w-100" style="height: fit-content;">
                     <h2 class="font-weight-semibold m-0 text-primary mb-4 par-1-2em">Informasi Data Peminjam</h2>
                     <div class="profile-image rounded-circle bg-primary mx-auto" style="width: 5rem; height: 5rem;">
-                        <img src="../../../assets/images/profile/user-profile.svg" alt="" class="w-100 h-100">
+                        <img src="@/assets/images/profile/user-profile.svg" alt="" class="w-100 h-100">
                     </div>
                     <div class="loan-detail-lendee-data d-flex flex-wrap mt-4" style="row-gap: 1rem">
                         <div class="w-50">
@@ -100,7 +100,7 @@
                     <section class="p-5 rounded-10 container-card-shadow">
                         <h2 class="font-weight-semibold m-0 text-primary mb-4 par-1-2em">Informasi Data Peminjam</h2>
                         <div class="profile-image rounded-circle bg-primary mx-auto" style="width: 5rem; height: 5rem;">
-                            <img src="../../../assets/images/profile/user-profile.svg" alt="" class="w-100 h-100">
+                            <img src="@/assets/images/profile/user-profile.svg" alt="" class="w-100 h-100">
                         </div>
                         <div class="loan-detail-lendee-data d-flex flex-wrap mt-4" style="row-gap: 1rem">
                             <div class="w-50">
@@ -132,7 +132,7 @@
 
                     <div class="w-100 opacity-75">
                         <div class="bg-primary" style="border-radius: 1.2rem; height: 4rem;">
-                            <img class="w-100" src="./assets/images/background/wave-background.svg" alt="">
+                            <img class="w-100" src="@/assets/images/background/wave-background.svg" alt="">
                         </div>
                     </div>
                 </div>
