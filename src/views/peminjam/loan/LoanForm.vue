@@ -92,7 +92,7 @@
                                 <ErrorMessage name="jml_cicilan" :class="'text-danger'" />
                             </div>
                         </div>
-                        <div class="form-check mt-1">
+                        <div class="form-check mt-1" style="z-index: 1059 !important">
                             <Field type="radio" id="instalment_payment_2" v-model="instalment_payment" @change="onChangeTypePayment" name="instalment_payment" value="1" class="form-check-input" />
                             <label for="instalment_payment_2" class="form-check-label ml-3">Bayar semuanya sekaligus</label>
                         </div>
@@ -197,10 +197,6 @@
     </main>
 </template>
 <script>
-    const getImageUrl = (name) => {
-        return new URL(`../../../assets/images/bank/${name}.svg`, import.meta.url).href;
-    }
-
     import { vMaska } from "maska"
 
     import { Field, Form, ErrorMessage } from 'vee-validate';
@@ -233,31 +229,31 @@
                 listBank: [
                     {
                         name: 'BCA',
-                        logo: getImageUrl('BCA'),
+                        logo: 'src/assets/images/bank/BCA.svg',
                     },
                     {
                         name: 'BNI',
-                        logo: getImageUrl('BNI'),
+                        logo: 'src/assets/images/bank/BNI.svg',
                     },
                     {
                         name: 'BNI Syariah',
-                        logo: getImageUrl('BNI_Syariah'),
+                        logo: 'src/assets/images/bank/BNI_Syariah.svg',
                     },
                     {
                         name: 'BRI',
-                        logo: getImageUrl('BRI'),
+                        logo: 'src/assets/images/bank/BRI.svg',
                     },
                     {
                         name: 'Mandiri',
-                        logo: getImageUrl('Mandiri'),
+                        logo: 'src/assets/images/bank/Mandiri.svg',
                     },
                     {
                         name: 'VISA',
-                        logo: getImageUrl('VISA'),
+                        logo: 'src/assets/images/bank/VISA.svg',
                     },
                     {
                         name: 'MasterCard',
-                        logo: getImageUrl('MasterCard'),
+                        logo: 'src/assets/images/bank/MasterCard.svg',
                     }
                 ]
             }

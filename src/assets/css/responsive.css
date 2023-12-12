@@ -250,10 +250,6 @@
     .profile-area .container-card-shadow {
         padding: 3rem !important;
     }
-
-    .bank-choices-in-inquiry {
-        grid-template-columns: 1fr !important;
-    }
 }
 
 
@@ -407,10 +403,6 @@
 
     #chart-line {
         height: 25rem !important;
-    }
-    
-    .bank-choices-in-inquiry {
-        grid-template-columns: 1fr !important;
     }
 }
 
@@ -653,10 +645,6 @@
 
     .hero .image {
         margin-top: 0rem !important;
-    }
-
-    .bank-choices-in-inquiry {
-        grid-template-columns: 1fr 1fr !important;
     }
 }
 
