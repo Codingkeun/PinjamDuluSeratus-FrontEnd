@@ -28,7 +28,7 @@
                     <Field type="password" name="password" id="password" class="form-control mb-2" placeholder="Masukkan password" v-model="password" />
                     <ErrorMessage name="password" :class="'text-danger'" />
                 </div>
-                <button type="submit" class="btn btn-primary font-weight-semibold w-100" :disabled="fetch"><span v-if="fetch">Loading</span><span v-else>Masuk</span></button>
+                <button type="submit" class="btn btn-primary font-weight-semibold w-100" style="max-width: 100%" :disabled="fetch"><span v-if="fetch">Loading</span><span v-else>Masuk</span></button>
             </form>
         </div>
     </div>

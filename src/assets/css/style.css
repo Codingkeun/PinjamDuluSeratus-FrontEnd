@@ -690,7 +690,3 @@ a.btn.bg-white.text-primary {
 .payment-history-back-button:hover {
     text-decoration: none !important;
 }
-
-#accountSignIn, #accountRegister {
-    max-width: 100%;
-}

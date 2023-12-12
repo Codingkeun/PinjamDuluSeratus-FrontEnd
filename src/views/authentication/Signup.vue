@@ -76,7 +76,7 @@
                     </div>
                 </div>
                 <div class="d-block">
-                    <button type="submit" class="btn btn-block btn-primary font-weight-semibold" :disabled="form.fetch"><span v-if="form.fetch">Loading</span><span v-else>Registrasi</span></button>
+                    <button type="submit" class="btn btn-block btn-primary font-weight-semibold" style="max-width: 100%;" :disabled="form.fetch"><span v-if="form.fetch">Loading</span><span v-else>Registrasi</span></button>
                 </div>
             </Form>
         </div>
