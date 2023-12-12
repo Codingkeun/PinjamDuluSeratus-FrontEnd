@@ -2484,9 +2484,6 @@ select.form-control-lg:not([size]):not([multiple]), .input-group-lg > select.for
   border-radius: 0.25rem;
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
   min-height: 44px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 .btn:hover, .btn:focus {
@@ -2519,12 +2516,15 @@ fieldset:disabled a.btn {
   color: #fff;
   background-color: var(--primary);
   border-color: var(--primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .btn-primary:hover {
   color: #fff;
   background-color: var(--secondary);
-  border-color: var(--primary);
+  border-color: var(--secondary) !important;
 }
 
 .btn-primary:focus, .btn-primary.focus {

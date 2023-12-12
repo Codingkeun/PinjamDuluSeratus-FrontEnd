@@ -2,7 +2,7 @@
 <main class="mt-5 mb-5" style="padding-inline: calc(15% / 2);">
     <div class="d-flex justify-content-between align-items-center flex-wrap mt-5" style="gap: 2rem;">
         <h1 class="font-weight-semibold">Detail Pinjaman</h1>
-        <router-link to="/history-payment" class="btn bg-white text-primary font-weight-semibold" style="height: 44px; border: 2px solid var(--primary);">Lihat Histori Pembayaran</router-link>
+        <router-link to="/history-payment" class="btn btn-border bg-white text-primary font-weight-semibold" style="height: 44px; border: 2px solid var(--primary);">Lihat Histori Pembayaran</router-link>
     </div>
     <div class="loan-detail-container row w-100 d-flex mx-0 justify-content-between mt-4">
         <div class="d-flex flex-column mt-4 w-100 col-sm-12 col-md-12 col-lg-6 px-0" style="gap: 3rem;">

@@ -4,7 +4,7 @@
         <!-- Investasi Aktif > Detail Pinjaman <with providing funds button> -->
         <div id="beforeProvidingLoans">
             <h1 class="font-weight-semibold mt-5">Detail Pinjaman</h1>
-            <div class="loan-detail-container lender-role w-100 mx-0 mt-4">
+            <form class="loan-detail-container lender-role w-100 mx-0 mt-4">
                 <section class="p-5 rounded-10 container-card-shadow w-100" style="height: fit-content;">
                     <h2 class="font-weight-semibold m-0 text-primary mb-4 par-1-2em">Informasi Data Peminjam</h2>
                     <div class="profile-image rounded-circle bg-primary mx-auto" style="width: 5rem; height: 5rem;">
@@ -85,14 +85,14 @@
                 </section>
 
                 <button class="btn btn-primary w-100 font-weight-semibold mx-auto" id="provideLoanFundsButton" type="submit">Berikan Dana Pinjaman</button>
-            </div>
+            </form>
         </div>
 
         <!-- Dashboard > Detail Pinjaman <with view history button> -->
         <div id="afterProvidingLoans">
             <div class="d-flex justify-content-between align-items-center flex-wrap mt-5" style="gap: 2rem;">
                 <h1 class="font-weight-semibold">Detail Pinjaman</h1>
-                <router-link to="/history-payment" class="btn bg-white text-primary font-weight-semibold" style="height: 44px; border: 2px solid var(--primary);">Lihat Histori Pembayaran</router-link>
+                <router-link to="/history-payment" class="btn btn-border bg-white text-primary font-weight-semibold" style="height: 44px; border: 2px solid var(--primary);">Lihat Histori Pembayaran</router-link>
             </div>
 
             <div class="loan-detail-container row w-100 d-flex mx-0 justify-content-between mt-4">

@@ -19,7 +19,7 @@
     }
 }
 
-@media screen and (max-width: 992px) {
+@media screen and (max-width: 991.9px) {
     .lendee-payment-detail .col-md-12:last-child {
         margin-top: 1.5rem !important;
     }
@@ -34,6 +34,12 @@
 
     .loan-detail-container > *:first-child > *:last-child {
         display: none;
+    }
+
+    .lendee-payment-detail button[type=button],
+    #uploadProofOfPaymentSection button[type=submit],
+    #uploadProofOfPaymentSection > div {
+        margin-inline: auto;
     }
 }
 

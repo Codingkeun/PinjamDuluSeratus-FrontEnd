@@ -64,7 +64,7 @@
                         <td class="receivableTableTable_lendersMajor">Teknik Informatika</td>
                         <td class="receivableTableTable_lendersClass">TIF RM 222</td>
                         <td>
-                            <button type="button" class="btn btn-primary receivableTable_detailLoan" onclick="window.location.href = 'investor_dashboard_detail-pinjaman.html'">Detail</button>
+                            <router-link to="/investment/detail/:id" type="button" class="receivableTable_detailLoan btn btn-primary font-weight-semibold w-100">Detail</router-link>
                         </td>
                     </tr>
                     <tr>

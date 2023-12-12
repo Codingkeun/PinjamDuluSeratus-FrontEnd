@@ -1,12 +1,18 @@
 <template>
 <main class="mt-5 mb-5" style="padding-inline: calc(15% / 2);">
-    <router-link to="/loan/detail/1" class="btn bg-white text-primary font-weight-semibold d-flex align-items-center p-0" style="gap: .5rem;">
+    <router-link to="/loan/detail/1" v-if="user.role == 'peminjam'" class="payment-history-back-button bg-white text-primary font-weight-semibold d-flex align-items-center p-0" style="gap: .5rem; width: fit-content">
         <span class="material-symbols-rounded">
             keyboard_arrow_left
         </span>
         Kembali
     </router-link>
-    <h1 class="font-weight-semibold mt-4">Histori Pembayaran</h1>
+    <router-link to="/dashboard/investor" v-if="user.role == 'investor'" class="payment-history-back-button bg-white text-primary font-weight-semibold d-flex align-items-center p-0" style="gap: .5rem; width: fit-content">
+        <span class="material-symbols-rounded">
+            keyboard_arrow_left
+        </span>
+        Kembali
+    </router-link>
+    <h1 class="font-weight-semibold mt-5">Histori Pembayaran</h1>
     <div class="table-responsive mt-5">
         <table id="lendeePaymentHistoryTable" class="table table-striped sortable">
             <thead>
@@ -48,12 +54,19 @@
 </main>
 </template>
 <script>
+import {useUserStore} from '@/stores/user'
 export default {
     name: '',
     data() {
         return {
             
         }
-    }
+    },
+    setup() {
+        const user = useUserStore()
+        return {
+            user
+        }
+    },
 }
 </script>
