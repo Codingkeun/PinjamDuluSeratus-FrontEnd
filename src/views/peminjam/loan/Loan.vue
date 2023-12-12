@@ -17,13 +17,16 @@
             </thead>
             <tbody id="loanTableData" v-if="list.length">
                 <tr v-for="item in list">
-                    <td class="loanTable_investorName">John Doe</td>
-                    <td class="loanTable_loanAmount">Rp 2,000,000</td>
-                    <td class="loanTable_dueDate" data-dateformat="DD MMM YYYY">15 November 2023</td>
-                    <td class="loanTable_totalPayment">Rp 2,250,000</td>
-                    <td class="loanTable_statusLoan">Lunas</td>
+                    <td class="loanTable_investorName">{{item.investor_name || '-'}}</td>
+                    <td class="loanTable_loanAmount">Rp {{ $toCurrency(item.nominal) }}</td>
+                    <td class="loanTable_dueDate">{{ $moment(item.deadline).format('DD MMMM YYYY HH:mm') }}</td>
+                    <td class="loanTable_totalPayment">Rp {{ $toCurrency((item.nominal + item.tip)) }}</td>
+                    <td class="loanTable_statusLoan">
+                        <span v-if="item.status_approval == 'wait'" class="text-muted">Menunggu Investor</span>
+                        <span v-if="item.instalment_status == 'belum' && item.status_approval == 'approve'">Belum Lunas</span>
+                    </td>
                     <td>
-                        <router-link to="loan/detail/1" type="button" class="btn btn-primary loanTable_detailLoan">Detail</router-link>
+                        <router-link :to="`loan/detail/${item.id}`" type="button" class="btn btn-primary loanTable_detailLoan">Detail</router-link>
                     </td>
                 </tr>
             </tbody>
@@ -35,6 +38,9 @@
 </main>
 </template>
 <script>
+import apiEnpoint from '@/services/api-endpoint'
+import { ApiCore } from '@/services/core'
+
 export default {
     name: 'Pinjaman',
     data() {
@@ -48,6 +54,26 @@ export default {
                 total: 0
             },
         }
+    },
+    mounted() {
+        this.fetchData(this.pagination.page)
+    },
+    methods: {
+        fetchData(page) {
+            this.list = []
+            ApiCore.get(`${apiEnpoint.LOAN}/pinjaman-aktif`, {
+                page: page,
+                limit: this.pagination.limit,
+            }).then((result) => {
+                if (result.status) {
+                    this.list = result.data
+                }
+                this.pagination.prev = result.pagination.prev
+                this.pagination.next = result.pagination.next
+                this.pagination.page = result.pagination.page
+                this.pagination.total = result.pagination.total
+            })
+        },
     }
 }
 </script>

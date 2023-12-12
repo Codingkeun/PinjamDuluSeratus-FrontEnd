@@ -111,6 +111,7 @@ const routes = [
     },
     {
         path: '/loan',
+        name: 'loan',
         component: LoanBorrower,
         meta: {
             title: `${nameApplication} | Pinjaman`,
@@ -220,7 +221,7 @@ router.beforeEach((to, from, next) => {
     const authRequired  = ['signin', 'signup'].includes(to.name);
 
     if (!authRequired) {
-        ApiCore.get(`${apiEnpoint.ACCOUNT}/info`)
+        ApiCore.get(`${apiEnpoint.ACCOUNT}/info`, null, false)
                 .then((response) => {
                     stores.commit('setuser', response)
                 })
