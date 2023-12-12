@@ -23,6 +23,9 @@ import 'sweetalert2/dist/sweetalert2.min.css';
 import Toast, {useToast} from "vue-toastification";
 import "vue-toastification/dist/index.css";
 
+// moment library
+import moment from 'moment'
+
 // load assets
 import './assets/css/bootstrap.css'
 import './assets/css/style.css'
@@ -62,6 +65,17 @@ app.component(VueCountdown.name, VueCountdown);
 app.component(Pagination.name, Pagination)
 app.component(EmptyState.name, EmptyState)
 
+// global variables
+app.config.globalProperties.$moment = moment;
 app.config.globalProperties.$toast = useToast()
+
+// global functions
+app.config.globalProperties.$toCurrency =  function (value) {
+    if (typeof value !== "number") {
+        return value;
+    }
+
+    return value.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,')
+}
 
 app.mount('#app')
