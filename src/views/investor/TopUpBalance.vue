@@ -1,10 +1,10 @@
 <template>
     <main>
-        <form class="mt-5 mb-5 w-100 d-flex flex-column" style="gap: 3rem;">
+        <form class="mt-5 mb-5 w-100 d-flex flex-column" style="gap: 3rem;" @submit.prevent="onSubmit($event)">
             <h1 class="font-weight-semibold" style="padding-inline: calc(15% / 2);">Top Up Saldo</h1>
             <div class="d-flex flex-column" style="gap: 1rem;">
                 <h2 class="text-center font-weight-semibold par-1-2em">Pilih nominal top up</h2>
-                <div class="amountInputByRadioElement d-flex card-horizontal-scroll" style="gap: 2rem; padding-inline: calc(15% / 2);">
+                <div class="amountInputByRadioElement d-flex card-horizontal-scroll" style="gap: 2rem; padding-inline: calc(15% / 2);" @click="cardOnClick($event)">
                     <div class="item-card-shadow rounded-10 px-3 py-2" style="min-width: 15rem; min-height: 8rem;">
                         <input type="radio" name="topUpAmount" id="topUp30Thousand" required>
                         <label for="topUp30Thousand" class="position-relative d-flex justify-content-center font-weight-semibold par-1-2em" style="transform: translateY(50%);">
@@ -47,7 +47,7 @@
                     <div>atau</div>
                     <div class="divider my-auto"></div>
                 </div>
-                <div class="input-group w-50 mx-auto d-flex">
+                <div class="input-group w-50 mx-auto d-flex" @click="inputOnClick($event)" >
                     <span class="input-group-text border-right-0" style="border-top-right-radius: 0; border-bottom-right-radius: 0;">Rp</span>
                     <input type="text" placeholder="Masukkan jumlah donasi" class="form-control" id="topUpWrittenAmount" required disabled>
                     <div class="amountInvalidInputMessage flex-wrap w-100" hidden>
@@ -106,11 +106,24 @@
     </main>
 </template>
 <script>
+import { topUpAmountCardOnClick, inputTopUpAmountElementOnClick } from '../../assets/js/top-up-input-amount-switch';
 export default {
     name: 'TopUpBalance',
     data() {
         return {
             
+        }
+    },
+    methods: {
+        cardOnClick(event) {
+            if (event) {
+                topUpAmountCardOnClick();
+            }
+        },
+        inputOnClick(event) {
+            if (event) {
+                inputTopUpAmountElementOnClick();
+            }
         }
     }
 }
