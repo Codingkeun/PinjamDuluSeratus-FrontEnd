@@ -13,9 +13,16 @@
                 <div class="d-flex flex-column" style="gap: 2rem;">
                     <div class="">
                         <label for="loanAmount">Jumlah Pinjaman</label>
+                        <Field type="number" v-model="form.nominal" name="nominal" class="d-none" />
                         <div class="input-group d-flex">
                             <span class="input-group-text border-right-0" style="border-top-right-radius: 0; border-bottom-right-radius: 0;">Rp</span>
-                            <Field type="number" name="nominal" v-model="form.nominal" placeholder="Masukkan jumlah pinjaman" class="form-control" />
+                            <input v-maska 
+                                placeholder="Masukkan jumlah pinjaman"
+                                class="form-control"
+                                @maska="setNominal"
+                                data-maska="9,99#"
+                                data-maska-tokens="9:[0-9]:repeated"
+                                data-maska-reversed/>
                         </div>
                         <ErrorMessage name="nominal" :class="'text-danger'" />
                     </div>
@@ -24,7 +31,14 @@
                         <label for="tipAmount">Tip</label>
                         <div class="input-group d-flex mb-3">
                             <span class="input-group-text border-right-0" style="border-top-right-radius: 0; border-bottom-right-radius: 0;">Rp</span>
-                            <Field type="number" name="tip" v-model="form.tip" placeholder="Masukkan jumlah tip" class="form-control" />
+                            <Field v-maska
+                                name="nomitipnal"
+                                placeholder="Masukkan jumlah tip"
+                                class="form-control"
+                                data-maska="9,99#"
+                                data-maska-tokens="9:[0-9]:repeated"
+                                @maska="setTip"
+                                data-maska-reversed/>
                         </div>
                         <div class="alert alert-info rounded-10 p-3">
                             <div class="d-flex align-items-center">
@@ -58,13 +72,14 @@
                         <div class="form-check">
                             <Field type="radio" id="instalment_payment" v-model="instalment_payment" name="instalment_payment" value="0" class="form-check-input" @change="onChangeTypePayment" />
                             <label for="instalment_payment" class="form-check-label ml-3">Bayar secara cicilan</label>
+                            <Field name="jml_cicilan" type="hidden" v-model="form.jml_cicilan" />
                             <div class="ml-3 installmentPaymentRange" v-if="instalment_payment == 0">
                                 <label for="installmentPaymentRange">Berapa kali cicilan?</label>
                                 <div class="custom-range">
                                     <div class="custom-range-field">
                                         <div class="value left">1</div>
                                         <div class="w-100">
-                                            <Field type="range" name="jml_cicilan" min="1" max="12" step="1" v-model="form.jml_cicilan" @change="onChange($event)" @blur="onBlur($event)" />
+                                            <input type="range" min="1" max="12" step="1" v-model="form.jml_cicilan" @change="onChange($event)" @blur="onBlur($event)" />
                                             <div class="custom-range-value-section">
                                                 <div class="custom-range-value" id="customRangeValue">
                                                     <span>5</span>
@@ -77,7 +92,7 @@
                                 <ErrorMessage name="jml_cicilan" :class="'text-danger'" />
                             </div>
                         </div>
-                        <div class="form-check mt-1" style="z-index: 1060 !important">
+                        <div class="form-check mt-1" style="z-index: 1059 !important">
                             <Field type="radio" id="instalment_payment_2" v-model="instalment_payment" @change="onChangeTypePayment" name="instalment_payment" value="1" class="form-check-input" />
                             <label for="instalment_payment_2" class="form-check-label ml-3">Bayar semuanya sekaligus</label>
                         </div>
@@ -90,7 +105,7 @@
                             <div class="form-check mb-2 border rounded-10" v-for="bank, index in listBank" :key="index">
                                 <label :for="`bank_${index}`" class="d-flex align-items-center px-3 pt-3 pb-2">
                                     <div class="d-flex align-items-center" style="gap: 10px">
-                                        <Field type="radio" name="bank_name" :id="`bank_${index}`" :value="bank.name" v-model="form.bank_name" class="form-check-input" />
+                                        <Field type="radio" name="bank_name" :id="`bank_${index}`" :value="bank.name" v-model="form.bank_name" class="form-check-input" @change="resetResultSimulate" />
                                         <img :src="bank.logo" :alt="`Bank ${bank.name}`" style="max-width: 100px;" class="ml-2">
                                     </div>
                                 </label>
@@ -111,7 +126,7 @@
     
             <section>
                 <div class="p-5 rounded-10 container-card-shadow" style="height: fit-content;">
-                    <h2 class="font-weight-semibold m-0 text-primary mb-4 par-1-2em">Hasil Simulasi Pengajuan</h2>
+                    <h2 class="font-weight-semibold m-0 text-primary mb-4 par-1-2em" id="result-simulation">Hasil Simulasi Pengajuan</h2>
                     <div class="simulation-result-data d-flex flex-column" style="gap: 1.5rem">
                         <div id="simulationResult_loanAmountTotal" style="row-gap: 8px;">
                             <h4 class="my-auto par-1em" id="loanAmountTotalName">Jumlah Pinjaman</h4>
@@ -143,7 +158,7 @@
                         </div>
                     </div>
                 </div>
-    
+
                 <Form :validation-schema="schemaSubmit" @submit="handleSubmit" class="mt-5" v-if="simulate.total_loan > 0">
                     <div>
                         <h4 class="text-center par-1em">Tanggal jatuh tempo pembayaran pinjaman</h4>
@@ -165,7 +180,7 @@
                     </div>
                     <ErrorMessage name="dueDateOfLoanTerms" :class="'text-danger'" />
     
-                    <button class="btn btn-primary font-weight-semibold w-100 mt-5" type="submit">Ajukan Pinjaman</button>
+                    <button ref="submit" class="btn btn-primary font-weight-semibold w-100 mt-5" type="submit">Ajukan Pinjaman</button>
                 </Form>
                 <div v-else class="d-flex align-items-center alert alert-info rounded-10 mt-5 text-muted">
                     <div class="text-info mr-3 pb-0">
@@ -180,10 +195,12 @@
             </section>
         </div>
     </main>
-    </template>
-    <script>
+</template>
+<script>
+    import { vMaska } from "maska"
+
     import { Field, Form, ErrorMessage } from 'vee-validate';
-    import * as yup from 'yup';
+    import {string, number, object, array} from 'yup';
     import $ from 'jquery'
     
     import { ApiCore } from '@/services/core';
@@ -195,8 +212,8 @@
             return {
                 instalment_payment: '0',
                 form: {
-                    nominal: 0,
-                    tip: 0,
+                    nominal: null,
+                    tip: null,
                     jml_cicilan: 1,
                     bank_name: '',
                     account_number: '',
@@ -241,25 +258,44 @@
                 ]
             }
         },
+        directives: { maska: vMaska },
         setup() {
-            const schemaSimulate = yup.object({
-                nominal: yup.number().min(1000, 'Jumlah pinjaman minimal Rp. 10,000.00').required('Masukan jumlah pinjaman'),
-                jml_cicilan: yup.string().required('Masukan jumlah tenor'),
-                bank_name: yup.string().required('Silahkan pilih bank'),
-                account_number: yup.string().required('Masukan nomor rekening'),
-                instalment_payment: yup.string().required('Pilih tipe pelunasan'),
+            const schemaSimulate = object({
+                nominal: number().nullable().min(10000, 'Jumlah pinjaman minimal Rp. 10,000.00').required('Masukan jumlah pinjaman'),
+                jml_cicilan: string().required('Masukan jumlah tenor'),
+                bank_name: string().required('Silahkan pilih bank'),
+                account_number: string().required('Masukan nomor rekening'),
+                instalment_payment: string().required('Pilih tipe pelunasan'),
             });
-            const schemaSubmit = yup.object({
-                dueDateOfLoanTerms: yup.array().min(3, 'Silahkan centang semua ketentuan').required('Silahkan untuk menyetujui ketentuan diatas.'),
+            const schemaSubmit = object({
+                dueDateOfLoanTerms: array().min(3, 'Silahkan centang semua ketentuan').required('Silahkan untuk menyetujui ketentuan diatas.'),
             });
     
             return {
                 schemaSimulate,
-                schemaSubmit
+                schemaSubmit,
             }
         },
         components: {Field, Form, ErrorMessage},
         methods: {
+            resetResultSimulate() {
+                this.simulate = {
+                    nominal: 0,
+                    tip: 0,
+                    jml_cicilan: 0,
+                    total_loan: 0,
+                    total_loan_by_instalment: 0,
+                    deadline: ''
+                }
+            },
+            setNominal(data) {
+                this.form.nominal=data.detail.unmasked
+                this.resetResultSimulate()
+            },
+            setTip(data) {
+                this.form.tip=data.detail.unmasked
+                this.resetResultSimulate()
+            },
             simulateSubmit() {
                 try {
                     this.simulate.nominal = this.form.nominal
@@ -270,7 +306,10 @@
                     this.simulate.total_loan_by_instalment = (this.simulate.total_loan / parseInt(this.form.jml_cicilan))
                     this.simulate.deadline = this.calculateDeadlineDate(this.form.jml_cicilan)
 
-                    window.scrollTo(0, 150)
+                    if (screen.width >= 900)
+                        window.scrollTo(0, 200)
+                    else
+                        window.scrollTo(0, 1500)
                 } catch(error) {
                     this.$toast.error(error);
                 }
@@ -301,6 +340,7 @@
             },
             onChangeTypePayment() {
                 this.form.jml_cicilan = 1
+                this.resetResultSimulate()
             },
             onChange(event) {
                 if (event) {
@@ -321,4 +361,4 @@
             },
         }
     }
-    </script>
+</script>
