@@ -2,7 +2,7 @@
 <main class="mt-5 mb-5" style="padding-inline: calc(15% / 2);">
     <h1 class="font-weight-semibold">Pengajuan Pinjaman</h1>
     <div class="loan-inquiry d-flex flex-column mt-4" style="gap: 3rem;">
-        <form class="p-5 rounded-10 container-card-shadow" onsubmit="amountInputValidation('#loanAmount', event); amountInputValidation('#tipAmount', event); numberInputValidation('#accountNumber', event)">
+        <form class="p-5 rounded-10 container-card-shadow">
             <h2 class="font-weight-semibold m-0 text-primary mb-4 par-1-2em">Form Pengajuan</h2>
             <div class="d-flex flex-column" style="gap: 2rem;">
                 <div class="">
@@ -57,7 +57,7 @@
                                 <div class="custom-range-field">
                                     <div class="value left">0</div>
                                     <div class="w-100">
-                                        <input type="range" id="installmentPaymentRange" name="installmentPaymentRange" min="0" max="12" value="0" step="1" required>
+                                        <input type="range" id="installmentPaymentRange" name="installmentPaymentRange" min="0" max="12" value="0" step="1" @change="onChange($event)" @blur="onBlur($event)" required>
                                         <div class="custom-range-value-section">
                                             <div class="custom-range-value" id="customRangeValue">
                                                 <span>5</span>
@@ -196,6 +196,7 @@
 </main>
 </template>
 <script>
+import $ from 'jquery';
 import { string, number, date } from 'yup';
 export default {
     name: 'FormLoan',
@@ -206,7 +207,24 @@ export default {
     },
     methods: {
         submit() {
-        }
+        },
+        onChange(event) {
+            if (event) {
+                let value = event.target.value;
+                $('.custom-range-value span').text(value);
+                $('.custom-range-value').css({
+                    'margin-left': (value / 12 * 100) + '%',
+                })
+                $('.custom-range-value').addClass('show');
+                $('.custom-range-value span').addClass('show');
+            };
+        },
+        onBlur(event) {
+            if (event) {
+                $('.custom-range-value').removeClass('show');
+                $('.custom-range-value span').removeClass('show');
+            }
+        },
     }
 }
 </script>
