@@ -116,7 +116,7 @@
     
                     <div class="">
                         <label for="account_number">Nomor Rekening</label>
-                        <Field type="number" v-model="form.account_number" placeholder="Masukkan nomor rekening" class="form-control" name="account_number" />
+                        <Field type="text" v-model="form.account_number" placeholder="Masukkan nomor rekening" class="form-control" name="account_number" />
                         <ErrorMessage name="account_number" :class="'text-danger'" />
                     </div>
                 </div>
