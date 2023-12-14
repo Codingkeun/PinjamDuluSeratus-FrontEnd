@@ -5,6 +5,9 @@
         <router-link to="/loan/form" class="btn btn-primary font-weight-semibold" style="height: 44px;">Buat Pengajuan Pinjaman</router-link>
     </div>
     <div class="table-responsive mt-5">
+        <div class="d-flex justify-content-end">
+            <div class="mb-3 text-muted">Menampilkan {{pagination.total}} data</div>
+        </div>
         <table id="loanTable" class="table table-striped sortable">
             <thead>
                 <tr>
@@ -12,7 +15,7 @@
                     <th>Jumlah Pinjaman</th>
                     <th>Tanggal Jatuh Tempo</th>
                     <th>Total Pembayaran</th>
-                    <th>Status</th>
+                    <th colspan=2>Status</th>
                 </tr>
             </thead>
             <tbody id="loanTableData" v-if="list.length">
@@ -34,6 +37,9 @@
                 <tr><td colspan="6" class="text-center text-muted">Belum ada riwayat pinjaman</td></tr>
             </tbody>
         </table>
+        <div class="d-flex justify-content-center" v-show="list.length">
+            <Pagination :page="pagination.page" :prev="pagination.prev" :next="pagination.next" v-on:fetchData="fetchData"></Pagination>
+        </div>
     </div>
 </main>
 </template>
@@ -50,7 +56,7 @@ export default {
                 prev: false,
                 next: false,
                 page: 1,
-                limit: 15,
+                limit: 5,
                 total: 0
             },
         }
