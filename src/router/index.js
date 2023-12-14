@@ -138,7 +138,7 @@ const routes = [
         }
     },
     {
-        path: '/history-payment',
+        path: '/history-payment/:id',
         component: HistoryPayment,
         meta: {
             title: `${nameApplication} | Riwayat Pembayaran`,

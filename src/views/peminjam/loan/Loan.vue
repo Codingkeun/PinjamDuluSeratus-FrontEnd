@@ -26,7 +26,7 @@
                         <span v-if="item.instalment_status == 'belum' && item.status_approval == 'approve'">Belum Lunas</span>
                     </td>
                     <td>
-                        <router-link :to="`loan/detail/${item.id}`" type="button" class="btn btn-primary loanTable_detailLoan">Detail</router-link>
+                        <button type="button" @click="$router.push(`loan/detail/${item.id}`)" class="btn loanTable_detailLoan" :class="{'btn-primary': item.status_approval == 'approve', 'btn-light border': item.status_approval == 'wait'}">Detail</button>
                     </td>
                 </tr>
             </tbody>
