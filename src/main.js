@@ -78,4 +78,9 @@ app.config.globalProperties.$toCurrency =  function (value) {
     return value.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,')
 }
 
+app.config.globalProperties.$changeFormatDate = function (date, format='DD MMMM YYYY HH:mm') {
+    if (!date) return '-'
+    return moment(date).format(format)
+}
+
 app.mount('#app')

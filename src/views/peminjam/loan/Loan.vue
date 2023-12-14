@@ -19,10 +19,10 @@
                 <tr v-for="item in list">
                     <td class="loanTable_investorName">{{item.investor_name || '-'}}</td>
                     <td class="loanTable_loanAmount">Rp {{ $toCurrency(item.nominal) }}</td>
-                    <td class="loanTable_dueDate">{{ $moment(item.deadline).format('DD MMMM YYYY HH:mm') }}</td>
+                    <td class="loanTable_dueDate">{{ $changeFormatDate(item.deadline) }}</td>
                     <td class="loanTable_totalPayment">Rp {{ $toCurrency((item.nominal + item.tip)) }}</td>
                     <td class="loanTable_statusLoan">
-                        <span v-if="item.status_approval == 'wait'" class="text-muted">Menunggu Investor</span>
+                        <span v-if="item.status_approval == 'wait'" class="text-muted">Menunggu Approval Investor</span>
                         <span v-if="item.instalment_status == 'belum' && item.status_approval == 'approve'">Belum Lunas</span>
                     </td>
                     <td>
