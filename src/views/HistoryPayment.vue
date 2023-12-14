@@ -1,12 +1,12 @@
 <template>
 <main class="mt-5 mb-5" style="padding-inline: calc(15% / 2);">
-    <router-link to="/loan/detail/1" v-if="$store.state.user.role == 'peminjam'" class="payment-history-back-button bg-white text-primary font-weight-semibold d-flex align-items-center p-0" style="gap: .5rem; width: fit-content">
+    <router-link to="/loan/detail/1" v-if="$store.state.user?.role == 'peminjam'" class="payment-history-back-button bg-white text-primary font-weight-semibold d-flex align-items-center p-0" style="gap: .5rem; width: fit-content">
         <span class="material-symbols-rounded">
             keyboard_arrow_left
         </span>
         Kembali
     </router-link>
-    <router-link to="/dashboard/investor" v-if="$store.state.user.role == 'investor'" class="payment-history-back-button bg-white text-primary font-weight-semibold d-flex align-items-center p-0" style="gap: .5rem; width: fit-content">
+    <router-link to="/dashboard/investor" v-if="$store.state.user?.role == 'investor'" class="payment-history-back-button bg-white text-primary font-weight-semibold d-flex align-items-center p-0" style="gap: .5rem; width: fit-content">
         <span class="material-symbols-rounded">
             keyboard_arrow_left
         </span>
@@ -14,6 +14,9 @@
     </router-link>
     <h1 class="font-weight-semibold mt-5">Histori Pembayaran</h1>
     <div class="table-responsive mt-5">
+        <div class="d-flex justify-content-end">
+            <div class="mb-3 text-muted">Menampilkan {{pagination.total}} data</div>
+        </div>
         <table id="lendeePaymentHistoryTable" class="table table-striped sortable">
             <thead>
                 <tr>
@@ -24,42 +27,69 @@
                     <th data-defaultsign='no-sort'></th>
                 </tr>
             </thead>
-            <tbody id="lendee_paymentHistoryTable">
-                <tr>
-                    <td class="lendee_paymentHistory_dueDate" data-dateformat="DD MMM YYYY">20 Januari 2024</td>
-                    <td class="lendee_PaymentHistory_totalPayment">Rp 2,250,000</td>
-                    <td class="lendee_PaymentHistory_paymentDate">-</td>
-                    <td class="lendee_PaymentHistory_paymentStatus">Belum Lunas</td>
-                    <td class="lendee_paymentHistory_proofOfPaymentButton"></td>
-                </tr>
-                <tr>
-                    <td class="lendee_paymentHistory_dueDate" data-dateformat="DD MMM YYYY">15 Februari 2024</td>
-                    <td class="lendee_PaymentHistory_totalPayment">Rp 3,250,000</td>
-                    <td class="lendee_PaymentHistory_paymentDate">-</td>
-                    <td class="lendee_PaymentHistory_paymentStatus">Belum Lunas</td>
-                    <td class="lendee_paymentHistory_proofOfPaymentButton"></td>
-                </tr>
-                <tr>
-                    <td class="lendee_paymentHistory_dueDate" data-dateformat="DD MMM YYYY">20 Juni 2023</td>
-                    <td class="lendee_PaymentHistory_totalPayment">Rp 5,250,000</td>
-                    <td class="lendee_PaymentHistory_paymentDate">20 November 2023</td>
-                    <td class="lendee_paymentHistory_paymentStatus">Lunas</td>
+            <tbody v-if="list.length">
+                <tr v-for="item in list">
+                    <td class="lendee_paymentHistory_dueDate">{{ $changeFormatDate(item.date, 'DD MMMM YYYY') }}</td>
+                    <td class="lendee_PaymentHistory_totalPayment">Rp {{ $toCurrency(item.nominal) }}</td>
+                    <td class="lendee_PaymentHistory_paymentDate">{{ $changeFormatDate(item.date_payment) }}</td>
+                    <td class="lendee_paymentHistory_paymentStatus">
+                        <span v-if="item.status == 'belum'">Belum Lunas</span>
+                        <span v-else>Lunas</span>
+                    </td>
                     <td class="lendee_paymentHistory_proofOfPaymentButton">
-                        <button type="button" class="btn btn-primary lendee_proofOfPaymentButton">Lihat Bukti Pembayaran</button>
+                        <button type="button" class="btn btn-primary lendee_proofOfPaymentButton" v-if="item.date_payment && item.attachment">Lihat Bukti Pembayaran</button>
+                        <button type="button" @click="$router.push(`/loan/payment/${item.id}`)" class="btn btn-primary lendee_proofOfPaymentButton" v-else>Bayar Sekarang</button>
                     </td>
                 </tr>
             </tbody>
+            <tbody v-else>
+                <tr><td colspan="4" class="text-center text-muted">Belum ada riwayat pembayaran</td></tr>
+            </tbody>
         </table>
+        <div class="d-flex justify-content-center" v-show="list.length">
+            <Pagination :page="pagination.page" :prev="pagination.prev" :next="pagination.next" v-on:fetchData="fetchData"></Pagination>
+        </div>
     </div>
 </main>
 </template>
 <script>
+import { ApiCore } from '@/services/core';
+import apiEnpoint from '@/services/api-endpoint';
+
 export default {
-    name: '',
+    name: 'HistoryPayment',
     data() {
         return {
-            
+            list: [],
+            pagination: {
+                prev: false,
+                next: true,
+                page: 1,
+                limit: 5,
+                total: 0
+            },
         }
     },
+    mounted() {
+        this.fetchData(this.pagination.page)
+    },
+    methods: {
+        fetchData(page) {
+            this.list = []
+            ApiCore.get(`${apiEnpoint.LOAN}/riwayat`, {
+                pinjaman_id: this.$route.params.id,
+                page: page,
+                limit: this.pagination.limit,
+            }).then((result) => {
+                if (result.status) {
+                    this.list = result.data
+                }
+                this.pagination.prev = result.pagination.prev
+                this.pagination.next = result.pagination.next
+                this.pagination.page = result.pagination.page
+                this.pagination.total = result.pagination.total
+            })
+        },
+    }
 }
 </script>

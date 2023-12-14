@@ -87,7 +87,7 @@
                 </div>
             </section>
 
-            <router-link to="/loan/info-payment" type="button" class="btn btn-primary font-weight-semibold w-100" v-if="detail.count_payment && detail.status_aproval == 'approve'">Bayar Cicilan ke-1</router-link>
+            <router-link to="/loan/payment" type="button" class="btn btn-primary font-weight-semibold w-100" v-if="detail.count_payment && detail.status_aproval == 'approve'">Bayar Cicilan ke-1</router-link>
         </div>
     </div>
 </main>

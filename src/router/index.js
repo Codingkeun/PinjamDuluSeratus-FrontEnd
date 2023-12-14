@@ -147,7 +147,7 @@ const routes = [
         }
     },
     {
-        path: '/loan/info-payment',
+        path: '/loan/payment/:id',
         component: LoanPayBorrower,
         meta: {
             title: `${nameApplication} | Informasi Pembayaran`,

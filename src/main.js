@@ -25,6 +25,7 @@ import "vue-toastification/dist/index.css";
 
 // moment library
 import moment from 'moment'
+import 'moment/dist/locale/id'
 
 // load assets
 import './assets/css/bootstrap.css'
@@ -80,6 +81,7 @@ app.config.globalProperties.$toCurrency =  function (value) {
 
 app.config.globalProperties.$changeFormatDate = function (date, format='DD MMMM YYYY HH:mm') {
     if (!date) return '-'
+    moment.locale('id')
     return moment(date).format(format)
 }
 
