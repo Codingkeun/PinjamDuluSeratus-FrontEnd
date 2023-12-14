@@ -73,7 +73,7 @@ export default {
                     localStorage.removeItem('token')
                     localStorage.setItem('token', signin.user.key)
                     setTimeout(() => {
-                        window.location.href = '/home'
+                        window.location.href = '/'
                     }, 1000);
                 } else {
                     this.$toast.error(signin.message);
