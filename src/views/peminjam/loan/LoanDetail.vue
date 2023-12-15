@@ -10,7 +10,7 @@
         <h1 class="font-weight-semibold">Detail Pinjaman</h1>
         <router-link :to="`/history-payment/` + $route.params.id" class="btn btn-border bg-white text-primary font-weight-semibold" style="height: 44px; border: 2px solid var(--primary);" v-if="detail.status_approval == 'approve'">Lihat Histori Pembayaran</router-link>
     </div>
-    <div class="alert alert-info rounded-10 d-flex" v-if="detail.status_approval == 'belum'">
+    <div class="alert alert-info rounded-10 d-flex" v-if="detail.status_approval == 'wait'">
         <span class="material-symbols-outlined">
             info
         </span>
@@ -101,7 +101,7 @@ export default {
     data() {
         return {
             detail: {
-                status_approval: 'belum',
+                status_approval: 'wait',
                 count_payment: 0
             }
         }
