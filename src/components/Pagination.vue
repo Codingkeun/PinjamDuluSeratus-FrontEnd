@@ -1,7 +1,7 @@
 <template>
     <nav class="mt-5 align-self-center">
         <ul class="custom-pagination d-flex p-0" style="gap: 1rem;">
-            <button type="button" class="btn btn-secondary text_white custom-pagination-backward d-flex justify-content-center" 
+            <button type="button" class="btn btn-light border text_white custom-pagination-backward d-flex justify-content-center" 
             :class="{ disabled: !prev }"
             :disabled="!prev"
             @click="fetch('prev')">
