@@ -197,10 +197,6 @@
     </main>
 </template>
 <script>
-    const getImageUrl = (name) => {
-        return new URL(`../../../assets/images/bank/${name}.svg`, import.meta.url).href;
-    }
-    
     import { vMaska } from "maska"
 
     import { Field, Form, ErrorMessage } from 'vee-validate';
@@ -233,31 +229,31 @@
                 listBank: [
                     {
                         name: 'BCA',
-                        logo: getImageUrl('BCA'),
+                        logo: this.$getImageUrl('BCA'),
                     },
                     {
                         name: 'BNI',
-                        logo: getImageUrl('BNI'),
+                        logo: this.$getImageUrl('BNI'),
                     },
                     {
                         name: 'BNI Syariah',
-                        logo: getImageUrl('BNI_Syariah'),
+                        logo: this.$getImageUrl('BNI_Syariah'),
                     },
                     {
                         name: 'BRI',
-                        logo: getImageUrl('BRI'),
+                        logo: this.$getImageUrl('BRI'),
                     },
                     {
                         name: 'Mandiri',
-                        logo: getImageUrl('Mandiri'),
+                        logo: this.$getImageUrl('Mandiri'),
                     },
                     {
                         name: 'VISA',
-                        logo: getImageUrl('VISA'),
+                        logo: this.$getImageUrl('VISA'),
                     },
                     {
                         name: 'MasterCard',
-                        logo: getImageUrl('MasterCard'),
+                        logo: this.$getImageUrl('MasterCard'),
                     }
                 ]
             }

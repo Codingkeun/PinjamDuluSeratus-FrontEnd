@@ -85,4 +85,8 @@ app.config.globalProperties.$changeFormatDate = function (date, format='DD MMMM 
     return moment(date).format(format)
 }
 
+app.config.globalProperties.$getImageUrl = (name) => {
+    return new URL(`./assets/images/bank/${name}.svg`, import.meta.url).href;
+}
+
 app.mount('#app')
