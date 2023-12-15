@@ -25,7 +25,7 @@
         <div class="card z-index-2 h-100 mt-4">
             <div class="card-body p-1">
                 <div class="chart">
-                    <canvas id="chart-line" class="chart-canvas" style="height: 18rem;"></canvas>
+                    <line-chart :datasets="statistic.datasets"></line-chart>
                 </div>
             </div>
         </div>
@@ -33,6 +33,7 @@
 
     <div class="table-responsive mt-5">
         <h1 class="font-weight-semibold mb-4">Daftar Pinjaman Aktif</h1>
+        <div class="mb-3 text-muted" v-if="pagination.total">Menampilkan {{pagination.total}} data</div>
         <table id="loanTable" class="table table-striped sortable">
             <thead>
                 <tr>
@@ -40,63 +41,91 @@
                     <th>Jumlah Pinjaman</th>
                     <th>Tanggal Jatuh Tempo</th>
                     <th>Total Pembayaran</th>
-                    <th>Status</th>
-                    <th data-defaultsign='no-sort'></th>
+                    <th colspan=2>Status</th>
                 </tr>
             </thead>
-            <tbody id="loanTableData">
-                <tr>
-                    <td class="loanTable_investorName">John Doe</td>
-                    <td class="loanTable_loanAmount">Rp 2,000,000</td>
-                    <td class="loanTable_dueDate" data-dateformat="DD MMM YYYY">15 November 2023</td>
-                    <td class="loanTable_totalPayment">Rp 2,250,000</td>
-                    <td class="loanTable_statusLoan">Lunas</td>
-                    <td>
-                        <button type="button" class="btn btn-primary loanTable_detailLoan" onclick="window.location.href = 'peminjam_pembayaran_detail-pinjaman.html'">Detail</button>
+            <tbody id="loanTableData" v-if="listLoanActive.length">
+                <tr v-for="item in listLoanActive">
+                    <td class="loanTable_investorName">{{item.investor_name || '-'}}</td>
+                    <td class="loanTable_loanAmount">Rp {{ $toCurrency(item.nominal) }}</td>
+                    <td class="loanTable_dueDate">{{ $changeFormatDate(item.deadline) }}</td>
+                    <td class="loanTable_totalPayment">Rp {{ $toCurrency((item.nominal + item.tip)) }}</td>
+                    <td class="loanTable_statusLoan">
+                        <span v-if="item.status_approval == 'wait'" class="text-muted">Menunggu Approval Investor</span>
+                        <span v-if="item.instalment_status == 'belum' && item.status_approval == 'approve'">Belum Lunas</span>
                     </td>
-                </tr>
-                <tr>
-                    <td class="loanTable_investorName">Jane Smith</td>
-                    <td class="loanTable_loanAmount">Rp 7,000,000</td>
-                    <td class="loanTable_dueDate" data-dateformat="DD MMM YYYY">2 April 2023</td>
-                    <td class="loanTable_totalPayment">Rp 7,750,000</td>
-                    <td class="loanTable_statusLoan">Lunas</td>
                     <td>
-                        <button type="button" class="btn btn-primary loanTable_detailLoan">Detail</button>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="loanTable_investorName">Ahmad Abdullah</td>
-                    <td class="loanTable_loanAmount">Rp 5,000,000</td>
-                    <td class="loanTable_dueDate" data-dateformat="DD MMM YYYY">20 Januari 2024</td>
-                    <td class="loanTable_totalPayment">Rp 6,450,000</td>
-                    <td class="loanTable_statusLoan">Belum Lunas</td>
-                    <td>
-                        <button type="button" class="btn btn-primary loanTable_detailLoan">Detail</button>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="loanTable_investorName">Maria Gonzalez</td>
-                    <td class="loanTable_loanAmount">Rp 8,000,000</td>
-                    <td class="loanTable_dueDate" data-dateformat="DD MMM YYYY">20 Maret 2024</td>
-                    <td class="loanTable_totalPayment">Rp 8,750,000</td>
-                    <td class="loanTable_statusLoan">Belum Lunas</td>
-                    <td>
-                        <button type="button" class="btn btn-primary loanTable_detailLoan">Detail</button>
+                        <button type="button" @click="$router.push(`/loan/detail/${item.id}`)" class="btn loanTable_detailLoan" :class="{'btn-primary': item.status_approval == 'approve', 'btn-light border': item.status_approval == 'wait'}">Detail</button>
                     </td>
                 </tr>
             </tbody>
+            <tbody v-else>
+                <tr><td colspan="6" class="text-center text-muted">Belum ada riwayat pinjaman</td></tr>
+            </tbody>
         </table>
+        <div class="d-flex justify-content-center" v-show="listLoanActive.length">
+            <Pagination :page="pagination.page" :prev="pagination.prev" :next="pagination.next" v-on:fetchDataLoanActive="fetchDataLoanActive"></Pagination>
+        </div>
     </div>
 </main>
 </template>
 <script>
+import apiEnpoint from '@/services/api-endpoint'
+import { ApiCore } from '@/services/core'
+
+import Line from '@/components/chart/Line.vue';
 export default {
     name: 'PeminjamDashboard',
     data() {
         return {
-            
+            statistic: {
+                datasets: []
+            },
+            listLoanActive: [],
+            pagination: {
+                prev: false,
+                next: false,
+                page: 1,
+                limit: 5,
+                total: 0
+            },
         }
+    },
+    components: {
+        'line-chart': Line
+    },
+    async mounted() {
+        this.fetchDataStatistic()
+        this.fetchDataLoanActive(this.pagination.page)
+    },
+    methods: {
+        async fetchDataStatistic() {
+            ApiCore.get(`${apiEnpoint.LOAN}/dashboard/statistic`, {
+                status: 'belum',
+                status_approval: 'approve'
+            }, false).then((result) => {
+                if (result.status) {
+                    this.statistic.datasets = result.data.statistic_loan_month.map((data) => parseInt(data))
+                }
+            })
+        },
+        fetchDataLoanActive(page) {
+            this.listLoanActive = []
+            ApiCore.get(`${apiEnpoint.LOAN}/pinjaman-aktif`, {
+                page: page,
+                limit: this.pagination.limit,
+                status: 'belum',
+                status_approval: 'approve'
+            }).then((result) => {
+                if (result.status) {
+                    this.listLoanActive = result.data
+                }
+                this.pagination.prev = result.pagination.prev
+                this.pagination.next = result.pagination.next
+                this.pagination.page = result.pagination.page
+                this.pagination.total = result.pagination.total
+            })
+        },
     }
 }
 </script>

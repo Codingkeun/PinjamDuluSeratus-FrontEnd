@@ -15,7 +15,7 @@
     <h1 class="font-weight-semibold mt-5">Histori Pembayaran</h1>
     <div class="table-responsive mt-5">
         <div class="d-flex justify-content-end">
-            <div class="mb-3 text-muted">Menampilkan {{pagination.total}} data</div>
+            <div class="mb-3 text-muted" v-if="pagination.total">Menampilkan {{pagination.total}} data</div>
         </div>
         <table id="lendeePaymentHistoryTable" class="table table-striped sortable">
             <thead>

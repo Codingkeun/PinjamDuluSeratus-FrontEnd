@@ -6,7 +6,7 @@
     </div>
     <div class="table-responsive mt-5">
         <div class="d-flex justify-content-end">
-            <div class="mb-3 text-muted">Menampilkan {{pagination.total}} data</div>
+            <div class="mb-3 text-muted" v-if="pagination.total">Menampilkan {{pagination.total}} data</div>
         </div>
         <table id="loanTable" class="table table-striped sortable">
             <thead>
