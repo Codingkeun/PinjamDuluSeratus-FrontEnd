@@ -167,9 +167,9 @@ const routes = [
     },
     {
         path: '/investment',
-        title: `${nameApplication} | Investasi Aktif`,
         component: InvestmentInvestor,
         meta: {
+            title: `${nameApplication} | Investasi Aktif`,
             footer: true,
             navbar: true,
         }
@@ -216,24 +216,25 @@ const router = createRouter({
 router.beforeEach((to, from, next) => {
     document.title = to.meta.title;
 
-    // const localData = localStorage.getItem('store')
+    const localData = localStorage.getItem('token')
 
     const authRequired  = ['signin', 'signup'].includes(to.name);
 
-    if (!authRequired) {
+    if (localData && !authRequired) {
         ApiCore.get(`${apiEnpoint.ACCOUNT}/info`, null, false)
                 .then((response) => {
-                    stores.commit('setuser', response)
+                    if ('status' in response && !response.status) {
+                        localStorage.removeItem('token')
+                        next({name: 'home'})
+                    } else {
+                        stores.commit('setuser', response)
+                        next()
+                    }
                 })
                 .catch(() => {})
-    }
-    //     if (localData && JSON.parse(localData).key)
-    //         next()
-    //     else
-    //         next({name: 'signin'})
-    // } else {
+    } else{
         next()
-    // }
+    }
 })
 
 export default router
