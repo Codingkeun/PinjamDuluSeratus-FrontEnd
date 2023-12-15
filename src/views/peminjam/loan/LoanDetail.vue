@@ -16,6 +16,12 @@
         </span>
         <div class="ml-3">Pinjamanmu saat ini sedang <b><u>menunggu</u></b> approval dari investor. Tenang, kamu <b><u>tidak perlu</u></b> membayar pinjaman ini 😊.</div>
     </div>
+    <div class="alert alert-success rounded-10 d-flex" v-if="detail.status_approval == 'approve' && detail.instalment_status == 'lunas'">
+        <span class="material-symbols-outlined">
+            info
+        </span>
+        <div class="ml-3">Yeaayy, Selamat tagihanmu saat ini <b><u>Sudah Lunas</u></b> 😊.</div>
+    </div>
     <div class="loan-detail-container row w-100 d-flex mx-0 justify-content-between mt-4">
         <div class="d-flex flex-column mt-4 w-100 col-sm-12 col-md-12 col-lg-6 px-0" style="gap: 3rem;">
             <section class="p-5 rounded-10 container-card-shadow">
@@ -87,7 +93,7 @@
                 </div>
             </section>
 
-            <router-link :to="`/loan/payment/` + detail.id" type="button" class="btn btn-primary font-weight-semibold w-100" v-if="detail.count_payment && detail.status_approval == 'approve'">Bayar Cicilan ke-{{detail.count_payment}}</router-link>
+            <router-link :to="`/loan/payment/` + detail.id" type="button" class="btn btn-primary font-weight-semibold w-100" v-if="detail.count_payment && detail.status_approval == 'approve' && detail.instalment_status != 'lunas'">Bayar Cicilan ke-{{detail.count_payment}}</router-link>
         </div>
     </div>
 </main>
