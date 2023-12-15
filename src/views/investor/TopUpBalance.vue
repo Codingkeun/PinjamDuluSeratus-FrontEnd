@@ -1,6 +1,12 @@
 <template>
     <main>
-        <form class="mt-5 mb-5 w-100 d-flex flex-column" style="gap: 3rem;" @submit.prevent="onSubmit($event)">
+        <button @click="$router.push(`/account/investor`)" class="btn bg-white text-primary font-weight-semibold d-flex align-items-center pl-1 mb-3" style="gap: .5rem; margin-left: calc(15% / 2)">
+            <span class="material-symbols-rounded">
+                keyboard_arrow_left
+            </span>
+            Kembali
+        </button>
+        <form class="mb-5 w-100 d-flex flex-column" style="gap: 3rem;" @submit.prevent="onSubmit($event)">
             <h1 class="font-weight-semibold" style="padding-inline: calc(15% / 2);">Top Up Saldo</h1>
             <div class="d-flex flex-column" style="gap: 1rem;">
                 <h2 class="text-center font-weight-semibold par-1-2em">Pilih nominal top up</h2>

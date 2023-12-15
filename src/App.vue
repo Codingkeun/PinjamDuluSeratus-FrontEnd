@@ -4,7 +4,7 @@ import Footer from './components/Footer.vue'
 </script>
 
 <template>
-  <div class="page">'
+  <div class="page">
     <header>
       <NavBar v-if="$route.meta.navbar"></NavBar>
     </header>
