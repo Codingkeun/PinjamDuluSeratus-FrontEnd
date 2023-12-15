@@ -19,7 +19,7 @@
             <div class="lendee-payment-detail">
                 <div class="mt-5">
                     <h2 class="text-center par-1em">Pilih metode pembayaran</h2>
-                    <div class="d-flex card-horizontal-scroll" style="gap: 2rem; padding-inline: 1%">
+                    <div class="d-flex card-horizontal-scroll" style="gap: 2rem; padding-inline: calc(15% / 2)">
                         <div class="item-card-shadow rounded-10 px-3 py-2" style="min-width: 15rem; min-height: 8rem;" v-for="bank, index in listBank">
                             <Field type="radio" :id="`lendeePaymentMethod_bca_` + index" required :value="bank.id" name="payment_method" v-model="form.payment_method_id" />
                             <label :for="`lendeePaymentMethod_bca_` + index" class="position-relative d-flex justify-content-center">
@@ -27,7 +27,7 @@
                             </label>
                         </div>
                     </div>
-                    <ErrorMessage name="payment_method" :class="'text-danger'" />
+                    <ErrorMessage name="payment_method" :class="'text-danger'" style="padding-inline: calc(15% / 2)" />
                 </div>
                 <div class="mt-5">
                     <h2 class="text-center par-1em">Informasi Pembayaran</h2>
@@ -35,7 +35,7 @@
                         <div class="bg-light rounded-20 d-flex flex-column justify-content-center col-sm-12 col-md-12 col-lg-6" style="height: 14rem; gap: .4rem;">
                             <h2 class="text-center pt-2 par-1em">Pembayaran Cicilan {{detail.count_payment_string}}</h2>
                             <h1 class="text-center font-weight-bold text-primary">Rp {{$toCurrency(detail.trx_unpaid?.nominal)}}</h1>
-                            <div class="d-flex p-3 rounded-10 bg-white justify-content-center mx-auto" style="gap: 1rem; width: fit-content;">
+                            <div class="d-flex p-3 rounded-10 bg-white mx-auto flex-wrap remaining-time" style="gap: .4rem 1rem; width: fit-content;">
                                 <h2 class="my-auto par-1em">Sisa Waktu</h2>
                                 <vue-countdown :transform="$transformSlotProps" :time="detail.time_remaining_in_millisecond" v-slot="{ days, hours, minutes, seconds }" v-if="detail.time_remaining_in_millisecond">
                                     <h3 class="text-danger my-auto font-weight-bold par-1em" id="donationDueDateTimer"><span v-if="days">{{ days }} hari, </span>{{hours}}:{{minutes}}:{{seconds}}</h3>
@@ -49,26 +49,36 @@
                     </div>
                 </div>
             </div>
-            <div class="d-block mt-5" ref="uploadContent">
-                <h2 class="text-center mb-3 pt-2 par-1em">Upload Bukti Pembayaran</h2>
-                <div class="rounded-5 d-flex justify-content-center align-items-center py-5 w-100" style="border: 2px dashed var(--primary);">
-                    <Field id="uploadProofOfPaymentButton" type="file" name="attachment_file" v-model="form.attachment" class="d-none" @change="previewFile" />
-                    <div class="btn bg-secondary text-primary position-relative" v-if="!attachment_preview">
-                        <label for="uploadProofOfPaymentButton" class="d-flex justify-content-center align-items-center d-flex align-items-center pb-0">
-                            <span class="font-weight-medium">Upload</span>
-                            <span class="material-symbols-rounded ml-2">
-                                publish
-                            </span>
-                        </label>
-                    </div>
-                    <div class="d-flex" style="gap: 10px" v-else>
-                        <div class="btn bg-primary position-relative">
-                            <a :href="attachment_preview" target="_blank" class="text-white">Lihat File</a>
+            <div class="d-block mt-5">
+                <div ref="uploadContent">
+                    <form id="paymentDateForm" class="w-100 d-flex flex-column">
+                        <label for="paymentDate" class="form-label text-center">Masukkan Tanggal Pembayaran</label>
+                        <input type="date" class="form-control" id="paymentDate" required>
+                    </form>
+                </div>
+                <div class="mt-5">
+                <h2 class="text-center mb-3 par-1em">Upload Bukti Pembayaran</h2>
+                    <div class="rounded-5 d-flex justify-content-center align-items-center py-5 w-100" style="border: 2px dashed var(--primary);">
+                        <Field id="uploadProofOfPaymentButton" type="file" name="attachment_file" v-model="form.attachment" class="d-none" @change="previewFile" />
+                        <div class="btn bg-secondary text-primary position-relative" v-if="!attachment_preview">
+                            <label for="uploadProofOfPaymentButton" class="pb-0 mb-0 d-flex">
+                                <span class="font-weight-medium">Upload</span>
+                                <span class="material-symbols-rounded ml-2">
+                                    publish
+                                </span>
+                            </label>
                         </div>
-                        <button type="button" @click="resetFile" class="btn bg-secondary position-relative">Hapus File</button>
+                        <div class="d-flex" style="gap: 10px" v-else>
+                            <div class="btn bg-primary position-relative">
+                                <a :href="attachment_preview" target="_blank" class="text-white">Lihat File</a>
+                            </div>
+                            <button type="button" @click="resetFile" class="btn bg-secondary position-relative">Hapus File</button>
+                        </div>
+                    </div>
+                    <div class="mt-2">
+                        <ErrorMessage name="attachment_file" :class="'text-danger'" />
                     </div>
                 </div>
-                <div class="mt-2"><ErrorMessage name="attachment_file" :class="'text-danger'" /></div>
                 <button type="submit" class="btn btn-primary font-weight-semibold w-100 mt-5" style="border: 2px solid var(--primary);">Kirim Bukti Pembayaran</button>
             </div>
         </Form>
