@@ -46,7 +46,7 @@
                 </div>
                 <div class="d-flex p-3 rounded-10 bg-secondary justify-content-center mx-auto mt-4" style="gap: 1rem; width: fit-content;">
                     <h2 class="my-auto par-1em">Sisa Waktu</h2>
-                    <vue-countdown :transform="transformSlotProps" :time="detail.time_remaining_in_millisecond" v-slot="{ days, hours, minutes, seconds }" v-if="detail.time_remaining_in_millisecond">
+                    <vue-countdown :transform="$transformSlotProps" :time="detail.time_remaining_in_millisecond" v-slot="{ days, hours, minutes, seconds }" v-if="detail.time_remaining_in_millisecond">
                         <h3 class="text-danger my-auto font-weight-bold par-1em" id="donationDueDateTimer"><span v-if="days">{{ days }} hari, </span>{{hours}}:{{minutes}}:{{seconds}}</h3>
                     </vue-countdown>
                 </div>
@@ -87,7 +87,7 @@
                 </div>
             </section>
 
-            <router-link to="/loan/payment" type="button" class="btn btn-primary font-weight-semibold w-100" v-if="detail.count_payment && detail.status_aproval == 'approve'">Bayar Cicilan ke-1</router-link>
+            <router-link :to="`/loan/payment/` + detail.id" type="button" class="btn btn-primary font-weight-semibold w-100" v-if="detail.count_payment && detail.status_approval == 'approve'">Bayar Cicilan ke-{{detail.count_payment}}</router-link>
         </div>
     </div>
 </main>
@@ -119,15 +119,6 @@ export default {
                     .catch((error) => {
                         this.$toast.error(error.message)
                     })
-        },
-        transformSlotProps(props) {
-            const formattedProps = {};
-
-            Object.entries(props).forEach(([key, value]) => {
-                formattedProps[key] = value < 10 ? `0${value}` : String(value);
-            });
-
-            return formattedProps;
         },
     }
 }

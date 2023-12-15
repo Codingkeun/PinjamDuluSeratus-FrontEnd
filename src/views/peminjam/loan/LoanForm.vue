@@ -105,8 +105,8 @@
                             <div class="form-check mb-2 border rounded-10" v-for="bank, index in listBank" :key="index">
                                 <label :for="`bank_${index}`" class="d-flex align-items-center px-3 pt-3 pb-2">
                                     <div class="d-flex align-items-center" style="gap: 10px">
-                                        <Field type="radio" name="bank_name" :id="`bank_${index}`" :value="bank.name" v-model="form.bank_name" class="form-check-input" @change="resetResultSimulate" />
-                                        <img :src="bank.logo" :alt="`Bank ${bank.name}`" style="max-width: 100px;" class="ml-2">
+                                        <Field type="radio" name="bank_name" :id="`bank_${index}`" :value="bank.bank_name" v-model="form.bank_name" class="form-check-input" @change="resetResultSimulate" />
+                                        <img :src="bank.bank_logo" :alt="`Bank ${bank.bank_name}`" style="max-width: 100px;" class="ml-2">
                                     </div>
                                 </label>
                             </div>
@@ -226,36 +226,7 @@
                     total_loan_by_instalment: 0,
                     deadline: ''
                 },
-                listBank: [
-                    {
-                        name: 'BCA',
-                        logo: this.$getImageUrl('BCA'),
-                    },
-                    {
-                        name: 'BNI',
-                        logo: this.$getImageUrl('BNI'),
-                    },
-                    {
-                        name: 'BNI Syariah',
-                        logo: this.$getImageUrl('BNI_Syariah'),
-                    },
-                    {
-                        name: 'BRI',
-                        logo: this.$getImageUrl('BRI'),
-                    },
-                    {
-                        name: 'Mandiri',
-                        logo: this.$getImageUrl('Mandiri'),
-                    },
-                    {
-                        name: 'VISA',
-                        logo: this.$getImageUrl('VISA'),
-                    },
-                    {
-                        name: 'MasterCard',
-                        logo: this.$getImageUrl('MasterCard'),
-                    }
-                ]
+                listBank: []
             }
         },
         directives: { maska: vMaska },
@@ -277,6 +248,9 @@
             }
         },
         components: {Field, Form, ErrorMessage},
+        mounted() {
+            this.fetchPaymentMethod()
+        },
         methods: {
             resetResultSimulate() {
                 this.simulate = {
@@ -295,6 +269,15 @@
             setTip(data) {
                 this.form.tip=data.detail.unmasked
                 this.resetResultSimulate()
+            },
+            fetchPaymentMethod() {
+                ApiCore.get('payment-method').then((data) => {
+                    if (data.status)
+                        this.listBank = data.data
+                    this.listBank.forEach(element => {
+                        element.bank_logo = this.$getUrlImageBank(element.bank_logo)
+                    });
+                }).catch((error) => {})
             },
             simulateSubmit() {
                 try {

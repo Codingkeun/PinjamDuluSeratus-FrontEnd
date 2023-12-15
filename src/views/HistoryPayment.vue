@@ -1,6 +1,6 @@
 <template>
 <main class="mt-5 mb-5" style="padding-inline: calc(15% / 2);">
-    <router-link to="/loan/detail/1" v-if="$store.state.user?.role == 'peminjam'" class="payment-history-back-button bg-white text-primary font-weight-semibold d-flex align-items-center p-0" style="gap: .5rem; width: fit-content">
+    <router-link :to="`/loan/detail/` + $route.params.id" v-if="$store.state.user?.role == 'peminjam'" class="payment-history-back-button bg-white text-primary font-weight-semibold d-flex align-items-center p-0" style="gap: .5rem; width: fit-content">
         <span class="material-symbols-rounded">
             keyboard_arrow_left
         </span>
@@ -37,8 +37,7 @@
                         <span v-else>Lunas</span>
                     </td>
                     <td class="lendee_paymentHistory_proofOfPaymentButton">
-                        <button type="button" class="btn btn-primary lendee_proofOfPaymentButton" v-if="item.date_payment && item.attachment">Lihat Bukti Pembayaran</button>
-                        <button type="button" @click="$router.push(`/loan/payment/${item.id}`)" class="btn btn-primary lendee_proofOfPaymentButton" v-else>Bayar Sekarang</button>
+                        <a :href="item.attachment" class="btn btn-primary lendee_proofOfPaymentButton" v-if="item.date_payment && item.attachment" target="_blank">Lihat Bukti Pembayaran</a>
                     </td>
                 </tr>
             </tbody>

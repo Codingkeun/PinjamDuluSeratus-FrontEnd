@@ -85,8 +85,18 @@ app.config.globalProperties.$changeFormatDate = function (date, format='DD MMMM 
     return moment(date).format(format)
 }
 
-app.config.globalProperties.$getImageUrl = (name) => {
-    return new URL(`./assets/images/bank/${name}.svg`, import.meta.url).href;
+app.config.globalProperties.$getUrlImageBank = (name) => {
+    return new URL(`./assets/images/bank/${name}`, import.meta.url).href;
 }
+
+app.config.globalProperties.$transformSlotProps = (props) => {
+    const formattedProps = {};
+
+    Object.entries(props).forEach(([key, value]) => {
+        formattedProps[key] = value < 10 ? `0${value}` : String(value);
+    });
+
+    return formattedProps;
+},
 
 app.mount('#app')
