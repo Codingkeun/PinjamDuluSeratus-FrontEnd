@@ -78,8 +78,8 @@
                         <h3 id="lenderClass" class="font-weight-semibold text-primary par-1-2em">TIF RM 222</h3>
                     </div>
                     <div class="card col-sm-5 col-md-5 col-lg-4 p-4 bg-secondary border-0 rounded-10 mb-4">
-                        <h3 class="par-1em">Nama</h3>
-                        <a href="#" id="lendersStudentCardImage" class="btn-link font-weight-semibold text-primary par-1-2em" style="text-decoration: underline;">Klik untuk melihat</a>
+                        <h3 class="par-1em">Foto KTM</h3>
+                        <a href="#" id="lendersStudentCardImage" class="btn-link font-weight-semibold text-primary par-1-2em" style="text-decoration: underline;" aria-label="Klik untuk melihat Foto KTM">Klik untuk melihat</a>
                     </div>
                 </div>
             </div>

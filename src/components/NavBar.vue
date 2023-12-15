@@ -3,9 +3,9 @@
         <div class="background"></div>
         <div class="container">
             <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                <a class="navbar-brand" href="#">
+                <div class="navbar-brand" href="#">
                     <img src="/logo.svg" />
-                </a>
+                </div>
                 <button class="navbar-toggler" type="button" data-toggle="collapse"
                     data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                     aria-expanded="false" aria-label="Toggle navigation">
@@ -43,7 +43,7 @@
                             <img src="@/assets/images/profile/user-profile.svg" alt="" class="w-100 h-100">
                         </div>
                         <div class="d-flex align-items-center">
-                            <button class="border-0 dropdown-toggle" data-toggle="dropdown" aria-expanded="false"></button>
+                            <button class="border-0 dropdown-toggle" data-toggle="dropdown" aria-expanded="false" aria-label="profile"></button>
                             <ul class="dropdown-menu rounded-10 border-0 container-card-shadow" style="left: auto; right: 0">
                                 <li><a class="dropdown-item" href="#"></a></li>
                                 <li><router-link :to="'/dashboard/' + $store.state.user.role" class="dropdown-item">Dashboard</router-link></li>

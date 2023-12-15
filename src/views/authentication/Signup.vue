@@ -1,14 +1,14 @@
 <template>
     <div class="page container-fluid p-0 position-absolute top-0 start-0 bg-white vh-100 vw-100 register-page">
-        <a class="navbar-brand position-absolute start-0 mt-4" href="#" style="padding-left: calc(15% / 2)">
+        <a class="navbar-brand position-absolute start-0 mt-4" href="#" style="padding-left: calc(15% / 2)" aria-label="Logo Pinjam Dulu Seratus">
             <img src="@/assets/images/full-white-logo.svg" style="width: 60%;"/>
         </a>
         <img class="ornament w-50" src="@/assets/images/background/register.svg" alt="">
 
         <div class="btn-group position-absolute top-0 mt-4" style="right: calc(15% / 2); z-index: 999;">
-            <router-link :to="'/signin/' + $route.params.role" class="btn rounded-10 d-flex align-items-center border-0 p-2 login-register-button" id="loginButton">
+            <router-link :to="'/signin/' + $route.params.role" class="btn btn-secondary rounded-10 d-flex align-items-center border-0 p-2 login-register-button" id="loginButton">
                 Masuk ke Akun
-                <span class="material-symbols-outlined rounded-5 mx-2 login-register-arrow-icon">
+                <span class="material-symbols-outlined rounded-5 mx-2 login-register-arrow-icon" aria-hidden="true">
                     keyboard_arrow_right
                 </span>
             </router-link>
@@ -16,7 +16,7 @@
 
         <div class="container-fluid row mx-auto pb-4 register-container">
             <img src="@/assets/images/illustration/computer-login.svg" alt="" class="col-sm-12 col-md-12 col-lg-12 w-100" style="height: fit-content;">
-            <Form :validation-schema="schema" @submit="handleSubmit" class="col-md-12" style="gap: 1.5rem; padding-right: calc(15% / 2);">
+            <Form :validation-schema="schema" @submit="handleSubmit" class="col-md-12 pl-0" style="gap: 1.5rem; padding-right: calc(15% / 2);">
                 <div class="d-flex flex-column form-register mb-3" style="gap: 10px">
                     <h1 class="fs-1 fw-bold text-primary">Registrasi Akun</h1>
                     <div class="mb-2">
@@ -61,21 +61,21 @@
                     </div>
                     <div class="mb-2">
                         <label for="profile">Foto profil</label>
-                        <Field type="file" name="profile" class="form-control" v-model="form.foto_profile" />
+                        <Field type="file" name="profile" class="form-control" v-model="form.foto_profile" aria-label="Unggah foto profil" />
                         <ErrorMessage name="profile" :class="'text-danger'" />
                     </div>
                     <div class="mb-2">
                         <label for="foto_ktm">Foto KTM</label>
-                        <Field type="file" name="foto_ktm" class="form-control" v-model="form.foto_ktm" />
+                        <Field type="file" name="foto_ktm" class="form-control" v-model="form.foto_ktm" aria-label="Unggah foto ktm" />
                         <ErrorMessage name="foto_ktm" :class="'text-danger'" />
                     </div>
                     <div class="mb-2">
                         <label for="foto_selfie">Foto diri dan KTM secara bersamaan</label>
-                        <Field type="file" name="foto_selfie" class="form-control" v-model="form.foto_selfie" />
+                        <Field type="file" name="foto_selfie" class="form-control" v-model="form.foto_selfie" aria-label="Unggah foto selfie dan KTM secara bersamaan" />
                         <ErrorMessage name="foto_selfie" :class="'text-danger'" />
                     </div>
                 </div>
-                <div class="d-block">
+                <div class="d-block register-button">
                     <button type="submit" class="btn btn-block btn-primary font-weight-semibold" style="max-width: 100%;" :disabled="form.fetch"><span v-if="form.fetch">Loading</span><span v-else>Registrasi</span></button>
                 </div>
             </Form>

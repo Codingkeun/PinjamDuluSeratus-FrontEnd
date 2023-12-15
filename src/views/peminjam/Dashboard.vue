@@ -55,7 +55,7 @@
                         <span v-if="item.instalment_status == 'belum' && item.status_approval == 'approve'">Belum Lunas</span>
                     </td>
                     <td>
-                        <button type="button" @click="$router.push(`/loan/detail/${item.id}`)" class="btn loanTable_detailLoan" :class="{'btn-primary': item.status_approval == 'approve', 'btn-light border': item.status_approval == 'wait'}">Detail</button>
+                        <button type="button" @click="$router.push(`/loan/detail/${item.id}`)" class="btn loanTable_detailLoan" :class="{'btn-primary': item.status_approval == 'approve', 'btn-light border': item.status_approval == 'wait'}" aria-label="Detail Pinjaman">Detail</button>
                     </td>
                 </tr>
             </tbody>

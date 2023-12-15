@@ -319,12 +319,32 @@ body {
     opacity: 0;
 }
 
-.team-card:hover .social-media-links {
+.social-media-links a img {
+    width: clamp(1.3rem, 6vw, 1.8rem) !important;
+    margin-top: 1rem;
+}
+
+.social-media-links a img.hover {
+    display: none;
+}
+
+.social-media-links a:hover img {
+    display: none;
+}
+
+.social-media-links a:hover img.hover {
+    display: block;
+}
+
+.team-card:hover .social-media-links,
+.team-card:focus .social-media-links,
+.social-media-links:focus-within {
     transform: translateY(0px);
     opacity: .7;
 }
 
-.team-card:hover > * {
+.team-card:hover > *,
+.team-card:focus > * {
     transform: translateY(0px);
 }
 
@@ -575,7 +595,6 @@ option {
     background-clip: padding-box;
 }
 
-
 .table-responsive::-webkit-scrollbar-thumb:hover {
     background-color: rgb(112, 112, 112);
 }
@@ -710,4 +729,14 @@ a.btn.bg-white.text-primary {
 .payment-history-back-button:active,
 .payment-history-back-button:hover {
     text-decoration: none !important;
+}
+
+.btn-secondary span {
+    background-color: var(--primary) !important;
+    transition: all 0.35s ease-out;
+}
+
+.btn-secondary:hover span {
+    background-color: var(--secondary) !important;
+    transition: all 0.35s ease-in;
 }

@@ -5,6 +5,10 @@
         margin-top: 3rem;
     }
     
+    .register-button {
+        padding-left: calc(15% / 2)
+    }
+
     .team-card > * {
         transform: translateY(0px) !important;
     }
@@ -180,8 +184,8 @@
         gap: clamp(.5rem, 4vw, 1rem) !important;
     }
 
-    .team-card .social-media-links a img {
-        width: clamp(1.3rem, 6vw, 1.6rem) !important;
+    .social-media-links a img {
+        margin-top: 0 !important;
     }
 
     .team-card div a {
@@ -491,6 +495,10 @@
 
     .register-container form {
         transform: translateY(-20%);
+    }
+
+    .social-media-links:focus-within {
+        margin-top: 1.5rem;
     }
 }
 

@@ -13,7 +13,7 @@
                         <h4 class="card-text par-1em"><span id="activeLendeesPhone">08123456789</span></h4>
                     </div>
                 </div>
-                <router-link :to="'investment/detail/' + item" class="btn btn-primary font-weight-semibold">Detail</router-link>
+                <button @click="$router.push('investment/detail/' + item)" class="btn btn-primary font-weight-semibold">Detail</button>
             </div>
         </div>
 

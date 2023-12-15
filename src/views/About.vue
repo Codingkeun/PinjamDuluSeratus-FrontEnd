@@ -19,90 +19,95 @@
             <div class="team-card-container">
                 <section class="d-flex flex-column justify-content-center w-100 h-100 bg-white rounded-20 team-card pb-4" style="box-shadow: 0px 4px 9px 0px rgba(0, 0, 0, 0.10), 0px 16px 16px 0px rgba(0, 0, 0, 0.09), 0px 35px 21px 0px rgba(0, 0, 0, 0.05), 0px 63px 25px 0px rgba(0, 0, 0, 0.01), 0px 98px 28px 0px rgba(0, 0, 0, 0.00);">
                     <img src="@/assets/images/profile/profile-1.svg" alt="" class="p-4">
-                    <h3 class="text-center font-weight-semibold text-primary px-4">Cecep Rokani</h3>
+                    <h3 tabindex="0" class="text-center font-weight-semibold text-primary px-4">Cecep Rokani</h3>
                     <div class="d-flex justify-content-center align-items-center social-media-links" style="column-gap: 1.25rem;">
                         <a href="#">
-                            <img src="@/assets/images/icon/github.svg" alt="">
-                        </a>
-                        <a href="#" class="text-dark">
-                            <span class="material-symbols-rounded" style="font-size: 2rem; line-height: 3rem;">
-                                mail
-                            </span>
+                            <img src="https://img.icons8.com/ios-glyphs/240/github.png" alt="github"/>
+                            <img src="https://img.icons8.com/ios-glyphs/240/1a5f7a//github.png" class="hover" alt="github"/>
                         </a>
                         <a href="#">
-                            <img src="@/assets/images/icon/linkedin.svg" alt="">
+                            <img src="https://img.icons8.com/material-rounded/384/mail.png" alt="email"/>
+                            <img src="https://img.icons8.com/material-rounded/384/1a5f7a/mail.png" class="hover" alt="email"/>
+                        </a>
+                        <a href="#">
+                            <img src="https://img.icons8.com/ios-glyphs/240/linkedin.png" alt="linkedin"/>
+                            <img src="https://img.icons8.com/ios-glyphs/240/1a5f7a/linkedin.png" class="hover" alt="linkedin"/>
                         </a>
                     </div>
                 </section>
 
                 <section class="d-flex flex-column justify-content-center w-100 h-100 bg-white rounded-20 team-card pb-4" style="box-shadow: 0px 4px 9px 0px rgba(0, 0, 0, 0.10), 0px 16px 16px 0px rgba(0, 0, 0, 0.09), 0px 35px 21px 0px rgba(0, 0, 0, 0.05), 0px 63px 25px 0px rgba(0, 0, 0, 0.01), 0px 98px 28px 0px rgba(0, 0, 0, 0.00);">
                     <img src="@/assets/images/profile/profile-2.svg" alt="" class="p-4">
-                    <h3 class="text-center font-weight-semibold text-primary px-4">Cecep Sutisna</h3>
+                    <h3 tabindex="0" class="text-center font-weight-semibold text-primary px-4">Cecep Sutisna</h3>
                     <div class="d-flex justify-content-center align-items-center social-media-links" style="column-gap: 1.25rem;">
                         <a href="#">
-                            <img src="@/assets/images/icon/github.svg" alt="">
-                        </a>
-                        <a href="#" class="text-dark">
-                            <span class="material-symbols-rounded" style="font-size: 2rem; line-height: 3rem;">
-                                mail
-                            </span>
+                            <img src="https://img.icons8.com/ios-glyphs/240/github.png" alt="github"/>
+                            <img src="https://img.icons8.com/ios-glyphs/240/1a5f7a//github.png" class="hover" alt="github"/>
                         </a>
                         <a href="#">
-                            <img src="@/assets/images/icon/linkedin.svg" alt="">
+                            <img src="https://img.icons8.com/material-rounded/384/mail.png" alt="email"/>
+                            <img src="https://img.icons8.com/material-rounded/384/1a5f7a/mail.png" class="hover" alt="email"/>
+                        </a>
+                        <a href="#">
+                            <img src="https://img.icons8.com/ios-glyphs/240/linkedin.png" alt="linkedin"/>
+                            <img src="https://img.icons8.com/ios-glyphs/240/1a5f7a/linkedin.png" class="hover" alt="linkedin"/>
                         </a>
                     </div>
                 </section>
 
                 <section class="d-flex flex-column justify-content-center w-100 h-100 bg-white rounded-20 team-card pb-4" style="box-shadow: 0px 4px 9px 0px rgba(0, 0, 0, 0.10), 0px 16px 16px 0px rgba(0, 0, 0, 0.09), 0px 35px 21px 0px rgba(0, 0, 0, 0.05), 0px 63px 25px 0px rgba(0, 0, 0, 0.01), 0px 98px 28px 0px rgba(0, 0, 0, 0.00);">
                     <img src="@/assets/images/profile/profile-3.svg" alt="" class="p-4">
-                    <h3 class="text-center font-weight-semibold text-primary px-4">Moh Ari Nurhuda Aprilyansyah</h3>
+                    <h3 tabindex="0" class="text-center font-weight-semibold text-primary px-4">Moh Ari Nurhuda Aprilyansyah</h3>
                     <div class="d-flex justify-content-center align-items-center social-media-links" style="column-gap: 1.25rem;">
                         <a href="#">
-                            <img src="@/assets/images/icon/github.svg" alt="">
-                        </a>
-                        <a href="#" class="text-dark">
-                            <span class="material-symbols-rounded" style="font-size: 2rem; line-height: 3rem;">
-                                mail
-                            </span>
+                            <img src="https://img.icons8.com/ios-glyphs/240/github.png" alt="github"/>
+                            <img src="https://img.icons8.com/ios-glyphs/240/1a5f7a//github.png" class="hover" alt="github"/>
                         </a>
                         <a href="#">
-                            <img src="@/assets/images/icon/linkedin.svg" alt="">
+                            <img src="https://img.icons8.com/material-rounded/384/mail.png" alt="email"/>
+                            <img src="https://img.icons8.com/material-rounded/384/1a5f7a/mail.png" class="hover" alt="email"/>
+                        </a>
+                        <a href="#">
+                            <img src="https://img.icons8.com/ios-glyphs/240/linkedin.png" alt="linkedin"/>
+                            <img src="https://img.icons8.com/ios-glyphs/240/1a5f7a/linkedin.png" class="hover" alt="linkedin"/>
                         </a>
                     </div>
                 </section>
 
                 <section class="d-flex flex-column justify-content-center w-100 h-100 bg-white rounded-20 team-card pb-4" style="box-shadow: 0px 4px 9px 0px rgba(0, 0, 0, 0.10), 0px 16px 16px 0px rgba(0, 0, 0, 0.09), 0px 35px 21px 0px rgba(0, 0, 0, 0.05), 0px 63px 25px 0px rgba(0, 0, 0, 0.01), 0px 98px 28px 0px rgba(0, 0, 0, 0.00);">
                     <img src="@/assets/images/profile/profile-4.svg" alt="" class="p-4">
-                    <h3 class="text-center font-weight-semibold text-primary px-4">Riana Ratna</h3>
+                    <h3 tabindex="0" class="text-center font-weight-semibold text-primary px-4">Riana Ratna</h3>
                     <div class="d-flex justify-content-center align-items-center social-media-links" style="column-gap: 1.25rem;">
                         <a href="#">
-                            <img src="@/assets/images/icon/github.svg" alt="">
-                        </a>
-                        <a href="#" class="text-dark">
-                            <span class="material-symbols-rounded" style="font-size: 2rem; line-height: 3rem;">
-                                mail
-                            </span>
+                            <img src="https://img.icons8.com/ios-glyphs/240/github.png" alt="github"/>
+                            <img src="https://img.icons8.com/ios-glyphs/240/1a5f7a//github.png" class="hover" alt="github"/>
                         </a>
                         <a href="#">
-                            <img src="@/assets/images/icon/linkedin.svg" alt="">
+                            <img src="https://img.icons8.com/material-rounded/384/mail.png" alt="email"/>
+                            <img src="https://img.icons8.com/material-rounded/384/1a5f7a/mail.png" class="hover" alt="email"/>
+                        </a>
+                        <a href="#">
+                            <img src="https://img.icons8.com/ios-glyphs/240/linkedin.png" alt="linkedin"/>
+                            <img src="https://img.icons8.com/ios-glyphs/240/1a5f7a/linkedin.png" class="hover" alt="linkedin"/>
                         </a>
                     </div>
                 </section>
 
                 <section class="d-flex flex-column justify-content-center w-100 h-100 bg-white rounded-20 team-card pb-4" style="box-shadow: 0px 4px 9px 0px rgba(0, 0, 0, 0.10), 0px 16px 16px 0px rgba(0, 0, 0, 0.09), 0px 35px 21px 0px rgba(0, 0, 0, 0.05), 0px 63px 25px 0px rgba(0, 0, 0, 0.01), 0px 98px 28px 0px rgba(0, 0, 0, 0.00);">
                     <img src="@/assets/images/profile/profile-5.svg" alt="" class="p-4">
-                    <h3 class="text-center font-weight-semibold text-primary px-4">Arinda Puspa Dewi</h3>
+                    <h3 tabindex="0" class="text-center font-weight-semibold text-primary px-4">Arinda Puspa Dewi</h3>
                     <div class="d-flex justify-content-center align-items-center social-media-links" style="column-gap: 1.25rem;">
                         <a href="#">
-                            <img src="@/assets/images/icon/github.svg" alt="">
-                        </a>
-                        <a href="#" class="text-dark">
-                            <span class="material-symbols-rounded" style="font-size: 2rem; line-height: 3rem;">
-                                mail
-                            </span>
+                            <img src="https://img.icons8.com/ios-glyphs/240/github.png" alt="github"/>
+                            <img src="https://img.icons8.com/ios-glyphs/240/1a5f7a//github.png" class="hover" alt="github"/>
                         </a>
                         <a href="#">
-                            <img src="@/assets/images/icon/linkedin.svg" alt="">
+                            <img src="https://img.icons8.com/material-rounded/384/mail.png" alt="email"/>
+                            <img src="https://img.icons8.com/material-rounded/384/1a5f7a/mail.png" class="hover" alt="email"/>
+                        </a>
+                        <a href="#">
+                            <img src="https://img.icons8.com/ios-glyphs/240/linkedin.png" alt="linkedin"/>
+                            <img src="https://img.icons8.com/ios-glyphs/240/1a5f7a/linkedin.png" class="hover" alt="linkedin"/>
                         </a>
                     </div>
                 </section>

@@ -1,7 +1,7 @@
 <template>
     <main class="mt-5 mb-5" style="padding-inline: calc(15% / 2);">
         <button @click="$router.push('/loan')" class="btn bg-white text-primary font-weight-semibold d-flex align-items-center pl-1 mb-3" style="gap: .5rem;">
-            <span class="material-symbols-rounded">
+            <span class="material-symbols-rounded" aria-hidden="true">
                 keyboard_arrow_left
             </span>
             Kembali

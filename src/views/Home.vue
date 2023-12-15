@@ -98,7 +98,7 @@
             </div>
             <img src="@/assets/images/background/big-circle-gradient.svg" alt="">
         </section>
-        <section class="donation" :style="{'margin-top': $store.state.user?.logged_in ? '300px' : ''}">
+        <section class="donation" :style="{'margin-top': $store.state.user?.logged_in ? '0px' : ''}">
             <div class="container">
                 <div class="balance">
                     <div class="content">
@@ -114,9 +114,9 @@
                         Berapapun dana donasi yang Anda berikan dapat membantu para mahasiswa dalam mempersiapkan dana pendidikan.
                     </p>
                     <div class="btn-group mt-4">
-                        <router-link to="Donation" class="btn rounded-10 d-flex align-items-center border-0 p-2 login-register-button font-weight-semibold">
+                        <router-link to="Donation" class="btn btn-secondary rounded-10 d-flex align-items-center border-0 p-2 login-register-button font-weight-semibold">
                             Donasi Sekarang
-                            <span class="material-symbols-outlined rounded-5 mx-2 login-register-arrow-icon">
+                            <span class="material-symbols-outlined rounded-5 mx-2 login-register-arrow-icon" aria-hidden="true">
                                 keyboard_arrow_right
                             </span>
                         </router-link>

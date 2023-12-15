@@ -92,7 +92,7 @@
         <div id="afterProvidingLoans">
             <div class="d-flex justify-content-between align-items-center flex-wrap mt-5" style="gap: 2rem;">
                 <h1 class="font-weight-semibold">Detail Pinjaman</h1>
-                <router-link to="/history-payment" class="btn btn-border bg-white text-primary font-weight-semibold" style="height: 44px; border: 2px solid var(--primary);">Lihat Histori Pembayaran</router-link>
+                <button @click="$router.push('/history-payment')" class="btn btn-border bg-white text-primary font-weight-semibold" style="height: 44px; border: 2px solid var(--primary);">Lihat Histori Pembayaran</button>
             </div>
 
             <div class="loan-detail-container row w-100 d-flex mx-0 justify-content-between mt-4">

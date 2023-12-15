@@ -60,11 +60,11 @@
                 <h2 class="text-center mb-3 par-1em">Upload Bukti Pembayaran</h2>
                     <div class="rounded-5 d-flex justify-content-center align-items-center py-5 w-100" style="border: 2px dashed var(--primary);">
                         <Field id="uploadProofOfPaymentButton" type="file" name="attachment_file" v-model="form.attachment" class="d-none" @change="previewFile" />
-                        <div class="btn bg-secondary text-primary position-relative" v-if="!attachment_preview">
-                            <label for="uploadProofOfPaymentButton" class="pb-0 mb-0 d-flex">
+                        <div class="btn bg-secondary text-primary position-relative d-flex align-items-center" v-if="!attachment_preview">
+                            <label for="uploadProofOfPaymentButton" class="pb-0 mb-0 d-flex align-items-center">
                                 <span class="font-weight-medium">Upload</span>
                                 <span class="material-symbols-rounded ml-2">
-                                    publish
+                                    download
                                 </span>
                             </label>
                         </div>

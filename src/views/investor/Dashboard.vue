@@ -64,7 +64,7 @@
                         <td class="receivableTableTable_lendersMajor">Teknik Informatika</td>
                         <td class="receivableTableTable_lendersClass">TIF RM 222</td>
                         <td>
-                            <router-link to="/investment/detail/:id" type="button" class="receivableTable_detailLoan btn btn-primary font-weight-semibold w-100">Detail</router-link>
+                            <router-link to="/investment/detail/:id" type="button" class="receivableTable_detailLoan btn btn-primary font-weight-semibold w-100" aria-label="Detail Peminjaman">Detail</router-link>
                         </td>
                     </tr>
                     <tr>
@@ -77,7 +77,7 @@
                         <td class="receivableTableTable_lendersMajor">Teknik Informatika</td>
                         <td class="receivableTableTable_lendersClass">TIF RM 221</td>
                         <td>
-                            <button type="button" class="btn btn-primary receivableTable_detailLoan" onclick="window.location.href = ''">Detail</button>
+                            <button type="button" class="btn btn-primary receivableTable_detailLoan" aria-label="Detail Peminjaman">Detail</button>
                         </td>
                     </tr>
                     <tr>
@@ -90,7 +90,7 @@
                         <td class="receivableTableTable_lendersMajor">Teknik Informatika</td>
                         <td class="receivableTableTable_lendersClass">TIF RM 220</td>
                         <td>
-                            <button type="button" class="btn btn-primary receivableTable_detailLoan" onclick="window.location.href = ''">Detail</button>
+                            <button type="button" class="btn btn-primary receivableTable_detailLoan" aria-label="Detail Peminjaman">Detail</button>
                         </td>
                     </tr>
                     <tr>
@@ -103,7 +103,7 @@
                         <td class="receivableTableTable_lendersMajor">Teknik Informatika</td>
                         <td class="receivableTableTable_lendersClass">TIF RM 219</td>
                         <td>
-                            <button type="button" class="btn btn-primary receivableTable_detailLoan" onclick="window.location.href = ''">Detail</button>
+                            <button type="button" class="btn btn-primary receivableTable_detailLoan" aria-label="Detail Peminjaman">Detail</button>
                         </td>
                     </tr>
                 </tbody>

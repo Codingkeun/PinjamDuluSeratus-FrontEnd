@@ -2,7 +2,7 @@
 <main class="loan-area mt-5 mb-5" style="padding-inline: calc(15% / 2);">
     <div class="d-flex justify-content-between align-items-center flex-wrap mt-5" style="gap: 2rem;">
         <h1 class="font-weight-semibold">Pinjaman</h1>
-        <router-link to="/loan/form" class="btn btn-primary font-weight-semibold" style="height: 44px;">Buat Pengajuan Pinjaman</router-link>
+        <button @click="$router.push('/loan/form')" class="btn btn-primary font-weight-semibold" style="height: 44px;">Buat Pengajuan Pinjaman</button>
     </div>
     <div class="table-responsive mt-5">
         <div class="d-flex justify-content-end">
@@ -30,7 +30,7 @@
                         <span v-if="item.instalment_status == 'lunas' && item.status_approval == 'approve'">Lunas</span>
                     </td>
                     <td>
-                        <button type="button" @click="$router.push(`loan/detail/${item.id}`)" class="btn loanTable_detailLoan" :class="{'btn-primary': item.status_approval == 'approve', 'btn-light border': item.status_approval == 'wait'}">Detail</button>
+                        <button type="button" @click="$router.push(`loan/detail/${item.id}`)" aria-label="Detail Pinjaman" class="btn loanTable_detailLoan" :class="{'btn-primary': item.status_approval == 'approve', 'btn-light border': item.status_approval == 'wait'}">Detail</button>
                     </td>
                 </tr>
             </tbody>

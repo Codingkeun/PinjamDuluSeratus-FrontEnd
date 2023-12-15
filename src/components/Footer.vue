@@ -1,5 +1,5 @@
 <template>
-    <div class="container-fluid footer position-relative d-flex flex-column" style="padding-inline: calc(15% / 2); gap: 1rem; overflow: hidden;">
+    <footer class="container-fluid footer position-relative d-flex flex-column" style="padding-inline: calc(15% / 2); gap: 1rem; overflow: hidden;">
         <div class="footer-logo d-flex justify-content-center align-items-center" style="gap: 1rem;">
             <div class="appLogo">
                 <img src="@/assets/images/full-white-logo.svg" alt="" class="w-100">
@@ -35,19 +35,19 @@
         <div class="footer-bottom-section d-flex justify-content-between flex-wrap" style="margin-bottom: 1rem; column-gap: 1rem; row-gap: .5rem;">
             <p class="text-light footer-copyright par-0-8em my-auto">Copyright &#169; 2023 PinjamDuluSeratus. All right reserved.</p>
             <div class="footer-social-media d-flex my-auto" style="gap: 1rem;">
-                <a href="https://twitter.com">
+                <a href="https://twitter.com" aria-label="twitter PinjamDuluSeratus">
                     <img src="https://img.icons8.com/ios-glyphs/30/FFFFFF/twitter--v1.png" alt=""/>
                 </a>
-                <a href="https://www.facebook.com/">
+                <a href="https://www.facebook.com/" aria-label="facebook PinjamDuluSeratus">
                     <img src="https://img.icons8.com/ios-glyphs/30/FFFFFF/facebook-new.png" alt=""/>
                 </a>
-                <a href="https://instagram.com">
+                <a href="https://instagram.com" aria-label="instagram PinjamDuluSeratus">
                     <img src="https://img.icons8.com/ios-glyphs/30/FFFFFF/instagram-new.png" alt=""/>
                 </a>
             </div>
         </div>
         <img src="@/assets/images/background/footer-pattern.svg" class="position-absolute" alt="" aria-hidden="true">
-    </div>
+    </footer>
 </template>
 <script>
 export default {

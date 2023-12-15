@@ -1,14 +1,14 @@
 <template>
     <div class="page container-fluid p-0 position-absolute top-0 start-0 bg-white vh-100 vw-100 login-page">
-        <a class="navbar-brand position-absolute start-0 mt-4" href="#" style="padding-left: calc(15% / 2); z-index: 2000">
+        <a class="navbar-brand position-absolute start-0 mt-4" href="#" style="padding-left: calc(15% / 2); z-index: 2000" aria-label="Logo Pinjam Dulu Seratus">
             <img src="@/assets/images/full-white-logo.svg" style="width: 60%;"/>
         </a>
         <img class="ornament w-50" style="z-index: 1111; position: relative;" src="@/assets/images/background/register.svg" alt="">
 
         <div class="btn-group position-absolute top-0 mt-4" style="right: calc(15% / 2); z-index: 3000;">
-            <router-link :to="'/signup/' + $route.params.role" class="btn rounded-10 d-flex align-items-center border-0 p-2 login-register-button" id="loginButton">
+            <router-link :to="'/signup/' + $route.params.role" class="btn btn-secondary rounded-10 d-flex align-items-center border-0 p-2 login-register-button" id="loginButton">
                 Registrasi Akun
-                <span class="material-symbols-outlined rounded-5 mx-2 login-register-arrow-icon">
+                <span class="material-symbols-outlined rounded-5 mx-2 login-register-arrow-icon" aria-hidden="true">
                     keyboard_arrow_right
                 </span>
             </router-link>
