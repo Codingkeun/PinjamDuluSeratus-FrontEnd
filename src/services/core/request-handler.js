@@ -50,7 +50,7 @@ export default class RequestHandler {
         this.loader = null
     }
 
-    async get(endpoint, params, withLoader=true) {
+    async get(endpoint, params={}, withLoader=true) {
         return new Promise((resolve, reject) => {
             if (withLoader)
                 this.loader = $loading.show();

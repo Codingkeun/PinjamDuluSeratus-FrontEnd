@@ -7,7 +7,7 @@
                         <img src="@/assets/images/background/saving-balance.svg" alt="" class="position-absolute" style="width: 7rem; margin-top: -8rem;">
                     </div>
                     <div class="position-relative">
-                        <h3 class="text-white font-weight-light par-1-2em">Rp <span class="font-weight-semibold par-2-2-5em">2,000,000</span></h3>
+                        <h3 class="text-white font-weight-light par-1-2em">Rp <span class="font-weight-semibold par-2-2-5em">{{$toCurrency(account.balance)}}</span></h3>
                         <h3 class="text-white font-weight-light par-1-2em">Saldo Tabungan Anda</h3>
                     </div>
                     <div class="wavy-background position-absolute opacity-50" style="left: 0; bottom: 0; margin-left: -4rem; margin-bottom: -3rem;">
@@ -47,7 +47,7 @@
                 <div class="profile-container row justify-content-around mt-4">
                     <div class="card col-sm-5 col-md-5 col-lg-4 p-4 bg-secondary border-0 rounded-10 mb-4">
                         <h3 class="par-1em">Nama</h3>
-                        <h3 id="lendersName" class="font-weight-semibold text-primary par-1-2em">Christine</h3>
+                        <h3 id="lendersName" class="font-weight-semibold text-primary par-1-2em">{{account.name}}</h3>
                     </div>
                     <div class="card col-sm-5 col-md-5 col-lg-4 p-4 bg-secondary border-0 rounded-10 mb-4">
                         <h3 class="par-1em">Peran</h3>
@@ -55,31 +55,31 @@
                     </div>
                     <div class="card col-sm-5 col-md-5 col-lg-4 p-4 bg-secondary border-0 rounded-10 mb-4">
                         <h3 class="par-1em">Email</h3>
-                        <h3 class="font-weight-semibold text-primary par-1-2em"><span id="lendersEmail">christine</span>@gmail.com</h3>
+                        <h3 class="font-weight-semibold text-primary par-1-2em">{{account.email || '-'}}</h3>
                     </div>
                     <div class="card col-sm-5 col-md-5 col-lg-4 p-4 bg-secondary border-0 rounded-10 mb-4">
                         <h3 class="par-1em">Nomor HP</h3>
-                        <h3 id="lendersPhoneNumber" class="font-weight-semibold text-primary par-1-2em">08123456789</h3>
+                        <h3 id="lendersPhoneNumber" class="font-weight-semibold text-primary par-1-2em">{{account.phone || '-'}}</h3>
                     </div>
                     <div class="card col-sm-5 col-md-5 col-lg-4 p-4 bg-secondary border-0 rounded-10 mb-4">
                         <h3 class="par-1em">NPM</h3>
-                        <h3 id="lendersNPM" class="font-weight-semibold text-primary par-1-2em">1019201923</h3>
+                        <h3 id="lendersNPM" class="font-weight-semibold text-primary par-1-2em">{{account.npm || '-'}}</h3>
                     </div>
                     <div class="card col-sm-5 col-md-5 col-lg-4 p-4 bg-secondary border-0 rounded-10 mb-4">
                         <h3 class="par-1em">Fakultas</h3>
-                        <h3 id="lendersFaculty" class="font-weight-semibold text-primary par-1-2em">Informatika</h3>
+                        <h3 id="lendersFaculty" class="font-weight-semibold text-primary par-1-2em">{{account.faculty || '-'}}</h3>
                     </div>
                     <div class="card col-sm-5 col-md-5 col-lg-4 p-4 bg-secondary border-0 rounded-10 mb-4">
                         <h3 class="par-1em">Jurusan</h3>
-                        <h3 id="lenderMajor" class="font-weight-semibold text-primary par-1-2em">Teknik Informatika</h3>
+                        <h3 id="lenderMajor" class="font-weight-semibold text-primary par-1-2em">{{account.major || '-'}}</h3>
                     </div>
                     <div class="card col-sm-5 col-md-5 col-lg-4 p-4 bg-secondary border-0 rounded-10 mb-4">
                         <h3 class="par-1em">Kelas</h3>
-                        <h3 id="lenderClass" class="font-weight-semibold text-primary par-1-2em">TIF RM 222</h3>
+                        <h3 id="lenderClass" class="font-weight-semibold text-primary par-1-2em">{{account.class || '-'}}</h3>
                     </div>
                     <div class="card col-sm-5 col-md-5 col-lg-4 p-4 bg-secondary border-0 rounded-10 mb-4">
                         <h3 class="par-1em">Foto KTM</h3>
-                        <a href="#investor_idCard_modal" data-target="#investor_idCard_modal" data-toggle="modal" id="lendersStudentCardImage" class="btn-link font-weight-semibold text-primary par-1-2em" style="text-decoration: underline;" aria-label="Klik untuk melihat Foto KTM">Klik untuk melihat</a>
+                        <a href="#investor_idCard_modal" data-target="#investor_idCard_modal" data-toggle="modal" id="lendersStudentCardImage" class="btn-link font-weight-semibold text-primary par-1-2em" style="text-decoration: underline;" aria-label="Klik untuk melihat Foto KTM" v-if="account.foto_ktm">Klik untuk melihat</a>
                     </div>
                 </div>
             </div>
@@ -93,7 +93,7 @@
                             <h5 class="modal-title" id="investor_idCard_modaltitle">Foto KTM</h5>
                         </div>
                         <div class="modal-body">
-                            <img src="../../assets/images/id-card/investor.png" class="w-100" />
+                            <img :src="account.foto_ktm" class="w-100" />
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
@@ -104,13 +104,30 @@
         </section>
     </main>
 </template>
+
 <script>
+import apiEnpoint from '@/services/api-endpoint'
+import {ApiCore} from '@/services/core'
+
 export default {
     name: 'AccountInvestor',
     data() {
         return {
-            
+            account: {}
         }
+    },
+    mounted() {
+        this.fetchData()
+    },
+    methods: {
+        fetchData() {
+            this.account = {}
+            ApiCore.get(`${apiEnpoint.ACCOUNT}/profile`).then((result) => {
+                if (result.status) {
+                    this.account = result.data
+                }
+            })
+        },
     }
 }
 </script>
