@@ -98,8 +98,8 @@
             </div>
             <img src="@/assets/images/background/big-circle-gradient.svg" alt="">
         </section>
-        <section class="donation" :style="{'margin-top': $store.state.user?.logged_in ? '300px' : ''}">
-            <div class="container">
+        <section class="donation" :style="{'margin-top': $store.state.user?.logged_in ? getParentHeight() : ''}">
+            <div class="container" :style="{'margin-top': $store.state.user?.logged_in ? getChildHeight() : ''}">
                 <div class="balance">
                     <div class="content">
                         <div class="text-center">
@@ -155,6 +155,7 @@
     </main>
 </template>
 <script>
+import $ from 'jquery';
 export default {
     name: 'Home',
     data() {
@@ -170,6 +171,15 @@ export default {
         }
     },
     methods: {
+        getParentHeight() {
+            return $('.lender-investor-registration-cta').height();
+        },
+        getChildHeight() {
+            if (window.matchMedia('(min-width: 768px)').matches) {
+                return '150px';
+            }
+            return '0px';
+        },
         fetchDataAnnouncement() {
 
         }
