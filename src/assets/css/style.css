@@ -570,7 +570,8 @@ option {
     transform: scale(1);
 }
 
-::-webkit-scrollbar {
+.card-horizontal-scroll::-webkit-scrollbar,
+.table-responsive::-webkit-scrollbar {
     height: 16px;
 }
 

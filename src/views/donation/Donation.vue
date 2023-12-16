@@ -5,7 +5,7 @@
             <h1 class="font-weight-semibold">Donasi</h1>
             <p>Ayo berdonasi</p>
             <div class="d-flex" style="gap: 1rem">
-                <span class="material-symbols-rounded text-danger">
+                <span class="material-symbols-rounded" style="color: red">
                     close
                 </span>
                 <p>Donasi yang terkumpul tidak akan digunakan untuk keperluan pribadi dari pihak <span class="text-primary font-weight-semibold">Pinjam Dulu Seratus</span></p>

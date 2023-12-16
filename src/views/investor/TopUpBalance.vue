@@ -55,7 +55,7 @@
                 </div>
                 <div class="input-group w-50 mx-auto d-flex" @click="inputOnClick($event)" >
                     <span class="input-group-text border-right-0" style="border-top-right-radius: 0; border-bottom-right-radius: 0;">Rp</span>
-                    <input type="text" placeholder="Masukkan jumlah donasi" class="form-control" id="topUpWrittenAmount" required disabled>
+                    <input type="text" placeholder="Masukkan nominal top-up" class="form-control" id="topUpWrittenAmount" required disabled>
                     <div class="amountInvalidInputMessage flex-wrap w-100" hidden>
                     </div>
                 </div>

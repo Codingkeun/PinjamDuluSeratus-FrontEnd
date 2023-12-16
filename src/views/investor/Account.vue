@@ -47,7 +47,7 @@
                 <div class="profile-container row justify-content-around mt-4">
                     <div class="card col-sm-5 col-md-5 col-lg-4 p-4 bg-secondary border-0 rounded-10 mb-4">
                         <h3 class="par-1em">Nama</h3>
-                        <h3 id="lendersName" class="font-weight-semibold text-primary par-1-2em">John Doe</h3>
+                        <h3 id="lendersName" class="font-weight-semibold text-primary par-1-2em">Christine</h3>
                     </div>
                     <div class="card col-sm-5 col-md-5 col-lg-4 p-4 bg-secondary border-0 rounded-10 mb-4">
                         <h3 class="par-1em">Peran</h3>
@@ -55,7 +55,7 @@
                     </div>
                     <div class="card col-sm-5 col-md-5 col-lg-4 p-4 bg-secondary border-0 rounded-10 mb-4">
                         <h3 class="par-1em">Email</h3>
-                        <h3 class="font-weight-semibold text-primary par-1-2em"><span id="lendersEmail">johndoe</span>@gmail.com</h3>
+                        <h3 class="font-weight-semibold text-primary par-1-2em"><span id="lendersEmail">christine</span>@gmail.com</h3>
                     </div>
                     <div class="card col-sm-5 col-md-5 col-lg-4 p-4 bg-secondary border-0 rounded-10 mb-4">
                         <h3 class="par-1em">Nomor HP</h3>
@@ -79,7 +79,25 @@
                     </div>
                     <div class="card col-sm-5 col-md-5 col-lg-4 p-4 bg-secondary border-0 rounded-10 mb-4">
                         <h3 class="par-1em">Foto KTM</h3>
-                        <a href="#" id="lendersStudentCardImage" class="btn-link font-weight-semibold text-primary par-1-2em" style="text-decoration: underline;" aria-label="Klik untuk melihat Foto KTM">Klik untuk melihat</a>
+                        <a href="#investor_idCard_modal" data-target="#investor_idCard_modal" data-toggle="modal" id="lendersStudentCardImage" class="btn-link font-weight-semibold text-primary par-1-2em" style="text-decoration: underline;" aria-label="Klik untuk melihat Foto KTM">Klik untuk melihat</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="modal fade" tabindex="-1" id="investor_idCard_modal" aria-labelledby="investor_idCard_modaltitle" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="investor_idCard_modaltitle">Foto KTM</h5>
+                        </div>
+                        <div class="modal-body">
+                            <img src="../../assets/images/id-card/investor.png" class="w-100" />
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
+                        </div>
                     </div>
                 </div>
             </div>
