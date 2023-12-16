@@ -1,5 +1,5 @@
 <template>
-    <main class="loan-area mt-5 mb-5" style="padding-inline: calc(15% / 2);">
+    <main class="loan-area" style="padding-inline: calc(15% / 2); margin-block: 100px;">
         <h1 class="font-weight-semibold mt-5">Statistik Investasi Anda</h1>
 
         <ul class="nav nav-tabs mt-4">
@@ -40,9 +40,12 @@
             </div>
         </div>
 
-        <div class="table-responsive mt-5">
+        <div class="table-responsive" style="margin-top: 100px;">
             <h1 class="font-weight-semibold mb-4">Daftar Piutang Aktif</h1>
-            <table id="receivableTable" class="table table-striped sortable">
+            <table id="activeReceivableTable" class="table table-striped sortable mb-0">
+                <div class="d-flex justify-content-end">
+                    <div class="mb-3 text-muted" v-if="pagination.total">Menampilkan {{pagination.total}} data</div>
+                </div>
                 <thead>
                     <tr>
                         <th class="no-sort">Peminjam</th>
@@ -50,6 +53,7 @@
                         <th>Nomor HP</th>
                         <th>Jurusan</th>
                         <th>Kelas</th>
+                        <th>Status</th>
                         <th data-defaultsign='no-sort'></th>
                     </tr>
                 </thead>
@@ -63,8 +67,9 @@
                         <td class="receivableTableTable_lendersPhone">08123456789</td>
                         <td class="receivableTableTable_lendersMajor">Teknik Informatika</td>
                         <td class="receivableTableTable_lendersClass">TIF RM 222</td>
+                        <td class="receivableTableTable_lendersStatus">Belum Lunas</td>
                         <td>
-                            <router-link to="/investment/detail/:id" type="button" class="receivableTable_detailLoan btn btn-primary font-weight-semibold w-100" aria-label="Detail Peminjaman">Detail</router-link>
+                            <router-link to="/investment/detail/:id" type="button" class="receivableTable_detailLoan btn btn-primary" aria-label="Detail Peminjaman">Detail</router-link>
                         </td>
                     </tr>
                     <tr>
@@ -76,6 +81,7 @@
                         <td class="receivableTableTable_lendersPhone">08123456789</td>
                         <td class="receivableTableTable_lendersMajor">Teknik Informatika</td>
                         <td class="receivableTableTable_lendersClass">TIF RM 221</td>
+                        <td class="receivableTableTable_lendersStatus">Belum Lunas</td>
                         <td>
                             <button type="button" class="btn btn-primary receivableTable_detailLoan" aria-label="Detail Peminjaman">Detail</button>
                         </td>
@@ -89,6 +95,7 @@
                         <td class="receivableTableTable_lendersPhone">08123456789</td>
                         <td class="receivableTableTable_lendersMajor">Teknik Informatika</td>
                         <td class="receivableTableTable_lendersClass">TIF RM 220</td>
+                        <td class="receivableTableTable_lendersStatus">Belum Lunas</td>
                         <td>
                             <button type="button" class="btn btn-primary receivableTable_detailLoan" aria-label="Detail Peminjaman">Detail</button>
                         </td>
@@ -102,12 +109,94 @@
                         <td class="receivableTableTable_lendersPhone">08123456789</td>
                         <td class="receivableTableTable_lendersMajor">Teknik Informatika</td>
                         <td class="receivableTableTable_lendersClass">TIF RM 219</td>
+                        <td class="receivableTableTable_lendersStatus">Belum Lunas</td>
                         <td>
                             <button type="button" class="btn btn-primary receivableTable_detailLoan" aria-label="Detail Peminjaman">Detail</button>
                         </td>
                     </tr>
                 </tbody>
             </table>
+            <div class="d-flex justify-content-center">
+                    <Pagination></Pagination>
+            </div>
+        </div>
+
+        <div class="table-responsive mt-6" style="margin-top: 100px;">
+            <h1 class="font-weight-semibold mb-4">Daftar Piutang Lunas</h1>
+            <table id="paidOffReceivableTable" class="table table-striped sortable mb-0">
+                <thead>
+                    <tr>
+                        <th class="no-sort">Peminjam</th>
+                        <th>Jumlah Pinjaman</th>
+                        <th>Nomor HP</th>
+                        <th>Jurusan</th>
+                        <th>Kelas</th>
+                        <th>Status</th>
+                        <th data-defaultsign='no-sort'></th>
+                    </tr>
+                </thead>
+                <tbody id="receivableTableData">
+                    <tr>
+                        <td class="receivableTable_lendersNameAndNPM">
+                            <div class="receivableTable_lendersName font-weight-semibold">Andrea</div>
+                            <div class="par-0-8em">NPM <span class="receivableTable_lendersNPM">1019201923</span></div>
+                        </td>
+                        <td class="receivableTable_loanAmount font-weight-semibold">Rp 2,000,000</td>
+                        <td class="receivableTableTable_lendersPhone">08123456789</td>
+                        <td class="receivableTableTable_lendersMajor">Teknik Informatika</td>
+                        <td class="receivableTableTable_lendersClass">TIF RM 222</td>
+                        <td class="receivableTableTable_lendersStatus">Lunas</td>
+                        <td>
+                            <router-link to="/investment/detail/:id" type="button" class="receivableTable_detailLoan btn btn-primary" aria-label="Detail Peminjaman">Detail</router-link>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="receivableTable_lendersNameAndNPM">
+                            <div class="receivableTable_lendersName font-weight-semibold">Jane Smith</div>
+                            <div class="par-0-8em">NPM <span class="receivableTable_lendersNPM">1019201923</span></div>
+                        </td>
+                        <td class="receivableTable_loanAmount font-weight-semibold">Rp 7,000,000</td>
+                        <td class="receivableTableTable_lendersPhone">08123456789</td>
+                        <td class="receivableTableTable_lendersMajor">Teknik Informatika</td>
+                        <td class="receivableTableTable_lendersClass">TIF RM 221</td>
+                        <td class="receivableTableTable_lendersStatus">Lunas</td>
+                        <td>
+                            <button type="button" class="btn btn-primary receivableTable_detailLoan" aria-label="Detail Peminjaman">Detail</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="receivableTable_lendersNameAndNPM">
+                            <div class="receivableTable_lendersName font-weight-semibold">Ahmad Abdullah</div>
+                            <div class="par-0-8em">NPM <span class="receivableTable_lendersNPM">1019201923</span></div>
+                        </td>
+                        <td class="receivableTable_loanAmount font-weight-semibold">Rp 5,000,000</td>
+                        <td class="receivableTableTable_lendersPhone">08123456789</td>
+                        <td class="receivableTableTable_lendersMajor">Teknik Informatika</td>
+                        <td class="receivableTableTable_lendersClass">TIF RM 220</td>
+                        <td class="receivableTableTable_lendersStatus">Lunas</td>
+                        <td>
+                            <button type="button" class="btn btn-primary receivableTable_detailLoan" aria-label="Detail Peminjaman">Detail</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="receivableTable_lendersNameAndNPM">
+                            <div class="receivableTable_lendersName font-weight-semibold">Maria Gonzalez</div>
+                            <div class="par-0-8em">NPM <span class="receivableTable_lendersNPM">1019201923</span></div>
+                        </td>
+                        <td class="receivableTable_loanAmount font-weight-semibold">Rp 8,750,000</td>
+                        <td class="receivableTableTable_lendersPhone">08123456789</td>
+                        <td class="receivableTableTable_lendersMajor">Teknik Informatika</td>
+                        <td class="receivableTableTable_lendersClass">TIF RM 219</td>
+                        <td class="receivableTableTable_lendersStatus">Lunas</td>
+                        <td>
+                            <button type="button" class="btn btn-primary receivableTable_detailLoan" aria-label="Detail Peminjaman">Detail</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="d-flex justify-content-center">
+                    <Pagination></Pagination>
+            </div>
         </div>
     </main>
 </template>
@@ -116,8 +205,14 @@ export default {
     name: 'DashboardInvestor',
     data() {
         return {
-            
+            pagination: {
+                prev: false,
+                next: false,
+                page: 1,
+                limit: 5,
+                total: 0
+            },
         }
-    }
+    },
 }
 </script>
