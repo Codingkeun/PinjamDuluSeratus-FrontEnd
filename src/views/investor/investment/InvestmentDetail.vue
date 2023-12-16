@@ -2,7 +2,7 @@
     <main class="mt-5 mb-5" style="padding-inline: calc(15% / 2);">
 
         <!-- Investasi Aktif > Detail Pinjaman <with providing funds button> -->
-        <div id="beforeProvidingLoans">
+        <div id="beforeProvidingLoans" v-if="this.$router.options.history.state.back === '/investment'">
             <router-link :to="`/investment`" class="payment-history-back-button bg-white text-primary font-weight-semibold d-flex align-items-center p-0" style="gap: .5rem; width: fit-content">
                 <span class="material-symbols-rounded">
                     keyboard_arrow_left
@@ -95,7 +95,7 @@
         </div>
 
         <!-- Dashboard > Detail Pinjaman <with view history button> -->
-        <div id="afterProvidingLoans">
+        <div id="afterProvidingLoans" v-if="this.$router.options.history.state.back === '/dashboard/investor'">
             <router-link :to="`/dashboard/investor`" class="payment-history-back-button bg-white text-primary font-weight-semibold d-flex align-items-center p-0" style="gap: .5rem; width: fit-content">
                 <span class="material-symbols-rounded">
                     keyboard_arrow_left
@@ -196,6 +196,8 @@
     </main>
 </template>
 <script>
+import { useRouter } from 'vue-router';
+const router = useRouter;
 export default {
     name: 'InvestmentDetailInvestor',
     data() {
