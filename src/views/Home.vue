@@ -98,7 +98,7 @@
             </div>
             <img src="@/assets/images/background/big-circle-gradient.svg" alt="">
         </section>
-        <section class="donation" :style="{'margin-top': $store.state.user?.logged_in ? '0px' : ''}">
+        <section class="donation" :style="{'margin-top': $store.state.user?.logged_in ? '300px' : ''}">
             <div class="container">
                 <div class="balance">
                     <div class="content">
