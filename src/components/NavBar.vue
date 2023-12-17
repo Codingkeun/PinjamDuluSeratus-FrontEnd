@@ -51,7 +51,7 @@
                                 <li><router-link to="/investment" class="dropdown-item" v-if="$store.state.user.role == 'investor'">Investasi Aktif</router-link></li>
                                 <li><hr class="dropdown-divider"></li>
                                 <li><router-link class="dropdown-item" :to="'/account/' + $store.state.user.role">Akun</router-link></li>
-                                <li><a class="dropdown-item" href="#">User Guide</a></li>
+                                <li><a class="dropdown-item" href="https://www.canva.com/design/DAF2eVvTNKw/eVJE1sfG25XS5XnREZoqqQ/edit" target="_blank">User Guide</a></li>
                                 <li><hr class="dropdown-divider"></li>
                                 <li><button type="button" @click="logout" class="dropdown-item">Log Out</button></li>
                             </ul>
