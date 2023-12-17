@@ -9,7 +9,7 @@
                     <div class="position-relative" style="z-index: 999;">
                         <h3 class="text-white font-weight-light par-1-2em">Rp <span class="font-weight-semibold par-2-2-5em">{{$toCurrency(account.balance)}}</span></h3>
                         <h3 class="text-white font-weight-light par-1-2em">Saldo Tabungan Anda</h3>
-                        <button type="button" @click="$router.push('/topup-balance/topup-history')" class="btn font-weight-semibold mt-3 view-topup-history-button" style="background-color: white; color: #5D299F;">Lihat Histori Top up</button>
+                        <button type="button" @click="$router.push('/history-topup')" class="btn font-weight-semibold mt-3 view-topup-history-button" style="background-color: white; color: #5D299F;">Lihat Histori Top up</button>
                     </div>
                     <div class="wavy-background position-absolute opacity-50" style="left: 0; bottom: 0; margin-left: -4rem; margin-bottom: -3rem;">
                         <img src="@/assets/images/background/footer-background.svg" alt="">

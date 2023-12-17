@@ -227,7 +227,7 @@ const routes = [
         }
     },
     {
-        path: '/topup-balance/topup-history',
+        path: '/history-topup',
         component: HistoryTopUp,
         meta: {
             title: `${nameApplication} | Histori Top Up`,
