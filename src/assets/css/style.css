@@ -741,3 +741,13 @@ a.btn.bg-white.text-primary {
     background-color: var(--secondary) !important;
     transition: all 0.35s ease-in;
 }
+
+.view-topup-history-button:hover,
+.view-topup-history-button:focus {
+    background-color: #C1ACDB !important;
+}
+
+.topup-balance-button:hover,
+.topup-balance-button:focus {
+    background-color: #A8D3CE !important;
+}

@@ -11,7 +11,7 @@
                 <h1 class="font-weight-semibold">Pembayaran Dana Pinjaman</h1>
                 <button type="button" @click="handleLinkToUploadReceiptOnClick" class="btn bg-white text-primary font-weight-semibold d-flex align-items-center" style="height: 44px; border: 2px solid var(--primary);">
                     <span>Upload Bukti Pembayaran</span>
-                    <span class="material-symbols-rounded ml-2">
+                    <span class="material-symbols-rounded ml-2" aria-hidden="true">
                         arrow_downward
                     </span>
                 </button>
@@ -51,10 +51,10 @@
             </div>
             <div class="d-block mt-5">
                 <div ref="uploadContent">
-                    <form id="paymentDateForm" class="w-100 d-flex flex-column">
+                    <div id="paymentDateForm" class="w-100 d-flex flex-column">
                         <label for="paymentDate" class="form-label text-center">Masukkan Tanggal Pembayaran</label>
                         <input type="date" class="form-control" id="paymentDate" required>
-                    </form>
+                    </div>
                 </div>
                 <div class="mt-5">
                 <h2 class="text-center mb-3 par-1em">Upload Bukti Pembayaran</h2>

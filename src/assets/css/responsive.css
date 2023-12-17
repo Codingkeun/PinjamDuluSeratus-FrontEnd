@@ -24,6 +24,7 @@
 }
 
 @media screen and (max-width: 991.9px) {
+    .top-up-detail .col-md-12:last-child,
     .lendee-payment-detail .col-md-12:last-child {
         margin-top: 1.5rem !important;
     }
@@ -42,7 +43,9 @@
 
     .lendee-payment-detail button[type=button],
     #uploadProofOfPaymentSection button[type=submit],
-    #uploadProofOfPaymentSection > div {
+    #uploadtopUpReceiptSection button[type=submit],
+    #uploadProofOfPaymentSection > div,
+    #uploadtopUpReceiptSection > div {
         margin-inline: auto;
     }
 }
@@ -427,13 +430,16 @@
         max-width: 48%;
     }
 
+    .top-up-detail .col-lg-6:last-child,
     .lendee-payment-detail .col-lg-6:last-child {
         max-width: 47% !important;
     }
 
     .lendee-payment-detail button,
     .lendee-payment-detail + * > div,
-    .lendee-payment-detail + * > button {
+    .lendee-payment-detail + * > button,
+    #uploadtopUpReceiptSection > div,
+    #uploadtopUpReceiptSection > button {
         width: 50% !important;
         transform: translateX(50%);
     }

@@ -1,7 +1,7 @@
 <template>
     <main class="mt-5 mb-5">
         <button @click="$router.push(`/account/investor`)" class="btn bg-white text-primary font-weight-semibold d-flex align-items-center pl-1 mb-3" style="gap: .5rem; margin-left: calc(15% / 2)">
-            <span class="material-symbols-rounded">
+            <span class="material-symbols-rounded" aria-hidden="true">
                 keyboard_arrow_left
             </span>
             Kembali

@@ -6,9 +6,10 @@
                     <div class="position-relative" style="width: 7rem;">
                         <img src="@/assets/images/background/saving-balance.svg" alt="" class="position-absolute" style="width: 7rem; margin-top: -8rem;">
                     </div>
-                    <div class="position-relative">
+                    <div class="position-relative" style="z-index: 999;">
                         <h3 class="text-white font-weight-light par-1-2em">Rp <span class="font-weight-semibold par-2-2-5em">{{$toCurrency(account.balance)}}</span></h3>
                         <h3 class="text-white font-weight-light par-1-2em">Saldo Tabungan Anda</h3>
+                        <button type="button" @click="$router.push('/topup-balance/top-up-history')" class="btn font-weight-semibold mt-3 view-topup-history-button" style="background-color: white; color: #5D299F;">Lihat Histori Top up</button>
                     </div>
                     <div class="wavy-background position-absolute opacity-50" style="left: 0; bottom: 0; margin-left: -4rem; margin-bottom: -3rem;">
                         <img src="@/assets/images/background/footer-background.svg" alt="">
@@ -25,8 +26,8 @@
                         <h3 class="text-white font-weight-semibold par-2-2-5em">Top Up</h3>
                         <h3 class="text-white font-weight-light par-1-2em">Saldo Tabungan Anda</h3>
                     </div>
-                    <button class="btn rounded-10 d-flex justify-content-center align-items-center border-0" style="max-width: 44px; max-height: 44px; z-index: 5" @click="$router.push('/topup-balance')">
-                        <span class="material-symbols-rounded text-primary" style="font-size: 3rem;">
+                    <button class="btn rounded-10 d-flex justify-content-center align-items-center border-0 topup-balance-button" style="max-width: 44px; max-height: 44px; z-index: 5" @click="$router.push('/topup-balance')">
+                        <span class="material-symbols-rounded text-primary" style="font-size: 3rem;" aria-hidden="true">
                             keyboard_arrow_right
                         </span>
                     </button>

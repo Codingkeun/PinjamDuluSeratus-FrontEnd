@@ -10,7 +10,7 @@
         <h1 class="font-weight-semibold">Detail Pembayaran Top-Up</h1>
         <button type="button" @click="handleLinkToUploadReceiptOnClick" class="btn bg-white text-primary font-weight-semibold d-flex align-items-center" style="height: 44px; border: 2px solid var(--primary);">
             <span>Upload Bukti Pembayaran</span>
-            <span class="material-symbols-rounded ml-2">
+            <span class="material-symbols-rounded ml-2" aria-hidden="true">
                 arrow_downward
             </span>
         </button>
@@ -46,7 +46,7 @@
                 <div class="btn bg-secondary text-primary position-relative d-flex align-items-center" v-if="!attachment_preview">
                     <label for="uploadtopUpReceipt" class="pb-0 mb-0 d-flex align-items-center">
                         <span class="font-weight-medium">Upload</span>
-                        <span class="material-symbols-rounded ml-2">
+                        <span class="material-symbols-rounded ml-2" aria-hidden="true">
                             download
                         </span>
                     </label>
