@@ -71,7 +71,9 @@ export default {
                 if (signin.status) {
                     this.$toast.success(signin.message);
                     localStorage.removeItem('token')
+                    localStorage.removeItem('role')
                     localStorage.setItem('token', signin.user.key)
+                    localStorage.setItem('role', this.role)
                     setTimeout(() => {
                         window.location.href = '/'
                     }, 1000);

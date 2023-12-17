@@ -11,6 +11,7 @@ import About from '../views/About.vue'
 import Donation from '../views/donation/Donation.vue'
 import DonationForm from '../views/donation/DonationForm.vue'
 import HistoryPayment from '../views/HistoryPayment.vue'
+import NotFound from '../views/404.vue'
 
 // routes for borrower role
 import DashboardBorrower from '../views/peminjam/Dashboard.vue'
@@ -39,6 +40,16 @@ const routes = [
             title: `${nameApplication} | Home`,
             footer: true,
             navbar: true,
+        }
+    },
+    {
+        path: '/notfound',
+        name: 'notfound',
+        component: NotFound,
+        meta: {
+            title: `${nameApplication} | Not Found`,
+            footer: false,
+            navbar: false,
         }
     },
     {
@@ -97,6 +108,7 @@ const routes = [
             title: `${nameApplication} | Dashboard`,
             footer: true,
             navbar: true,
+            role: 'peminjam'
         }
     },
     {
@@ -107,6 +119,7 @@ const routes = [
             title: `${nameApplication} | Akun`,
             footer: true,
             navbar: true,
+            role: 'peminjam'
         }
     },
     {
@@ -117,6 +130,7 @@ const routes = [
             title: `${nameApplication} | Pinjaman`,
             footer: true,
             navbar: true,
+            role: 'peminjam'
         }
     },
     {
@@ -126,6 +140,7 @@ const routes = [
             title: `${nameApplication} | Pengajuan Pinjaman`,
             footer: true,
             navbar: true,
+            role: 'peminjam'
         }
     },
     {
@@ -135,6 +150,7 @@ const routes = [
             title: `${nameApplication} | Detail Pinjaman`,
             footer: true,
             navbar: true,
+            role: 'peminjam'
         }
     },
     {
@@ -144,6 +160,7 @@ const routes = [
             title: `${nameApplication} | Riwayat Pembayaran`,
             footer: true,
             navbar: true,
+            role: 'peminjam'
         }
     },
     {
@@ -153,6 +170,7 @@ const routes = [
             title: `${nameApplication} | Informasi Pembayaran`,
             footer: true,
             navbar: true,
+            role: 'peminjam'
         }
     },
     // routes for investor
@@ -163,6 +181,7 @@ const routes = [
             title: `${nameApplication} | Dashboard`,
             footer: true,
             navbar: true,
+            role: 'investor'
         }
     },
     {
@@ -172,6 +191,7 @@ const routes = [
             title: `${nameApplication} | Investasi Aktif`,
             footer: true,
             navbar: true,
+            role: 'investor'
         }
     },
     {
@@ -182,6 +202,7 @@ const routes = [
             title: `${nameApplication} | Akun`,
             footer: true,
             navbar: true,
+            role: 'investor'
         }
     },
     {
@@ -191,6 +212,7 @@ const routes = [
             title: `${nameApplication} | Detail Pinjaman`,
             footer: true,
             navbar: true,
+            role: 'investor'
         }
     },
     {
@@ -200,6 +222,7 @@ const routes = [
             title: `${nameApplication} | Top Up Saldo`,
             footer: true,
             navbar: true,
+            role: 'investor'
         }
     }
 ]
@@ -217,23 +240,38 @@ router.beforeEach((to, from, next) => {
     document.title = to.meta.title;
 
     const localData = localStorage.getItem('token')
+    const tmpRole = localStorage.getItem('role') || ''
 
     const authRequired  = ['signin', 'signup'].includes(to.name);
+    const role = to.meta.role || ''
 
-    if (localData && !authRequired) {
-        ApiCore.get(`${apiEnpoint.ACCOUNT}/info`, null, false)
-                .then((response) => {
-                    if ('status' in response && !response.status) {
-                        localStorage.removeItem('token')
-                        next({name: 'home'})
-                    } else {
-                        stores.commit('setuser', response)
-                        next()
-                    }
-                })
-                .catch(() => {})
-    } else{
-        next()
+    let isAllow = true
+
+    if (role) {
+        if (role != tmpRole)
+            isAllow = false
+    }
+
+    console.log(isAllow);
+
+    if (isAllow) {
+        if (localData && !authRequired) {
+            ApiCore.get(`${apiEnpoint.ACCOUNT}/info`, null, false)
+                    .then((response) => {
+                        if ('status' in response && !response.status) {
+                            localStorage.removeItem('token')
+                            next({name: 'home'})
+                        } else {
+                            stores.commit('setuser', response)
+                            next()
+                        }
+                    })
+                    .catch(() => {})
+        } else{
+            next()
+        }
+    } else {
+        next({name: 'notfound'})
     }
 })
 
