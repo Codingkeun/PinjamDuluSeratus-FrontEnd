@@ -27,6 +27,7 @@ import InvestmentInvestor from '../views/investor/investment/Investment.vue'
 import InvestmentDetailInvestor from '../views/investor/investment/InvestmentDetail.vue'
 import AccountInvestor from '../views/investor/Account.vue'
 import TopUpBalanceInvestor from '../views/investor/TopUpBalance.vue'
+import HistoryTopUp from '../views/investor/HistoryTopUp.vue'
 
 const nameApplication = import.meta.env.VITE_APP_TITLE
 
@@ -223,6 +224,15 @@ const routes = [
             footer: true,
             navbar: true,
             role: 'investor'
+        }
+    },
+    {
+        path: '/topup-balance/topup-history',
+        component: HistoryTopUp,
+        meta: {
+            title: `${nameApplication} | Histori Top Up`,
+            footer: true,
+            navbar: true,
         }
     }
 ]
