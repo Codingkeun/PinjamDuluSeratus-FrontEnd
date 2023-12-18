@@ -16,7 +16,7 @@
                 <div class="row d-flex align-items-center ml-0" style="column-gap: 3rem; row-gap: 1rem;">
                     <div>
                         <h3 class="par-1em">Total Pinjaman</h3>
-                        <h3 class="font-weight-semibold par-1-5em" id="dashboard_investmentAmountTotal">Rp 5,000,000</h3>
+                        <h3 class="font-weight-semibold par-1-5em" id="dashboard_investmentAmountTotal">Rp {{ $toCurrency(1870000) }}</h3>
                     </div>
                     <div>
                         <h3 class="par-1em">Periode</h3>
@@ -34,7 +34,7 @@
             <div class="card z-index-2 h-100 mt-4">
                 <div class="card-body p-1">
                     <div class="chart">
-                        <canvas id="chart-line" class="chart-canvas" style="height: 18rem;"></canvas>
+                        <line-chart :datasets="statistic.datasets"></line-chart>
                     </div>
                 </div>
             </div>
@@ -44,7 +44,7 @@
             <h1 class="font-weight-semibold mb-4">Daftar Piutang Aktif</h1>
             <table id="activeReceivableTable" class="table table-striped sortable mb-0">
                 <div class="d-flex justify-content-end">
-                    <div class="mb-3 text-muted" v-if="pagination.total">Menampilkan {{pagination.total}} data</div>
+                    <div class="mb-3 text-muted" v-if="paginationLoanActive.total">Menampilkan {{paginationLoanActive.total}} data</div>
                 </div>
                 <thead>
                     <tr>
@@ -83,7 +83,7 @@
                         <td class="receivableTableTable_lendersClass">TIF RM 221</td>
                         <td class="receivableTableTable_lendersStatus">Belum Lunas</td>
                         <td>
-                            <button type="button" class="btn btn-primary receivableTable_detailLoan" aria-label="Detail Peminjaman">Detail</button>
+                            <router-link to="/investment/detail/:id" type="button" class="receivableTable_detailLoan btn btn-primary" aria-label="Detail Peminjaman">Detail</router-link>
                         </td>
                     </tr>
                     <tr>
@@ -97,7 +97,7 @@
                         <td class="receivableTableTable_lendersClass">TIF RM 220</td>
                         <td class="receivableTableTable_lendersStatus">Belum Lunas</td>
                         <td>
-                            <button type="button" class="btn btn-primary receivableTable_detailLoan" aria-label="Detail Peminjaman">Detail</button>
+                            <router-link to="/investment/detail/:id" type="button" class="receivableTable_detailLoan btn btn-primary" aria-label="Detail Peminjaman">Detail</router-link>
                         </td>
                     </tr>
                     <tr>
@@ -111,13 +111,13 @@
                         <td class="receivableTableTable_lendersClass">TIF RM 219</td>
                         <td class="receivableTableTable_lendersStatus">Belum Lunas</td>
                         <td>
-                            <button type="button" class="btn btn-primary receivableTable_detailLoan" aria-label="Detail Peminjaman">Detail</button>
+                            <router-link to="/investment/detail/:id" type="button" class="receivableTable_detailLoan btn btn-primary" aria-label="Detail Peminjaman">Detail</router-link>
                         </td>
                     </tr>
                 </tbody>
             </table>
             <div class="d-flex justify-content-center">
-                    <Pagination></Pagination>
+                    <paginationLoanActive></paginationLoanActive>
             </div>
         </div>
 
@@ -161,7 +161,7 @@
                         <td class="receivableTableTable_lendersClass">TIF RM 221</td>
                         <td class="receivableTableTable_lendersStatus">Lunas</td>
                         <td>
-                            <button type="button" class="btn btn-primary receivableTable_detailLoan" aria-label="Detail Peminjaman">Detail</button>
+                            <router-link to="/investment/detail/:id" type="button" class="receivableTable_detailLoan btn btn-primary" aria-label="Detail Peminjaman">Detail</router-link>
                         </td>
                     </tr>
                     <tr>
@@ -175,7 +175,7 @@
                         <td class="receivableTableTable_lendersClass">TIF RM 220</td>
                         <td class="receivableTableTable_lendersStatus">Lunas</td>
                         <td>
-                            <button type="button" class="btn btn-primary receivableTable_detailLoan" aria-label="Detail Peminjaman">Detail</button>
+                            <router-link to="/investment/detail/:id" type="button" class="receivableTable_detailLoan btn btn-primary" aria-label="Detail Peminjaman">Detail</router-link>
                         </td>
                     </tr>
                     <tr>
@@ -189,30 +189,63 @@
                         <td class="receivableTableTable_lendersClass">TIF RM 219</td>
                         <td class="receivableTableTable_lendersStatus">Lunas</td>
                         <td>
-                            <button type="button" class="btn btn-primary receivableTable_detailLoan" aria-label="Detail Peminjaman">Detail</button>
+                            <router-link to="/investment/detail/:id" type="button" class="receivableTable_detailLoan btn btn-primary" aria-label="Detail Peminjaman">Detail</router-link>
                         </td>
                     </tr>
                 </tbody>
             </table>
             <div class="d-flex justify-content-center">
-                    <Pagination></Pagination>
+                <Pagination></Pagination>
             </div>
         </div>
     </main>
 </template>
 <script>
+import Line from '@/components/chart/Line.vue';
+
 export default {
     name: 'DashboardInvestor',
     data() {
         return {
-            pagination: {
+            listLoanActive: [],
+            listLoanActivePaid: [],
+            paginationLoanActive: {
                 prev: false,
                 next: false,
                 page: 1,
                 limit: 5,
                 total: 0
             },
+            paginationLoanActivePaid: {
+                prev: false,
+                next: false,
+                page: 1,
+                limit: 5,
+                total: 0
+            },
+            statistic: {
+                datasets: [100000, 200000, 150000, 50000, 500000, 120000, 0, 0, 200000, 0, 400000, 150000]
+            },
         }
     },
+    components: {
+        'line-chart': Line
+    },
+    mounted() {
+        // this.fetchData()
+    },
+    methods: {
+        fetchData() {
+            this.listLoanActive = []
+            ApiCore.find(`${apiEnpoint.INVESMENT}/piutang-aktif`, this.$route.params.id)
+                    .then((result) => {
+                        if (result.status)
+                            this.listLoanActive = result.data
+                    })
+                    .catch((error) => {
+                        this.$toast.error(error.message)
+                    })
+        },
+    }
 }
 </script>
