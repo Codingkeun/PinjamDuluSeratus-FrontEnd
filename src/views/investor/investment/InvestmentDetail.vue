@@ -9,7 +9,7 @@
             </router-link>
             <div class="d-flex justify-content-between align-items-center flex-wrap mt-5" style="gap: 2rem;">
                 <h1 class="font-weight-semibold">Detail Pinjaman</h1>
-                <button @click="$router.push('/history-payment')" v-if="detail.status_approval == 'approve'" class="btn btn-border bg-white text-primary font-weight-semibold" style="height: 44px; border: 2px solid var(--primary);">Lihat Histori Pembayaran</button>
+                <button @click="$router.push(`/history-payment/${$route.params.id}`)" v-if="detail.status_approval == 'approve'" class="btn btn-border bg-white text-primary font-weight-semibold" style="height: 44px; border: 2px solid var(--primary);">Lihat Histori Pembayaran</button>
             </div>
             <Form :validation-schema="schema" @submit="handleSubmit" class="loan-detail-container lender-role w-100 mx-0 mt-4">
                 <section class="p-5 rounded-10 container-card-shadow w-100" style="height: fit-content;">
@@ -53,7 +53,7 @@
                     </div>
                     <Field v-if="detail.status_approval != 'approve'" class="form-check-input" type="checkbox" name="terms" value="1" id="terms" />
                     <label v-if="detail.status_approval != 'approve'" class="form-check-label ml-3" for="terms">Form pemberian dana pinjaman yang telah berhasil dibuat tidak bisa dibatalkan</label>
-                    <ErrorMessage name="terms" class="text-danger ml-3"/>
+                    <ErrorMessage v-if="detail.status_approval != 'approve'" name="terms" class="text-danger ml-3"/>
                 </section>
 
                 <section class="d-flex flex-column w-100 px-0" style="gap: 3rem;">
