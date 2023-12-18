@@ -79,7 +79,7 @@ export default {
     data() {
         return {
             statistic: {
-                datasets: []
+                datasets: [100000, 200000, 150000, 50000, 500000, 120000, 0, 0, 200000, 0, 400000, 150000]
             },
             listLoanActive: [],
             pagination: {
