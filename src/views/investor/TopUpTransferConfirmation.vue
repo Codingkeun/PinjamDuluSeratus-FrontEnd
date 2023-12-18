@@ -1,12 +1,12 @@
 <template>
     <main class="mt-5 mb-5" style="padding-inline: calc(15% / 2)">
-        <button type="button" @click="$router.push(`/topup-balance`)" class="btn bg-white text-primary font-weight-semibold d-flex align-items-center pl-1 mb-3" style="gap: .5rem;">
+        <button type="button" @click="$router.push(`/topup-balance/history`)" class="btn bg-white text-primary font-weight-semibold d-flex align-items-center pl-1 mb-3" style="gap: .5rem;">
             <span class="material-symbols-rounded" aria-hidden="true">
                 keyboard_arrow_left
             </span>
             Kembali
         </button>
-        <div class="d-flex justify-content-between align-items-center flex-wrap mt-5" style="gap: 2rem;">
+        <div class="d-flex justify-content-between align-items-center flex-wrap" style="gap: 2rem;">
             <h1 class="font-weight-semibold">Detail Pembayaran Top-Up</h1>
             <button type="button" @click="handleLinkToUploadReceiptOnClick" class="btn bg-white text-primary font-weight-semibold d-flex align-items-center" style="height: 44px; border: 2px solid var(--primary);">
                 <span>Upload Bukti Pembayaran</span>

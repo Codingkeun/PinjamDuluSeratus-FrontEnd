@@ -52,7 +52,7 @@
                         </div>
                     </div>
                     <Field v-if="detail.status_approval != 'approve'" class="form-check-input" type="checkbox" name="terms" value="1" id="terms" />
-                    <label v-if="detail.status_approval != 'approve'" class="form-check-label ml-3 mb-2" for="terms">Form pemberian dana pinjaman yang telah berhasil dibuat tidak bisa dibatalkan</label>
+                    <label v-if="detail.status_approval != 'approve'" class="form-check-label ml-3" for="terms">Form pemberian dana pinjaman yang telah berhasil dibuat tidak bisa dibatalkan</label>
                     <ErrorMessage name="terms" class="text-danger ml-3"/>
                 </section>
 
@@ -100,11 +100,16 @@
                     </div>
                 </section>
 
-                <div class="w-100 mx-auto">
-                    <button v-if="detail.status_approval == 'wait'" class="btn btn-primary font-weight-semibold mb-2" type="submit">Berikan Dana Pinjaman</button>
-                    <div class="d-block" v-if="mustTopUp">
-                        <div class="text-muted mb-3">Saldo kamu kurang untuk melakukan investasi pada pinjaman ini ?</div>
-                        <button @click="$router.push('/account/investor')" class="btn btn-outline-primary font-weight-semibold" type="button">Top Up Saldo</button>
+                <div class="mx-auto w-100">
+                    <button v-if="detail.status_approval == 'wait'" class="btn btn-primary font-weight-semibold mb-2 mx-auto w-100" type="submit">Berikan Dana Pinjaman</button>
+                    <div class="d-flex align-items-center bg-secondary p-3 rounded-10 mx-auto" v-if="mustTopUp">
+                        <span class="material-symbols-outlined display-2 text-primary" aria-hidden="true">
+                            sentiment_dissatisfied
+                        </span>
+                        <div class="d-flex align-items-center">
+                            <div class="text-muted ml-2 par-1em">Saldo Anda belum cukup untuk melakukan investasi pada pinjaman ini.</div>
+                            <button @click="$router.push('/account/investor')" class="btn btn-outline-primary font-weight-semibold ml-2" type="button">Top Up Saldo</button>
+                        </div>
                     </div>
                 </div>
             </Form>

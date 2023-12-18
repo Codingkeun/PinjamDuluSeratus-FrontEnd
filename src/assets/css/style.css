@@ -439,7 +439,7 @@ body {
     font-weight: 50% !important;
 }
 
-select {
+#loanDuration select {
     appearance: none !important;
     border: 0 !important;
     outline: 0 !important;
@@ -454,11 +454,11 @@ select {
     cursor: pointer !important;
 }
 
-select::ms-expand {
+#loanDuration select::ms-expand {
     display: none;
 }
 
-select:focus {
+#loanDuration select:focus {
     outline: none;
 }
 
@@ -764,4 +764,12 @@ a.btn.bg-white.text-primary {
 .notfound-container {
     min-width: 100vw;
     min-height: 100vh;
+}
+
+#beforeProvidingLoans .loan-detail-container.lender-role > div > div {
+    max-width: 680px;
+}
+
+#beforeProvidingLoans .loan-detail-container.lender-role > div > div > span {
+    font-size: clamp(3rem, 9vw, 4rem);
 }
