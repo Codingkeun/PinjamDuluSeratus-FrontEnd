@@ -263,6 +263,21 @@
     }
 }
 
+@media screen and (max-width: 480px) {
+    #beforeProvidingLoans .loan-detail-container.lender-role > div > div > span {
+        align-self: start !important;
+    }
+
+    #beforeProvidingLoans .loan-detail-container.lender-role > div > div > div {
+        display: grid !important;
+        grid-template-columns: 1fr;
+        row-gap: .5rem;
+    }
+
+    #beforeProvidingLoans .loan-detail-container.lender-role > div > div > div > button {
+        max-width: fit-content !important;
+    }
+}
 
 @media screen and (max-width: 442px) {
     .lender-investor-registration-cta .container > div:nth-child(2) > img:nth-child(3), 
