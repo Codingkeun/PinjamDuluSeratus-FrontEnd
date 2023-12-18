@@ -162,7 +162,6 @@ const routes = [
             title: `${nameApplication} | Riwayat Pembayaran`,
             footer: true,
             navbar: true,
-            role: 'peminjam'
         }
     },
     {
