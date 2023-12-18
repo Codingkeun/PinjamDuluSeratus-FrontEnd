@@ -27,6 +27,8 @@ import InvestmentInvestor from '../views/investor/investment/Investment.vue'
 import InvestmentDetailInvestor from '../views/investor/investment/InvestmentDetail.vue'
 import AccountInvestor from '../views/investor/Account.vue'
 import TopUpBalanceInvestor from '../views/investor/TopUpBalance.vue'
+import TopUpTransferConfirmation from '../views/investor/TopUpTransferConfirmation.vue'
+import TopUpHistory from '../views/investor/TopUpHistory.vue'
 
 const nameApplication = import.meta.env.VITE_APP_TITLE
 
@@ -220,6 +222,28 @@ const routes = [
         component: TopUpBalanceInvestor,
         meta: {
             title: `${nameApplication} | Top Up Saldo`,
+            footer: true,
+            navbar: true,
+            role: 'investor'
+        }
+    },
+    {
+        path: '/topup-balance/confirmation/:id',
+        name: 'topup.confirmation',
+        component: TopUpTransferConfirmation,
+        meta: {
+            title: `${nameApplication} | Konfirmasi Pembayaran`,
+            footer: true,
+            navbar: true,
+            role: 'investor'
+        }
+    },
+    {
+        path: '/topup-balance/history',
+        name: 'topup.history',
+        component: TopUpHistory,
+        meta: {
+            title: `${nameApplication} | History Top Up`,
             footer: true,
             navbar: true,
             role: 'investor'

@@ -124,7 +124,7 @@ export default {
                 this.form.fetch = false
                 if (process.status) {
                     this.$toast.success(process.message);
-                    this.$router.push({ name: 'account.investor' })
+                    this.$router.push({ name: 'topup.confirmation', params: {id: process.data} })
                 } else {
                     this.$toast.error(process.message);
                 }

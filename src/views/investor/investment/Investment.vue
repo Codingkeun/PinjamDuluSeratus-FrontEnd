@@ -52,7 +52,7 @@ export default {
     methods: {
         fetchData(page) {
             this.list = []
-            ApiCore.get(`${apiEnpoint.INVESTMENT}/pinjaman-aktif`, {
+            ApiCore.get(`${apiEnpoint.INVESMENT}/pinjaman-aktif`, {
                 page: page,
                 limit: this.pagination.limit,
                 status_approval: 'wait'

@@ -64,7 +64,7 @@
                             <label for="uploadProofOfPaymentButton" class="pb-0 mb-0 d-flex align-items-center">
                                 <span class="font-weight-medium">Upload</span>
                                 <span class="material-symbols-rounded ml-2">
-                                    download
+                                    upload
                                 </span>
                             </label>
                         </div>

@@ -23,6 +23,10 @@ import 'sweetalert2/dist/sweetalert2.min.css';
 import Toast, {useToast} from "vue-toastification";
 import "vue-toastification/dist/index.css";
 
+// import datepicker
+import VueFlatpickr from 'vue-flatpickr-component'
+import 'flatpickr/dist/flatpickr.css';
+
 // moment library
 import moment from 'moment'
 import 'moment/dist/locale/id'
@@ -65,6 +69,7 @@ app.config.productionTip = false
 app.component(VueCountdown.name, VueCountdown);
 app.component(Pagination.name, Pagination)
 app.component(EmptyState.name, EmptyState)
+app.component('flat-pickr', VueFlatpickr);
 
 // global variables
 app.config.globalProperties.$moment = moment;
