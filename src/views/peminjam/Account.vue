@@ -7,7 +7,7 @@
                 <div class="profile-container row justify-content-around mt-4">
                     <div class="card col-sm-5 col-md-5 col-lg-4 p-4 bg-secondary border-0 rounded-10 mb-4">
                         <h3 class="par-1em">Nama</h3>
-                        <h3 id="lendeesName" class="font-weight-semibold text-primary par-1-2em">John Doe</h3>
+                        <h3 id="lendeesName" class="font-weight-semibold text-primary par-1-2em">{{ account.name || '-' }}</h3>
                     </div>
                     <div class="card col-sm-5 col-md-5 col-lg-4 p-4 bg-secondary border-0 rounded-10 mb-4">
                         <h3 class="par-1em">Peran</h3>
@@ -15,31 +15,31 @@
                     </div>
                     <div class="card col-sm-5 col-md-5 col-lg-4 p-4 bg-secondary border-0 rounded-10 mb-4">
                         <h3 class="par-1em">Email</h3>
-                        <h3 class="font-weight-semibold text-primary par-1-2em"><span id="lendeesEmail">johndoe</span>@gmail.com</h3>
+                        <h3 class="font-weight-semibold text-primary par-1-2em">{{ account.email || '-' }}</h3>
                     </div>
                     <div class="card col-sm-5 col-md-5 col-lg-4 p-4 bg-secondary border-0 rounded-10 mb-4">
                         <h3 class="par-1em">Nomor HP</h3>
-                        <h3 id="lendeesPhoneNumber" class="font-weight-semibold text-primary par-1-2em">08123456789</h3>
+                        <h3 id="lendeesPhoneNumber" class="font-weight-semibold text-primary par-1-2em">{{ account.phone || '-' }}</h3>
                     </div>
                     <div class="card col-sm-5 col-md-5 col-lg-4 p-4 bg-secondary border-0 rounded-10 mb-4">
                         <h3 class="par-1em">NPM</h3>
-                        <h3 id="lendeesNPM" class="font-weight-semibold text-primary par-1-2em">1019201923</h3>
+                        <h3 id="lendeesNPM" class="font-weight-semibold text-primary par-1-2em">{{ account.npm || '-' }}</h3>
                     </div>
                     <div class="card col-sm-5 col-md-5 col-lg-4 p-4 bg-secondary border-0 rounded-10 mb-4">
                         <h3 class="par-1em">Fakultas</h3>
-                        <h3 id="lendeesFaculty" class="font-weight-semibold text-primary par-1-2em">Informatika</h3>
+                        <h3 id="lendeesFaculty" class="font-weight-semibold text-primary par-1-2em">{{ account.faculty || '-' }}</h3>
                     </div>
                     <div class="card col-sm-5 col-md-5 col-lg-4 p-4 bg-secondary border-0 rounded-10 mb-4">
                         <h3 class="par-1em">Jurusan</h3>
-                        <h3 id="lendeeMajor" class="font-weight-semibold text-primary par-1-2em">Teknik Informatika</h3>
+                        <h3 id="lendeeMajor" class="font-weight-semibold text-primary par-1-2em">{{ account.major || '-' }}</h3>
                     </div>
                     <div class="card col-sm-5 col-md-5 col-lg-4 p-4 bg-secondary border-0 rounded-10 mb-4">
                         <h3 class="par-1em">Kelas</h3>
-                        <h3 id="lendeeClass" class="font-weight-semibold text-primary par-1-2em">TIF RM 222</h3>
+                        <h3 id="lendeeClass" class="font-weight-semibold text-primary par-1-2em">{{ account.class || '-' }}</h3>
                     </div>
                     <div class="card col-sm-5 col-md-5 col-lg-4 p-4 bg-secondary border-0 rounded-10 mb-4">
                         <h3 class="par-1em">Foto KTM</h3>
-                        <a href="#lender_idCard_modal" data-target="#lender_idCard_modal" data-toggle="modal" id="lendeesStudentCardImage" class="btn-link font-weight-semibold text-primary par-1-2em" style="text-decoration: underline;" aria-label="Klik untuk melihat Foto KTM">Klik untuk melihat</a>
+                        <a href="#lender_idCard_modal" v-if="account.foto_ktm" data-target="#lender_idCard_modal" data-toggle="modal" id="lendeesStudentCardImage" class="btn-link font-weight-semibold text-primary par-1-2em" style="text-decoration: underline;" aria-label="Klik untuk melihat Foto KTM">Klik untuk melihat</a>
                     </div>
                 </div>
             </div>
@@ -53,7 +53,7 @@
                             <h5 class="modal-title" id="lender_idCard_modaltitle">Foto KTM</h5>
                         </div>
                         <div class="modal-body">
-                            <img src="../../assets/images/id-card/peminjam.png" class="w-100" />
+                            <img :src="account.foto_ktm" class="w-100" />
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
@@ -65,12 +65,28 @@
     </main>
 </template>
 <script>
+import apiEnpoint from '@/services/api-endpoint'
+import {ApiCore} from '@/services/core'
+
 export default {
     name: 'Account',
     data() {
         return {
-            
+            account: {}
         }
+    },
+    mounted() {
+        this.fetchData()
+    },
+    methods: {
+        fetchData() {
+            this.account = {}
+            ApiCore.get(`${apiEnpoint.ACCOUNT}/profile`).then((result) => {
+                if (result.status) {
+                    this.account = result.data
+                }
+            })
+        },
     }
 }
 </script>
