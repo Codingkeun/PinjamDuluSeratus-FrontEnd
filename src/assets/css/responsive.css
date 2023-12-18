@@ -300,6 +300,10 @@
         margin-block: auto;
         font-size: clamp(1.5rem, 6vw, 2rem) !important;
     }
+
+    .notfound-image {
+        width: 100% !important;
+    }
 }
 
 @media screen and (max-width: 360px) {
@@ -348,6 +352,16 @@
 
     #chart-line {
         height: 20rem !important;
+    }
+
+    .notfound-section > * {
+        display: grid !important;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+    }
+
+    .notfound-image {
+        width: 100% !important;
     }
 }
 
@@ -612,6 +626,10 @@
 @media screen and (max-width: 688.9px) {
     .hero .content {
         width: 70%;
+    }
+
+    .notfound-image {
+        min-width: 10rem !important;
     }
 }
 

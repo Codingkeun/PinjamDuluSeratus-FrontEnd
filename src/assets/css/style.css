@@ -751,3 +751,17 @@ a.btn.bg-white.text-primary {
 .topup-balance-button:focus {
     background-color: #A8D3CE !important;
 }
+
+.notfound-container {
+    height: 100vh;
+}
+
+.notfound-section {
+    align-items: center !important;
+    height: 100%;
+}
+
+.notfound-container {
+    min-width: 100vw;
+    min-height: 100vh;
+}
