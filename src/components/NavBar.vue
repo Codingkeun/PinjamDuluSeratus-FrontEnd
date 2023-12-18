@@ -79,9 +79,10 @@ export default {
                     icon: 'warning',
                     showDenyButton: true,
                     showCancelButton: false,
-                    confirmButtonText: 'YA',
-                    confirmButtonColor: '#0059AD',
-                    denyButtonText: 'TIDAK',
+                    confirmButtonText: 'Ya',
+                    confirmButtonColor: '#159895',
+                    denyButtonColor: '#c0c0c0',
+                    denyButtonText: 'Tidak',
                 })
                 .then(async (result) => {
                     if (result.isConfirmed) {

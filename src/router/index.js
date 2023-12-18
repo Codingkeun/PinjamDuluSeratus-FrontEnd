@@ -188,6 +188,7 @@ const routes = [
     },
     {
         path: '/investment',
+        name: 'investment',
         component: InvestmentInvestor,
         meta: {
             title: `${nameApplication} | Investasi Aktif`,

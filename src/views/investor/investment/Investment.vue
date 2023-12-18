@@ -5,9 +5,9 @@
         <div class="d-flex justify-content-end">
             <div class="mb-3 text-muted" v-if="pagination.total">Menampilkan {{pagination.total}} data</div>
         </div>
-        <div class="active-lendees-list d-flex flex-column mt-4" style="gap: 3rem">
-            <div class="card p-5 rounded-10 container-card-shadow" v-if="list.length">
-                <div class="card-body p-0 mb-4" v-for="item in list">
+        <div class="active-lendees-list d-flex flex-column mt-4" style="gap: 3rem" v-if="pagination.total">
+            <div class="card p-5 rounded-10 container-card-shadow" v-for="item in list">
+                <div class="card-body p-0 mb-4">
                     <h2 class="card-title font-weight-bold m-0 par-1-5em" id="activeLendeesLoanAmount">Rp {{ $toCurrency(item.nominal) }}</h2>
                     <h3 class="card-subtitle font-weight-semibold text-primary m-0 mb-4 par-1em" id="activeLendeesTipAmount">Tip Rp {{ $toCurrency((item.tip)) }}</h3>
                     <div class="d-flex flex-column">
@@ -16,14 +16,16 @@
                         <h4 class="card-text par-1em"><span id="activeLendeesPhone">{{item.peminjam_phone || '-'}}</span></h4>
                     </div>
                 </div>
-                <button @click="$router.push('investment/detail/' + item)" class="btn btn-primary font-weight-semibold">Detail</button>
+                <button @click="$router.push('investment/detail/' + item.id)" class="btn btn-primary font-weight-semibold">Detail</button>
             </div>
-            <div v-else>
+        </div>
+        <div v-else class="card rounded-10 bg-light">
+            <div class="card-body">
                 <span class="text-center text-muted">Belum ada pengajuan pinjaman</span>
             </div>
         </div>
 
-        <div class="d-flex justify-content-center" v-show="list.length">
+        <div class="d-flex justify-content-center" v-if="pagination.total">
             <Pagination :page="pagination.page" :prev="pagination.prev" :next="pagination.next" v-on:fetchData="fetchData"></Pagination>
         </div>
     </main>
@@ -59,7 +61,7 @@ export default {
             }).then((result) => {
                 if (result.status) {
                     this.list = result.data
-                }s
+                }
                 this.pagination.prev = result.pagination.prev
                 this.pagination.next = result.pagination.next
                 this.pagination.page = result.pagination.page

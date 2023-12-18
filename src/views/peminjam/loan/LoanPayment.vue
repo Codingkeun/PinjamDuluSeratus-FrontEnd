@@ -53,7 +53,9 @@
                 <div ref="uploadContent">
                     <div id="paymentDateForm" class="w-100 d-flex flex-column">
                         <label for="paymentDate" class="form-label text-center">Masukkan Tanggal Pembayaran</label>
-                        <input type="date" class="form-control" id="paymentDate" required>
+                        <Field name="date" v-model="form.date" type="hidden" />
+                        <flat-pickr class="form-control bg-white mb-2" v-model="form.date" placeholder="Choose date" :config="configDate"></flat-pickr>
+                        <ErrorMessage name="date" :class="'text-danger'" />
                     </div>
                 </div>
                 <div class="mt-5">
@@ -100,6 +102,7 @@ export default {
             form: {
                 trx_id: '',
                 payment_method_id: '',
+                date: '',
                 attachment: null,
                 fetch: false
             },
@@ -109,11 +112,19 @@ export default {
             },
             listBank: [],
             attachment_preview: '',
+            configDate: {
+                altInput: true,
+                altFormat: "j F Y H:i",
+                dateFormat: "Y-m-d H:i",
+                enableTime: true,
+                time_24hr: true
+            },
         }
     },
     components: {Field, Form, ErrorMessage},
     setup() {
         const schemaSubmit = object({
+            date: string().required('Pilih tanggal pembayaran'),
             payment_method: string().required('Pilih Metode Pembayaran'),
             attachment_file: string().required('Pilih Bukti Pembayaran'),
         });
@@ -166,22 +177,39 @@ export default {
             this.$refs.uploadContent.scrollIntoView({ behavior: "smooth" });
         },
         async handleSubmit() {
-            try {
-                this.form.fetch = true
-                const process = await ApiCore.postWithUpload(`${apiEnpoint.LOAN}/payment`, {
-                    ...this.form
+            
+            this.$swal
+                .fire({
+                    title: 'Apakah kamu yakin ?',
+                    html: `Kamu akan melakukan <b>Pembayaran</b> pada pinjaman ini`,
+                    icon: 'warning',
+                    showDenyButton: true,
+                    showCancelButton: false,
+                    confirmButtonText: 'Ya',
+                    confirmButtonColor: '#159895',
+                    denyButtonColor: '#c0c0c0',
+                    denyButtonText: 'Tidak',
                 })
-                this.form.fetch = false
-                if (process.status) {
-                    this.$toast.success(process.message);
-                    this.$router.push({ name: 'loan' })
-                } else {
-                    this.$toast.error(process.message);
-                }
-            } catch(error) {
-                this.form.fetch = false
-                this.$toast.error(error);
-            }
+                .then(async (result) => {
+                    if (result.isConfirmed) {
+                        try {
+                            this.form.fetch = true
+                            const process = await ApiCore.postWithUpload(`${apiEnpoint.LOAN}/payment`, {
+                                ...this.form
+                            })
+                            this.form.fetch = false
+                            if (process.status) {
+                                this.$toast.success(process.message);
+                                this.$router.push({ name: 'loan' })
+                            } else {
+                                this.$toast.error(process.message);
+                            }
+                        } catch(error) {
+                            this.form.fetch = false
+                            this.$toast.error(error);
+                        }
+                    }
+                });
         },
         previewFile(e) {
             const file = e.target.files[0];                

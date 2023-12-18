@@ -83,9 +83,9 @@
                         <div class="divider"></div>
                         <div style="row-gap: 8px;">
                             <h4 class="my-auto par-1em">Jumlah yang harus dibayarkan</h4>
-                            <h4 class="text-primary font-weight-semibold my-auto text-right par-1em">Rp {{$toCurrency((detail.nominal + detail.tip))}}</h4>
+                            <h4 class="text-primary my-auto text-right" :class="{'par-1em font-weight-semibold': detail.instalment_total > 1, 'font-weight-bold': detail.instalment_total == 1}">Rp {{$toCurrency((detail.nominal + detail.tip))}}</h4>
                         </div>
-                        <div style="row-gap: 8px;">
+                        <div style="row-gap: 8px;" v-if="detail.instalment_total > 1">
                             <h4 class="my-auto par-1em">Pembayaran per cicilan</h4>
                             <h4 class="text-primary font-weight-bold text-right">Rp {{$toCurrency(detail.instalment_nominal)}}</h4>
                         </div>

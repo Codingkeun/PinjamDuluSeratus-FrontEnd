@@ -92,7 +92,7 @@
                                 <ErrorMessage name="jml_cicilan" :class="'text-danger'" />
                             </div>
                         </div>
-                        <div class="form-check mt-1">
+                        <div class="form-check mt-1" style="z-index: 1059">
                             <Field type="radio" id="instalment_payment_2" v-model="instalment_payment" @change="onChangeTypePayment" name="instalment_payment" value="1" class="form-check-input" />
                             <label for="instalment_payment_2" class="form-check-label ml-3">Bayar semuanya sekaligus</label>
                         </div>
